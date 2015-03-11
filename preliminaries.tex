@@ -1,4 +1,4 @@
-\thesistitle{Title of the Thesis}
+\thesistitle{Efficient Hosted interpreter for Dynamic Languages}
 
 \degreename{Doctor of Philosophy}
 
@@ -84,28 +84,37 @@
 \textbf{EDUCATION}
 
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Doctor of Philosophy in Computer Science} & \textbf{2012} \\
+    \textbf{Doctor of Philosophy in Computer Engineering} & \textbf{2015} \\
     \vspace{6pt}
-    University name & \emph{City, State} \\
-    \textbf{Bachelor of Science in Computational Sciences} & \textbf{2007} \\
+    University of California, Irvine & \emph{Irvine, California} \\
+
+    \textbf{Master of Science in Computer Engineering} & \textbf{2010} \\
     \vspace{6pt}
-    Another university name & \emph{City, State} \\
+    Chalmers University of Technology & \emph{Gothenburg, Sweden} \\
+
+    \textbf{Bachelor of Science in Mechanical Engineering} & \textbf{2004} \\
+    \vspace{6pt}
+    University of Science and Technology Beijing & \emph{Beijing, China} \\
   \end{tabular*}
 
 \vspace{12pt}
 \textbf{RESEARCH EXPERIENCE}
 
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Graduate Research Assistant} & \textbf{2007--2012} \\
+    \textbf{Graduate Student Researcher} & \textbf{2010--2015} \\
     \vspace{6pt}
     University of California, Irvine & \emph{Irvine, California} \\
+
+    \textbf{Master Student Researcher} & \textbf{2010} \\
+    \vspace{6pt}
+    Chalmers University of Technology & \emph{Gothenburg, Sweden} \\
   \end{tabular*}
 
 \vspace{12pt}
-\textbf{TEACHING EXPERIENCE}
+\textbf{PROFESSIONAL EXPERIENCE}
 
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Teaching Assistant} & \textbf{2009--2010} \\
+    \textbf{Teaching Assistant} & \textbf{2014--2014} \\
     \vspace{6pt}
     University name & \emph{City, State} \\
   \end{tabular*}
@@ -134,7 +143,16 @@
 % supposedly somewhat of a soft constraint.
 \thesisabstract
 {
-  The abstract of your contribution goes here.
+Motivated by high development costs, production compilers and virtual machines, often support more than one language.
+This strategy is most effective when the language family is homogeneous.
+Many languages, for instance, are very amenable to static program analysis; dynamic languages are not.
+Consequently, a single VM cannot deliver peak performance for both types of languages without adapting its optimization strategy accordingly.
+
+Informally, we host a “highly dynamic” language (Python) on the Java Virtual Machine, a VM for “moderately dynamic” languages.
+While we are not the first to do so, our approach diverges from current practice by representing Python programs as abstract syntax trees, ASTs, rather than bytecode.
+Not only are ASTs the simplest and most natural programming language implementation,
+they also lend themselves well to optimizations those are particularly beneficial to highly dynamic languages.
+Compared to Jython, which compiles Python programs to Java bytecode, our Python prototype is faster and requires less implementation effort.
 }
 
 
