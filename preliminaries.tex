@@ -137,21 +137,36 @@
 
 \pagebreak
 
-\textbf{REFEREED JOURNAL PUBLICATIONS}
+\textbf{PUBLICATIONS}
 
-  \mypubentry{Ground-breaking article}{2012}{Journal name}
+  % \mypubentry{Awesome paper}{Jun 2011}{Conference name}
+  % \mypubentry{Another awesome paper}{Aug 2012}{Conference name}
 
-\vspace{12pt}
-\textbf{REFEREED CONFERENCE PUBLICATIONS}
+Wei Zhang, Per Larsen, Stefan Brunthaler, Michael Franz.
+\textbf{Accelerating Iterators in Optimizing AST Interpreters}.
+\textit{In Proceedings of the 29th ACM SIGPLAN Conference on Object Oriented Programming:
+Systems, Languages, and Applications, Portland, OR, USA, October 20-24, 2014 (OOPSLA '14)}, 2014.
 
-  \mypubentry{Awesome paper}{Jun 2011}{Conference name}
-  \mypubentry{Another awesome paper}{Aug 2012}{Conference name}
+G{\"u}lfem Savrun-Yeniçeri, Wei Zhang, Huahan Zhang, Eric Seckler, Chen Li, Stefan Brunthaler,
+Per Larsen, Michael Franz.
+\textbf{Efficient Hosted Interpreters on the JVM}.
+\textit{In ACM Transactions on Architecture and Code Optimization, volume 11(1) pages 9:1–9:24}, 2014.
+
+G{\"u}lfem Savrun-Yeniçeri, Wei Zhang, Huahan Zhang, Chen Li, Stefan Brunthaler, Per Larsen, Michael Franz.
+\textbf{Efficient Interpreter Optimizations for the JVM}.
+\textit{In Proceedings of the 10th International Conference on Principles and Practice of Programming in Java,
+Stuttgart, Germany, September 11-13, 2013 (PPPJ '13)}, 2013.
 
 \vspace{12pt}
 \textbf{SOFTWARE}
 
-  \mysoftentry{Magical tool}{http://your.url.here/}
-  {C++ algorithm that solves TSP in polynomial time.}
+\mysoftentry{ZipPy}{http://bitbucket.org/ssllab/zippy/}
+{A fast and lightweight Python 3 implementation built using the Truffle framework.
+It leverages the underlying Java JIT compiler and compiles Python programs to highly optimized machine code at runtime.}
+
+\mysoftentry{ModularVM}{https://bitbucket.org/thezhangwei/modularvm/}
+{An extension to the Maxine VM (Java Virtual Machine) that enables deeper integrations with JVM languages
+like Jython (Python), Rhino (JavaScript) or JRuby (Ruby). It automatically accelerates guest language interpreters written in Java.}
 
 }
 
@@ -159,6 +174,7 @@
 % supposedly somewhat of a soft constraint.
 \thesisabstract
 {
+
 Motivated by high development costs, production compilers and virtual machines, often support more than one language.
 This strategy is most effective when the language family is homogeneous.
 Many languages, for instance, are very amenable to static program analysis; dynamic languages are not.
@@ -169,6 +185,7 @@ While we are not the first to do so, our approach diverges from current practice
 Not only are ASTs the simplest and most natural programming language implementation,
 they also lend themselves well to optimizations those are particularly beneficial to highly dynamic languages.
 Compared to Jython, which compiles Python programs to Java bytecode, our Python prototype is faster and requires less implementation effort.
+
 }
 
 
