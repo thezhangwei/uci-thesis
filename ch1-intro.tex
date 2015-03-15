@@ -1,55 +1,28 @@
 \chapter{Introduction}
 
-This is an example using the \LaTeX{} template for UCI theses and
-dissertation documents \cite{uci-thesis-latex}. Figure
-\ref{fig:sourcecode} is just for illustration purposes, as is Table
-\ref{tab:coordinates}.
+Since their first inception, dynamic languages or sometime referred as dynamically typed programming languages have enabled higher productivity for programmers.
+They are no longer simply regard as ``scripting language'' used to accomplish relatively small tasks,
+but have become ubiquitous in many domains including scientific computing and web programming.
 
-\begin{figure}
-\begin{verbatim}
-#include <iostream>
-int main(int argc, char** argv) {
-  std::cout << "Hello World." << std::endl;
-  return 0;
-}
-\end{verbatim}
-  \caption{Example source code.}
-  \label{fig:sourcecode}
-\end{figure}
+GitHub~\cite{github} is a popular web-based open source software hosting service.
+Among the six most poplar programming languages used in the projects hosted on GitHub, four of them are dynamic languages.
+They are JavaScript, Python, PHP and Ruby.
+PYPL~\cite{pypl} is a popular programming language index created by analyzing how often languages tutorials are searched on Google.
+Among the top 16 languages ranked by PYPL, half of them are dynamic languages.
+Many of the popular websites we are using today are built using dynamic languages.
+For instance, the backend of Airbnb and Hulu is written in Ruby and that of Quora and Reddit is written in Python.
 
-\section{Background}
+Despite their popularity, performance has been the weakness of dynamic languages.
+Languages like Python and Ruby are originally implemented as interpreters.
+Although interpreters are easy to implement, their performance is suboptimal.
+To address this weakness, we have seen recent works that have improved the performance of dynamic languages
+by constructing a complete just-in-time (JIT) compilation based virtual machine for one particular language.
+This approach offers promising performance benefit, but incurs significant implementation costs.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
-
-\begin{table}
-  \centering
-  \begin{tabular}{|rr|r|}
-    \hline
-    $x$ & $y$ & $z$ \\
-    \hline
-    14 & 12 & -2 \\
-    0 & 33 & -25 \\
-    -3 & 11 & 22 \\
-    4 & 4 & 6 \\
-    \hline
-  \end{tabular}
-  \caption{Example coordinates.}
-  \label{tab:coordinates}
-\end{table}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Alternatively, language implementors can build their languages on top of an existing mature virtual machine such as the Java Virtual machine (JVM).
+In this way, the ``guest'' language can reuse the existing components of the ``hosting'' virtual machine to alleviate its implementation costs.
+It also provide the opportunity for the ``hosted'' language to take advantage of the underlying JIT compiler to address its performance issue.
+In this thesis we explore...
 
 
 %%% Local Variables: ***
