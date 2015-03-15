@@ -22,7 +22,17 @@ This approach offers promising performance benefit, but incurs significant imple
 Alternatively, language implementors can build their languages on top of an existing mature virtual machine such as the Java Virtual machine (JVM).
 In this way, the ``guest'' language can reuse the existing components of the ``hosting'' virtual machine to alleviate its implementation costs.
 It also provide the opportunity for the ``hosted'' language to take advantage of the underlying JIT compiler to address its performance issue.
-In this thesis we explore...
+We explore the performance potential of ``hosted'' interpreters for dynamic languages.
+We do so by hosting a ``highly dynamic'' language (Python) the JVM, a VM for ``moderately dynamic'' languages.
+
+This thesis makes the following contributions:
+\begin{itemize}
+\item A technique that speedups the execution of ``hosted'' bytecode interpreters using direct threading.
+
+\item A new iterator optimization in the context of an optimizing Abstract Syntax Tree (AST) interpreter.
+
+\item A space efficient object model optimization for dynamic languages hosted on the JVM.
+\end{itemize}
 
 
 %%% Local Variables: ***
