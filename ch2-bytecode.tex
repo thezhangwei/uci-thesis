@@ -1,0 +1,15 @@
+\chapter{Hosted Bytecode Interpreter}
+
+A programming language interpreter executes programs in two steps.
+First it parses the human readable source code, verifies its correctness and translates the code into a more efficient intermediate representation (IR) format.
+The interpreter then picks up the translated program and executes it piece by piece.
+
+Bytecode interpreters parse source program into bytecode, a highly compressed representation of the program.
+The format of the bytecode is a form of virtual instruction set designed for this particular interpreter.
+In the second step bytecode interpreters execute the bytecode as a sequence of virtual instruction one instruction at a time before finishing the last one.
+Interpreters are also regard as virtual machines, since they emulate ``machines'' with their own virtual instruction sets.
+
+In this Chapter, we go over the performance overheads of bytecode interpreters and the classic techniques used to overcome these overheads.
+Lastly, we introduce ModularVM~\cite{savrun2013, savrun2014}, a research JVM that automatically optimize the performance of hosted bytecode interpreters.
+
+\section{Performance Anatomy of Bytecode Interpreters}
