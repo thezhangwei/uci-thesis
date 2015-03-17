@@ -39,6 +39,11 @@ from the angle of a virtual machine is to correlate each step with the stages in
 Figure~\ref{fig:interpretation-cost} illustrates the five stages in a classic RISC pipeline:
 instruction fetch (IF), instruction decode (ID), execute (EX), memory access (ME) and write back (WB).
 The instruction dispatch step in bytecode interpreters is similar to instruction fetch and decode stages in RISC.
-We can correlate the late stage of instruction decode, memory access and write back in RISC to operand access in interpreters.
-Since these are the pipeline stages that prepare the operands for the computing unit and stores the computed result back to either a register or memory address.
+We can correlate the late stage of instruction decode, memory access and write back in RISC to operand access in an interpreter.
+Since these are the pipeline stages that prepare the operands for the computing unit and stores the end result back to either a register or memory address.
 The interpreter step that performs the function of the instruction works exactly as the execute stage in RISC, which performs the actual computation.
+
+The cost of running a hosted program on an interpreter consists of the costs of performing each of the three steps we described above.
+Among those steps, instruction dispatch and operand access does not directly contribute to the actual work of the hosted program.
+The less time the interpreter spend in these two steps, the more time the interpreter spend in doing the actual work.
+Therefore, an efficient bytecode interpreter must encompass techniques that optimize instruction dispatch and operand access.
