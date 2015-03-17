@@ -29,7 +29,16 @@ For instance, if the instruction is addition of two numbers, the actually additi
 
 \begin{figure*}[th]
 \centering
-\includegraphics[scale=.30]{figures/ch2-risc-pipeline.pdf}
-\caption{Interpretation costs}
-\label{fig:interpretation-cost-in-risc}
+\includegraphics[scale=.25]{figures/ch2-risc-pipeline.pdf}
+\caption{Interpretation costs of bytecode interpreters}
+\label{fig:interpretation-cost}
 \end{figure*}
+
+An interesting way to further illustrate the purpose of each interpretation step
+from the angle of a virtual machine is to correlate each step with the stages in a classic reduced instruction set computer (RISC) pipeline.
+Figure~\ref{fig:interpretation-cost} illustrates the five stages in a classic RISC pipeline:
+instruction fetch (IF), instruction decode (ID), execute (EX), memory access (ME) and write back (WB).
+The instruction dispatch step in bytecode interpreters is similar to instruction fetch and decode stages in RISC.
+We can correlate the late stage of instruction decode, memory access and write back in RISC to operand access in interpreters.
+Since these are the pipeline stages that prepare the operands for the computing unit and stores the computed result back to either a register or memory address.
+The interpreter step that performs the function of the instruction works exactly as the execute stage in RISC, which performs the actual computation.
