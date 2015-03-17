@@ -9,7 +9,27 @@ The format of the bytecode is a form of virtual instruction set designed for thi
 In the second step bytecode interpreters execute the bytecode as a sequence of virtual instruction one instruction at a time before finishing the last one.
 Interpreters are also regard as virtual machines, since they emulate ``machines'' with their own virtual instruction sets.
 
-In this Chapter, we go over the performance overheads of bytecode interpreters and the classic techniques used to overcome these overheads.
+In this Chapter, we go over performance overheads of bytecode interpreters and the classic techniques used to minimize these overheads.
 Lastly, we introduce ModularVM~\cite{savrun2013, savrun2014}, a research JVM that automatically optimize the performance of hosted bytecode interpreters.
 
 \section{Performance Anatomy of Bytecode Interpreters}
+
+Bytecode interpreters execute bytecode one instruction at a time.
+For each instruction, the interpretation consists of three steps~\cite{davis2003case}:
+\begin{itemize}
+  \item Instruction dispatch
+  \item Operand access
+  \item Performing the function of the instruction
+\end{itemize}
+Instruction dispatch includes fetching the next instruction, decoding the instruction and transferring program execution to the actual implementation of the instruction.
+Operand access involves fetching operands required to perform the instruction from either a temporal operand stack or a virtual register file depending on the design of the virtual instruction set.
+It also includes storing the computed result back to where temporal operands should be stored.
+Subsequently in the last step the interpreter performs the actual computation.
+For instance, if the instruction is addition of two numbers, the actually addition is performed in this step.
+
+\begin{figure*}[th]
+\centering
+\includegraphics[scale=.30]{figures/ch2-risc-pipeline.pdf}
+\caption{Interpretation costs}
+\label{fig:interpretation-cost-in-risc}
+\end{figure*}
