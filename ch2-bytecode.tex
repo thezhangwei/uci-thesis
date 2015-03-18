@@ -73,8 +73,8 @@ Since the bytecode sequence is input dependent and unlikely to form a predictabl
 branch prediction mechanisms in modern hardware tend to mis-predict the shared indirect branch.
 This mis-prediction results in a significant performance penalty for switch-based bytecode interpreters.
 
-\section{Bytecode Interpreter Optimizations}
-
+\section{Efficient Instruction Dispatch Techniques}
+\label{sec:efficient-instruction-dispatch-techniques}
 \subsection{Direct Threading Dispatch}
 
 \begin{figure}[th]
@@ -123,3 +123,16 @@ The subroutine threaded code translation phase translates each input bytecode to
 Each instruction implementation ends with a return instruction that transfer execution back to the threaded code.
 Note that the call instruction in subroutine threading is a direct branch.
 Although the return instruction is an indirect branch, modern hardware can accurately predict call/return repairs which results in a performance increase.
+
+\subsection{Efficient Instruction Dispatch For Hosted Bytecode Interpreters}
+
+Instruction dispatch greatly affects the overall performance of a bytecode interpreter.
+The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques}
+relies on the use of computed goto's.
+Due to the restricted use of pointers, a hosted bytecode interpreter written in Java can not make use of those techniques.
+To address this issue, we extend the JVM by adding the functionality of threaded code generation to enable efficient instruction dispatch for hosted interpreters.
+Our research prototype takes an existing switch-based bytecode interpreter written in Java, and converts it into a direct threading interpreter in a semi-automatic fashion.
+
+\subsection{System Overview}
+
+Stuff
