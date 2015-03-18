@@ -72,3 +72,24 @@ Note that each iteration of the dispatch loop shares the same indirect branch.
 Since the bytecode sequence is input dependent and unlikely to form a predictable pattern,
 branch prediction mechanisms in modern hardware tend to mis-predict the shared indirect branch.
 This mis-prediction results in a significant performance penalty for switch-based bytecode interpreters.
+
+\section{Bytecode Interpreter Optimizations}
+
+\subsection{Direct Threading Dispatch}
+
+\begin{figure}[th]
+\centering
+\subfigure[direct threading interpreter] {
+  \includegraphics[scale=.85]{figures/ch2-direct-threading-dispatch-code.pdf}
+  \label{fig:direct-threading-dispatch-code}
+}
+\subfigure[branches in direct threading dispatch] {
+  \includegraphics[scale=.47]{figures/ch2-direct-threading-dispatch-branch.pdf}
+  \label{fig:direct-threading-dispatch-branch}
+}
+\caption{direct threading dispatch}
+\label{fig:direct-threading-dispatch}
+\end{figure}
+
+Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation.
+Figure~\ref{fig:direct-threading-dispatch-code} illustrates this technique.
