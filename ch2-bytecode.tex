@@ -91,5 +91,13 @@ This mis-prediction results in a significant performance penalty for switch-base
 \label{fig:direct-threading-dispatch}
 \end{figure}
 
-Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation.
-Figure~\ref{fig:direct-threading-dispatch-code} illustrates this technique.
+Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation~\cite{bell73}.
+Figure~\ref{fig:direct-threading-dispatch-code} illustrates this technique written in C.
+Direct threading requires an additional translation phase that translates the bytecode sequence into a sequence of pointers or the threaded code.
+Each pointer in the threaded code points to the instruction implementation that corresponds to the bytecode instruction in the original bytecode input.
+The interpreter starts interpretation by jumping to the address pointed by the first pointer in the threaded code as shown in Figure~\ref{fig:direct-threading-dispatch-code}.
+Similarly each instruction implementation repeat the same dispatch routine at the end of it to forward execution to the next instruction implementation.
+The duplicated dispatch branches reduce indirect branch mis-predictions.
+Therefore, direct threading alleviates the performance loss we have seen in switch-based dispatch.
+
+\subsection{Subroutine Threading Dispatch}
