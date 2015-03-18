@@ -53,8 +53,8 @@ Therefore, an efficient bytecode interpreter must encompass techniques that opti
 \begin{figure}[th]
 \centering
 \subfigure[dispatch loop] {
-  \includegraphics[scale=.70]{figures/ch2-switch-based-dispatch.pdf}
-  \label{fig:switch-based-dispatch-loop}
+  \includegraphics[scale=.70]{figures/ch2-switch-based-dispatch-code.pdf}
+  \label{fig:switch-based-dispatch-code}
 }
 \subfigure[branches in switch-based dispatch] {
   \includegraphics[scale=.47]{figures/ch2-switch-based-dispatch-branch.pdf}
@@ -65,7 +65,7 @@ Therefore, an efficient bytecode interpreter must encompass techniques that opti
 \end{figure}
 
 The simplest way to construct a bytecode interpreter is to use an interpreter loop and a switch statement in the loop to dispatch each bytecode instruction.
-Figure~\ref{fig:switch-based-dispatch-loop} illustrates a switch-based bytecode interpreter loop written in Java.
+Figure~\ref{fig:switch-based-dispatch-code} illustrates a switch-based bytecode interpreter loop written in Java.
 In each iteration of the loop, the interpreter fetches the next instruction and use the switch statement to redirect execution to the case block that implements the instruction.
 Figure~\ref{fig:switch-based-dispatch-branch} shows the branches involved in a switch-based dispatch.
 Note that each iteration of the dispatch loop shares the same indirect branch.
@@ -101,3 +101,25 @@ The duplicated dispatch branches reduce indirect branch mis-predictions.
 Therefore, direct threading alleviates the performance loss we have seen in switch-based dispatch.
 
 \subsection{Subroutine Threading Dispatch}
+
+\begin{figure}[th]
+\centering
+\subfigure[subroutine threaded code] {
+  \includegraphics[scale=.85]{figures/ch2-subroutine-threading-dispatch-code.pdf}
+  \label{fig:subroutine-threading-dispatch-code}
+}
+\subfigure[branches in subroutine threading dispatch] {
+  \includegraphics[scale=.47]{figures/ch2-subroutine-threading-dispatch-branch.pdf}
+  \label{fig:subroutine-threading-dispatch-branch}
+}
+\caption{subroutine threading dispatch}
+\label{fig:subroutine-threading-dispatch}
+\end{figure}
+
+Subroutine threading takes one step further by translating the input bytecode sequence directly to executable machine code.
+The translated machine code or the subroutine threaded code is a sequence of machine level calls.
+Each call is a direct branch jumping to an instruction implementation as a subroutine.
+The subroutine threaded code translation phase translates each input bytecode to a subroutine call to the corresponding instruction implementation.
+Each instruction implementation ends with a return instruction that transfer execution back to the threaded code.
+Note that the call instruction in subroutine threading is a direct branch.
+Although the return instruction is an indirect branch, modern hardware can accurately predict call/return repairs which results in a performance increase.
