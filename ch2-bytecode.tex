@@ -27,23 +27,48 @@ It also includes storing the computed result back to where temporal operands sho
 Subsequently in the last step the interpreter performs the actual computation.
 For instance, if the instruction is addition of two numbers, the actually addition is performed in this step.
 
-\begin{figure*}[th]
+\begin{figure}[th]
 \centering
 \includegraphics[scale=.25]{figures/ch2-risc-pipeline.pdf}
 \caption{Interpretation costs of bytecode interpreters}
 \label{fig:interpretation-cost}
-\end{figure*}
+\end{figure}
 
 An interesting way to further illustrate the purpose of each interpretation step
-from the angle of a virtual machine is to correlate each step with the stages in a classic reduced instruction set computer (RISC) pipeline.
+from the angle of a virtual machine is to correlate them with the stages in a classic reduced instruction set computer (RISC) pipeline.
 Figure~\ref{fig:interpretation-cost} illustrates the five stages in a classic RISC pipeline:
 instruction fetch (IF), instruction decode (ID), execute (EX), memory access (ME) and write back (WB).
 The instruction dispatch step in bytecode interpreters is similar to instruction fetch and decode stages in RISC.
 We can correlate the late stage of instruction decode, memory access and write back in RISC to operand access in an interpreter.
-Since these are the pipeline stages that prepare the operands for the computing unit and stores the end result back to either a register or memory address.
+Since these are the stages that prepare the operands for the computing unit and stores the end result back to either a register or memory address.
 The interpreter step that performs the function of the instruction works exactly as the execute stage in RISC, which performs the actual computation.
 
 The cost of running a hosted program on an interpreter consists of the costs of performing each of the three steps we described above.
 Among those steps, instruction dispatch and operand access does not directly contribute to the actual work of the hosted program.
 The less time the interpreter spend in these two steps, the more time the interpreter spend in doing the actual work.
 Therefore, an efficient bytecode interpreter must encompass techniques that optimize instruction dispatch and operand access.
+
+\subsection{Switch-based Dispatch}
+
+\begin{figure}[th]
+\centering
+\subfigure[dispatch loop] {
+  \includegraphics[scale=.70]{figures/ch2-switch-based-dispatch.pdf}
+  \label{fig:switch-based-dispatch-loop}
+}
+\subfigure[branches in switch-based dispatch] {
+  \includegraphics[scale=.47]{figures/ch2-switch-based-dispatch-branch.pdf}
+  \label{fig:switch-based-dispatch-branch}
+}
+\caption{switch-based dispatch}
+\label{fig:switch-based-dispatch}
+\end{figure}
+
+The simplest way to construct a bytecode interpreter is to use an interpreter loop and a switch statement in the loop to dispatch each bytecode instruction.
+Figure~\ref{fig:switch-based-dispatch-loop} illustrates a switch-based bytecode interpreter loop written in Java.
+In each iteration of the loop, the interpreter fetches the next instruction and use the switch statement to redirect execution to the case block that implements the instruction.
+Figure~\ref{fig:switch-based-dispatch-branch} shows the branches involved in a switch-based dispatch.
+Note that each iteration of the dispatch loop shares the same indirect branch.
+Since the bytecode sequence is input dependent and unlikely to form a predictable pattern,
+branch prediction mechanisms in modern hardware tend to mis-predict the shared indirect branch.
+This mis-prediction results in a significant performance penalty for switch-based bytecode interpreters.
