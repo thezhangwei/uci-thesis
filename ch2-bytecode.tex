@@ -124,7 +124,7 @@ Each instruction implementation ends with a return instruction that transfer exe
 Note that the call instruction in subroutine threading is a direct branch.
 Although the return instruction is an indirect branch, modern hardware can accurately predict call/return repairs which results in a performance increase.
 
-\section{Efficient Instruction Dispatch For Hosted Bytecode Interpreters}
+\section{Efficient Instruction Dispatch for Hosted Bytecode Interpreters}
 
 Instruction dispatch greatly affects the overall performance of a bytecode interpreter.
 The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques}
@@ -142,7 +142,7 @@ Our research prototype takes an existing switch-based bytecode interpreter writt
 \label{fig:jython-on-modularvm}
 \end{figure}
 
-Our system, Modular VM is an extension to Maxine VM~\cite{Wimmer2013}, a research JVM developed at Oracle Labs.
+Our system, Modular VM, is an extension to Maxine VM~\cite{Wimmer2013}, a research JVM developed at Oracle Labs.
 We build Modular VM with the ability to recognize hosted interpreters running on top of it and automatically optimizes them.
 We host Jython, a Python VM written in Java, on Modular VM in our experiment to show case our optimization.
 Figure~\ref{fig:jython-on-modularvm} illustrates the overall system setup.
@@ -152,6 +152,31 @@ compiling Python code to Java bytecode and let the JVM compiler further compile 
 Our optimization focuses on the bytecode interpreter.
 It shows that by incorporating efficient interpreter optimizations, bytecode interpreter can deliver comparable performance to a basic compiler.
 
-\subsection{Threaded Code Generatotion}
+\subsection{Threaded Code Generation}
 
-stuff
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=.5]{figures/ch2-direct-threading-on-modularvm.pdf}
+\caption{Threaded code generation}
+\label{fig:direct-threading-on-modularvm}
+\end{figure}
+
+Modular VM performs threaded code generation in two steps.
+First, it recognizes the hosted interpreter running on top of it and transforms it into an optimized one.
+To be more specific, Modular VM extracts all the bytecode instruction implementations or i-ops for short from the interpreter and
+compiles them into machine code using the existing Java compiler.
+Modular VM then initializes an i-op code table that contains the address of all the compiled i-ops.
+After this transformation, the interpreter is ready to execute Python programs.
+It first translates Python source code to Python bytecode and then further translates bytecode to direct threaded code using the i-op code table.
+The generated threaded code is a sequence of code pointers copied from the i-op code table.
+Figure~\ref{fig:direct-threading-on-modularvm} illustrates this work flow.
+The interpreter optimizer in the Figure applies the transformation to Jython's bytecode interpreter.
+Subsequently, the thread code generator produces threaded code and execute it.
+Both interpreter optimizer and threaded code generator are part of Modular VM.
+Our system encapsulates the details of i-ops compilation and threaded code generation from the hosted VM.
+
+\subsubsection{Interpreter Annotation}
+
+Modular VM uses a Java annotation based domain specific language to integrate with the hosted interpreter.
+Our programmable interface provides a set of annotations to annotate different components of the interpreter.
+We expect hosted VM implementers to annotate their code by applying special Java annotation
