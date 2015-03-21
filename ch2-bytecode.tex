@@ -75,7 +75,9 @@ This mis-prediction results in a significant performance penalty for switch-base
 
 \section{Efficient Instruction Dispatch Techniques}
 \label{sec:efficient-instruction-dispatch-techniques}
+
 \subsection{Direct Threading Dispatch}
+\label{sec:direct-threading-dispatch}
 
 \begin{figure}[th]
 \centering
@@ -169,14 +171,95 @@ Modular VM then initializes an i-op code table that contains the address of all 
 After this transformation, the interpreter is ready to execute Python programs.
 It first translates Python source code to Python bytecode and then further translates bytecode to direct threaded code using the i-op code table.
 The generated threaded code is a sequence of code pointers copied from the i-op code table.
+
 Figure~\ref{fig:direct-threading-on-modularvm} illustrates this work flow.
 The interpreter optimizer in the Figure applies the transformation to Jython's bytecode interpreter.
-Subsequently, the thread code generator produces threaded code and execute it.
+Subsequently, the thread code generator produces threaded code and executes it.
 Both interpreter optimizer and threaded code generator are part of Modular VM.
 Our system encapsulates the details of i-ops compilation and threaded code generation from the hosted VM.
 
 \subsubsection{Interpreter Annotation}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.65]{figures/ch2-annotated-iop-code.pdf}
+\caption{Annotated i-op}
+\label{fig:annotated-iop}
+\end{figure}
+
 Modular VM uses a Java annotation based domain specific language to integrate with the hosted interpreter.
-Our programmable interface provides a set of annotations to annotate different components of the interpreter.
-We expect hosted VM implementers to annotate their code by applying special Java annotation
+Our programmable interface provides a set of annotations for hosted VM implementers to annotate different components of their interpreter.
+We expect hosted VM implementers to properly annotate the interpreter class, the bytecode class and all the i-op methods for our system to identify the structure of the interpreter.
+Figure~\ref{fig:annotated-iop} shows an annotated i-op in Jython's bytecode interpreter refactored to its own separate method.
+Modular VM automatically picks up Java methods annotated as i-ops, optimizes them and put them into the i-op code table.
+
+\subsubsection{Next Dispatch}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.65]{figures/ch2-iop-with-next-code.pdf}
+\caption{I-op with next dispatch}
+\label{fig:iop-with-next}
+\end{figure}
+
+Direct threading, as explained in Chapter~\ref{sec:direct-threading-dispatch}, duplicates instruction dispatch at the end of each instruction implementation or i-op.
+When the interpreter optimizer compiles an i-op, it also insert a synthesized \emph{next} routine at the end of the i-op.
+The \emph{next} routine performs the actual instruction dispatch.
+Figure~\ref{fig:iop-with-next} illustrates the i-op of \texttt{BINARY\_ADD} in Jython with the \emph{next} routine.
+Note that the figure shows what the program looks like with the added instruction dispatch.
+Hosted VM implementers are not required to write the additional code.
+As shown in Figure~\ref{fig:iop-with-next}, the intrinsic function \texttt{next} performs an indirect jump to the next i-op in the threaded code.
+The \emph{next} routine also passes the reference to the threaded code and virtual program pointer to the next instruction to continue the execution of the program.
+
+\subsubsection{Stack Frame Reusing}
+
+As described above, the \texttt{next} instruction dispatch performs a native indirect branch instead of a call.
+Therefore, i-ops need to reuse the same stack frame allocated for each Python function invocation.
+We implement this using two special i-ops, \texttt{PROLOGUE} and \texttt{EPILOGUE}.
+Both of them are manually assembled instead of compiled from Java source code.
+\texttt{PROLOGUE}, used at the beginning of a function, allocates a stack frame that is big enough to accommodate all i-ops.
+\texttt{EPILOGUE}, used to model \texttt{RETURN}, deallocates the stack frame and returns.
+The interpretation of a Python method always start with a \texttt{PROLOGUE} and end with an \texttt{EPILOGUE}.
+Stack frame reusing reduces the number of native machine instructions executed for each hosted virtual machine instruction dispatch.
+
+\subsubsection{Efficient Array Stores}
+\label{sec:efficient-array-stores}
+
+Another problem affecting hosted interpreter performance on the JVM is the performance of array stores.
+Java being a safe language performs type check such as \texttt{ArrayStoreException} checks on array stores.
+Hosted language interpreters like the one in Jython uses an operand stack to manage temporal operands.
+Internally, the operand stack is implemented as an Java object array.
+During interpretation, every i-op that produces a value performs an array store onto the operand stack.
+As a result, the interpreter repeatedly performs the same the type check, even though every i-op is guaranteed to produce an value that is safe to be stored on the operand stack.
+
+We identified the detrimental effect of preserving array type-safety for hosted interpreters.
+Our interpreter optimizer omits the \texttt{ArrayStoreException} checks when compiling the i-ops of hosted interpreters.
+
+\subsubsection{An Example}
+
+\begin{figure}[th]
+\centering
+\subfigure[Python source code] {
+  \includegraphics[scale=.85]{figures/ch2-threaded-code-example-python.pdf}
+  \label{fig:threaded-code-example-python}
+}
+\subfigure[Python bytecode] {
+  \includegraphics[scale=.75]{figures/ch2-threaded-code-example-bytecode.pdf}
+  \label{fig:threaded-code-example-bytecode}
+}
+\subfigure[Threaded code] {
+  \includegraphics[scale=.7]{figures/ch2-threaded-code-example-threaded-code.pdf}
+  \label{fig:threaded-code-example-threaded-code}
+}
+\caption{Direct threading example}
+\label{fig:threaded-code-example}
+\end{figure}
+
+Figure~\ref{fig:threaded-code-example} illustrates the Python program translation in Jython hosted on Modular VM.
+The input program, as shown in Figure~\ref{fig:threaded-code-example-python}, is a simple Python method that adds two parameters.
+Jython first converts the program to the bytecode sequence show in Figure~\ref{fig:threaded-code-example-bytecode}.
+Note that the bytecode instruction \texttt{LOAD\_FAST} consists of not only the \texttt{LOAD\_FAST} opcode itself but also an opcode argument ($0$ or $1$) in the bytecode sequence.
+Figure~\ref{fig:threaded-code-example-threaded-code} shows the direct threading code produced by the threaded code generator.
+Aside from the translated i-op addresses, the threaded code generator also copies opcode arguments, like the one in \texttt{LOAD\_FAST}, into the threaded code.
+
+\section{Evaluation}

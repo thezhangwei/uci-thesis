@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-03-20 00:52:50 +0000</string>
+	<string>2015-03-21 00:37:31 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -9878,6 +9878,780 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
+					<string>{{96, 616}, {68, 64}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>27</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 Consolas-Italic;}
+{\colortbl;\red255\green255\blue255;\red76\green76\blue76;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\fs16 \cf0 &amp;LOAD_FAST 0\
+0       
+\f1\i\fs14 \cf2 // a
+\f0\i0\fs16 \cf0 \
+&amp;LOAD_FAST 1\
+1       
+\f1\i\fs14 \cf2 // b
+\f0\i0\fs16 \cf0 \
+&amp;BINARY_ADD\
+&amp;RETURN_VALUE}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 615.85044860839844}, {85, 13.149551391601562}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>26</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 example threaded code}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{96, 560}, {90, 60}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>25</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 Consolas-Italic;}
+{\colortbl;\red255\green255\blue255;\red76\green76\blue76;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\fs16 \cf0 LOAD_FAST 0   
+\f1\i\fs14 \cf2 // a
+\f0\i0\fs16 \cf0 \
+LOAD_FAST 1   
+\f1\i\fs14 \cf2 // b
+\f0\i0\fs16 \cf0 \
+BINARY_ADD\
+RETURN_VALUE}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 559.85044860839844}, {85, 13.149551391601562}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>24</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 example bytecode}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{96, 512}, {90, 42}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>23</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\b\fs16 \cf2 def
+\f1\b0 \cf0  add(a, b):\
+    
+\f0\b \cf2 return
+\f1\b0 \cf0  a + b}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 511.85044860839844}, {85, 13.149551391601562}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>22</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 example Python}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{96, 424}, {193, 74}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>21</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\b\fs16 \cf2 @
+\f1\b0 \cf0 IOP(Opcode.BINARY_ADD)
+\f0\b \cf2 \
+void
+\f1\b0 \cf0  binary_add(ThreadedCode tc, 
+\f0\b \cf2 int
+\f1\b0 \cf0  pc) \{\
+    PyObject a = stack.pop();\
+    PyObject b = stack.pop();\
+    stack.push(a._add(b));\
+    next(tc.get(pc++), tc, pc);\
+\}}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 423.85044860839844}, {85, 13.149551391601562}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>20</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 i-op with next}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{96, 352}, {136, 60}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>19</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\b\fs16 \cf2 @
+\f1\b0 \cf0 IOP(Opcode.BINARY_ADD)
+\f0\b \cf2 \
+void
+\f1\b0 \cf0  binary_add() \{\
+    PyObject a = stack.pop();\
+    PyObject b = stack.pop();\
+    stack.push(a._add(b));\
+\}}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 351.85044860839844}, {85, 13.149551391601562}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>18</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 Annotated i-op}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{96, 272}, {91, 74}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -9955,18 +10729,16 @@
 						bwBsAGEAcwAtAEkAdABhAGwAaQBj
 						AIQBZgebAJsBmwCbAIaGlwIJkoSY
 						mQOSmZKEm5sBnIP//v4+AIOrqqo+
-						AYaSnJKEnp4AAJ+BAAqgJIPNzEw9
-						hpKhkoSjmSSEBVszNmNdBgAAABwA
-						AAD//kMAbwBuAHMAbwBsAGEAcwAt
-						AEIAbwBsAGQAowibAJsBmwCbAIaG
-						lwMJkoSYmQKSnJKEnp4AAJ+BAAqg
-						JIPNzEw9hpKhkoSjmRyEBVsyOGNd
-						BgAAABIAAAD//kMAbwBuAHMAbwBs
-						AGEAcwAAAKMImwCbAZsAmwCGhpcC
-						BpcDCZcCBpcDCZcEBpKEmJkEkoSW
-						lg5OU09yaWdpbmFsRm9udIaSqpKc
-						kqmSoZKqkpmShJubApwBAQEBhoaX
-						AwGG
+						AYaSnJKdkqGShKOZJIQFWzM2Y10G
+						AAAAHAAAAP/+QwBvAG4AcwBvAGwA
+						YQBzAC0AQgBvAGwAZACjCJsAmwGb
+						AJsAhoaXAwmShJiZApKckp2SoZKE
+						o5kchAVbMjhjXQYAAAASAAAA//5D
+						AG8AbgBzAG8AbABhAHMAAACjCJsA
+						mwGbAJsAhoaXAgaXAwmXAgaXAwmX
+						BAaShJiZA5KZkoSbmwKcAQEBAYaS
+						nJKEnp4AAJ+BAAqgJIPNzEw9hpKh
+						kqiGlwMBhg==
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
@@ -9981,7 +10753,6 @@
 \f1\i0\b\fs16 \cf3   \
   call
 \f2\b0 \cf0  &amp;get_a;\
-\pard\pardeftab720\pardirnatural
 
 \f1\b \cf3   call
 \f2\b0 \cf0  &amp;get_b;\
@@ -10144,7 +10915,6 @@
           \{&amp;add, &amp;pop
 \f1\i\fs14 \cf2 ...
 \f0\i0\fs16 \cf0 \};\
-\pard\pardeftab720\pardirnatural
 
 \f1\i\fs14 \cf2 // starting point
 \f2\i0\b\fs16 \cf3   \
@@ -10153,7 +10923,6 @@ goto
 \
 
 \f1\i\fs14 \cf2 // instruction implementations\
-\pard\pardeftab720\pardirnatural
 
 \f2\i0\b\fs16 \cf3 add
 \f0\b0 \cf0 :\
@@ -10306,27 +11075,25 @@ goto
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 \cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Consolas-Italic;
 }
-{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red0\green0\blue0;\red76\green76\blue76;
-}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red76\green76\blue76;}
 \deftab720
 \pard\pardeftab720\pardirnatural
 
 \f0\b\fs16 \cf2 while
-\f1\b0 \cf3  (
+\f1\b0 \cf0  (
 \f0\b \cf2 true
-\f1\b0 \cf3 ) \{\
+\f1\b0 \cf0 ) \{\
   
 \f0\b \cf2 int 
-\f1\b0 \cf3 opcode = bytecode[pc++];\
+\f1\b0 \cf0 opcode = bytecode[pc++];\
 
 \f0\b \cf2   switch
-\f1\b0 \cf3  (opcode) \{\
+\f1\b0 \cf0  (opcode) \{\
   
 \f0\b \cf2 case 
 \f1\b0 \cf0 LOAD_FAST:\
     
-\f2\i\fs14 \cf4 // LOAD_FAST implementation\
-\pard\pardeftab720\pardirnatural
+\f2\i\fs14 \cf3 // LOAD_FAST implementation\
 
 \f1\i0\fs16 \cf0     
 \f0\b \cf2 break
@@ -10492,7 +11259,7 @@ goto
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>ExpandedCanvases</key>
 		<array>
 			<dict>
@@ -10513,9 +11280,9 @@ goto
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{477, 726.5}, {895, 472.5}}</string>
+		<string>{{0.25, 481.5}, {447.5, 236.25}}</string>
 		<key>Zoom</key>
-		<real>2</real>
+		<real>4</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
