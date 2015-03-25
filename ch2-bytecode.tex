@@ -136,6 +136,7 @@ To address this issue, we extend the JVM by adding the functionality of threaded
 Our research prototype takes an existing switch-based bytecode interpreter written in Java, and converts it into a direct threading interpreter in a semi-automatic fashion.
 
 \subsection{System Overview}
+\label{sec:system-overview}
 
 \begin{figure}[th]
 \centering
@@ -298,7 +299,11 @@ Combined with the efficient array stores, it achieves an average speedup of $2.4
 
 Note that the original switch-based interpreter in Jython is also written in Java and can be compiled by the Java compiler.
 However, the Java compiler can only see Jython's interpreter as a generic program and can not automatically apply interpreter specific optimizations to it.
+On the other hand, Modular VM is able to recognize the hosted interpreter and automatically transforms it to a more efficient one.
+As a result of the transformation, the performance of instruction in the hosted interpreter increases significantly.
 
+Our optimization also heavily optimizes array stores, another performance bottleneck in the original interpreter.
+By eliminating type checks on array stores in the stack-based interpreter written in Java, we see an additional $48\%$ speedup in our experiments.
 
 \subsubsection{Comparison with Class File Compiler}
 
@@ -308,3 +313,18 @@ However, the Java compiler can only see Jython's interpreter as a generic progra
 \caption{Jython's direct threaded interpreter vs. class file compiler}
 \label{fig:benchmark-jython-direct-threading-compiler}
 \end{figure}
+
+As explained in Section~\ref{sec:system-overview}, Jython uses a class file compiler as its higher tier execution strategy.
+The compiler translates Python programs to Java bytecode and let the Java compiler to further compile it down to machine code subsequently.
+Figure~\ref{fig:benchmark-jython-direct-threading-compiler} shows the performance of our optimized interpreter normalized to that of Jython's class file compiler.
+On average, with efficient array stores enabled, the performance of our interpreter is $0.98\times$ compared to Jython's compiler.
+Without efficient array stores, our interpreter is $34\%$ slower than Jython's class file compiler.
+
+Jython's class file compiler, although marginally faster than our interpreter, is more expensive to construct and maintain.
+Implementing a class file compiler that is custom to its source language requires a thorough understanding not only on the source language but also many details of the JVM.
+They need to find efficient and smart ways to map their languages onto the Java bytecode instruction set and at the same time incorporate classic compiler optimizations into their compilers.
+This process requires a costly effort from the host VM implementors both initially and continuously.
+
+Our optimizations on the other hand hides away many of the details of the JVM and how to run interpreter efficiently on the JVM.
+We only require host VM implementers to apply simple modifications to their existing baseline interpreter.
+As our experiments suggest our solution provides comparable performance to the more costly solutions for the host VM implementors.
