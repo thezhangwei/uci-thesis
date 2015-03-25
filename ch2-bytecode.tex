@@ -263,3 +263,48 @@ Figure~\ref{fig:threaded-code-example-threaded-code} shows the direct threading 
 Aside from the translated i-op addresses, the threaded code generator also copies opcode arguments, like the one in \texttt{LOAD\_FAST}, into the threaded code.
 
 \section{Evaluation}
+
+In this section we evaluate the performance of our bytecode interpreter optimizations.
+We compare the performance of Jython's bytecode interpreter optimized using our system with that of the original interpreter both hosted on Modular VM.
+We also compare our optimized interpreter with Jython's class file compiler to further illustrate the software engineering benefits of our approach.
+
+\subsubsection{System Setup}
+
+Our system setup is as follows:
+\begin{itemize}
+  \item Intel Xeon E5-2660 based system, running at a frequency of $2.20$ GHz, using the Linux $3.2.0-29$ kernel and gcc version $4.6.3$.
+  \item Modular VM build from revision number \textt{0d1145f} based on Maxine $1.0$.
+  \item Jython version $2.7.0$ alpha $2$.
+\end{itemize}
+
+\subsubsection{Benchmark Selection}
+
+We select several benchmarks from the computer language benchmarks game~\cite{benchmarkgame}, a popular benchmark suite for evaluating the performance of different programming languages.
+We run each benchmark with multiple arguments to increase the range of the measured running time.
+We run ten repetitions of each benchmark for each argument and report the geometric mean over all runs.
+
+\subsubsection{Speedups over Switch-based Interpreter}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.44]{figures/ch2-benchmark-jython-direct-threading-rawinterpreter.pdf}
+\caption{Jython's direct threaded interpreter vs. switch-based}
+\label{fig:benchmark-jython-direct-threading-rawinterpreter}
+\end{figure}
+
+Figure~\ref{fig:benchmark-jython-direct-threading-rawinterpreter} shows the speedups of our optimized direct threaded code interpreter over the switch-based interpreter in Jython.
+Direct threading itself achieves an average speedup of $1.66$ over the original interpreter.
+Combined with the efficient array stores, it achieves an average speedup of $2.45$ over the switch-based interpreter.
+
+Note that the original switch-based interpreter in Jython is also written in Java and can be compiled by the Java compiler.
+However, the Java compiler can only see Jython's interpreter as a generic program and can not automatically apply interpreter specific optimizations to it.
+
+
+\subsubsection{Comparison with Class File Compiler}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.44]{figures/ch2-benchmark-jython-direct-threading-compiler.pdf}
+\caption{Jython's direct threaded interpreter vs. class file compiler}
+\label{fig:benchmark-jython-direct-threading-compiler}
+\end{figure}
