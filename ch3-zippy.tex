@@ -45,8 +45,22 @@ In this thesis we focus on guest language level optimizations we added to ZipPy.
 
 ZipPy benefits from the Truffle framework in two ways.
 First, Truffle's Java annotation based domain specific language (DSL) greatly simplifies the implementation of type specialization in dynamic languages like Python~\cite{Humer+2014}.
+Second, Truffle bridges the gap between the hosted AST interpreter and the underlying Java JIT compiler.
+It empowers the hosted interpreter with the performance of a custom compiler without having the hosted VM implementers to actually write a compiler.
+The end performance one could achieve on Truffle usually surpasses that of a custom build class file compiler not to mention the upfront cost of building such compiler.
+
+However, Truffle is not a fool proof framework.
+It does require knowledge of the Java compiler internals to make better use of the framework.
+In this section we describe design choices we made to retrofit the core part of the Python language onto Truffle's execution model.
 
 \subsection{Applying Type Specialization}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=1]{figures/ch3-not-node.pdf}
+\caption{Implementation of \texttt{NotNode} in ZipPy}
+\label{fig:not-node}
+\end{figure}
 
 \subsection{Numeric Types}
 
