@@ -39,4 +39,15 @@ This architecture helps ZipPy outperform Python implementations that either do n
 However, Truffle has no knowledge about specific high level guest language semantics, like generators in Python.
 Further performance exploration of a guest language will mainly benefit from better insights on distinct features of the language and
 making better use of the host compiler based on those insights.
-In this paper we focus on guest language level optimizations we added to ZipPy.
+In this thesis we focus on guest language level optimizations we added to ZipPy.
+
+\section{Design and Implementation}
+
+ZipPy benefits from the Truffle framework in two ways.
+First, Truffle's Java annotation based domain specific language (DSL) greatly simplifies the implementation of type specialization in dynamic languages like Python~\cite{Humer+2014}.
+
+\subsection{Applying Type Specialization}
+
+\subsection{Numeric Types}
+
+\subsection{Comnposite Data Types}
