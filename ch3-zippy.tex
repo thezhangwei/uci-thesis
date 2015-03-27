@@ -72,12 +72,12 @@ In this section we describe the design choices we made to retrofit the core part
 Truffle provides a Java annotation based source code generation engine.
 Hosted VM implementers can use this engine to automatically generate type specialized derivatives for their AST interpreters.
 Derivative generation is an essential but tedious part of applying type specializations.
-This code generation process requires little boilerplate code from the hosted VM implementers and helps them to focus on the core logic of their interpreter.
+This code generation process requires minimum boilerplate code from the hosted VM implementers and helps them to focus on the core logic of their interpreter.
 
 \texttt{not} is a unary arithmetic operation in Python.
 The operation evaluates the given expression to a boolean value and returns the inversion of that value.
 Similar to other arithmetic operations, ZipPy implements \texttt{not} as a single AST node.
-Figure~\ref{fig:not-node-code} illustrates the implementation of the \texttt{NotNode} in ZipPy using Truffle's DSL.
+Figure~\ref{fig:not-node-code} illustrates the implementation of the \texttt{NotNode} in ZipPy using Truffle's DSL (simplified for brevity).
 Note that each method annotated using \texttt{@Specialization} represents a type specialized derivative of the \texttt{NotNode}.
 For instance, the method \texttt{doInteger} and \texttt{doDouble} implement the \texttt{not} operation for integers and floating point numbers.
 We will explain in~\ref{sec:numeric-types} about the reason why we specialize against Java primitive types instead of boxed representations of numeric types in Python.
@@ -94,5 +94,37 @@ If no matching derivative is found, the node rewrites to \texttt{NodeGenericNode
 
 \subsection{Numeric Types}
 \label{sec:numeric-types}
+
+\begin{figure}[t]
+\centering
+\subfigure[Numeric types in Python 3] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-python.pdf}
+  \label{fig:numeric-types-python}
+}
+\subfigure[Boxed representation] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-boxed.pdf}
+  \label{fig:numeric-types-boxed}
+}
+\subfigure[Unboxed representation] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-unboxed.pdf}
+  \label{fig:numeric-types-unboxed}
+}
+\caption{Numeric types in ZipPy}
+\label{fig:numeric-types-zippy}
+\end{figure}
+
+Numeric types are the most commonly used built-in types in Python.
+Having fast arithmetic operation is critical to the performance of our interpreter.
+Therefore, it is essential to have efficient data representation for the built-in numeric types in Python.
+Figure~\ref{fig:numeric-types-python} illustrates the four numeric types in Python: booleans, integers, floating point numbers and complex numbers.
+The figure also depicts type coercion rules between those types.
+Note that the value range of an integer in Python 3 is unbounded.
+
+All data in Python is an object.
+So are all the numbers.
+A straight-forward way to model the built-in numeric types, which is similar to the one in CPython, is to implement them as boxed Java objects.
+As shown in Figure~\ref{fig:numeric-types-boxed}, in the boxed representation ZipPy uses a Java object to represent a Python number.
+The object boxes the actual value of the number as a field.
+To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigInteger} field to store its integer value (Figure~\ref{fig:numeric-types-boxed}).
 
 \subsection{Comnposite Data Types}
