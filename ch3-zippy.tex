@@ -126,5 +126,13 @@ A straight-forward way to model the built-in numeric types, which is similar to 
 As shown in Figure~\ref{fig:numeric-types-boxed}, in the boxed representation ZipPy uses a Java object to represent a Python number.
 The object boxes the actual value of the number as a field.
 To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigInteger} field to store its integer value (Figure~\ref{fig:numeric-types-boxed}).
+For all the arithmetic operation nodes in ZipPy, we specify the type specializations in the order that ensures the correct type coercion rules.
+
+ZipPy uses another unboxed data representation for numbers to achieve high performance arithmetic operation.
+Essentially we map Python numeric types to Java primitive types as long as possible.
+For instance, initially ZipPy uses a Java \texttt{int} to represent a Python \texttt{int}.
+For all arithmetic operations that consume unboxed numbers, as long as the result does not overflow, ZipPy keep their result remain unboxed.
+Object operations such as attribute access trigger lazy boxing that coverts a number from the unboxed representation to the boxed one.
+To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
 
 \subsection{Comnposite Data Types}
