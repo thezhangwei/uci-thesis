@@ -51,17 +51,48 @@ The end performance one could achieve on Truffle usually surpasses that of a cus
 
 However, Truffle is not a fool proof framework.
 It does require knowledge of the Java compiler internals to make better use of the framework.
-In this section we describe design choices we made to retrofit the core part of the Python language onto Truffle's execution model.
+In this section we describe the design choices we made to retrofit the core part of the Python language onto Truffle's execution model.
 
-\subsection{Applying Type Specialization}
+\subsection{Applying Type Specializations}
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=1]{figures/ch3-not-node.pdf}
+\includegraphics[scale=.8]{figures/ch3-not-node-code.pdf}
 \caption{Implementation of \texttt{NotNode} in ZipPy}
-\label{fig:not-node}
+\label{fig:not-node-code}
 \end{figure}
 
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.5]{figures/ch3-not-node-derivatives.pdf}
+\caption{Derivatives of \texttt{NotNode} in ZipPy}
+\label{fig:not-node-derivatives}
+\end{figure}
+
+Truffle provides a Java annotation based source code generation engine.
+Hosted VM implementers can use this engine to automatically generate type specialized derivatives for their AST interpreters.
+Derivative generation is an essential but tedious part of applying type specializations.
+This code generation process requires little boilerplate code from the hosted VM implementers and helps them to focus on the core logic of their interpreter.
+
+\texttt{not} is a unary arithmetic operation in Python.
+The operation evaluates the given expression to a boolean value and returns the inversion of that value.
+Similar to other arithmetic operations, ZipPy implements \texttt{not} as a single AST node.
+Figure~\ref{fig:not-node-code} illustrates the implementation of the \texttt{NotNode} in ZipPy using Truffle's DSL.
+Note that each method annotated using \texttt{@Specialization} represents a type specialized derivative of the \texttt{NotNode}.
+For instance, the method \texttt{doInteger} and \texttt{doDouble} implement the \texttt{not} operation for integers and floating point numbers.
+We will explain in~\ref{sec:numeric-types} about the reason why we specialize against Java primitive types instead of boxed representations of numeric types in Python.
+\texttt{@Fallback} denotes the generic version of the \texttt{not} operand.
+
+Truffle's code generation engine produces the actual implementation of the derivative nodes.
+Figure~\ref{fig:not-node-derivatives} shows the derivative classes produced by Truffle.
+It generates a class for each method annotated with \texttt{@Specialization} in Figure~\ref{fig:not-node-code}.
+The derivative nodes perform node rewriting based type specialization at runtime.
+As shown in Figure~\ref{fig:python-on-truffle}, a \texttt{NotNode} starts with the uninitialized version.
+At runtime, the node rewrites itself to a derivative that matches the type of the incoming operand.
+The rewrite follows the order of the classes shown in Figure~\ref{fig:not-node-derivatives} from the top to the bottom.
+If no matching derivative is found, the node rewrites to \texttt{NodeGenericNode}, which perform the generic routine for the \texttt{not} operation.
+
 \subsection{Numeric Types}
+\label{sec:numeric-types}
 
 \subsection{Comnposite Data Types}
