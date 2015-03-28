@@ -128,7 +128,7 @@ The object boxes the actual value of the number as a field.
 To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigInteger} field to store its integer value (Figure~\ref{fig:numeric-types-boxed}).
 For all the arithmetic operation nodes in ZipPy, we specify the type specializations in the order that ensures the correct type coercion rules.
 
-ZipPy uses another unboxed data representation for numbers to achieve high performance arithmetic operation.
+ZipPy uses another unboxed data representation for numbers to achieve fast arithmetic operation.
 Essentially we map Python numeric types to Java primitive types as long as possible.
 For instance, initially ZipPy uses a Java \texttt{int} to represent a Python \texttt{int}.
 For all arithmetic operations that consume unboxed numbers, as long as the result does not overflow, ZipPy keep their result remain unboxed.
@@ -136,3 +136,31 @@ Object operations such as attribute access trigger lazy boxing that coverts a nu
 To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
 
 \subsection{Comnposite Data Types}
+
+Python provides a rich set of built-in composite data types including \texttt{list}s, \texttt{tuple}s, \texttt{set}s, and \texttt{dict}s.
+Jython uses a straight-forward approach that uses the existing collection types in the Java development kit (JDK) to implement these data types.
+This approach is simple to implement but adds runtime cost to the use of the data types.
+When adding an element to a Java generics based collection type, the JVM performs auto-boxing on the primitive types to their corresponding object wrapper classes.
+Auto-boxing ensures that every element in a collection type is of reference type.
+This design simplifies garbage collection in Java, since the garbage collector does not have to distinguish between reference type and value type for members of collection types.
+However, auto-boxing involves heap allocation and additional memory accesses, and it slows down accesses to composite data types in Jython.
+
+\subsubsection{Unboxed Sequence Storage}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.5]{figures/ch3-sequence-storage-types.pdf}
+\caption{Sequence storage types in ZipPy}
+\label{fig:sequence-storage-types}
+\end{figure}
+
+ZipPy employs more efficient data representations for Python composite or sequence data types to avoid auto-boxing.
+Unlike \texttt{tuple}s, programmers tend to use \texttt{list}s in a homogeneous way meaning that elements of a \texttt{list} are usually of the same type.
+Therefore, we can speculatively stores a list of integers, for instance, in a Java primitive \texttt{int} array to avoid auto-boxing.
+In ZipPy, a \texttt{list} stores its elements in a \texttt{SequenceStorage} object that dynamically switches between different concrete data representations.
+Figure~\ref{fig:sequence-storage-types} shows the different \texttt{SequenceStorage} types used in ZipPy.
+For instance, a list of Python integers uses a \texttt{IntSequenceStorage} to store the integers in a Java primitive \texttt{int} array assuming that the element types will stay the same.
+As long as the assumption holds, ZipPy specializes accesses of the integer list and avoids auto-boxing altogether.
+Once the assumption become invalid, the list automatically converts its \texttt{SequenceStorage} to the next matching type.
+
+\subsection{List Comprehensions}
