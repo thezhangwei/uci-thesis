@@ -161,6 +161,24 @@ In ZipPy, a \texttt{list} stores its elements in a \texttt{SequenceStorage} obje
 Figure~\ref{fig:sequence-storage-types} shows the different \texttt{SequenceStorage} types used in ZipPy.
 For instance, a list of Python integers uses a \texttt{IntSequenceStorage} to store the integers in a Java primitive \texttt{int} array assuming that the element types will stay the same.
 As long as the assumption holds, ZipPy specializes accesses of the integer list and avoids auto-boxing altogether.
-Once the assumption become invalid, the list automatically converts its \texttt{SequenceStorage} to the next matching type.
+Once the assumption becomes invalid, the list automatically converts its \texttt{SequenceStorage} to the next matching type to preserve semantics.
+
+\subsubsection{Profiling-based List Literal Specialization}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.9]{figures/ch3-list-construction-loop-code.pdf}
+\caption{List construction loop}
+\label{fig:list-construction-loop-code}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.55]{figures/ch3-empty-list-storage-profiling.pdf}
+\caption{List literal specialization}
+\label{fig:empty-list-storage-profiling}
+\end{figure}
+
+\subsection{Loop Specialization}
 
 \subsection{List Comprehensions}
