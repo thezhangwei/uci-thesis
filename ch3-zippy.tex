@@ -179,6 +179,17 @@ Once the assumption becomes invalid, the list automatically converts its \texttt
 \label{fig:empty-list-storage-profiling}
 \end{figure}
 
+ZipPy enables the use of unboxed sequence storages by specializing Python list constructions.
+More specifically we create type specialized derivatives for list constructor calls and list literals.
+When a list literal creates a list that can use a more efficient sequence storage type, we specialize it to a typed list literal
+that always try to create a list using an unboxed sequence storage type.
+
+However, some times the list construction site does not have enough information about the elements that are going into the list.
+For instance, what we often see in Python programs is a pattern similar to the code snippet shown in Figure~\ref{fig:list-construction-loop-code}.
+The shown program first instantiates an empty list and then populates the list one element at a time using a loop.
+The for range loop in Figure~\ref{fig:list-construction-loop-code} appends integers to list \texttt{lst}, which ideally should store its elements in an \texttt{IntSequenceStorage} to avoid auto-boxing.
+
+
 \subsection{Loop Specialization}
 
 \subsection{List Comprehensions}
