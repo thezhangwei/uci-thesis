@@ -57,7 +57,7 @@ In this section we describe the design choices we made to retrofit the core part
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=.8]{figures/ch3-not-node-code.pdf}
+\includegraphics[scale=.9]{figures/ch3-not-node-code.pdf}
 \caption{Implementation of \texttt{NotNode} in ZipPy}
 \label{fig:not-node-code}
 \end{figure}
@@ -204,13 +204,33 @@ Therefore, the node need to give up the current specialization, and rewrites its
 In short, the straight forward specialization can not properly handle empty list instantiation.
 
 Alternatively, we could add an intermediate step when specializing list literals.
-As shown in Figure~\ref{fig:empty-list-storage-profiling}, ZipPy first specializes the \texttt{UninitializedListLiteralNode} in \textsf{1} to the \textsf{ProfilingListLiteralNode} in \textsf{2B}.
+As shown in Figure~\ref{fig:empty-list-storage-profiling}, ZipPy first specializes the \texttt{UninitializedListLiteralNode} in \textsf{1} to the \texttt{Profili\-ngListLiteralNode} in \textsf{2B}.
 The \texttt{ProfilingListLiteralNode} keeps a reference to the list it previously instantiated.
-Upon the second execution of function \texttt{makeList}, the \texttt{ProfilingListLiteralNode} rewrites itself by looking at the storage type of the previously created list.
+Upon the second execution of function \texttt{makeList}, the \texttt{ProfilingLis\-tLiteralNode} rewrites itself by looking at the storage type of the previously created list.
 It performs the final specialization to the derivative version that matches the previous list assuming that the next list is most likely to have the same storage type.
 This step results in the stable AST \textsf{3B} shown in Figure~\ref{fig:empty-list-storage-profiling}.
 By using profiling based non-local type feedback, ZipPy is able to optimize list accesses for more complicated list construction pattern in Python programs.
 
-\subsection{Loop Specialization}
+\subsection{For Loop Specializations}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.9]{figures/ch3-for-range-node-code.pdf}
+\caption{For loop specialization for range iterators}
+\label{fig:for-range-node}
+\end{figure}
+
+Unlike the way other languages use it, for statements in Python iterate over a sequence of items, like a list or a string, in the order that they appear in the sequence.
+ZipPy models Python control flow using Java control flow constructs.
+Naturally it uses Java loops to construct for loops in Python.
+If we abstract a for loop in Python as an operation, the only input operand of this operation is the sequence flowing into the loop.
+Evidently we could apply type specializations on for loops like we did to the other operations in ZipPy.
+
+Figure~\ref{fig:for-range-node} shows a specialization we added to the \texttt{ForNode} for \texttt{PRangeIterators} in ZipPy.
+In Python the built-in \texttt{range} function generates an iterable containing arithmetic progressions that can be used to iterate over a sequence of numbers.
+A for loop over a range iterator, or a for range loop like the one shown in Figure~\ref{fig:list-construction-loop-code}, is the most common use of for loops among Python programs.
+The \texttt{doPRange} method shown in Figure~\ref{fig:for-range-node} completely unboxes the incoming \texttt{PRangeIterator} into a few primitive integer indices.
+This approach effectively lower the semantics level of a for range loop in Python to a straight forward for loop in Java.
+The for range specialization not only minimizes the loop overhead on the JVM, it also enables more advanced loop optimizations like loop unrolling for the Java compiler.
 
 \subsection{List Comprehensions}

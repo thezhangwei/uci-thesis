@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-03-28 23:23:59 +0000</string>
+	<string>2015-03-31 06:30:39 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -24492,6 +24492,169 @@ specialization}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
+					<string>{{96, 304}, {141, 90}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>16</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red100\green100\blue100;\red127\green0\blue85;\red106\green62\blue62;
+\red0\green0\blue192;}
+\deftab720
+\pard\pardeftab720
+
+\f0\fs10 \cf2 @Specialization\cf0 \
+\pard\pardeftab720
+\cf3 public\cf0  Object doPRange(VirtualFrame \cf4 frame\cf0 , \
+                       PRangeIterator \cf4 range\cf0 ) \{\
+  \cf3 int\cf0  \cf4 start\cf0  = \cf4 range\cf0 .getStart();\
+  \cf3 int\cf0  \cf4 stop\cf0  = \cf4 range\cf0 .getStop();\
+  \cf3 int\cf0  \cf4 step\cf0  = \cf4 range\cf0 .getStep();\
+\
+  \cf3 for\cf0  (\cf3 int\cf0  \cf4 i\cf0  = \cf4 start\cf0 ; \cf4 i\cf0  &lt; \cf4 stop\cf0 ; \cf4 i\cf0  += \cf4 step\cf0 ) \{\
+    ((WriteNode) \cf5 target\cf0 ).executeWrite(\cf4 frame\cf0 , \cf4 i\cf0 );\
+    \cf5 body\cf0 .executeVoid(\cf4 frame\cf0 );\
+  \}\
+  \
+  \cf3 return\cf0  PNone.\cf5 NONE\cf0 ;\
+\pard\pardeftab720
+\cf0 \}}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{0, 303.85044860839844}, {85.03936767578125, 11.338580131530762}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>6</real>
+					</dict>
+					<key>ID</key>
+					<integer>15</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs12 \cf0 for range node}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{96, 248}, {76, 40}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -24908,7 +25071,7 @@ specialization}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{0.25, 88.75}, {447.5, 265.25}}</string>
+		<string>{{0.25, 175.25}, {447.5, 265.25}}</string>
 		<key>Zoom</key>
 		<real>4</real>
 		<key>ZoomValues</key>
