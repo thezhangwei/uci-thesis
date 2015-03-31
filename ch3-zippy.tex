@@ -184,11 +184,32 @@ More specifically we create type specialized derivatives for list constructor ca
 When a list literal creates a list that can use a more efficient sequence storage type, we specialize it to a typed list literal
 that always try to create a list using an unboxed sequence storage type.
 
-However, some times the list construction site does not have enough information about the elements that are going into the list.
+However, some times the list construction site does not have enough information about the elements going into the list at a later point.
 For instance, what we often see in Python programs is a pattern similar to the code snippet shown in Figure~\ref{fig:list-construction-loop-code}.
 The shown program first instantiates an empty list and then populates the list one element at a time using a loop.
-The for range loop in Figure~\ref{fig:list-construction-loop-code} appends integers to list \texttt{lst}, which ideally should store its elements in an \texttt{IntSequenceStorage} to avoid auto-boxing.
+The for range loop in Figure~\ref{fig:list-construction-loop-code} appends integers to list \texttt{lst},
+which ideally should use an \texttt{IntSequenceStorage} to store its elements to avoid auto-boxing.
 
+Figure~\ref{fig:empty-list-storage-profiling} illustrates the simplified ASTs of the \texttt{makeList} function shown in Figure~\ref{fig:list-construction-loop-code}.
+The AST labeled as \textsf{1} is the initial version with both the \texttt{ListLiteralNode} and \texttt{ListAppendNode} uninitialized.
+If we simply specialize the \texttt{ListLiteralNode} base on type information available locally, we will replace it with an \texttt{EmptyListLiteralNode} (\textsf{2A} in Figure~\ref{fig:empty-list-storage-profiling}).
+The \texttt{EmptyListLiteralNode} returns a list backed by an \texttt{EmptySequenceStorage}.
+Subsequently the \texttt{ListAppendNode} in the loop body specializes itself to an \texttt{IntStorageAppendNode} and switches the list's storage to an \texttt{IntSequenceStorage}.
+The remaining iterations of the loop does not introduce changes to the AST and populates and populates the list using an efficient data representation.
+However, if \texttt{makeList} is invoked again, the above mentioned specializations will alter.
+Note that the \texttt{EmptyListLiteralNode} always return a list using \texttt{EmptySequenceStorage}.
+This storage type is not expected by the \texttt{IntStorageAppendNode} in the loop body and will trigger a re-specialization that generalizes the list storage type to an boxed one.
+The reason of this action is that the previous specialization to \texttt{IntSequenceStorage} become unstable.
+Therefore, the node need to give up the current specialization, and rewrites itself to the next matching derivative version.
+In short, the straight forward specialization can not properly handle empty list instantiation.
+
+Alternatively, we could add an intermediate step when specializing list literals.
+As shown in Figure~\ref{fig:empty-list-storage-profiling}, ZipPy first specializes the \texttt{UninitializedListLiteralNode} in \textsf{1} to the \textsf{ProfilingListLiteralNode} in \textsf{2B}.
+The \texttt{ProfilingListLiteralNode} keeps a reference to the list it previously instantiated.
+Upon the second execution of function \texttt{makeList}, the \texttt{ProfilingListLiteralNode} rewrites itself by looking at the storage type of the previously created list.
+It performs the final specialization to the derivative version that matches the previous list assuming that the next list is most likely to have the same storage type.
+This step results in the stable AST \textsf{3B} shown in Figure~\ref{fig:empty-list-storage-profiling}.
+By using profiling based non-local type feedback, ZipPy is able to optimize list accesses for more complicated list construction pattern in Python programs.
 
 \subsection{Loop Specialization}
 
