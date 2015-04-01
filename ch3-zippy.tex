@@ -234,3 +234,27 @@ This approach effectively lower the semantics level of a for range loop in Pytho
 The for range specialization not only minimizes the loop overhead on the JVM, it also enables more advanced loop optimizations like loop unrolling for the Java compiler.
 
 \subsection{List Comprehensions}
+
+\begin{figure}[h]
+\centering
+\subfigure[original] {
+  \includegraphics[scale=.9]{figures/ch3-list-comp-code.pdf}
+  \label{fig:list-comp-code}
+}
+\subfigure[desugared] {
+  \includegraphics[scale=.9]{figures/ch3-list-comp-desugared-code.pdf}
+  \label{fig:list-comp-desugared-code}
+}
+\caption{List comprehensions}
+\label{fig:list-comp}
+\end{figure}
+
+List comprehension provides a concise way to construct lists in Python.
+It allows expressing the construction of a list from another sequence in one compact expression.
+Figure~\ref{fig:list-comp-code} illustrates the use of list comprehension to create the list \texttt{lst} that consists of the square of $0$ to $9$.
+Figure~\ref{fig:list-comp-desugared-code} shows the desugared equivalence of the shown list comprehension.
+Note that we can always expand a list comprehension to an explicit loop that creates the same list in Python.
+When parsing a list comprehension, ZipPy applies a similar desugaring process as shown in Figure~\ref{fig:list-comp}.
+It automatically expands the list comprehension to an AST that is equivalent to what is shown in Figure~\ref{fig:list-comp-desugared-code}.
+This transformation enables further optimizations described previously in this section such as unboxed data representation for the created list, proper type specialization and compiler optimizations of the expanded loop.
+In summary, list comprehension desugaring eliminates the performance introduced by the concise syntax of list comprehension, and enables efficient list creation in ZipPy.
