@@ -22,7 +22,7 @@
 % Some other useful packages
 \usepackage{caption}
 \usepackage{multirow}
-\usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{subfigure}
 
 % plainpages=false fixes the "duplicate ignored" error with page counters
@@ -56,6 +56,9 @@
 \newtheorem{definition}{\textsc{Definition}}[chapter]
 \newtheorem{example}{\textsc{Example}}[chapter]
 
+% Global variables
+\newcommand{\peelingSpeedup}{3.58}
+
 % Macros for title, author, abstract, etc.
 \input{ch0-preliminaries}
 
@@ -87,6 +90,7 @@
 \include{ch1-intro}
 \include{ch2-bytecode}
 \include{ch3-zippy}
+\include{ch4-peeling}
 % ... and so on
 
 % These commands fix an odd problem in which the bibliography line

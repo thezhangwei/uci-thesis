@@ -5,17 +5,9 @@
   howpublished = {\url{https://github.com/lotten/uci-thesis-latex/}}
 }
 
-
-@misc{github,
-  author = {{GitHub}},
-  howpublished = {\url{http://github.com/}}
-}
-
-@misc{pypl,
-  author = {{PYPL PopularitY of Programming Language}},
-  howpublished = {\url{http://pypl.github.io/PYPL.html}}
-}
-
+##########################
+# Our own papers
+##########################
 @inproceedings{savrun2013,
   title={Efficient interpreter optimizations for the JVM},
   author={Savrun-Yeni{\c{c}}eri, G{\"u}lfem and Zhang, Wei and Zhang, Huahan and Li, Chen and Brunthaler, Stefan and Larsen, Per and Franz, Michael},
@@ -34,6 +26,70 @@
   pages={9},
   year={2014},
   publisher={ACM}
+}
+
+##########################
+# Non academic references
+##########################
+@misc{pypl,
+  author = {{PYPL PopularitY of Programming Language}},
+  howpublished = {\url{http://pypl.github.io/PYPL.html}}
+}
+
+@misc{ruby,
+    author = {{Ruby}},
+    howpublished = {\url{http://www.ruby-lang.org/}}
+}
+
+@misc{jruby,
+    author = {{JRuby}},
+    howpublished = {\url{http://www.jruby.org/}}
+}
+
+@misc{clojure,
+    author = {{Clojure}},
+    howpublished = {\url{http://www.clojure.org/}}
+}
+
+@misc{rhino,
+    author = {{Mozilla Foundation}},
+    title = {Rhino},
+    howpublished = {\url{http://www.mozilla.org/rhino/}}
+}
+
+@misc{hotspot,
+    author = {{Oracle Corporation}},
+    title = {{The Java HotSpot Performance Engine Architecture}},
+    year = 2006
+}
+
+@misc{python,
+    author = {{Python}},
+    howpublished = {\url{http://www.python.org/}}
+}
+
+@misc{PEP255,
+    author = {Schemenauer, Neil and Peters, Tim and Lie Hetland, Magnus},
+    title = {{PEP, Python Enhancement Proposal, 255 Simple Generators}},
+    howpublished = {\url{http://legacy.python.org/dev/peps/pep-0255/}}
+}
+
+@misc{ECMA262,
+    author = {ECMA},
+    title = {{Standard {ECMA}-262: ECMAScript Language Specification 6th Edition Draft}},
+    howpublished = {\url{http://people.mozilla.org/~jorendorff/es6-draft.html}},
+    year = 2014,
+}
+
+@misc{pypi,
+    author = {{PyPI Ranking}},
+    title = {{PyPI Python modules ranking}},
+    howpublished = {\url{http://pypi-ranking.info/}}
+}
+
+@misc{github,
+  author = {{GitHub}},
+  howpublished = {\url{http://github.com/}}
 }
 
 #######################
@@ -186,6 +242,182 @@
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {Java, Maxine VM, VM design, VM interfaces, debugging, inspector, metacircular VM, tool support},
+}
+
+#############################
+# Coroutine stuff
+#############################
+@article{Liskov1977,
+ author = {Liskov, Barbara and Snyder, Alan and Atkinson, Russell and Schaffert, Craig},
+ title = {{Abstraction Mechanisms in CLU}},
+ journal = {Communications of the ACM},
+ issue_date = {Aug. 1977},
+ volume = {20},
+ number = {8},
+ month = aug,
+ year = {1977},
+ issn = {0001-0782},
+ pages = {564--576},
+ numpages = {13},
+ doi = {10.1145/359763.359789},
+ acmid = {359789},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {control abstractions, data abstractions, data types, programming languages, programming methodology, separate compilation},
+}
+
+@inproceedings{Atkinson1978CLU,
+ author = {Atkinson, Russell R. and Liskov, Barbara H. and Scheifler, Robert W.},
+ title = {{Aspects Of Implementing CLU}},
+ booktitle = {Proceedings of the 1978 Annual Conference},
+ series = {ACM '78},
+ year = {1978},
+ isbn = {0-89791-000-1},
+ location = {Washington, D.C., USA},
+ pages = {123--129},
+ numpages = {7},
+ doi = {10.1145/800127.804079},
+ acmid = {804079},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {CLU, Exception handling, Implementation methods, Iterators, Parameterized modules, Programming language},
+}
+
+@article{Murer1996,
+ author = {Murer, Stephan and Omohundro, Stephen and Stoutamire, David and Szyperski, Clemens},
+ title = {{Iteration Abstraction in Sather}},
+ journal = {ACM Transactions on Programming Languages and Systems},
+ issue_date = {Jan. 1996},
+ volume = {18},
+ number = {1},
+ month = jan,
+ year = {1996},
+ issn = {0164-0925},
+ pages = {1--15},
+ numpages = {15},
+ doi = {10.1145/225540.225541},
+ acmid = {225541},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Sather, general control structures, iteration abstraction},
+}
+
+@article{Griswold1981generators,
+ author = {Griswold, Ralph E. and Hanson, David R. and Korb, John T.},
+ title = {Generators in Icon},
+ journal = {ACM Transactions on Programming Languages and Systems},
+ issue_date = {April 1981},
+ volume = {3},
+ number = {2},
+ month = apr,
+ year = {1981},
+ issn = {0164-0925},
+ pages = {144--161},
+ numpages = {18},
+ doi = {10.1145/357133.357136},
+ acmid = {357136},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@article{Grune1977view,
+ author = {Grune, Dick},
+ title = {{A View of Coroutines}},
+ journal = {SIGPLAN Not.},
+ issue_date = {July 1977},
+ volume = {12},
+ number = {7},
+ month = jul,
+ year = {1977},
+ issn = {0362-1340},
+ pages = {75--81},
+ numpages = {7},
+ doi = {10.1145/954639.954644},
+ acmid = {954644},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+
+@inproceedings{Liu:2006JMatch,
+ author = {Liu, Jed and Kimball, Aaron and Myers, Andrew C.},
+ title = {{Interruptible Iterators}},
+ booktitle = {Proceedings of the 33rd ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+ series = {POPL '06},
+ year = {2006},
+ isbn = {1-59593-027-2},
+ location = {Charleston, South Carolina, USA},
+ pages = {283--294},
+ numpages = {12},
+ doi = {10.1145/1111037.1111063},
+ acmid = {1111063},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {JMatch, Java, coroutine, exception, logic programming},
+}
+
+@inproceedings{watt2006technique,
+ author = {Watt, Stephen M.},
+ title = {{A Technique for Generic Iteration and Its Optimization}},
+ booktitle = {Proceedings of the 2006 ACM SIGPLAN Workshop on Generic Programming},
+ series = {WGP '06},
+ year = {2006},
+ isbn = {1-59593-492-8},
+ location = {Portland, Oregon, USA},
+ pages = {76--86},
+ numpages = {11},
+ doi = {10.1145/1159861.1159872},
+ acmid = {1159872},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {generic program, iterators},
+}
+
+@article{de2004coroutines,
+  title={{Coroutines in Lua}},
+  author={De Moura, Ana L{\'u}cia and Rodriguez, Noemi and Ierusalimschy, Roberto},
+  journal={Journal of Universal Computer Science},
+  volume={10},
+  number={7},
+  pages={910--925},
+  year={2004}
+}
+
+@article{Moura2009,
+ author = {Moura, Ana L\'{u}cia De and Ierusalimschy, Roberto},
+ title = {{Revisiting Coroutines}},
+ journal = {ACM Transactions on Programming Languages and Systems},
+ issue_date = {February 2009},
+ volume = {31},
+ number = {2},
+ month = feb,
+ year = {2009},
+ issn = {0164-0925},
+ pages = {6:1--6:31},
+ articleno = {6},
+ numpages = {31},
+ doi = {10.1145/1462166.1462167},
+ acmid = {1462167},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Continuations, generators, multitasking},
+}
+
+@inproceedings{Stadler2010,
+ author = {Stadler, Lukas and W\"{u}rthinger, Thomas and Wimmer, Christian},
+ title = {{Efficient Coroutines for the Java Platform}},
+ booktitle = {Proceedings of the 8th International Conference on the Principles and Practice of Programming in Java},
+ series = {PPPJ '10},
+ year = {2010},
+ isbn = {978-1-4503-0269-2},
+ location = {Vienna, Austria},
+ pages = {20--28},
+ numpages = {9},
+ doi = {10.1145/1852761.1852765},
+ acmid = {1852765},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Java, activation, coroutine, optimization, performance, stack frame, virtual machine},
 }
 
 #######################

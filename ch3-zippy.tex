@@ -257,4 +257,4 @@ Note that we can always expand a list comprehension to an explicit loop that cre
 When parsing a list comprehension, ZipPy applies a similar desugaring process as shown in Figure~\ref{fig:list-comp}.
 It automatically expands the list comprehension to an AST that is equivalent to what is shown in Figure~\ref{fig:list-comp-desugared-code}.
 This transformation enables further optimizations described previously in this section such as unboxed data representation for the created list, proper type specialization and compiler optimizations of the expanded loop.
-In summary, list comprehension desugaring eliminates the performance introduced by the concise syntax of list comprehension, and enables efficient list creation in ZipPy.
+In summary, list comprehension desugaring eliminates the performance overhead introduced by the concise syntax of list comprehension, and enables efficient list creations in ZipPy.
