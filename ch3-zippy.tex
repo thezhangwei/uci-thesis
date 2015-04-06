@@ -1,4 +1,5 @@
 \chapter{Hosted AST Interpreter}
+\label{chp:ch3-zippy}
 
 Abstract syntax trees, ASTs, are the simplest and most natural ways to implement programming languages.
 They do not require an additional translation step that linearizes ASTs produced by the parser to bytecode or other forms of internal representations.
@@ -135,7 +136,7 @@ For all arithmetic operations that consume unboxed numbers, as long as the resul
 Object operations such as attribute access trigger lazy boxing that coverts a number from the unboxed representation to the boxed one.
 To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
 
-\subsection{Comnposite Data Types}
+\subsection{Composite Data Types}
 
 Python provides a rich set of built-in composite data types including \texttt{list}s, \texttt{tuple}s, \texttt{set}s, and \texttt{dict}s.
 Jython uses a straight-forward approach that uses the existing collection types in the Java development kit (JDK) to implement these data types.

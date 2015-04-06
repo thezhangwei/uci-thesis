@@ -1,0 +1,40 @@
+\chapter{Optimizing Calls and Object Model}
+\label{chp:ch5-object}
+
+Being a object oriented programing language, it is a common practice for Python programmer to encode states using classes and encapsulate logic in methods in their programs.
+It is essential for us to ensure the performance of object operations and method calls in ZipPy.
+In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}),
+in this chapter we explain how we structure call sites and object operations in ZipPy.
+
+\section{Call Sites}
+
+Calls are common in Python programs.
+In general you can call any \emph{callable} object in Python.
+Making a call in different contexts has different semantics allowing the caller to pass arguments to the callee in different ways.
+
+\subsection{The Structure of Call Sites in Python}
+
+\begin{figure}
+\centering
+\subfigure[Simple call site]{
+	\includegraphics[scale=1.]{figures/ch5-call-site-simple-code}
+	\label{fig:ch5-call-site-simple-code}
+}
+\subfigure[Attribute call site]{
+	\includegraphics[scale=1.]{figures/ch5-call-site-attribute-code}
+	\label{fig:ch5-call-site-attribute-code}
+}
+\caption{Basic syntax of calls in Python}
+\label{fig:ch4-call-site-synteax-code}
+\end{figure}
+
+Figure~\ref{fig:ch5-call-site-simple-code} shows the syntax of a simple call in Python.
+It is simple enough for us to explain the basic steps of making a call in Python without getting into more complicated details.
+The execution of the call shown in the Figure involves the following steps.
+As the first step, the program needs to look up the symbol \texttt{foo} from the current scope or its enclosing scope with respect to Python's scoping rules.
+After resolving the symbol \texttt{foo}, the program then checks the type of the resolved object to determine the eligibility of such call.
+Lastly, the actual call takes place using a calling convention matching the type of the callee object.
+
+
+
+\section{Object Model}
