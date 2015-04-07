@@ -17,11 +17,11 @@ Making a call in different contexts has different semantics allowing the caller 
 \begin{figure}
 \centering
 \subfigure[Simple call site]{
-	\includegraphics[scale=1.]{figures/ch5-call-site-simple-code}
+	\includegraphics[scale=.9]{figures/ch5-call-site-simple-code}
 	\label{fig:ch5-call-site-simple-code}
 }
 \subfigure[Attribute call site]{
-	\includegraphics[scale=1.]{figures/ch5-call-site-attribute-code}
+	\includegraphics[scale=.9]{figures/ch5-call-site-attribute-code}
 	\label{fig:ch5-call-site-attribute-code}
 }
 \caption{Basic syntax of calls in Python}
@@ -41,10 +41,45 @@ The call site shown in Figure~\ref{fig:ch5-call-site-simple-code} is in its simp
 We refer it as a \emph{simple call site}.
 The callee resolution for the call shown in Figure~\ref{fig:ch5-call-site-attribute-code} involves an attribute referencing on the Python object \texttt{p}.
 We refer this type of call sites as \emph{attribute call sites}, since the actual callee is an attribute of the primary object like \texttt{p} in the Figure.
-The primary object, however, can be any namespace backed by a Python object such as a regular object, a class object or a Python module.
-Taking a look back at the simple call site as shown in Figure~\ref{fig:ch5-call-site-simple-code},
+The primary object, however, can be any namespace backed by a Python object such as a regular object, a class object or a module.
+Looking back at the simple call site as shown in Figure~\ref{fig:ch5-call-site-simple-code},
 it is worth noting that the callee resolution might involve an attributing referencing as well depending on the type of the scope in which the call takes place.
 For example, if program resolves \texttt{foo} as a global variable, the look up of \texttt{foo} includes an implicit attribute referencing on the current Python module.
 Similarly, in a class scope, a simple call to an existing class attribute also involves an implicit attribute look up on the enclosing class object.
+% say something about motivates the structure of the AST
+The same syntax implies different semantics and ways to make the actual call at runtime.
+To capture this variation, we decompose a call site in Python into multiple components and assemble them in different ways to serve different variations.
+This way allows us to apply specializations on each component separately to accelerate calls in Python programs.
+
+\subsubsection{The AST of Call Sites}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{figures/ch5-python-call-node-basic}
+\caption{The structure of a \texttt{PythonCallNode}}
+\label{fig:ch5-python-call-node-basic}
+\end{figure}
+
+Figure~\ref{fig:ch5-python-call-node-basic} illustrates the basic structure of a call node in ZipPy.
+A \texttt{PythonCallNode} employees five child nodes representing five components of the call site.
+Each child node can further expand into its own sub tree depending on the complexity of the component.
+A call node performs a Python call in-coorperating its child nodes in the following steps:
+
+\begin{enumerate}
+
+\item The primary node evaluates the primary object of the call.
+If the primary component is missing, the primary node returns the constant Python \texttt{None} object.
+
+\item The callee node resolves the actual callee object using the previously resolved primary object if necessary.
+If the callee resolution does not involve an attribute referencing, it ignores the primary object.
+
+\item The arguments node evaluates all the arguments, and returns them to the call node as a Java array.
+
+\item The keywords node evaluates all the keyword arguments, and returns them to the call node in an Java array.
+
+\item The \texttt{PythonCallNode} passes the evaluated primary object, callee, arguments array and keyword arguments array to the dispatch node.
+The dispatch node performs the actual call using inline caching based dispatch chain scheme~\ref{?}, which we will explain in more in detail in Section~\ref{?}.
+
+\end{enumerate}
 
 \section{Object Model}
