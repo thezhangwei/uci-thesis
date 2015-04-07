@@ -6,7 +6,7 @@ It is essential for us to ensure the performance of object operations and method
 In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}),
 in this chapter we explain how we structure call sites and object operations in ZipPy.
 
-\section{Call Sites}
+\section{Call Site Modeling}
 
 Calls are common in Python programs.
 In general you can call any \emph{callable} object in Python.
@@ -33,8 +33,18 @@ It is simple enough for us to explain the basic steps of making a call in Python
 The execution of the call shown in the Figure involves the following steps.
 As the first step, the program needs to look up the symbol \texttt{foo} from the current scope or its enclosing scope with respect to Python's scoping rules.
 After resolving the symbol \texttt{foo}, the program then checks the type of the resolved object to determine the eligibility of such call.
-Lastly, the actual call takes place using a calling convention matching the type of the callee object.
+Lastly, the actual call takes place using a calling convention that matches the type of the callee object.
+The Python interpreter uses different calling convention or passes the arguments to the callee in a different way depending on the actual type of the callee.
+For instance, if the callee is a Python class object, the interpreter creates an empty Python object and passes it to the callee as the first argument.
 
-
+The call site shown in Figure~\ref{fig:ch5-call-site-simple-code} is in its simplest form.
+We refer it as a \emph{simple call site}.
+The callee resolution for the call shown in Figure~\ref{fig:ch5-call-site-attribute-code} involves an attribute referencing on the Python object \texttt{p}.
+We refer this type of call sites as \emph{attribute call sites}, since the actual callee is an attribute of the primary object like \texttt{p} in the Figure.
+The primary object, however, can be any namespace backed by a Python object such as a regular object, a class object or a Python module.
+Taking a look back at the simple call site as shown in Figure~\ref{fig:ch5-call-site-simple-code},
+it is worth noting that the callee resolution might involve an attributing referencing as well depending on the type of the scope in which the call takes place.
+For example, if program resolves \texttt{foo} as a global variable, the look up of \texttt{foo} includes an implicit attribute referencing on the current Python module.
+Similarly, in a class scope, a simple call to an existing class attribute also involves an implicit attribute look up on the enclosing class object.
 
 \section{Object Model}
