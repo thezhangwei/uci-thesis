@@ -78,8 +78,28 @@ If the callee resolution does not involve an attribute referencing, it ignores t
 \item The keywords node evaluates all the keyword arguments, and returns them to the call node in an Java array.
 
 \item The \texttt{PythonCallNode} passes the evaluated primary object, callee, arguments array and keyword arguments array to the dispatch node.
-The dispatch node performs the actual call using inline caching based dispatch chain scheme~\ref{?}, which we will explain in more in detail in Section~\ref{?}.
+The dispatch node performs the actual call using an inline caching inspired dispatch chain scheme~\cite{Deutsch1984, holzle1991}, and passes all the arguments to the AST of the callee.
+We will explain the call dispatch nodes in more detail in Section~\ref{sec:ch5-call-site-caching-and-inlining}.
 
 \end{enumerate}
+
+Note that some components like the primary or keyword arguments are not always present.
+In case that an optional component is missing, we still model it as a dummy node that returns a \texttt{None} or an empty Java array to make it consistent for all call nodes.
+The \texttt{PythonCallNode} organizes different components of the call site and handles transformations like specialization and de-optimization at runtime.
+
+\subsection{Call Node Specializations}
+
+Similar to type specializations we discussed in Chapter~\ref{chp:ch3-zippy}, we construct call nodes initially in the uninitialized version.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=.49]{figures/ch5-call-node-specialization-simple}
+\caption{Call node specialization for a simple call site}
+\label{fig:ch5-call-node-specialization-simple}
+\end{figure}
+
+\subsection{Call Site Caching and Inlining}
+\label{sec:ch5-call-site-caching-and-inlining}
 
 \section{Object Model}
