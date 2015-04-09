@@ -1,10 +1,41 @@
-\chapter{Optimizing Calls and Object Model}
+\chapter{Optimizing Object Model and Calls}
 \label{chp:ch5-object}
 
 Being a object oriented programing language, it is a common practice for Python programmer to encode states using classes and encapsulate logic in methods in their programs.
 It is essential for us to ensure the performance of object operations and method calls in ZipPy.
 In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}),
-in this chapter we explain how we structure call sites and object operations in ZipPy.
+in this chapter we explain how we implement object operations and calls in ZipPy.
+
+\section{Object Model}
+\label{sec:ch5-object-module}
+
+\subsection{Existing Object Model Design}
+
+In Python all data is an object.
+CPython, the original implementation of Python, constructs every data type in Python as a heap allocated data structure.
+Since it is written in C, CPython implements Python built-in data types using C struct and user defined types using hash maps.
+This model results in expensive arithmetic operations due to frequent accesses and allocations of data structures in the heap.
+Hash map based object model is also inefficient.
+Although the cost of hash map operations is amortized for large data sets, the overhead of retrieving or updating a single map entry is still expensive.
+In a hash map based object model, retrieving the value of an object field, or an object attribute in Python, is equivalent to reading the value of a map entry.
+This operation involves a hashing calculation and a few steps of memory accesses before reaching the memory address that stores the target value.
+On the other hand, in a traditional programming language like Java, an object field access, if optimized, is simply a single memory read.
+In summary, object model inefficiency is the main impediment to the performance of popular dynamic languages like Python.
+
+Existing JVM based Python implementations like Jython, however, replicate the same object model design we saw in CPython.
+The main approach they are took is porting the existing design from C to Java hoping that the underlying Java compiler will magically optimize it.
+This approach failed to realize that, although, the java JIT compiler is powerful, its strength is in compiling and optimizing programs written in Java,
+the first class citizen of the JVM.
+Hence, without additional knowledge to the guest language, the Java compiler is unable to address the miss match between the object model of the guest language and that of Java in an efficient way.
+A more efficient solution requires identifying the strengths of the Java compiler and mapping critical components of the guest language onto efficient constructs offered of the JVM.
+In the rest of this Section, we explain how do we close the gap between the object model of Python and the one of the JVM in ZipPy.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.6]{figures/ch5-three-data-representations}
+\caption{Three data representations for Python objects}
+\label{fig:ch5-three-data-representations}
+\end{figure}
 
 \section{Call Site Modeling}
 
@@ -195,6 +226,3 @@ Therefore, attribute lookup on those built-in types involves a mapping that asso
 \subsection{Inline Caching Based Call Dispatching}
 
 \subsection{Call Inlining in Truffle}
-
-\section{Object Model}
-\label{sec:ch5-object-module}
