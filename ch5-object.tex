@@ -13,6 +13,7 @@ In general you can call any \emph{callable} object in Python.
 Making a call in different contexts has different semantics allowing the caller to pass arguments to the callee in different ways.
 
 \subsection{The Structure of Call Sites in Python}
+\label{sec:ch5-structure-of-call-sites}
 
 \begin{figure}
 \centering
@@ -25,7 +26,7 @@ Making a call in different contexts has different semantics allowing the caller 
 	\label{fig:ch5-call-site-attribute-code}
 }
 \caption{Basic syntax of calls in Python}
-\label{fig:ch4-call-site-synteax-code}
+\label{fig:ch5-call-site-synteax-code}
 \end{figure}
 
 Figure~\ref{fig:ch5-call-site-simple-code} shows the syntax of a simple call in Python.
@@ -85,21 +86,115 @@ We will explain the call dispatch nodes in more detail in Section~\ref{sec:ch5-c
 
 Note that some components like the primary or keyword arguments are not always present.
 In case that an optional component is missing, we still model it as a dummy node that returns a \texttt{None} or an empty Java array to make it consistent for all call nodes.
-The \texttt{PythonCallNode} organizes different components of the call site and handles transformations like specialization and de-optimization at runtime.
+The \texttt{PythonCallNode} organizes different components of the call site and handles transformations like type specialization and de-optimization at runtime.
 
 \subsection{Call Node Specializations}
 
-Similar to type specializations we discussed in Chapter~\ref{chp:ch3-zippy}, we construct call nodes initially in the uninitialized version.
+Similar to the type specializations of arithmetics as we discussed in Chapter~\ref{chp:ch3-zippy}, ZipPy applies specializations to call nodes against the type of the callee through node rewriting.
+The interpreter initially constructs a call node using the uninitialized version (\texttt{UninitCallNode} in Figure~\ref{fig:ch5-call-node-specialization-simple}).
+Upon the first execution of the call, the uninitialized call node uses a slow path to resolve the primary object and callee.
+At the same time, it rewrites itself to a derivative version that is tailored to the resolved primary and callee.
+Not only that the call node specializes itself, it also applies type specializations to its child nodes during the rewriting process.
+In this Section, we explain how ZipPy applies call node specializations for different call sites and callee types.
 
+\subsubsection{Specialization for Simple Call Sites}
 
 \begin{figure}
 \centering
-\includegraphics[scale=.49]{figures/ch5-call-node-specialization-simple}
-\caption{Call node specialization for a simple call site}
+\includegraphics[scale=.5]{figures/ch5-call-node-specialization-simple}
+\caption{Call node specializations for a simple call site}
 \label{fig:ch5-call-node-specialization-simple}
 \end{figure}
+
+As explained in Section~\ref{sec:ch5-structure-of-call-sites}, the callee resolution of a simple call site (Figure~\ref{fig:ch5-call-site-simple-code}) depends on the type of the namespace to which the callee belongs.
+Therefore, the specialization of a simple call site needs to cover different resolution cases.
+Figure~\ref{fig:ch5-call-node-specialization-simple} illustrates various call node transformations of a simple call site.
+The description of the three different specialization cases shown in the Figure is as follows:
+
+\begin{enumerate}
+
+\item \textbf{Callee in function activation}
+The call takes place in a function scope.
+The resolved callee is a variable of the function's lexical scope or its enclosing scope.
+The primary object does not exist or is \texttt{None} in this case.
+Therefore, the primary node is an \texttt{EmptyNode} that returns an \texttt{None}.
+The callee nodes retrieve the callee object from the function's activation or the frame object as discussed in Chapter~\ref{sec:ch4-frame-and-control}.
+Although type specialization is also applicable to the \texttt{ReadLocalVariableNode}, given that the callee is guarantee to be a boxed object, type specialization in this case has limited benefit.
+However, Truffle is still able to optimize frame accesses by eliminating heap allocation of the frame object when applicable.
+
+\item \textbf{Callee as a module attribute}
+The resolved callee is an attribute of a module, e.g., the global scope of the current module or the built-in module.
+The retrieval of the callee in this case involves an implicit attribute referencing on the primary module object.
+Since the primary object is boxed, ZipPy specializes the call node to a \texttt{BoxedCallNode}.
+The primary node is a wrapper node that holds a reference to the current module object.
+The callee node reads the callee attribute from the module object returned by the primary node.
+The \texttt{ReadGlobalNode} accesses the built-in module if it failed to resolve it from the global scope module.
+Upon a successful resolution of the callee object, the \texttt{ReadGlobalNode} caches the actual primary object.
+For instance, if the resolved callee object is an attribute of the built-in object, the node caches the built-in object instead of the current module.
+Caching speedups subsequent attribute accesses by accessing the cached object directly as long as the attributes of the object remain unchanged.
+
+\item \textbf{Callee as a class attribute}
+The call takes place in a class scope.
+The resolved callee is an existing class attribute of the enclosing scope.
+Class definition works as a special function in Python.
+The evaluation of the class definition statement is essentially a call to the special function.
+The interpreter passes an empty class object as the first argument to the function, and the class definition function populates the class object with attributes like functions.
+The call to the class definition function returns the created class object containing attributes specified by in the class definition.
+To access an existing attribute of the defining class, we need to first retrieve the defining class object.
+The \texttt{ReadArgumentNode} does so by reading the argument array passed by the caller of the class definition.
+the callee node then reads the callee attribute from the primary class object.
+The \texttt{GetAttributeNode} also enjoys type specialization and caching on its own, which we will discuss more in Section~\ref{sec:ch5-object-module}.
+
+\end{enumerate}
+
+The call node specializations illustrated in Figure~\ref{fig:ch5-call-node-specialization-simple} are based on the resolution of the primary object and callee.
+We simplified the Figure to not show the arguments node and the keyword arguments node, since their specialization are orthogonal callee resolutions.
+
+\subsubsection{Specialization for Attribute Call Sites}
+
+\begin{figure}
+\centering
+\subfigure[Boxed primary]{
+	\includegraphics[scale=.7]{figures/ch5-attribute-call-site-boxed-code}
+	\label{fig:ch5-attribute-call-site-boxed-code}
+}
+\subfigure[Unboxed primary]{
+	\includegraphics[scale=.7]{figures/ch5-attribute-call-site-unboxed-code}
+	\label{fig:ch5-attribute-call-site-unboxed-code}
+}
+\caption{Attribute call sites with different primary object representations}
+\label{fig:ch5-attribute-call-site-boxed-unboxed-code}
+\end{figure}
+
+In Chapter~\ref{sec:ch3-design-and-implementation} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and data accesses more efficient.
+Since the physical data representation of Python objects differs in ZipPy, attribute lookups on objects backed by different representations are also different.
+Figure~\ref{fig:ch5-attribute-call-site-boxed-unboxed-code} shows two attribute call sites.
+The primary object of the left one, \texttt{h}, is a user custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}).
+The primary object \texttt{n} in the one shown in Figure~\ref{fig:ch5-attribute-call-site-unboxed-code} is a built-in integer.
+In ZipPy, we model custom objects using a boxed Java object, and map an attribute access to the Python object to a field access on the Java object.
+On the other hand, ZipPy represents Python integers and some other built-in data types as Java primitives.
+% probably did not explain it very clearly....
+Therefore, attribute lookup on those built-in types involves a mapping that associates the instance of the type to the meta class object of the type containing the target attribute.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{figures/ch5-call-node-specialization-attribute}
+\caption{Call node specializations for an attribute call site}
+\label{fig:ch5-call-node-specialization-attribute}
+\end{figure}
+
+
+% the specializations shown above covers the majority of calls in Python.
+% However, they are not meant to be comprehensive. there are corner cases that we do not cover in this thesis due to space limitations.
+% call node specialization captures the fast path of callee resolution.....
+% the next chapter will talk about how we further optimize calls in Python.
 
 \subsection{Call Site Caching and Inlining}
 \label{sec:ch5-call-site-caching-and-inlining}
 
+\subsection{Inline Caching Based Call Dispatching}
+
+\subsection{Call Inlining in Truffle}
+
 \section{Object Model}
+\label{sec:ch5-object-module}
