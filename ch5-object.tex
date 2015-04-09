@@ -1,15 +1,16 @@
 \chapter{Optimizing Object Model and Calls}
 \label{chp:ch5-object}
 
-Being a object oriented programing language, it is a common practice for Python programmer to encode states using classes and encapsulate logic in methods in their programs.
-It is essential for us to ensure the performance of object operations and method calls in ZipPy.
-In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}),
-in this chapter we explain how we implement object operations and calls in ZipPy.
+Python is an object oriented programing language.
+It is a common practice for Python programmer to encode states using classes and encapsulate logic in methods in their programs.
+As an implementation of the Python language, it is essential for us to ensure the performance of object operations and method calls in ZipPy.
+In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}).
+In this chapter we explain how we implement object operations and calls in ZipPy.
 
 \section{Object Model}
 \label{sec:ch5-object-module}
 
-\subsection{Existing Object Model Design}
+\subsection{Python Object Data Representations}
 
 In Python all data is an object.
 CPython, the original implementation of Python, constructs every data type in Python as a heap allocated data structure.
@@ -22,6 +23,8 @@ This operation involves a hashing calculation and a few steps of memory accesses
 On the other hand, in a traditional programming language like Java, an object field access, if optimized, is simply a single memory read.
 In summary, object model inefficiency is the main impediment to the performance of popular dynamic languages like Python.
 
+\subsubsection{Jython's Object Model Design}
+
 Existing JVM based Python implementations like Jython, however, replicate the same object model design we saw in CPython.
 The main approach they are took is porting the existing design from C to Java hoping that the underlying Java compiler will magically optimize it.
 This approach failed to realize that, although, the java JIT compiler is powerful, its strength is in compiling and optimizing programs written in Java,
@@ -30,12 +33,55 @@ Hence, without additional knowledge to the guest language, the Java compiler is 
 A more efficient solution requires identifying the strengths of the Java compiler and mapping critical components of the guest language onto efficient constructs offered of the JVM.
 In the rest of this Section, we explain how do we close the gap between the object model of Python and the one of the JVM in ZipPy.
 
+\subsubsection{Multiple Data Representations}
+
 \begin{figure}
 \centering
 \includegraphics[scale=.6]{figures/ch5-three-data-representations}
 \caption{Three data representations for Python objects}
 \label{fig:ch5-three-data-representations}
 \end{figure}
+
+ZipPy internally uses multiple data representations to model Python objects.
+Figure~\ref{fig:ch5-three-data-representations} illustrates this design scheme:
+
+\begin{enumerate}
+
+\item \textbf{Built-in numeric types}
+ZipPy as explained in Chapter~\ref{sec:ch3-design-and-implementation} models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
+This approach helps to achieve Java level performance for arithmetic operations in ZipPy.
+We refer types that has a Java primitive representation as \emph{unboxable}.
+Each \emph{unboxable} numeric type in ZipPy has a corresponding \emph{boxed} representation using Java objects as a fallback.
+As shown in the Figure, a boxing operation will convert an instance of unboxable type, e.g., \texttt{int}, from its Java primitive representation to the boxed one.
+
+\item \textbf{Built-in immutable types}
+Similar to Jython, we implement Python built-in types including numeric types as regular Java classes.
+In this way we map Python's built-in type hierarchy onto a Java class based type hierarchy.
+Unlike custom types, all built-in types in Python are immutable meaning that user program cannot modify the attributes of an instance of a built-in type.
+We take advantage of this immutability by modeling Python built-in types directly using Java classes on the JVM.
+
+\item \textbf{Custom mutable types}
+All custom or user defined types in Python are mutable.
+That includes Python modules, custom type definitions written in Python and instances of custom classes.
+We model them using still a regular Java object, an instance of \texttt{PythonObject} in ZipPy, to circumvent the performance overhead incurred by using a hash map.
+ZipPy maps Python attribute accesses to field accesses on the \texttt{PythonObject} object.
+We support attribute mutation by maintaining an object layout table for each Python object.
+The object layout table keeps track of the memory offset for each attribute that is currently alive on the object.
+We will discuss how we support attribute mutations on Python types in more detail in Section~\ref{sec:ch5-custom-mutable-types}.
+
+\end{enumerate}
+
+Although we model Python objects using different physical data representations, our approach preserve the semantics that every data in Python is an object.
+ZipPy support object like operations on each of the data representations described above.
+What differs our approach to the existing ones is that we do not treat all Python data types in the same way.
+We try to pick the most efficient construct offered by the JVM that is suitable for implementing particular types in Python.
+To be more specific, modeling Python numbers as Java primitives enables the best arithmetics performance achievable on the JVM.
+Using Java object to model Python object brings the potential for ZipPy to close the performance gap of object operations between Python and Java.
+
+\subsection{Attribute Resolutions}
+
+\subsection{Custom Mutable Types}
+\label{sec:ch5-custom-mutable-types}
 
 \section{Call Site Modeling}
 
