@@ -80,8 +80,53 @@ Using Java object to model Python object brings the potential for ZipPy to close
 
 \subsection{Attribute Resolutions}
 
-\subsection{Custom Mutable Types}
+Each object in Python is a collection of key value pairs.
+Each key value pair is an attribute of the object with the key being the symbol of the attribute.
+The value of an attribute is essentially another Python object.
+Like other dynamic languages, Python allows programmers to reference, add or delete attributes on an object.
+Attribute referencing follows a rule referred as method resolution order in Python.
+Upon the creation of a custom type or class in Python, the interpreter calculates a linearized list of types for the newly created type.
+Each type in the list is a super type of the new type.
+The method resolution order of the new type refers to the order its super types appear in the linearized list.
+Given the method resolution order, an attribute resolution on a Python object follows the following steps:
+
+\begin{enumerate}
+
+\item Lookup the attribute from the object itself.
+If it does not exist on the object, continue with the next step.
+
+\item Obtaining the class object of the original object through the \texttt{\_\_class\_\_} attribute of the object.
+Lookup the attribute from the class object.
+If failed, continue with the next step.
+
+\item Obtaining the bases of the object's class through the \texttt{\_\_bases\_\_} attribute of the class object.
+Lookup the bases types in the method resolution order until the attribute is found.
+Otherwise, if the interpreter fail to resolve the attribute in the end, it throws an \texttt{AttributeError}.
+
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.54]{figures/ch5-attribute-resolutions}
+\caption{Attribute resolution for different data representations}
+\label{fig:ch5-attribute-resolutions}
+\end{figure}
+
+Since ZipPy uses multiple data representations to model Python objects, we also need to implement the above mentioned attribute resolution differently for each representation.
+Figure~\ref{fig:ch5-attribute-resolutions} illustrates this process for the three different data representations used in ZipPy.
+For simplicity, we model all class objects using a mutable \texttt{PythonObject}.
+Each \texttt{PythonObject} stores the reference to the next node in the lookup chain as a dedicated field (\texttt{\_\_class\_\_} and \texttt{\_\_bases\_\_}).
+This choice makes the type hierarchy of mutable objects consistent, since every node on the lookup chain is a \texttt{PythonObject}.
+Similarly, built-in types modeled using immutable java objects connect to the rest of the lookup chain also use a reference stored in a dedicated field.
+For unboxed built-in types, we uses a preprocessed mapping table to associate the Java class of the primitive type to the class object representing its Python type.
+For instance, we model a Python integer, which is an instance of the Python \texttt{int} class, using a Java primitive \texttt{int}.
+However, we model the Python \texttt{int} class object itself, which is an instance of the class \texttt{type}, using a mutable Java object.
+Therefore, the mapping table connects the Java primitive \texttt{int} to the Python \texttt{int} class object, and completes the entire lookup chain.
+
+\subsection{Modeling Custom Mutable Types}
 \label{sec:ch5-custom-mutable-types}
+
+\subsection{Inline Caching for Attribute Accesses}
 
 \section{Call Site Modeling}
 
@@ -89,7 +134,7 @@ Calls are common in Python programs.
 In general you can call any \emph{callable} object in Python.
 Making a call in different contexts has different semantics allowing the caller to pass arguments to the callee in different ways.
 
-\subsection{The Structure of Call Sites in Python}
+\subsection{Call Sites Structures in Python}
 \label{sec:ch5-structure-of-call-sites}
 
 \begin{figure}
