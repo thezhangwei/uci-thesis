@@ -121,18 +121,71 @@ Similarly, built-in types modeled using immutable java objects connect to the re
 For unboxed built-in types, we uses a preprocessed mapping table to associate the Java class of the primitive type to the class object representing its Python type.
 For instance, we model a Python integer, which is an instance of the Python \texttt{int} class, using a Java primitive \texttt{int}.
 However, we model the Python \texttt{int} class object itself, which is an instance of the class \texttt{type}, using a mutable Java object.
-Therefore, the mapping table connects the Java primitive \texttt{int} to the Python \texttt{int} class object, and completes the entire lookup chain.
+The mapping table maps the Java class of primitive \texttt{int} to the Python \texttt{int} class object, and therefore completes the entire lookup chain for unboxed built-in types.
 
 \subsection{Modeling Custom Mutable Types}
 \label{sec:ch5-custom-mutable-types}
 
 \begin{figure}
 \centering
+\includegraphics[scale=1.]{figures/ch5-fixed-python-object-code}
+\caption{The implementation of \texttt{PythonObject}}
+\label{ch5-fixed-python-object-code}
+\end{figure}
+
+\begin{figure}
+\centering
 \includegraphics[scale=.6]{figures/ch5-mutable-object-layout-change}
-\caption{Layout changing operations on mutable object}
+\caption{Mutable object layout}
 \label{ch5-mutable-object-layout-change}
 \end{figure}
 
+Python allows programmers to add, modify or delete attributes on an object during the execution of the program.
+On the other hand, a Java object is fixed.
+You can modify the value of a field, but cannot resize or change the layout of an object.
+We support this dynamic feature of Python by implementing each Python object using a combination of a fixed \texttt{PythonObject} and a resizable object layout.
+
+Figure~\ref{ch5-fixed-python-object-code} shows an implementation of \texttt{PythonObject} in ZipPy.
+Each \texttt{PythonObject} has a fixed number of fields of both primitive and reference types to accommodate its attributes.
+Each field on the objec is a \emph{location}.
+The object stores each of its attribute on a dedicated \emph{location}.
+ZipPy tries to store an unboxed attribute in an unboxed location to avoid the overhead of boxing.
+For instance, it tries to store a Java \texttt{int} in an \texttt{int} field when possible.
+If all \texttt{int} fields are taken, it tries to stores the attribute in an \emph{boxed} location or an object field.
+If no in-object location is available anymore (taken by other attributes), ZipPy will spill the incoming attribute the additional object array (field \texttt{objectArray} in Figure~\ref{ch5-fixed-python-object-code}).
+The additional object array gives the fixed \texttt{PythonObject} the ability to store more attributes than its own capacity by paying the price of another level of direction and possibly auto-boxing.
+
+An object layout attached to a \texttt{PythonObject} keeps track of the list of attributes stored on the object as well as the location of each attribute.
+It is essentially a table that maps the symbol of an attribute to its location.
+The table records modifications made dynamically to the attributes of the object.
+Figure~\ref{ch5-mutable-object-layout-change} illustrates how this process works by using a hyperthetical Python object.
+The layout of the shown object goes through the following stages:
+
+\begin{enumerate}
+
+\item The object initially has one attribute \textsf{ham} stored in location $0$ with the value $42$.
+
+\item After adding the attribute \textsf{egg}, the object now has both \textsf{ham} and \textsf{egg} stored in location $0$ and $1$ respectively.
+
+\item Since both in-object locations are taken, the object stores the new attribute \textsf{spam} in the spill array at the index $0$.
+The rest of the layout remain unchanged.
+
+\item The deletion of \textsf{egg} frees location $1$ on the object.
+The object reassigns the newly available in-object location to \textsf{spam} to make sure that location assignments are optimal.
+It also update the layout table to reflect the new changes.
+
+\end{enumerate}
+
+We simplified the structure of the Python object shown in Figure~\ref{ch5-mutable-object-layout-change} for brevity.
+The actual algorithm for a layout update is more complicated.
+Adding or deleting an attribute triggers a layout update.
+The update tries to stores as many unboxed attributes in an unboxed location as possible.
+The spill array allocation is lazy that we only allocate the array when necessary.
+During the layout update, ZipPy calculates the size of the addtional spill array needed to accommodate all the attributes.
+If it requires a spill array, we conservatively allocate an array that is just enough to store all the attributes.
+
+The type of an attribute can change at runtime.
+Type change also triggers a layout update.
 
 
 \subsection{Inline Caching for Attribute Accesses}
