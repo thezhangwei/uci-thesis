@@ -185,8 +185,9 @@ During the layout update, ZipPy calculates the size of the addtional spill array
 If it requires a spill array, we conservatively allocate an array that is just enough to store all the attributes.
 
 The type of an attribute can change at runtime.
-Type change also triggers a layout update.
-
+A type change also triggers a layout update.
+Our current solution is to assign a location that matches the most general type of an attribute.
+Once an unboxed attribute becomes boxed, we always assign a boxed location for this attribute in the future.
 
 \subsection{Inline Caching for Attribute Accesses}
 
