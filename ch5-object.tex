@@ -152,7 +152,7 @@ The object stores each of its attribute on a dedicated \emph{location}.
 ZipPy tries to store an unboxed attribute in an unboxed location to avoid the overhead of boxing.
 For instance, it tries to store a Java \texttt{int} in an \texttt{int} field when possible.
 If all \texttt{int} fields are taken, it tries to stores the attribute in an \emph{boxed} location or an object field.
-If no in-object location is available anymore (taken by other attributes), ZipPy will spill the incoming attribute the additional object array (field \texttt{objectArray} in Figure~\ref{ch5-fixed-python-object-code}).
+If no in-object location is available anymore (taken by other attributes), ZipPy will spill the incoming attribute to be stored in the additional object array (field \texttt{objectArray} in Figure~\ref{ch5-fixed-python-object-code}).
 The additional object array gives the fixed \texttt{PythonObject} the ability to store more attributes than its own capacity by paying the price of another level of direction and possibly auto-boxing.
 
 An object layout attached to a \texttt{PythonObject} keeps track of the list of attributes stored on the object as well as the location of each attribute.
@@ -191,6 +191,28 @@ Once an unboxed attribute becomes boxed, we always assign a boxed location for t
 
 \subsection{Inline Caching for Attribute Accesses}
 
+\begin{figure}
+\centering
+\subfigure[Structure of \texttt{GetAttributeNode}]{
+	\includegraphics[scale=.55]{figures/ch5-get-attribute-node}
+	\label{fig:ch5-get-attribute-node}
+}
+\subfigure[Structure of \texttt{SetAttributeNode}]{
+	\includegraphics[scale=.55]{figures/ch5-set-attribute-node}
+	\label{fig:ch5-set-attribute-node}
+}
+\caption{Attribute access dispatch chain}
+\label{fig:ch5-attribute-access-dispatch-chain}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=.65]{figures/ch5-attribute-dispatch-transformation}
+\caption{Get attribute dispatch transformation}
+\label{ch5-ch5-attribute-dispatch-transformation}
+\end{figure}
+
 \section{Call Site Modeling}
 
 Calls are common in Python programs.
@@ -210,7 +232,7 @@ Making a call in different contexts has different semantics allowing the caller 
 	\includegraphics[scale=.9]{figures/ch5-call-site-attribute-code}
 	\label{fig:ch5-call-site-attribute-code}
 }
-\caption{Basic syntax of calls in Python}
+\caption{Two types of calls in Python}
 \label{fig:ch5-call-site-synteax-code}
 \end{figure}
 
