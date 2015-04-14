@@ -189,7 +189,19 @@ A type change also triggers a layout update.
 Our current solution is to assign a location that matches the most general type of an attribute.
 Once an unboxed attribute becomes boxed, we always assign a boxed location for this attribute in the future.
 
+Our approach uses \texttt{PythonObject}s simply as a physical storage for the attributes of a Python object.
+We detach the layout description of the Python object from its storage component, which gives us the freedom to customize the behavior of attribute accesses in ZipPy without being restricted by Java's own object model.
+Since we model class objects in the same way as regular objects in Python, they enjoy the same potential peformance benefit achieved by this design.
+
 \subsection{Inline Caching for Attribute Accesses}
+
+As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table stores the location of the object attributes.
+In order to access an attribute, we need to retrieve its location information from the layout table, and then perform a memory operation that reads from or writes to the given address.
+Since we implement the layout table using hash maps, the cost of lookup or update the table is as expensive as attribute accesses on a hash map based object.
+However, ZipPy optimizes attribute accesses by caching attribute locations after a full layout table lookup.
+This technique amortizes the cost of accesses to the same attribute on the object of the same type.
+
+\subsubsection{Attribute Access Dispatch Chain}
 
 \begin{figure}
 \centering
@@ -205,11 +217,42 @@ Once an unboxed attribute becomes boxed, we always assign a boxed location for t
 \label{fig:ch5-attribute-access-dispatch-chain}
 \end{figure}
 
+Like the other operation, we model attribute accesses using AST nodes in ZipPy.
+We model an attribute read operation using a \texttt{GetAttributeNode} and write operation using a \texttt{SetAttributeNode}.
+Figure~\ref{fig:ch5-attribute-access-dispatch-chain} illustrates the structure of these two nodes.
+In each attribute access node, the \textsf{primary} child node represents the primary expression, the component precedes the period in Python's syntax.
+The \textsf{primary} node evaluates to the Python object, on which we perform the attribute access.
+The \textsf{attribute} nodes shown in both Figure~\ref{fig:ch5-get-attribute-node} and~\ref{fig:ch5-set-attribute-node} are dispatch chains that perform the actual read or write on the resolved object.
+
+The attribute access dispatch chain is a link list of dispatch nodes.
+Each dispatch node has a \textsf{next} field that points to the next dispatch node except for the last one on the chain.
+The chain forms a polymorphic inline cache with each node working as an individual cache entry.
+Each entry stores the object layout and the location of a previously accessed attribute.
+Upon a successive access to the attribute on an object having the same layout, the matching dispatch node performs a memory access directly using the cached location.
+In other words, a cache hit in the dispatch chain voids executing the slow path lookup on the object layout.
+
+ZipPy performs an attribute access operation in a number of steps.
+It first evaluates the primary object, and passes the object to the dispatch chain.
+The resolved primary object travels through the dispatch chain from the top to the bottom one dispatch node after another.
+Each dispatch node tests the cached object layout against the one of the incoming object.
+If the test returns a match, the dispatch node performs a fast read or write on the object and returns the result to the parent node if necessary.
+Otherwise, execution falls to the next dispatch node on the chain until a cache hit occurs.
+If no cache hit happends, the primary object reaches the uninitialized dispatch node at the end of the chain.
+The unitialized dispatch node, in this case, performs a full attribute access on the primary object including a lookup on its layout table.
+Additionally, it also constructs a new cached dispatch node and inserts the new node between the unitialized dispatch node and its predecessor.
+The added entry increases the depth of the inline cache as well as the chance of a cache hit in the future.
+However, if the cache depth reaches a certain threshold, ZipPy rewrites the entire dispatch chain to a single generic dispatch node that always perform a slow path lookup.
+
+Besides the \textsf{next} field pointing to the next node in the dispatch chain, each dispatch node has a \texttt{LayoutCheckNode} as well as a \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
+The \textsf{check} node stores the cached object layout and performs the layout test.
+The \textsf{read} or \textsf{write} node stores the cached attribute location and performs the actual read or write on the primary object.
+
+\subsubsection{Dispatch Node Transformation}
 
 \begin{figure}
 \centering
 \includegraphics[scale=.65]{figures/ch5-attribute-dispatch-transformation}
-\caption{Get attribute dispatch transformation}
+\caption{The transformation of a get attribute dispatch node}
 \label{ch5-ch5-attribute-dispatch-transformation}
 \end{figure}
 
