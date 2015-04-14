@@ -79,6 +79,7 @@ To be more specific, modeling Python numbers as Java primitives enables the best
 Using Java object to model Python object brings the potential for ZipPy to close the performance gap of object operations between Python and Java.
 
 \subsection{Attribute Resolutions}
+\label{sec:ch5-attribute-resolution}
 
 Each object in Python is a collection of key value pairs.
 Each key value pair is an attribute of the object with the key being the symbol of the attribute.
@@ -246,6 +247,11 @@ However, if the cache depth reaches a certain threshold, ZipPy rewrites the enti
 Besides the \textsf{next} field pointing to the next node in the dispatch chain, each dispatch node has a \texttt{LayoutCheckNode} as well as a \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
 The \textsf{check} node stores the cached object layout and performs the layout test.
 The \textsf{read} or \textsf{write} node stores the cached attribute location and performs the actual read or write on the primary object.
+When a layout update happens, ZipPy creates a new layout instance for the associated Python object.
+ZipPy also signals the old layout as invalid, since it does not describe a valid layout for the associated object anymore.
+Therefore, the texttt{LayoutCheckNode} also checks the validity of the cached layout in a layout test.
+If a cached layout become invalid, it throws an exception back to the parent node.
+ZipPy handles the exception by remove the invalid cache entry from the dispatch chain.
 
 \subsubsection{Dispatch Node Transformation}
 
@@ -255,6 +261,42 @@ The \textsf{read} or \textsf{write} node stores the cached attribute location an
 \caption{The transformation of a get attribute dispatch node}
 \label{ch5-ch5-attribute-dispatch-transformation}
 \end{figure}
+
+The above mentioned attribute access dispatch chain initially starts with a single uninitialized dispatch node.
+It expands to a chain linking a number of \texttt{LinkedDispatchNode} during execution.
+If the depth of the chain overflows a given limit, the entire chain transforms to a \texttt{GenericDispatchNode}.
+Figure~\ref{ch5-ch5-attribute-dispatch-transformation} further illustrates this transformation.
+The descriptions of the transformation rules depicted in the Figure are as follows:
+
+\begin{enumerate}
+
+\item Upon a successful specialization, the uninitialized dispatch node produces a specialized dispatch node that caches the layout of the primary and the location of the attribute being accessed.
+Depending on the data representation of the primary object, it chooses the \texttt{LinkedDispatchUnboxNode} as the transformation target to avoid auto-boxing.
+A \texttt{LinkedDispatchUnboxNode} stores the Java class of the \emph{unboxed} object.
+
+\item A \texttt{LinkedDispatchBoxedNode} performs the layout test through an identify check between the cached layout and the layout of the incoming primary object.
+A layout test on a \texttt{LinkedDispatchUnboxedNode} compares the cached Java class to that of the primary object.
+If the layout test returns a match, the cached dispatch node remains unchanged.
+Note that in an attribute read operation, as explained in Section~\ref{sec:ch5-attribute-resolution}, the resolved attribute may not be stored on the primary object itself.
+In fact, the actual owner can be any object on the attribute resolution chain of the primary object.
+In this case, the cached dispatch node needs to conservatively cache all the layout of the objects on the attribute resolution chain from the primary object itself upto the owner of the resolved attribute.
+In the layout test, the dispatch node needs to perform a series of checks to ensure the validity of the cache layouts.
+
+\item If the layout test returns a miss match or a cache miss occurs, the cached dispatch node redirects execution to the next node on the dispatch chain.
+The same rules apply to the transformation of the next dispatch node.
+In addition, if the cached layout become invalid, ZipPy removes the dispatch node from the chain.
+
+\item If the execution of an attribute access dispatch reaches an uninitialied dispatch node and the depth of the chain has reached a certain threshold,
+the dispatch node replaces the entire dispatch chain with a \texttt{GenericDispatchNode}.
+A \texttt{GenericDispatchNode} is stable meaning that it always perform a slow path attribute lookup and does not re-specialize to other nodes.
+
+\end{enumerate}
+
+The deeper the dispatch chain the higher the execution cost before reaching the cache entries near the bottom of the chain.
+Thus, it is not cost effective to grow the dispatch chain indefinitely.
+On the other hand, if a program location exhibits a high degree of polymorphism, optimizing for just a few number of cases only affects a limited fraction of the overall execution occured at this program location.
+Therefore, an optimization strategy like inline caching is unlikely to have an substantial performance impact in this case.
+In summary, a generic dispatch node is simpler and at least as efficient when comparing to a deep dispatch chain.
 
 \section{Call Site Modeling}
 
