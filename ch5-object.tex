@@ -48,7 +48,7 @@ Figure~\ref{fig:ch5-three-data-representations} illustrates this design scheme:
 \begin{enumerate}
 
 \item \textbf{Built-in numeric types}
-ZipPy as explained in Chapter~\ref{sec:ch3-design-and-implementation} models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
+ZipPy as explained in Chapter~\ref{sec:ch3-fast-arithmetics} models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
 This approach helps to achieve Java level performance for arithmetic operations in ZipPy.
 We refer types that has a Java primitive representation as \emph{unboxable}.
 Each \emph{unboxable} numeric type in ZipPy has a corresponding \emph{boxed} representation using Java objects as a fallback.
@@ -458,7 +458,7 @@ We simplified the Figure to not show the arguments node and the keyword argument
 \label{fig:ch5-attribute-call-site-boxed-unboxed-code}
 \end{figure}
 
-In Chapter~\ref{sec:ch3-design-and-implementation} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and data accesses more efficient.
+In Chapter~\ref{sec:ch5-object-module} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and data accesses more efficient.
 Since the physical data representation of Python objects differs in ZipPy, attribute lookups on objects backed by different representations are also different.
 Figure~\ref{fig:ch5-attribute-call-site-boxed-unboxed-code} shows two attribute call sites.
 The primary object of the left one, \texttt{h}, is a user custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}).

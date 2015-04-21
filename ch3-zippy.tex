@@ -1,4 +1,4 @@
-\chapter{Hosted AST Interpreter}
+\chapter{ZipPy: A Simple Python 3 for the JVM}
 \label{chp:ch3-zippy}
 
 Abstract syntax trees, ASTs, are the simplest and most natural ways to implement programming languages.
@@ -42,18 +42,64 @@ Further performance exploration of a guest language will mainly benefit from bet
 making better use of the host compiler based on those insights.
 In this thesis we focus on guest language level optimizations we added to ZipPy.
 
-\section{Design and Implementation}
-\label{sec:ch3-design-and-implementation}
-
 ZipPy benefits from the Truffle framework in two ways.
 First, Truffle's Java annotation based domain specific language (DSL) greatly simplifies the implementation of type specialization in dynamic languages like Python~\cite{Humer+2014}.
 Second, Truffle bridges the gap between the hosted AST interpreter and the underlying Java JIT compiler.
 It empowers the hosted interpreter with the performance of a custom compiler without having the hosted VM implementers to actually write a compiler.
 The end performance one could achieve on Truffle usually surpasses that of a custom build class file compiler not to mention the upfront cost of building such compiler.
 
-However, Truffle is not a fool proof framework.
-It does require knowledge of the Java compiler internals to make better use of the framework.
-In this section we describe the design choices we made to retrofit the core part of the Python language onto Truffle's execution model.
+However, Truffle cannot automatically optimize guest languages.
+It requires understandings of the Java compiler internals to make better use of the framework.
+In this Chapter we describe the design choices we made to retrofit the core part of the Python language onto Truffle's execution model.
+
+\section{Fast Arithmetics Via Type Specialization}
+\label{sec:ch3-fast-arithmetics}
+
+Arithmetic operations are fundamental constructs of a programming language.
+It is challenging to implement efficient arithmetic operations in a dynamically typed langauge like Python.
+In this Section, we explain how we utilize Truffle to enable fast arithmetics in ZipPy.
+
+\subsection{Numeric Types}
+\label{sec:numeric-types}
+
+\begin{figure}[t]
+\centering
+\subfigure[Numeric types in Python 3] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-python.pdf}
+  \label{fig:numeric-types-python}
+}
+\subfigure[Boxed representation] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-boxed.pdf}
+  \label{fig:numeric-types-boxed}
+}
+\subfigure[Unboxed representation] {
+  \includegraphics[scale=.4]{figures/ch3-numeric-types-unboxed.pdf}
+  \label{fig:numeric-types-unboxed}
+}
+\caption{Numeric types in ZipPy}
+\label{fig:numeric-types-zippy}
+\end{figure}
+
+Numeric types are the most commonly used built-in types in Python.
+It is essential to have efficient data representation for the built-in numeric types in Python.
+Figure~\ref{fig:numeric-types-python} illustrates the four numeric types in Python: booleans, integers, floating point numbers and complex numbers.
+The figure also depicts type coercion rules between those types.
+Note that the value range of an integer in Python 3 is unbounded.
+
+All data in Python is an object.
+So are all the numbers.
+A straight-forward way to model the built-in numeric types, which is similar to the one in CPython, is to implement them as boxed Java objects.
+As shown in Figure~\ref{fig:numeric-types-boxed}, in the boxed representation ZipPy uses a Java object to represent a Python number.
+The object boxes the actual value of the number as a field.
+To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigInteger} field to store its integer value (Figure~\ref{fig:numeric-types-boxed}).
+For all the arithmetic operation nodes in ZipPy, we specify the type specializations in the order that ensures the correct type coercion rules.
+
+ZipPy uses another unboxed data representation for numbers to achieve fast arithmetic operation.
+Essentially we map Python numeric types to Java primitive types as long as possible.
+For instance, initially ZipPy uses a Java \texttt{int} to represent a Python \texttt{int}.
+For all arithmetic operations that consume unboxed numbers, as long as the result does not overflow, ZipPy keep their result remain unboxed.
+Object operations such as attribute access trigger lazy boxing that coverts a number from the unboxed representation to the boxed one.
+To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
 
 \subsection{Applying Type Specializations}
 
@@ -94,50 +140,7 @@ At runtime, the node rewrites itself to a derivative that matches the type of th
 The rewrite follows the order of the classes shown in Figure~\ref{fig:not-node-derivatives} from the top to the bottom.
 If no matching derivative is found, the node rewrites to \texttt{NodeGenericNode}, which perform the generic routine for the \texttt{not} operation.
 
-\subsection{Numeric Types}
-\label{sec:numeric-types}
-
-\begin{figure}[t]
-\centering
-\subfigure[Numeric types in Python 3] {
-  \includegraphics[scale=.4]{figures/ch3-numeric-types-python.pdf}
-  \label{fig:numeric-types-python}
-}
-\subfigure[Boxed representation] {
-  \includegraphics[scale=.4]{figures/ch3-numeric-types-boxed.pdf}
-  \label{fig:numeric-types-boxed}
-}
-\subfigure[Unboxed representation] {
-  \includegraphics[scale=.4]{figures/ch3-numeric-types-unboxed.pdf}
-  \label{fig:numeric-types-unboxed}
-}
-\caption{Numeric types in ZipPy}
-\label{fig:numeric-types-zippy}
-\end{figure}
-
-Numeric types are the most commonly used built-in types in Python.
-Having fast arithmetic operation is critical to the performance of our interpreter.
-Therefore, it is essential to have efficient data representation for the built-in numeric types in Python.
-Figure~\ref{fig:numeric-types-python} illustrates the four numeric types in Python: booleans, integers, floating point numbers and complex numbers.
-The figure also depicts type coercion rules between those types.
-Note that the value range of an integer in Python 3 is unbounded.
-
-All data in Python is an object.
-So are all the numbers.
-A straight-forward way to model the built-in numeric types, which is similar to the one in CPython, is to implement them as boxed Java objects.
-As shown in Figure~\ref{fig:numeric-types-boxed}, in the boxed representation ZipPy uses a Java object to represent a Python number.
-The object boxes the actual value of the number as a field.
-To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigInteger} field to store its integer value (Figure~\ref{fig:numeric-types-boxed}).
-For all the arithmetic operation nodes in ZipPy, we specify the type specializations in the order that ensures the correct type coercion rules.
-
-ZipPy uses another unboxed data representation for numbers to achieve fast arithmetic operation.
-Essentially we map Python numeric types to Java primitive types as long as possible.
-For instance, initially ZipPy uses a Java \texttt{int} to represent a Python \texttt{int}.
-For all arithmetic operations that consume unboxed numbers, as long as the result does not overflow, ZipPy keep their result remain unboxed.
-Object operations such as attribute access trigger lazy boxing that coverts a number from the unboxed representation to the boxed one.
-To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
-
-\subsection{Composite Data Types}
+\section{Efficient Data Representation for Composite Data Types}
 
 Python provides a rich set of built-in composite data types including \texttt{list}s, \texttt{tuple}s, \texttt{set}s, and \texttt{dict}s.
 Jython uses a straight-forward approach that uses the existing collection types in the Java development kit (JDK) to implement these data types.
@@ -147,7 +150,7 @@ Auto-boxing ensures that every element in a collection type is of reference type
 This design simplifies garbage collection in Java, since the garbage collector does not have to distinguish between reference type and value type for members of collection types.
 However, auto-boxing involves heap allocation and additional memory accesses, and it slows down accesses to composite data types in Jython.
 
-\subsubsection{Unboxed Sequence Storage}
+\subsection{Unboxed Sequence Storage}
 
 \begin{figure}[ht]
 \centering
@@ -165,7 +168,7 @@ For instance, a list of Python integers uses a \texttt{IntSequenceStorage} to st
 As long as the assumption holds, ZipPy specializes accesses of the integer list and avoids auto-boxing altogether.
 Once the assumption becomes invalid, the list automatically converts its \texttt{SequenceStorage} to the next matching type to preserve semantics.
 
-\subsubsection{Profiling-based List Literal Specialization}
+\subsection{Profiling-based List Literal Specialization}
 
 \begin{figure}[ht]
 \centering
@@ -212,6 +215,9 @@ Upon the second execution of function \texttt{makeList}, the \texttt{ProfilingLi
 It performs the final specialization to the derivative version that matches the previous list assuming that the next list is most likely to have the same storage type.
 This step results in the stable AST \textsf{3B} shown in Figure~\ref{fig:empty-list-storage-profiling}.
 By using profiling based non-local type feedback, ZipPy is able to optimize list accesses for more complicated list construction pattern in Python programs.
+
+
+\section{Control Flow Specializations}
 
 \subsection{For Loop Specializations}
 
@@ -260,3 +266,9 @@ When parsing a list comprehension, ZipPy applies a similar desugaring process as
 It automatically expands the list comprehension to an AST that is equivalent to what is shown in Figure~\ref{fig:list-comp-desugared-code}.
 This transformation enables further optimizations described previously in this section such as unboxed data representation for the created list, proper type specialization and compiler optimizations of the expanded loop.
 In summary, list comprehension desugaring eliminates the performance overhead introduced by the concise syntax of list comprehension, and enables efficient list creations in ZipPy.
+
+\section{Discussion}
+ZipPy is the first full-fledged Python 3 protype running atop the Java virtual machine.
+Our implementation applies type specialization using Truffle by replacing generic AST nodes with type-specialized ones during execution.
+We also present efficient supports of composite data types and loops that specifically benefit Python programs.
+The techniques we discussed in this Chapter provide a performant basis that includes the imperative subset of the Python language.
