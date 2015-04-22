@@ -1,4 +1,4 @@
-\chapter{Hosted Bytecode Interpreter}
+\chapter{Fast Instruction Dispatch for Hosted Bytecode Interpreters}
 \label{chp:ch2-bytecode}
 
 A programming language interpreter executes programs in two steps.
@@ -127,7 +127,7 @@ Each instruction implementation ends with a return instruction that transfer exe
 Note that the call instruction in subroutine threading is a direct branch.
 Although the return instruction is an indirect branch, modern hardware can accurately predict call/return repairs which results in a performance increase.
 
-\section{Efficient Instruction Dispatch for Hosted Bytecode Interpreters}
+\section{Just-In-Time Threaded Code for Hosted Bytecode Interpreters}
 
 Instruction dispatch greatly affects the overall performance of a bytecode interpreter.
 The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques}

@@ -2,7 +2,7 @@
 \label{chp:ch5-object}
 
 Python is an object oriented programing language.
-It is a common practice for Python programmer to encode states using classes and encapsulate logic in methods in their programs.
+It is a common practice for programmers to encapsulate state and logic using classes in Python programs.
 As an implementation of the Python language, it is essential for us to ensure the performance of object operations and method calls in ZipPy.
 In the previous chapters we discussed how we optimize arithmetics (Chapter~\ref{chp:ch3-zippy}) and accelerate iterators (Chapter~\ref{chp:ch4-peeling}).
 In this chapter we explain how we implement object operations and calls in ZipPy.
@@ -26,12 +26,12 @@ In summary, object model inefficiency is the main impediment to the performance 
 \subsubsection{Jython's Object Model Design}
 
 Existing JVM based Python implementations like Jython, however, replicate the same object model design we saw in CPython.
-The main approach they are took is porting the existing design from C to Java hoping that the underlying Java compiler will magically optimize it.
+The main approach they took is porting the existing design from C to Java hoping that the underlying Java compiler will magically optimize it.
 This approach failed to realize that, although, the java JIT compiler is powerful, its strength is in compiling and optimizing programs written in Java,
 the first class citizen of the JVM.
-Hence, without additional knowledge to the guest language, the Java compiler is unable to address the miss match between the object model of the guest language and that of Java in an efficient way.
+Hence, without additional knowledge to the guest language, the Java compiler is unable to address the miss match between the object model of the guest language and Java in an efficient way.
 A more efficient solution requires identifying the strengths of the Java compiler and mapping critical components of the guest language onto efficient constructs offered of the JVM.
-In the rest of this Section, we explain how do we close the gap between the object model of Python and the one of the JVM in ZipPy.
+In the rest of this Section, we describe how we close the gap between the object models of Python and the JVM in ZipPy.
 
 \subsubsection{Multiple Data Representations}
 
@@ -43,12 +43,13 @@ In the rest of this Section, we explain how do we close the gap between the obje
 \end{figure}
 
 ZipPy internally uses multiple data representations to model Python objects.
-Figure~\ref{fig:ch5-three-data-representations} illustrates this design scheme:
+Figure~\ref{fig:ch5-three-data-representations} illustrates this design scheme.
+The descriptions of each data representation are as follows:
 
 \begin{enumerate}
 
 \item \textbf{Built-in numeric types}
-ZipPy as explained in Chapter~\ref{sec:ch3-fast-arithmetics} models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
+ZipPy, as explained in Chapter~\ref{sec:ch3-fast-arithmetics}, models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
 This approach helps to achieve Java level performance for arithmetic operations in ZipPy.
 We refer types that has a Java primitive representation as \emph{unboxable}.
 Each \emph{unboxable} numeric type in ZipPy has a corresponding \emph{boxed} representation using Java objects as a fallback.
@@ -66,8 +67,8 @@ That includes Python modules, custom type definitions written in Python and inst
 We model them using still a regular Java object, an instance of \texttt{PythonObject} in ZipPy, to circumvent the performance overhead incurred by using a hash map.
 ZipPy maps Python attribute accesses to field accesses on the \texttt{PythonObject} object.
 We support attribute mutation by maintaining an object layout table for each Python object.
-The object layout table keeps track of the memory offset for each attribute that is currently alive on the object.
-We will discuss how we support attribute mutations on Python types in more detail in Section~\ref{sec:ch5-custom-mutable-types}.
+The object layout table keeps track of the memory offset for each attribute that is currently stored on the object.
+We will discuss how we support attribute modifications on custom types in more detail in Section~\ref{sec:ch5-custom-mutable-types}.
 
 \end{enumerate}
 
@@ -76,7 +77,7 @@ ZipPy support object like operations on each of the data representations describ
 What differs our approach to the existing ones is that we do not treat all Python data types in the same way.
 We try to pick the most efficient construct offered by the JVM that is suitable for implementing particular types in Python.
 To be more specific, modeling Python numbers as Java primitives enables the best arithmetics performance achievable on the JVM.
-Using Java object to model Python object brings the potential for ZipPy to close the performance gap of object operations between Python and Java.
+Using Java object to model Python object brings the opportunity for ZipPy to close the performance gap of object operations between existing implementations of Python and Java.
 
 \subsection{Attribute Resolutions}
 \label{sec:ch5-attribute-resolution}
@@ -122,7 +123,7 @@ Similarly, built-in types modeled using immutable java objects connect to the re
 For unboxed built-in types, we uses a preprocessed mapping table to associate the Java class of the primitive type to the class object representing its Python type.
 For instance, we model a Python integer, which is an instance of the Python \texttt{int} class, using a Java primitive \texttt{int}.
 However, we model the Python \texttt{int} class object itself, which is an instance of the class \texttt{type}, using a mutable Java object.
-The mapping table maps the Java class of primitive \texttt{int} to the Python \texttt{int} class object, and therefore completes the entire lookup chain for unboxed built-in types.
+The mapping table maps the Java class of primitive \texttt{int} to the Python \texttt{int} class object, and thus completes the entire lookup chain for unboxed built-in types.
 
 \subsection{Modeling Custom Mutable Types}
 \label{sec:ch5-custom-mutable-types}
@@ -180,8 +181,8 @@ It also update the layout table to reflect the new changes.
 We simplified the structure of the Python object shown in Figure~\ref{ch5-mutable-object-layout-change} for brevity.
 The actual algorithm for a layout update is more complicated.
 Adding or deleting an attribute triggers a layout update.
-The update tries to stores as many unboxed attributes in an unboxed location as possible.
-The spill array allocation is lazy that we only allocate the array when necessary.
+The layout update tries to stores as many unboxed attributes in an unboxed location as possible.
+The spill array allocation is lazy so that we only allocate the array when necessary.
 During the layout update, ZipPy calculates the size of the addtional spill array needed to accommodate all the attributes.
 If it requires a spill array, we conservatively allocate an array that is just enough to store all the attributes.
 
@@ -196,11 +197,11 @@ Since we model class objects in the same way as regular objects in Python, they 
 
 \subsection{Inline Caching for Attribute Accesses}
 
-As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table stores the location of the object attributes.
-In order to access an attribute, we need to retrieve its location information from the layout table, and then perform a memory operation that reads from or writes to the given address.
-Since we implement the layout table using hash maps, the cost of lookup or update the table is as expensive as attribute accesses on a hash map based object.
+As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table stores the location of each object attribute.
+Access an attribute requires looking up its location information from the layout table and then performing a memory operation that reads from or writes to the obtained memory location.
+Since we implement the layout table using a hash map, the cost of accessing the table is as expensive as attribute accesses on a hash map based object.
 However, ZipPy optimizes attribute accesses by caching attribute locations after a full layout table lookup.
-This technique amortizes the cost of accesses to the same attribute on the object of the same type.
+This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, holzle1991, Brunthaler2010inca}, amortizes the cost of accesses to the same attribute on the object of the same type.
 
 \subsubsection{Attribute Access Dispatch Chain}
 
@@ -226,7 +227,7 @@ The \textsf{primary} node evaluates to the Python object, on which we perform th
 The \textsf{attribute} nodes shown in both Figure~\ref{fig:ch5-get-attribute-node} and~\ref{fig:ch5-set-attribute-node} are dispatch chains that perform the actual read or write on the resolved object.
 
 The attribute access dispatch chain is a link list of dispatch nodes.
-Each dispatch node has a \textsf{next} field that points to the next dispatch node except for the last one on the chain.
+Each dispatch node has a \textsf{next} field that points to the next dispatch node except for the last one.
 The chain forms a polymorphic inline cache with each node working as an individual cache entry.
 Each entry stores the object layout and the location of a previously accessed attribute.
 Upon a successive access to the attribute on an object having the same layout, the matching dispatch node performs a memory access directly using the cached location.
@@ -238,19 +239,20 @@ The resolved primary object travels through the dispatch chain from the top to t
 Each dispatch node tests the cached object layout against the one of the incoming object.
 If the test returns a match, the dispatch node performs a fast read or write on the object and returns the result to the parent node if necessary.
 Otherwise, execution falls to the next dispatch node on the chain until a cache hit occurs.
-If no cache hit happends, the primary object reaches the uninitialized dispatch node at the end of the chain.
+If no cache hit happened, the primary object reaches the uninitialized dispatch node at the end of the chain.
 The unitialized dispatch node, in this case, performs a full attribute access on the primary object including a lookup on its layout table.
 Additionally, it also constructs a new cached dispatch node and inserts the new node between the unitialized dispatch node and its predecessor.
 The added entry increases the depth of the inline cache as well as the chance of a cache hit in the future.
 However, if the cache depth reaches a certain threshold, ZipPy rewrites the entire dispatch chain to a single generic dispatch node that always perform a slow path lookup.
 
-Besides the \textsf{next} field pointing to the next node in the dispatch chain, each dispatch node has a \texttt{LayoutCheckNode} as well as a \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
+Each cache entry in the dispatch chain consists of a cluster of nodes coordinated by the dispatch node.
+Besides the \textsf{next} field pointing to the next node, each dispatch node has a \texttt{LayoutCheckNode} as well as a \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
 The \textsf{check} node stores the cached object layout and performs the layout test.
 The \textsf{read} or \textsf{write} node stores the cached attribute location and performs the actual read or write on the primary object.
 When a layout update happens, ZipPy creates a new layout instance for the associated Python object.
 ZipPy also signals the old layout as invalid, since it does not describe a valid layout for the associated object anymore.
-Therefore, the texttt{LayoutCheckNode} also checks the validity of the cached layout in a layout test.
-If a cached layout become invalid, it throws an exception back to the parent node.
+Therefore, when performing a layout test the \texttt{LayoutCheckNode} also checks the validity of the cached layout.
+If the cached layout become invalid, it throws an exception back to the parent node.
 ZipPy handles the exception by remove the invalid cache entry from the dispatch chain.
 
 \subsubsection{Dispatch Node Transformation}
@@ -259,18 +261,18 @@ ZipPy handles the exception by remove the invalid cache entry from the dispatch 
 \centering
 \includegraphics[scale=.65]{figures/ch5-attribute-dispatch-transformation}
 \caption{The transformation of a get attribute dispatch node}
-\label{ch5-ch5-attribute-dispatch-transformation}
+\label{fig:ch5-attribute-dispatch-transformation}
 \end{figure}
 
 The above mentioned attribute access dispatch chain initially starts with a single uninitialized dispatch node.
-It expands to a chain linking a number of \texttt{LinkedDispatchNode} during execution.
+It expands into a chain linking a number of \texttt{LinkedDispatchNode} during execution.
 If the depth of the chain overflows a given limit, the entire chain transforms to a \texttt{GenericDispatchNode}.
-Figure~\ref{ch5-ch5-attribute-dispatch-transformation} further illustrates this transformation.
+Figure~\ref{fig:ch5-attribute-dispatch-transformation} further illustrates this transformation.
 The descriptions of the transformation rules depicted in the Figure are as follows:
 
 \begin{enumerate}
 
-\item Upon a successful specialization, the uninitialized dispatch node produces a specialized dispatch node that caches the layout of the primary and the location of the attribute being accessed.
+\item Upon a successful specialization, the uninitialized dispatch node produces a specialized dispatch node that caches the layout of the primary object and the location of the attribute being accessed.
 Depending on the data representation of the primary object, it chooses the \texttt{LinkedDispatchUnboxNode} as the transformation target to avoid auto-boxing.
 A \texttt{LinkedDispatchUnboxNode} stores the Java class of the \emph{unboxed} object.
 
@@ -286,21 +288,22 @@ In the layout test, the dispatch node needs to perform a series of checks to ens
 The same rules apply to the transformation of the next dispatch node.
 In addition, if the cached layout become invalid, ZipPy removes the dispatch node from the chain.
 
-\item If the execution of an attribute access dispatch reaches an uninitialied dispatch node and the depth of the chain has reached a certain threshold,
+\item If the execution of an attribute access dispatch reaches an uninitialized dispatch node and the depth of the chain has reached a certain threshold,
 the dispatch node replaces the entire dispatch chain with a \texttt{GenericDispatchNode}.
 A \texttt{GenericDispatchNode} is stable meaning that it always perform a slow path attribute lookup and does not re-specialize to other nodes.
 
 \end{enumerate}
 
-The deeper the dispatch chain the higher the execution cost before reaching the cache entries near the bottom of the chain.
+The deeper the dispatch chain the more step it takes to reach the bottom portion of the chain.
+The cost of hitting a cache entry located close to the bottom of the chain grows with the depth of the chain.
 Thus, it is not cost effective to grow the dispatch chain indefinitely.
-On the other hand, if a program location exhibits a high degree of polymorphism, optimizing for just a few number of cases only affects a limited fraction of the overall execution occured at this program location.
-Therefore, an optimization strategy like inline caching is unlikely to have an substantial performance impact in this case.
-In summary, a generic dispatch node is simpler and at least as efficient when comparing to a deep dispatch chain.
+On the other hand, for a program location exhibits a high degree of polymorphism or also referred as a megamorphic dispatch site,
+optimizing for just a few number of cases only affects a limited fraction of the overall execution occurred at this program location.
+An optimization strategy like inline caching is unlikely to have an substantial performance impact in this case.
+In summary, for a megamorphic dispatch site using a generic dispatch node is simpler and as efficient as forming a deep dispatch chain.
 
 \section{Call Site Modeling}
 
-Calls are common in Python programs.
 In general you can call any \emph{callable} object in Python.
 Making a call in different contexts has different semantics allowing the caller to pass arguments to the callee in different ways.
 
