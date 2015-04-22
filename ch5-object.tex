@@ -304,10 +304,12 @@ In summary, for a megamorphic dispatch site using a generic dispatch node is sim
 
 \section{Call Site Modeling}
 
+Calls are common in Python programs.
 In general you can call any \emph{callable} object in Python.
-Making a call in different contexts has different semantics allowing the caller to pass arguments to the callee in different ways.
+However, there are different ways to make a call in Python.
+In different contexts the semantics of a call in Python also differs, which makes it surprisingly difficult to model various types of call sites in an efficient way.
 
-\subsection{Call Sites Structures in Python}
+\subsection{Call Site Structures in Python}
 \label{sec:ch5-structure-of-call-sites}
 
 \begin{figure}
@@ -324,28 +326,28 @@ Making a call in different contexts has different semantics allowing the caller 
 \label{fig:ch5-call-site-synteax-code}
 \end{figure}
 
-Figure~\ref{fig:ch5-call-site-simple-code} shows the syntax of a simple call in Python.
+Figure~\ref{fig:ch5-call-site-simple-code} shows the basic syntax of a call in Python.
 It is simple enough for us to explain the basic steps of making a call in Python without getting into more complicated details.
 The execution of the call shown in the Figure involves the following steps.
-As the first step, the program needs to look up the symbol \texttt{foo} from the current scope or its enclosing scope with respect to Python's scoping rules.
-After resolving the symbol \texttt{foo}, the program then checks the type of the resolved object to determine the eligibility of such call.
-Lastly, the actual call takes place using a calling convention that matches the type of the callee object.
-The Python interpreter uses different calling convention or passes the arguments to the callee in a different way depending on the actual type of the callee.
-For instance, if the callee is a Python class object, the interpreter creates an empty Python object and passes it to the callee as the first argument.
+First, the program needs to lookup the symbol \texttt{ham} from the current scope or its enclosing scope with respect to Python's scoping rules.
+After resolving the callee, the program then checks the type of the callee to determine the eligibility of such call.
+Lastly, the actual call takes place using a calling convention that matches the callee type.
+The Python interpreter handles argument passing differently for different callee types.
+For instance, a constructor call, a call to a Python class object, creates an instance of the Python class.
+In a constructor call, the interpreter creates an empty Python object and passes it to the callee as the first argument.
 
 The call site shown in Figure~\ref{fig:ch5-call-site-simple-code} is in its simplest form.
 We refer it as a \emph{simple call site}.
-The callee resolution for the call shown in Figure~\ref{fig:ch5-call-site-attribute-code} involves an attribute referencing on the Python object \texttt{p}.
-We refer this type of call sites as \emph{attribute call sites}, since the actual callee is an attribute of the primary object like \texttt{p} in the Figure.
+The callee resolution for the call shown in Figure~\ref{fig:ch5-call-site-attribute-code} involves an attribute access on the Python object \texttt{p}.
+Therefore, we refer this type of call site as \emph{attribute call sites}.
 The primary object, however, can be any namespace backed by a Python object such as a regular object, a class object or a module.
-Looking back at the simple call site as shown in Figure~\ref{fig:ch5-call-site-simple-code},
-it is worth noting that the callee resolution might involve an attributing referencing as well depending on the type of the scope in which the call takes place.
-For example, if program resolves \texttt{foo} as a global variable, the look up of \texttt{foo} includes an implicit attribute referencing on the current Python module.
+Note that, in a simple call site, the callee resolution might involve an attributing access as well depending on the type of the surrounding scope where the call takes place.
+For example, if \texttt{ham} is a global variable, the look up of \texttt{ham} includes an implicit attribute access on the global scope object or the Python module.
 Similarly, in a class scope, a simple call to an existing class attribute also involves an implicit attribute look up on the enclosing class object.
 % say something about motivates the structure of the AST
 The same syntax implies different semantics and ways to make the actual call at runtime.
-To capture this variation, we decompose a call site in Python into multiple components and assemble them in different ways to serve different variations.
-This way allows us to apply specializations on each component separately to accelerate calls in Python programs.
+To cover different variations, we decompose a call site in ZipPy into multiple of components or nodes and assemble them in various ways to serve our needs.
+This way allows us to apply specializations on each component separately to optimize calls in Python programs.
 
 \subsubsection{The AST of Call Sites}
 
@@ -358,7 +360,7 @@ This way allows us to apply specializations on each component separately to acce
 
 Figure~\ref{fig:ch5-python-call-node-basic} illustrates the basic structure of a call node in ZipPy.
 A \texttt{PythonCallNode} employees five child nodes representing five components of the call site.
-Each child node can further expand into its own sub tree depending on the complexity of the component.
+Each child node can further expand into its own sub tree depending on its complexity.
 A call node performs a Python call in-coorperating its child nodes in the following steps:
 
 \begin{enumerate}
@@ -367,7 +369,7 @@ A call node performs a Python call in-coorperating its child nodes in the follow
 If the primary component is missing, the primary node returns the constant Python \texttt{None} object.
 
 \item The callee node resolves the actual callee object using the previously resolved primary object if necessary.
-If the callee resolution does not involve an attribute referencing, it ignores the primary object.
+If the callee resolution does not involve an attribute access, it ignores the primary object.
 
 \item The arguments node evaluates all the arguments, and returns them to the call node as a Java array.
 
@@ -385,9 +387,9 @@ The \texttt{PythonCallNode} organizes different components of the call site and 
 
 \subsection{Call Node Specializations}
 
-Similar to the type specializations of arithmetics as we discussed in Chapter~\ref{chp:ch3-zippy}, ZipPy applies specializations to call nodes against the type of the callee through node rewriting.
-The interpreter initially constructs a call node using the uninitialized version (\texttt{UninitCallNode} in Figure~\ref{fig:ch5-call-node-specialization-simple}).
-Upon the first execution of the call, the uninitialized call node uses a slow path to resolve the primary object and callee.
+Similar to other operations in ZipPy, we applies type specializations to call nodes against the type of the callee through node rewriting.
+It initially constructs a call node using the uninitialized version (\texttt{UninitCallNode} in Figure~\ref{fig:ch5-call-node-specialization-simple}).
+Upon the first execution of the call, the uninitialized call node executes a slow path to resolve the primary object and callee.
 At the same time, it rewrites itself to a derivative version that is tailored to the resolved primary and callee.
 Not only that the call node specializes itself, it also applies type specializations to its child nodes during the rewriting process.
 In this Section, we explain how ZipPy applies call node specializations for different call sites and callee types.
@@ -443,7 +445,7 @@ The \texttt{GetAttributeNode} also enjoys type specialization and caching on its
 \end{enumerate}
 
 The call node specializations illustrated in Figure~\ref{fig:ch5-call-node-specialization-simple} are based on the resolution of the primary object and callee.
-We simplified the Figure to not show the arguments node and the keyword arguments node, since their specialization are orthogonal callee resolutions.
+We simplified the Figure by not including the arguments node and the keyword arguments node, since their specializations are orthogonal to callee resolutions.
 
 \subsubsection{Specialization for Attribute Call Sites}
 
@@ -461,15 +463,12 @@ We simplified the Figure to not show the arguments node and the keyword argument
 \label{fig:ch5-attribute-call-site-boxed-unboxed-code}
 \end{figure}
 
-In Chapter~\ref{sec:ch5-object-module} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and data accesses more efficient.
-Since the physical data representation of Python objects differs in ZipPy, attribute lookups on objects backed by different representations are also different.
-Figure~\ref{fig:ch5-attribute-call-site-boxed-unboxed-code} shows two attribute call sites.
-The primary object of the left one, \texttt{h}, is a user custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}).
-The primary object \texttt{n} in the one shown in Figure~\ref{fig:ch5-attribute-call-site-unboxed-code} is a built-in integer.
-In ZipPy, we model custom objects using a boxed Java object, and map an attribute access to the Python object to a field access on the Java object.
-On the other hand, ZipPy represents Python integers and some other built-in data types as Java primitives.
-% probably did not explain it very clearly....
-Therefore, attribute lookup on those built-in types involves a mapping that associates the instance of the type to the meta class object of the type containing the target attribute.
+In Section~\ref{sec:ch5-object-module} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and object operations more efficient.
+As a consequence, attribute accesses on objects modeled using different representations are also different.
+Figure~\ref{fig:ch5-attribute-call-site-boxed-unboxed-code} shows two examples of attribute call sites.
+The primary object in the left example --- \texttt{h} --- is a custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}),
+whereas the primary object \texttt{n} in the right one (Figure~\ref{fig:ch5-attribute-call-site-unboxed-code}) is a built-in integer.
+The callee resolutions in these two cases are different.
 
 \begin{figure}
 \centering
@@ -478,15 +477,33 @@ Therefore, attribute lookup on those built-in types involves a mapping that asso
 \label{fig:ch5-call-node-specialization-attribute}
 \end{figure}
 
+Figure~\ref{fig:ch5-call-node-specialization-attribute} illustrates the specializations we implemented in ZipPy to handle both boxed and unboxed primary types in an attribute call site.
+A \texttt{BoxedCallNode} expects a mutable Python object as the primary and walks its attribute resolution chain upward to resolve the callee.
+A \texttt{UnboxedCallNode} on the other hand expects an unboxed primary object.
+It obtains the primary's class object through the mapping table explained in Section~\ref{sec:ch5-attribute-resolution} to access the primary's attribute resolution chain.
 
-% the specializations shown above covers the majority of calls in Python.
-% However, they are not meant to be comprehensive. there are corner cases that we do not cover in this thesis due to space limitations.
-% call node specialization captures the fast path of callee resolution.....
-% the next chapter will talk about how we further optimize calls in Python.
+In Python, an attribute reference that looks up a \texttt{PyFunction} object creates a \texttt{PyMethod} that wraps both the primary and the \texttt{PyFunction} objects.
+If the \texttt{PyMethod} is invoked at another program location, it passes the stored primary object to the actual callee as the first argument.
+The \texttt{PyMethod} creation guarantees the data binding between the primary and its function attribute.
+However, in most cases, the allocation of the \texttt{PyMethod} object is unnecessary.
+In an attribute call site, the resolved callee is invoked right away and does not escape the program location where it is referenced.
+Therefore, there is no need to create the wrapper for it.
+By applying specialization for attribute call sites in ZipPy we eliminate the creation of \texttt{PyMethod} objects in most cases.
 
-\subsection{Call Site Caching and Inlining}
+\subsubsection{Specialization for Special Method Call Sites}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.7]{figures/ch5-special-method-add-code}
+\caption{Operator overloading by overwriting special method}
+\label{fig:ch5-special-method-add-code}
+\end{figure}
+
+Python support operator overloading by allowing user defined classes to overwrite a set of special methods.
+Those special methods all have underscores in their names.
+Figure~\ref{fig:ch5-special-method-add-code} gives an example of overloading the add operation.
+By overwriting the \texttt{\_\_add\_\_} method, the shown program redefines the behavior of the add operation on the custom type \texttt{Integer}.
+Therefore, the add operation on the last line of the program shown in Figure~\ref{fig:ch5-special-method-add-code} performs an in-place update on the object \texttt{l}.
+
+\subsection{Call Site Dispatching and Inlining}
 \label{sec:ch5-call-site-caching-and-inlining}
-
-\subsection{Inline Caching Based Call Dispatching}
-
-\subsection{Call Inlining in Truffle}
