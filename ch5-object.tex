@@ -204,6 +204,7 @@ However, ZipPy optimizes attribute accesses by caching attribute locations after
 This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, holzle1991, Brunthaler2010inca}, amortizes the cost of accesses to the same attribute on the object of the same type.
 
 \subsubsection{Attribute Access Dispatch Chain}
+\label{sec:ch5-attribute-access-dispatch-chain}
 
 \begin{figure}
 \centering
@@ -504,6 +505,83 @@ Those special methods all have underscores in their names.
 Figure~\ref{fig:ch5-special-method-add-code} gives an example of overloading the add operation.
 By overwriting the \texttt{\_\_add\_\_} method, the shown program redefines the behavior of the add operation on the custom type \texttt{Integer}.
 Therefore, the add operation on the last line of the program shown in Figure~\ref{fig:ch5-special-method-add-code} performs an in-place update on the object \texttt{l}.
+In the end, the values of the attribute \texttt{v} on the object \texttt{l} and \texttt{r} equal to $5$ and $3$ respectively.
 
-\subsection{Call Site Dispatching and Inlining}
+\begin{figure}
+\centering
+\includegraphics[scale=1.]{figures/ch5-add-node-special-method-code}
+\caption{\texttt{AddNode} specialization for special method overwriting}
+\label{fig:ch5-add-node-special-method-code}
+\end{figure}
+
+To support special method overwriting in ZipPy, we applied additional specializations to the operation nodes that support overloading.
+As an example, Figure~\ref{fig:ch5-add-node-special-method-code} shows such a specialization we added to the \texttt{AddNode} in ZipPy.
+Add is a binary operation.
+So an \texttt{AddNode} in ZipPy specializes against the types of the two operands.
+If either of the operand is a boxed Python object or of type \texttt{PythonObject} we specialize this add operation as a special method call.
+The call to \texttt{doSpecialMethodCall} shown in the Figure tries to lookup the special method \texttt{\_\_add\_\_} from the operands and invoke it.
+At the same time, it also constructs a call dispatch chain that performs the actual invocation and attaches the chain to the add node.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{figures/ch5-add-node-with-special-dispatch}
+\caption{\texttt{AddNode} specialized for special method dispatch}
+\label{fig:ch5-add-node-with-special-dispatch}
+\end{figure}
+
+Figure~\ref{fig:ch5-add-node-with-special-dispatch} illustrates the structure of an add node after successfully specialized for a special method call.
+First, ZipPy specializes the add node itself to an \texttt{AddObjectNode} based on the operand types.
+The left and right children of the add node can be nodes of any time.
+We simply mark them as \texttt{PNode}s here to show their existences.
+More interestingly, a call dispatch chain represented by the \texttt{CallDispatchSpecialNode} appears as a child of the add node.
+A call dispatch chain is similar to an attribute access dispatch chain.
+It forms an inline cache for calls, which we will explain in more detail in Section~\ref{sec:ch5-call-site-caching-and-inlining}.
+When executing a subsequent call to the special method, the add node first evaluates the operands and passes them to the call dispatch chain.
+The dispatch chain performs the actual call and passes the two operands as arguments to the callee.
+
+\subsection{Call Site Dispatch and Inlining}
 \label{sec:ch5-call-site-caching-and-inlining}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{figures/ch5-call-dispatch-chain}
+\caption{Call dispatch chain}
+\label{fig:ch5-call-dispatch-chain}
+\end{figure}
+
+The most effective way to optimize a call is to avoid the call altogether.
+In other words, inlining helps to eliminate the overhead incurred by calls.
+However, the dynamic features of Python makes call inlining more challenging to implement.
+Any callable is a first class object stored as an attribute of another object or namespace.
+The value of a symbol in a namespace could change from a callable to a non-callable or a different callable object at runtime.
+Due to the dynamic nature of Python, the callee resolution of a procedure call needs to happens just-in-time of the call.
+A subsequent call performed at the same location does not guarantee to call the same target.
+
+To overcome this challenge we use call dispatch chains similar to the one described in Section~\ref{sec:ch5-attribute-access-dispatch-chain} to optimize and inline calls in ZipPy.
+A call dispatch chain is a chain of dispatch nodes that work as a polymorphic inline cache.
+Each cache entry on the chain caches the layout of the primary object and the resolved callee of a previous call at the same call site.
+Figure~\ref{fig:ch5-call-dispatch-chain} shows the components of the call dispatch chain in more detail.
+Each \texttt{LinkedCallDispatchNode} represents a single cache entry.
+The check node of the entry layout of a previous primary object and performs a layout test to determine a cache hit.
+The invoke node stores the cached call target and call the AST of the callee.
+A call dispatch chain goes through the same transformation process as an attribute dispatch chain, which starts with an uninitialized version and later on expands into a number linked dispatch nodes.
+If the depth of the chain grows over threshold, the entire chain rewrites itself with a generic dispatch node.
+
+As an AST interpreter, all Python functions are ASTs in ZipPy.
+Inlining a function call is essentially stitching the AST of the callee to that of the caller at the node that represents the call site.
+Truffle runtime handles the actual inlining and possibly cloning the callee AST automatically during execution.
+It does so through the \texttt{InvokeNode} interface shown in Figure~\ref{fig:ch5-call-dispatch-chain}.
+The \texttt{InvokeNode} stores the AST of the resolved callee and passes the arguments to the callee AST in a call.
+Truffle runtime profiles the hotness of each call in the \texttt{InvokeNode} and performs call inlining by rewriting the \texttt{InvokeNode}.
+Some times different call sites pass arguments of different types to the same callee.
+This difference in type causes the callee AST to specialize for multiple call sites.
+To void this unwanted state share between an inlined AST and the original one, Truffle clones the entire callee AST before stitches it to that of the caller.
+
+However, Truffle's call profiling and inlining treats the entire AST as a single entity.
+It does not have domain knowledge about the semantics of the guest language but only to provide building blocks that makes it easier for the guest language implementer.
+To enable AST inlining, ZipPy needs to construct Python call sites using \texttt{InvokeNode}s in the way that we have described above.
+Alternatively, we could handle AST inlining complete by ourselves.
+From a software engineering perspective, however, this is a less desirable solution, since offloading it to the Truffle framework is easier to maintain in the long run.
+
+\section{Flexible Object Storages}
+\label{sec:ch5-flexible-object-storages}
