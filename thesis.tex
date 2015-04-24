@@ -24,6 +24,25 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{subfigure}
+\usepackage{xcolor} % provides \colorlet
+\usepackage{fixme}
+
+% fixme stuff
+\fxsetup{
+    status=draft,
+    author=Wei,
+    layout=inline,
+    theme=color
+}
+\definecolor{fxnote}{rgb}{0.8000,0.0000,0.0000}
+\colorlet{fxnotebg}{yellow}
+% refedine the layout macro:
+\makeatletter
+\renewcommand*\FXLayoutInline[3]{%
+  \@fxdocolon {#3}{%
+    \@fxuseface {inline}%
+    \colorbox{fx#1bg}{\color {fx#1}\ignorespaces #3\@fxcolon #2}}}
+\makeatother
 
 % plainpages=false fixes the "duplicate ignored" error with page counters
 % Set pdfborder to 0 0 0 to disable colored borders around PDF hyperlinks
