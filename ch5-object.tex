@@ -661,7 +661,7 @@ Note that the bootstrapping process described above only happens once for each P
 After the successful generation of the flexible storage class, any subsequent attempt to instantiate the same Python class automatically picks up the updated storage class.
 If the Python program does not instantiate a loaded Python class, ZipPy does not generate flexible storage class for it.
 
-\subsection{Flexible Storage Layout Evolution}
+\subsection{Continuous Storage Class Generation}
 \label{sec:ch5-flexible-storage-layout-evolution}
 
 \begin{figure}
@@ -686,11 +686,56 @@ The method inserts a new attribute to the instances of \texttt{Point}.
 A hypothetical loop shown in Figure~\ref{fig:ch5-python-class-point-used-in-loop-code} calls the \texttt{addNeighbors} method in the loop body, and causes a layout change after the instantiation of the class \texttt{Point}.
 The behavior of the program shown in the Figure does not follow the suggested coding practice, however, it is in fact commonplace among Python programs.
 
-Although flexible object storage is capable of handling a layout change like the one shown in Figure~\ref{fig:ch5-python-object-layout-change-example-code}, it does so by spilling the new attribute to the spill array.
+Although flexible object storage is capable of handling layout changes like the one shown in Figure~\ref{fig:ch5-python-object-layout-change-example-code}, it does so by spilling the new attribute to the spill array.
 A few number of layout changes occurred after the instantiation is enough to cripple the performance advantage of using such a flexible object storage.
-To address this issue we enhanced the flexible object storage generation in ZipPy to continuously generate new storage classes to adopt the layout changes occurred after instantiation.
+To address this issue we extended flexible object storage generation in ZipPy to support continuous generation of storage classes.
+Every newly generated storage class adopts the layout changes happened so far.
+So if the layout changes converge to a stable point, ZipPy allocates all subsequently instantiated Python objects using the optimal flexible object storage.
 
+\begin{figure}
+\centering
+\includegraphics[scale=.65]{figures/ch5-constructor-call-site-transformation}
+\caption{Constructor call site transformation}
+\label{fig:ch5-constructor-call-site-transformation}
+\end{figure}
 
+ZipPy supports continuous storage class generation by applying a series of node transformations on a constructor call site.
+We implement a number of call node versions specifically for constructor calls or constructor call nodes.
+Each version handles the allocation of the new Python object in a different way.
+Figure~\ref{fig:ch5-constructor-call-site-transformation} shows the various call constructor nodes in ZipPy.
+The descriptions of each node is as follows:
+
+\begin{itemize}
+
+\item \texttt{UninitCallNode}: Uninitialized call node representing an un-executed call site.
+
+\item \texttt{CallCtorFlexNode}: Specialized constructor call node that allocates Python object instances using a flexible object storage.
+
+\item \texttt{CallCtorBootstrappingNode}: Specialized constructor call node that bootstraps the initial flexible storage class generation.
+
+\item \texttt{CallCtorFixedNode}: Specialized constructor call node that allocates Python object instances using a fixed object storage.
+
+\end{itemize}
+
+Figure~\ref{fig:ch5-constructor-call-site-transformation} also illustrates the transformations between different call constructor nodes that enables continuous storage class generation.
+The descriptions of the transformation rules are as follows:
+
+\begin{enumerate}
+
+\item With flexible object storage enabled, upon the first execution of a constructor call site, ZipPy rewrites the uninitialized call node to a constructor call node that allocates flexible object storages.
+If this call is the first instantiation of the target Python class, we rewrite the call node to a \texttt{CallCtorBootstrappingNode}.
+Otherwise, if the target Python class has an existing flexible storage class, we rewrite the call node to a \texttt{CallCtorFlexNode}.
+
+\item With flexible object storage disabled, the initialization of a constructor call site rewrites the call node simply to a \texttt{CallCtorFixedNode}.
+
+\item After the first instantiation of a Python class, the \texttt{CallCtorBootstrappingNode} generates the first flexible storage class and rewrites itself to a \texttt{CallCtorFlexNode}.
+
+\item When a \texttt{CallCtorFlexNode} detects a layout change, it generates an updated Java storage class for the target Python class, and allocates a Python object using the updated storage class.
+It also rewrites itself to a new \texttt{CallCtorFlexNode} optimizing for the allocation of the updated storage class.
+
+\item If the callee of the constructor call changes, all specialized call node transforms back to the uninitialized call node.
+
+\end{enumerate}
 
 \subsection{Zombie Resurrection}
 \label{sec:ch5-zombie-resurrection}
