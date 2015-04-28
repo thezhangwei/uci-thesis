@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-04-25 00:27:35 +0000</string>
+	<string>2015-04-28 06:30:45 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -61424,6 +61424,4621 @@ _sum = None\
 					<key>Graphics</key>
 					<array>
 						<dict>
+							<key>Bounds</key>
+							<string>{{0.25, 2644.25}, {91.5, 11}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38615</integer>
+							<key>Rotation</key>
+							<real>270</real>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red23\green34\blue41;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs18 \cf2 \expnd0\expndtw0\kerning0
+object layout change}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38616</integer>
+							<key>Points</key>
+							<array>
+								<string>{59, 2609}</string>
+								<string>{60, 2696}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>4</real>
+									<key>HeadArrow</key>
+									<string>FilledArrow</string>
+									<key>HeadScale</key>
+									<real>0.60000002384185791</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>TailScale</key>
+									<real>1.0000001192092896</real>
+									<key>Width</key>
+									<real>1.5</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{397, 2355}, {122, 11}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38617</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red23\green34\blue41;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs18 \cf2 \expnd0\expndtw0\kerning0
+storage class generation}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38618</integer>
+							<key>Points</key>
+							<array>
+								<string>{400, 2373}</string>
+								<string>{512, 2373}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>4</real>
+									<key>HeadArrow</key>
+									<string>FilledArrow</string>
+									<key>HeadScale</key>
+									<real>0.60000002384185791</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>TailScale</key>
+									<real>1.0000001192092896</real>
+									<key>Width</key>
+									<real>1.5</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2482.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38619</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 spill array}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{436, 2568.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38621</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'c' : arr 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{436, 2552.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38622</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : loc 1}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{436, 2536.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38623</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{436, 2520.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38624</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38620</integer>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{432, 2384}, {10, 10}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38625</integer>
+							<key>Shape</key>
+							<string>Circle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>RTFD</key>
+								<data>
+								BAtzdHJlYW10
+								eXBlZIHoA4QB
+								QISEhBJOU0F0
+								dHJpYnV0ZWRT
+								dHJpbmcAhIQI
+								TlNPYmplY3QA
+								hZKEhIQITlNT
+								dHJpbmcBlIQB
+								KwE0hoQCaUkB
+								AZKEhIQMTlNE
+								aWN0aW9uYXJ5
+								AJSEAWkDkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoPC
+								wEA+g8LAQD6D
+								wsBAPgGGkoSW
+								lhBOU1BhcmFn
+								cmFwaFN0eWxl
+								hpKEhIQXTlNN
+								dXRhYmxlUGFy
+								YWdyYXBoU3R5
+								bGUAhIQQTlNQ
+								YXJhZ3JhcGhT
+								dHlsZQCUhARD
+								Q0BTAgCEhIQO
+								TlNNdXRhYmxl
+								QXJyYXkAhIQH
+								TlNBcnJheQCU
+								mQyShISECU5T
+								VGV4dFRhYgCU
+								hAJDZgAchpKE
+								pKMAOIaShKSj
+								AFSGkoSkowBw
+								hpKEpKMAgYwA
+								hpKEpKMAgagA
+								hpKEpKMAgcQA
+								hpKEpKMAgeAA
+								hpKEpKMAgfwA
+								hpKEpKMAgRgB
+								hpKEpKMAgTQB
+								hpKEpKMAgVAB
+								hoaBAAiEBFsx
+								Zl2DzcxMPYaS
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmSyE
+								BVs0NGNdBgAA
+								ACQAAAD//kgA
+								ZQBsAHYAZQB0
+								AGkAYwBhAC0A
+								TwBiAGwAaQBx
+								AHUAZQCEAWYH
+								mwCbAZsAmwCG
+								hoY=
+								</data>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red36\green36\blue36;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 4}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+							<key>TextPlacement</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38624</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38626</integer>
+							<key>Points</key>
+							<array>
+								<string>{504, 2426}</string>
+								<string>{517, 2426}</string>
+								<string>{517, 2508}</string>
+								<string>{468, 2508}</string>
+								<string>{468, 2520.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2466.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38627</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 c: }</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2450.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38628</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 b: }</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2434.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38629</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 a:    }</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2418.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38630</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 layout}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{432, 2402.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38631</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 Flexible 2}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{316, 2624.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38633</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'c' : arr 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{316, 2608.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38634</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : loc b}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{316, 2592.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38635</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc a}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{316, 2576.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38636</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38632</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38636</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38637</integer>
+							<key>Points</key>
+							<array>
+								<string>{348, 2552}</string>
+								<string>{348, 2576.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{316, 2536.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38638</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{0, 1}</string>
+								<string>{0, -1}</string>
+								<string>{1, 0}</string>
+								<string>{-1, 0}</string>
+							</array>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : loc b}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{312, 2384}, {10, 10}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38639</integer>
+							<key>Shape</key>
+							<string>Circle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>RTFD</key>
+								<data>
+								BAtzdHJlYW10
+								eXBlZIHoA4QB
+								QISEhBJOU0F0
+								dHJpYnV0ZWRT
+								dHJpbmcAhIQI
+								TlNPYmplY3QA
+								hZKEhIQITlNT
+								dHJpbmcBlIQB
+								KwEzhoQCaUkB
+								AZKEhIQMTlNE
+								aWN0aW9uYXJ5
+								AJSEAWkDkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoPC
+								wEA+g8LAQD6D
+								wsBAPgGGkoSW
+								lhBOU1BhcmFn
+								cmFwaFN0eWxl
+								hpKEhIQXTlNN
+								dXRhYmxlUGFy
+								YWdyYXBoU3R5
+								bGUAhIQQTlNQ
+								YXJhZ3JhcGhT
+								dHlsZQCUhARD
+								Q0BTAgCEhIQO
+								TlNNdXRhYmxl
+								QXJyYXkAhIQH
+								TlNBcnJheQCU
+								mQyShISECU5T
+								VGV4dFRhYgCU
+								hAJDZgAchpKE
+								pKMAOIaShKSj
+								AFSGkoSkowBw
+								hpKEpKMAgYwA
+								hpKEpKMAgagA
+								hpKEpKMAgcQA
+								hpKEpKMAgeAA
+								hpKEpKMAgfwA
+								hpKEpKMAgRgB
+								hpKEpKMAgTQB
+								hpKEpKMAgVAB
+								hoaBAAiEBFsx
+								Zl2DzcxMPYaS
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmSyE
+								BVs0NGNdBgAA
+								ACQAAAD//kgA
+								ZQBsAHYAZQB0
+								AGkAYwBhAC0A
+								TwBiAGwAaQBx
+								AHUAZQCEAWYH
+								mwCbAZsAmwCG
+								hoY=
+								</data>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red36\green36\blue36;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 3}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+							<key>TextPlacement</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38642</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38640</integer>
+							<key>Points</key>
+							<array>
+								<string>{384, 2426}</string>
+								<string>{397, 2426}</string>
+								<string>{397, 2493}</string>
+								<string>{348, 2493}</string>
+								<string>{348, 2504.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{316, 2520.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38641</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{0, 1}</string>
+								<string>{0, -1}</string>
+								<string>{1, 0}</string>
+								<string>{-1, 0}</string>
+							</array>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc a}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{316, 2504.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38642</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{0, 1}</string>
+								<string>{0, -1}</string>
+								<string>{1, 0}</string>
+								<string>{-1, 0}</string>
+							</array>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{312, 2466.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38644</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 spill array}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{312, 2450.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38645</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 b: }</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{312, 2434.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38646</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 a:    }</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{312, 2418.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38647</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 layout}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{312, 2402.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38648</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 Flexible 1}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38643</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{196, 2680.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38650</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'c' : arr 1}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{196, 2664.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38651</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : arr 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{196, 2648.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38652</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc a}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{196, 2632.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38653</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38649</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38653</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38654</integer>
+							<key>Points</key>
+							<array>
+								<string>{228, 2608}</string>
+								<string>{228, 2632.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{196, 2592.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38656</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : arr 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{196, 2576.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38657</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc a}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{196, 2560.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38658</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38655</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38658</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38659</integer>
+							<key>Points</key>
+							<array>
+								<string>{228, 2536}</string>
+								<string>{228, 2560.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+							<key>Tail</key>
+							<dict>
+								<key>ID</key>
+								<integer>38663</integer>
+								<key>Info</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{192, 2384}, {10, 10}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38660</integer>
+							<key>Shape</key>
+							<string>Circle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>RTFD</key>
+								<data>
+								BAtzdHJlYW10
+								eXBlZIHoA4QB
+								QISEhBJOU0F0
+								dHJpYnV0ZWRT
+								dHJpbmcAhIQI
+								TlNPYmplY3QA
+								hZKEhIQITlNT
+								dHJpbmcBlIQB
+								KwEyhoQCaUkB
+								AZKEhIQMTlNE
+								aWN0aW9uYXJ5
+								AJSEAWkDkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoPC
+								wEA+g8LAQD6D
+								wsBAPgGGkoSW
+								lhBOU1BhcmFn
+								cmFwaFN0eWxl
+								hpKEhIQXTlNN
+								dXRhYmxlUGFy
+								YWdyYXBoU3R5
+								bGUAhIQQTlNQ
+								YXJhZ3JhcGhT
+								dHlsZQCUhARD
+								Q0BTAgCEhIQO
+								TlNNdXRhYmxl
+								QXJyYXkAhIQH
+								TlNBcnJheQCU
+								mQyShISECU5T
+								VGV4dFRhYgCU
+								hAJDZgAchpKE
+								pKMAOIaShKSj
+								AFSGkoSkowBw
+								hpKEpKMAgYwA
+								hpKEpKMAgagA
+								hpKEpKMAgcQA
+								hpKEpKMAgeAA
+								hpKEpKMAgfwA
+								hpKEpKMAgRgB
+								hpKEpKMAgTQB
+								hpKEpKMAgVAB
+								hoaBAAiEBFsx
+								Zl2DzcxMPYaS
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmSyE
+								BVs0NGNdBgAA
+								ACQAAAD//kgA
+								ZQBsAHYAZQB0
+								AGkAYwBhAC0A
+								TwBiAGwAaQBx
+								AHUAZQCEAWYH
+								mwCbAZsAmwCG
+								hoY=
+								</data>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red36\green36\blue36;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 2}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+							<key>TextPlacement</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38664</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38661</integer>
+							<key>Points</key>
+							<array>
+								<string>{264, 2426}</string>
+								<string>{277, 2426}</string>
+								<string>{277, 2493}</string>
+								<string>{228, 2493}</string>
+								<string>{228, 2504.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>Bounds</key>
+									<string>{{196, 2520.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38663</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc a}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{196, 2504.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38664</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38662</integer>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{192, 2450.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38665</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 spill array}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{192, 2434.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38666</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 a:    }</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{192, 2418.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38667</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 layout}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{192, 2402.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38668</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 Flexible 0}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{76, 2680.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38670</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'c' : arr 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{76, 2664.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38671</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : loc 1}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{76, 2648.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38672</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{76, 2632.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38673</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38669</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38673</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38674</integer>
+							<key>Points</key>
+							<array>
+								<string>{108, 2608}</string>
+								<string>{108, 2632.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{76, 2592.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38676</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'b' : loc 1}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{76, 2576.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38677</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{76, 2560.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38678</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38675</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38678</integer>
+								<key>Info</key>
+								<integer>2</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38679</integer>
+							<key>Points</key>
+							<array>
+								<string>{108, 2536}</string>
+								<string>{108, 2560.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+							<key>Tail</key>
+							<dict>
+								<key>ID</key>
+								<integer>38683</integer>
+								<key>Info</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{72, 2384}, {10, 10}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Helvetica-Oblique</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38680</integer>
+							<key>Shape</key>
+							<string>Circle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.141349</string>
+										<key>g</key>
+										<string>0.141382</string>
+										<key>r</key>
+										<string>0.141355</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+								<key>RTFD</key>
+								<data>
+								BAtzdHJlYW10
+								eXBlZIHoA4QB
+								QISEhBJOU0F0
+								dHJpYnV0ZWRT
+								dHJpbmcAhIQI
+								TlNPYmplY3QA
+								hZKEhIQITlNT
+								dHJpbmcBlIQB
+								KwExhoQCaUkB
+								AZKEhIQMTlNE
+								aWN0aW9uYXJ5
+								AJSEAWkDkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoPC
+								wEA+g8LAQD6D
+								wsBAPgGGkoSW
+								lhBOU1BhcmFn
+								cmFwaFN0eWxl
+								hpKEhIQXTlNN
+								dXRhYmxlUGFy
+								YWdyYXBoU3R5
+								bGUAhIQQTlNQ
+								YXJhZ3JhcGhT
+								dHlsZQCUhARD
+								Q0BTAgCEhIQO
+								TlNNdXRhYmxl
+								QXJyYXkAhIQH
+								TlNBcnJheQCU
+								mQyShISECU5T
+								VGV4dFRhYgCU
+								hAJDZgAchpKE
+								pKMAOIaShKSj
+								AFSGkoSkowBw
+								hpKEpKMAgYwA
+								hpKEpKMAgagA
+								hpKEpKMAgcQA
+								hpKEpKMAgeAA
+								hpKEpKMAgfwA
+								hpKEpKMAgRgB
+								hpKEpKMAgTQB
+								hpKEpKMAgVAB
+								hoaBAAiEBFsx
+								Zl2DzcxMPYaS
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmSyE
+								BVs0NGNdBgAA
+								ACQAAAD//kgA
+								ZQBsAHYAZQB0
+								AGkAYwBhAC0A
+								TwBiAGwAaQBx
+								AHUAZQCEAWYH
+								mwCbAZsAmwCG
+								hoY=
+								</data>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red36\green36\blue36;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 1}</string>
+								<key>VerticalPad</key>
+								<integer>0</integer>
+							</dict>
+							<key>TextPlacement</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>38684</integer>
+							</dict>
+							<key>ID</key>
+							<integer>38681</integer>
+							<key>Points</key>
+							<array>
+								<string>{144, 2426}</string>
+								<string>{157, 2426}</string>
+								<string>{157, 2493}</string>
+								<string>{108, 2493}</string>
+								<string>{108, 2504.25}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>2.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>Bounds</key>
+									<string>{{76, 2520.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38683</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'a' : loc 0}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>Bounds</key>
+									<string>{{76, 2504.25}, {64, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>7</real>
+									</dict>
+									<key>ID</key>
+									<integer>38684</integer>
+									<key>Magnets</key>
+									<array>
+										<string>{0, 1}</string>
+										<string>{0, -1}</string>
+										<string>{1, 0}</string>
+										<string>{-1, 0}</string>
+									</array>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.209924</string>
+												<key>g</key>
+												<string>0.209924</string>
+												<key>r</key>
+												<string>0.209924</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38682</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{72, 2466.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38686</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 spill array}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{72, 2450.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38687</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 1: }</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{72, 2434.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38688</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 0:    }</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{72, 2418.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38689</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 layout}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{72, 2402.25}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38690</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 Fixed}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38685</integer>
+						</dict>
+					</array>
+					<key>ID</key>
+					<integer>38614</integer>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Group</string>
+					<key>Graphics</key>
+					<array>
+						<dict>
 							<key>Class</key>
 							<string>Group</string>
 							<key>Graphics</key>
@@ -81364,6 +85979,153 @@ specialization}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
+					<string>{{0, 896.00004577636719}, {85.03936767578125, 23.999954223632812}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>37128</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.203907</string>
+								<key>g</key>
+								<string>0.736019</string>
+								<key>r</key>
+								<string>0.421799</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 ArialNarrow;}
+{\colortbl;\red255\green255\blue255;}
+\deftab850
+\pard\pardeftab850\pardirnatural
+
+\f0\fs16 \cf0 python class point with zombie store}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{112, 896}, {127, 56}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>37127</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;}
+\deftab720
+\pard\pardeftab720\pardirnatural
+
+\f0\b\fs16 \cf2 class 
+\f1\b0 \cf0 Point:\
+
+\f0\b \cf2   def 
+\f1\b0 \cf0 __init__(self, x, y):\
+    self.x = x\
+    self.y = y\
+    board.append(self)}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{272, 800}, {120, 72}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -82914,17 +87676,17 @@ h.egg()}</string>
 	<key>SmartAlignmentGuidesActive</key>
 	<string>NO</string>
 	<key>SmartDistanceGuidesActive</key>
-	<string>NO</string>
+	<string>YES</string>
 	<key>UseEntirePage</key>
 	<false/>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>6</integer>
+		<integer>7</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{0, 4}, {1920, 1053}}</string>
+		<string>{{-0, 4}, {1920, 1173}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -82936,7 +87698,7 @@ h.egg()}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{44.25, 2123.25}, {447.5, 235.25}}</string>
+		<string>{{0.25, 768.25}, {447.5, 265.25}}</string>
 		<key>Zoom</key>
 		<real>4</real>
 		<key>ZoomValues</key>
@@ -82973,8 +87735,8 @@ h.egg()}</string>
 			</array>
 			<array>
 				<string>ch5-fig</string>
+				<real>2</real>
 				<real>4</real>
-				<real>8</real>
 			</array>
 			<array>
 				<string>ch5-code</string>

@@ -737,5 +737,84 @@ It also rewrites itself to a new \texttt{CallCtorFlexNode} optimizing for the al
 
 \end{enumerate}
 
+Each Python class keeps track of its own Java storage classes used to instantiate the Python class.
+It marks the most recently generated storage class as its current storage class.
+Each \texttt{CallCtorFlexNode} caches the current storage class and the Java method handle \fxnote{reference to method handle} of its constructor.
+When allocating an object storage, the \texttt{CallCtorFlexNode} calls the Java constructor of the storage class by using the cached method handle.
+A Python object layout change signals its Python class to mark the current storage class as ``old''.
+The following instantiation of the Python class triggers an storage class generation, and replaces the ``old'' current storage class with the ``new'' one.
+Subsequent instantiations of the Python class automatically pick up the update, and make sure to allocate Python object instances using the current storage class.
+
+\subsection{A Generalization to the Object Model}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.49]{figures/ch5-object-storage-class-generation-and-object-layout-change}
+\caption{Continuous storage class generations and object layout changes of an example Python class}
+\label{fig:ch5-object-storage-class-generation-and-object-layout-change}
+\end{figure}
+
+Continuous storage class generation generalizes the existing object model of ZipPy to enable the use of multiple storage classes for a single Python class.
+Figure~\ref{fig:ch5-object-storage-class-generation-and-object-layout-change} illustrates the transitions of storage classes and object layouts of an example Python class during the life time of the class.
+In the object model described previously where we only use fixed storage classes to model Python objects, an object layout change at runtime triggers a transition vertically in the Figure.
+Whereas with continuous storage class generation an object layout change also triggers a storage class regeneration along the horizontal direction in the Figure.
+The transitions of the storage classes are orthogonal to that of the object layouts.
+Each storage class follows its own object layout transitions.
+
+Every Python object has its own life time.
+The life time starts from the instantiation of the object, and ends at the point that it is not referenced by the program and ready to be garbage collected.
+In the middle of its life time, a Python object allocated using on storage class in general cannot migrate its attributes to use another storage class.
+Since there could be existing pointers that reference the current object storage of the Python object, a storage class migration will turn those existing pointers into dangling pointers.
+Therefore, a Python object needs to reside in a single object storage throughout its life time.
+
+A storage class generation caused by an object layout change only benefits Python objects instantiated after the layout change.
+The living or existing objects of the same Python class handle layout changes lazily by spilling the new attribute to the spill array and updating its own layout table.
+Note that similar to the fixed object layout approach, we synchronize object layout changes across all the Python objects allocated using the same storage class.
+We will use a program execution example to further explain the object layout synchronizations.
+For instance, along the execution of a hypothetical Python program, the program at one point allocates two Python object \textsf{A} and \textsf{B} both using the storage class \texttt{Flexible 0} shown in Figure~\ref{fig:ch5-object-storage-class-generation-and-object-layout-change}.
+Since Python object instantiation always picks up the latest storage class, \texttt{Flexible 0} is the most current storage class at this point.
+Both \textsf{A} and \textsf{B} only have a single attribute \texttt{a}.
+At a later point, an object layout takes place by adding an attribute \texttt{b} to the object \textsf{A}.
+Object \textsf{A} updates its own layout table, invalidates the previous object layout, and sets the new object layout as the valid layout of \texttt{Flexible 0}.
+Since we invalidated the previous object layout, any object that still uses the old layout needs to \emph{synchronize} to the updated layout.
+The following access to object \textsf{B} will cause an slow path execution that synchronizes its object layout with \texttt{Flexible 0}.
+After the layout synchronization, even though object \textsf{B} does not actually contain the attribute \texttt{b}, its layout table includes an entry for \texttt{b}.
+Note that the above mentioned layout change also signals the Python class to generate storage class \texttt{Flexible 1}.
+However, object \textsf{A} and \textsf{B} will not migrate to another storage class and always synchronize its with \texttt{Flexible 0} to share the same object layout.
+
+Object layout synchronization simplifies the attribute access dispatch we explained in Section~\ref{sec:ch5-attribute-access-dispatch-chain}.
+It ensures that we only need to maintain a single valid cache entry to access Python objects allocated using the same storage class.
+However, in its life time, a Python class could generate multiple storage classes.
+It is inevitable that at the same program location we need to built multiple cache entries, one for each storage class, to optimize accesses to Python objects of the same class.
+
 \subsection{Zombie Resurrection}
 \label{sec:ch5-zombie-resurrection}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.7]{figures/ch5-python-class-point-with-zombie-store-code}
+\caption{A Python constructor that exposes a reference to \texttt{self}}
+\label{fig:ch5-python-class-point-with-zombie-store-code}
+\end{figure}
+
+We uses a fixed object storage to bootstrap the initial storage class generation.
+But we only return the instantiated Python object to the caller of the constructor after migrating to a flexible object storage and discarding the initial fixed one.
+This approach ensures that the consumer of the constructor call only references the flexible object storage.
+However, there are cases where the constructor itself could expose the reference to the fixed object storage making it accessible outside the constructor.
+Figure~\ref{fig:ch5-python-class-point-with-zombie-store-code} shows a modified definition of the Python class \texttt{Point}.
+The constructor of \texttt{Point} stores a reference to \texttt{self} to the Python list \texttt{board}.
+The reference store makes potential accesses to \texttt{self} possible outside the constructor.
+So during the storage class bootstrapping of \texttt{Point}, the shown reference store of \texttt{self} will make the bootstrapping object modeled using the fixed object storage accessible at a later point.
+We refer this scenario as zombie resurrection.
+Since the bootstrapping object, in most case a \emph{dead} object, comes to live again in this particular situation.
+
+We address this issue by turning the zombie object storage to a proxy to the flexible storage object it migrates to.
+To be more specific, in the last step of bootstrapping a storage class generation, after migrating to the flexible object storage, we pass a reference to the flexible object storage the zombie object storage, and flag it as a proxy.
+As a proxy the zombie redirect all attribute accesses to the flexible object storage.
+This approach ensures that all references to the first instance of a Python class eventually access the same flexible object storage, hence, preserves the correct semantics.
+
+\subsection{Discussion}
+
+\fxnote{talk about layout and storage class stabilization before JIT compilation}
+
+
