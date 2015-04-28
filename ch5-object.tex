@@ -808,13 +808,19 @@ So during the storage class bootstrapping of \texttt{Point}, the shown reference
 We refer this scenario as zombie resurrection.
 Since the bootstrapping object, in most case a \emph{dead} object, comes to live again in this particular situation.
 
-We address this issue by turning the zombie object storage to a proxy to the flexible storage object it migrates to.
+We address this issue by turning the zombie object storage into a proxy to the flexible storage object it migrates to.
 To be more specific, in the last step of bootstrapping a storage class generation, after migrating to the flexible object storage, we pass a reference to the flexible object storage the zombie object storage, and flag it as a proxy.
-As a proxy the zombie redirect all attribute accesses to the flexible object storage.
+As a proxy, the zombie redirects all attribute accesses to the flexible object storage.
 This approach ensures that all references to the first instance of a Python class eventually access the same flexible object storage, hence, preserves the correct semantics.
 
 \subsection{Discussion}
 
-\fxnote{talk about layout and storage class stabilization before JIT compilation}
-
-
+ZipPy execute Python programs first in the interpreter mode, and compiles the program when it becomes hot.
+The warming up phase of the guest program executes in interpreter mode.
+ZipPy compiles the Python program only after it has been executed for a few iterations when the specializations of the program become stable.
+The same type locality principle applies to Python object layouts as well.
+That is the layouts of Python objects of the same class tend to converge and stabilize after the initial warm up phase.
+Therefore, ZipPy in most cases compiles Python programs only after their object layout evolution has stabilized.
+The underlying Java JIT compiler treats Python objects as regular Java objects, since we model them using ordinary Java objects.
+The compiler is able to apply aggressive optimizations such as escape analysis to Python objects as well.
+When combined with flexible storage class generation, our object model design offers both performance and space efficiency that closes the gap between the guest language and the host language.
