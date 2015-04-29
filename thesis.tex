@@ -24,6 +24,7 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{subfigure}
+\usepackage{threeparttable}
 \usepackage{xcolor} % provides \colorlet
 \usepackage{fixme}
 
@@ -75,8 +76,10 @@
 \newtheorem{definition}{\textsc{Definition}}[chapter]
 \newtheorem{example}{\textsc{Example}}[chapter]
 
-% Global variables
+% Benchmarking numbers
 \newcommand{\peelingSpeedup}{3.58}
+\newcommand{\zippyToCPython}{20.59}
+\newcommand{\pypyToCPython}{10.53}
 
 % Macros for title, author, abstract, etc.
 \input{ch0-preliminaries}
@@ -111,6 +114,7 @@
 \include{ch3-zippy}
 \include{ch4-peeling}
 \include{ch5-object}
+\include{ch6-evaluation}
 % ... and so on
 
 % These commands fix an odd problem in which the bibliography line

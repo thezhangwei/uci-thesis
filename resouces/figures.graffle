@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-04-28 06:30:45 +0000</string>
+	<string>2015-04-28 23:18:57 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -87672,6 +87672,103 @@ h.egg()}</string>
 			<key>VPages</key>
 			<integer>4</integer>
 		</dict>
+		<dict>
+			<key>ActiveLayerIndex</key>
+			<integer>0</integer>
+			<key>AutoAdjust</key>
+			<false/>
+			<key>BackgroundGraphic</key>
+			<dict>
+				<key>Bounds</key>
+				<string>{{0, 0}, {6000, 3000}}</string>
+				<key>Class</key>
+				<string>SolidGraphic</string>
+				<key>ID</key>
+				<integer>2</integer>
+				<key>Style</key>
+				<dict>
+					<key>shadow</key>
+					<dict>
+						<key>Draws</key>
+						<string>NO</string>
+					</dict>
+					<key>stroke</key>
+					<dict>
+						<key>Draws</key>
+						<string>NO</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>BaseZoom</key>
+			<integer>0</integer>
+			<key>CanvasOrigin</key>
+			<string>{0, 0}</string>
+			<key>CanvasSize</key>
+			<string>{6000, 3000}</string>
+			<key>ColumnAlign</key>
+			<integer>1</integer>
+			<key>ColumnSpacing</key>
+			<real>36</real>
+			<key>DisplayScale</key>
+			<string>1 pt = 1 pt</string>
+			<key>GraphicsList</key>
+			<array/>
+			<key>GridInfo</key>
+			<dict>
+				<key>GridSpacing</key>
+				<real>1</real>
+				<key>ShowsGrid</key>
+				<string>YES</string>
+				<key>SnapsToGrid</key>
+				<string>YES</string>
+			</dict>
+			<key>HPages</key>
+			<integer>11</integer>
+			<key>KeepToScale</key>
+			<false/>
+			<key>Layers</key>
+			<array>
+				<dict>
+					<key>Lock</key>
+					<string>NO</string>
+					<key>Name</key>
+					<string>Layer 1</string>
+					<key>Print</key>
+					<string>YES</string>
+					<key>View</key>
+					<string>YES</string>
+				</dict>
+			</array>
+			<key>LayoutInfo</key>
+			<dict>
+				<key>Animate</key>
+				<string>NO</string>
+				<key>circoMinDist</key>
+				<real>18</real>
+				<key>circoSeparation</key>
+				<real>0.0</real>
+				<key>layoutEngine</key>
+				<string>dot</string>
+				<key>neatoSeparation</key>
+				<real>0.0</real>
+				<key>twopiSeparation</key>
+				<real>0.0</real>
+			</dict>
+			<key>Orientation</key>
+			<integer>2</integer>
+			<key>PrintOnePage</key>
+			<false/>
+			<key>RowAlign</key>
+			<integer>1</integer>
+			<key>RowSpacing</key>
+			<real>36</real>
+			<key>SheetTitle</key>
+			<string>ch6-fig</string>
+			<key>UniqueID</key>
+			<integer>9</integer>
+			<key>VPages</key>
+			<integer>4</integer>
+		</dict>
 	</array>
 	<key>SmartAlignmentGuidesActive</key>
 	<string>NO</string>
@@ -87682,11 +87779,11 @@ h.egg()}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>7</integer>
+		<integer>8</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{-0, 4}, {1920, 1173}}</string>
+		<string>{{0, 4}, {1920, 1053}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -87698,9 +87795,9 @@ h.egg()}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{0.25, 768.25}, {447.5, 265.25}}</string>
+		<string>{{0.5, 0.5}, {895, 470.5}}</string>
 		<key>Zoom</key>
-		<real>4</real>
+		<real>2</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
@@ -87741,6 +87838,11 @@ h.egg()}</string>
 			<array>
 				<string>ch5-code</string>
 				<real>4</real>
+				<real>1</real>
+			</array>
+			<array>
+				<string>ch6-fig</string>
+				<real>2</real>
 				<real>1</real>
 			</array>
 		</array>
