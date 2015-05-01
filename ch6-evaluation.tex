@@ -88,7 +88,7 @@ Its benchmark suite is well-regarded in the Python community.
 \end{itemize}
 
 Table~\ref{tab:ch6-regular-benchmark-selection} summerizes the benchmarks we selected in this experiment from the above mentioned suites.
-Since we focus on the overall performance of a Python VM, we intentionally leave out benchmarks that are sentitive to the performance of generators.
+Since we focus on the overall performance of Python VMs, we intentionally leave out benchmarks that are sentitive to the performance of generators.
 We selected benchmarks that are written in both imperative and object oriented styles.
 
 \subsection{Experiment Results}
@@ -115,7 +115,7 @@ We selected benchmarks that are written in both imperative and object oriented s
   \textsf{go}            & $23.15$   & $24.97$  & $46.16$ & $157.29$ & $154.07$ & $356.80$ \\
   \bottomrule
   \end{tabular}
-  \caption{The scores of Python VMs running additional benchmarks}
+  \caption{The scores of Python VMs running regular benchmarks}
   \label{tab:ch6-regular-benchmarks-scores}
   \end{center}
 \end{table*}
@@ -143,41 +143,61 @@ We selected benchmarks that are written in both imperative and object oriented s
   \textbf{mean}          & \textbf{1.00}    & \textbf{1.02}   & \textbf{1.05}  & \textbf{12.15}  & \textbf{11.68}  & \textbf{15.34} \\
   \bottomrule
   \end{tabular}
-  \caption{The speedups of Python VMs normalized to CPython3 running additional benchmarks}
+  \caption{The speedups of Python VMs normalized to CPython3 running regular benchmarks}
   \label{tab:ch6-regular-benchmarks-speedups}
   \end{center}
 \end{table*}
 
+Table~\ref{tab:ch6-regular-benchmarks-scores} and~\ref{tab:ch6-regular-benchmarks-speedups} shows the results of our experiments.
+We use a score system to gauge VM performance.
+We calculate the score by dividing $1000$ by the execution time of the benchmark.
+A score system is more intuitive than execution times for visualization purpose.
+It also offers a higher resolution for our performance measurements.
+We carefully chose the program inputs such that the resulting scores stay in the range between $10$ and $1000$.
+Larger inputs have limited impacts on the speedups our of optimization.
+
+Table~\ref{tab:ch6-regular-benchmarks-scores} shows the average scores of each Python VM running the selected benchmarks.
+Table~\ref{tab:ch6-regular-benchmarks-speedups} shows the average speedups of each VM against CPython3.
+We calculate the speedups by normalizing the scores of each VM shown in Table~\ref{tab:ch6-regular-benchmarks-scores} against that of CPython3.
+The last row of Table~\ref{tab:ch6-regular-benchmarks-speedups} shows the geometric mean of the speedups of each Python VM relative to CPython3.
+As shown in the Table, the average speedup of ZipPy over CPython3 is $\zippyToCPythonRegular{}\times$ with the highest speedup over $128\times$ on \textsf{spectralnorm}.
+Note that the performance of ZipPy running the selected benchmarks is even higher than PyPy by around $26\%$
+
+\subsection{Performance Analysis}
+
+The majority of the high number speedups of ZipPy comes from compute intensive benchmarks like the ones from the Computer Language Benchmarks Game.
+The unboxed data representation of numeric types in ZipPy successfully optimizes these benchmarks without ever having to go to the boxed representation.
+At peak performance, ZipPy executes the entire benchmark by only using Java primitives for arithmetic operations.
+This approach effectively enables low level optimizations offered by the underlying Graal compiler, which consequently achieved Java like arithmetics performance for Python programs in our experiments.
+Being able to speculatively bring the cost of arithmetic operations in Python much closer to the one in Java is the key distinguisher between ZipPy and the existing JVM-based Python implementations.
+
+The noticeable slow down in \textsf{pidigits} is caused by integer overflows in Python.
+After an integer overflow, ZipPy uses a JDK \texttt{BigInteger} \fxnote{cite JDK?} to model integers of a large value.
+However, the implementation of \texttt{BigInteger} in the JDK did not outperform the implementation of \texttt{PyInt} in CPython on our benchmark.
+We did not pursue in the direction of replacing \texttt{BigInteger} with a more efficient alternative written in Java, since we consider the implementation details of an unbound integer type to be orthogonal to the research we discuss in this thesis.
+
+We also see speedups of multiple of $10\times$ on object-bound benchmarks like \textsf{richards} and \textsf{chaos}.
+We only use fixed object storages in this experiment.
+The results suggest that the Python object model used in ZipPy is orders of magnitude more efficient that the hash map based ones used in CPython and Jython.
+The object layout based approach in ZipPy clears the way on letting the underlying Java compiler to optimize Python object accesses the same way as it does to Java objects.
+In the common case where the object layouts stabilize shortly after warming up, ZipPy essentially delivers Java like performance on Python object operations in our experiment.
+
+Overall ZipPy outperforms PyPy in our experiment.
+We attribute this advancement to Graal, the underlying Java JIT compiler.
+PyPy uses a relatively straight forward tracing JIT compiler to compile Python programs down to machine code.
+Whereas Graal is a substantially more sophisticated and aggressive method JIT.
+The kinds of optimizations implemented in Graal outnumbered that in PyPy.
+Overall we do expect Graal to generate more efficient machine code that the compiler in PyPy.
+
+In general the speedups we achieved in our experiment are inline with other efficient Truffle language implementations~\fxnote{cite other truffle langs?}.
+A number of semi built-in optimizations offered by Truffle helped us achieving this result.
+The most important ones includes: frame optimization that eliminates the heap allocation of a frame object and Truffle AST inlining.
+Another advantage of using Truffle as the base of ZipPy is that it makes it easy for guest language implementers to fine tune the machine code size produced by the compiler.
+It offers utilities that helps us to precisely specify the boundary of a JIT compilation rather than fully relying on the compiler heuristics.
+This features allows us to carve out less important code paths from the compiled code to make the machine code size more compact.
+In summary, by making better use of Truffle ZipPy is able to achieve high speedups when compared with existing Python VMs with low implementation cost.
+
 \section{The Effectiveness of Generator Peeling}
-
-\begin{table*}
-  \begin{center}
-    \begin{tabular}{ l r r r r r r }
-      \toprule
-      Benchmark             & Score $-$GP & Score $+$GP & Speedup        & No. gen & No. genexp & No. of lines \\
-      \midrule
-      \textsf{nqueens}      &  $69.09$    & $313.14$    & \textbf{4.53}  & 2/2 & 5/5 & $41$ \\
-      \textsf{euler11}      &  $71.42$    & $941.73$    & \textbf{13.19} & 2/2 & 5/5 & $61$ \\
-      \textsf{euler31}      &  $47.70$    & $134.35$    & \textbf{2.82}  & 1/1\textsuperscript{\textdagger} & 2/2 & $46$ \\
-      \textsf{eratos}       &  $277.13$   & $316.64$    & \textbf{1.14}  & 2/2 & 0/0 & $86$ \\
-      \textsf{lyndon}       &  $37.89$    & $859.91$    & \textbf{22.69} & 3/3 & 0/0 & $127$ \\
-      \textsf{partitions}   &  $50.36$    & $217.56$    & \textbf{4.32}  & 1/1 & 0/0 & $228$ \\
-      \textsf{pymaging}     &  $102.80$   & $283.99$    & \textbf{2.76}  & 2/2 & 0/0 & $1528$ \\
-      \textsf{python-graph} &  $51.89$    & $93.08$     & \textbf{1.79}  & 2/2 & 2/2 & $3136$ \\
-      \textsf{simplejson}   &  $66.12$    & $242.52$    & \textbf{3.67}  & 1/1 & 0/0 & $3128$ \\
-      \textsf{sympy}        &  $198.55$   & $259.68$    & \textbf{1.31}  & 4/5\textsuperscript{\textdagger} & 1/2 & $262k$ \\
-      \textsf{whoosh}       &  $242.74$   & $676.10$    & \textbf{2.79}  & 4/4 & 0/0 & $40k$ \\
-      \textbf{mean}         &             &             & \textbf{3.58}  &     &     & \\
-      \bottomrule
-	\end{tabular}
-    \begin{tablenotes}
-    \item \textsuperscript{\textdagger} Contains recursive generator calls.
-    \end{tablenotes}
-    \caption{The performance numbers of generator peeling}
-    \label{tab:ch6-peeling-benchmark-scores}
-  \end{center}
-\end{table*}
-
 
 We evaluate the performance of our generator peeling implementation in ZipPy.
 We compare the performance of our system with existing Python VMs: CPython~\cite{python}, Jython~\cite{jython} and PyPy~\cite{pypy}.
@@ -241,6 +261,34 @@ Second, many of these applications are not compute intensive.
 They spent most of the execution time processing Unicode strings or in native libraries, which is not a good indicator of the VM performance.
 
 \subsection{The Performance of Generator Peeling}
+
+\begin{table*}
+  \begin{center}
+    \begin{tabular}{ l r r r r r r }
+      \toprule
+      Benchmark             & Score $-$GP & Score $+$GP & Speedup        & No. gen & No. genexp & No. of lines \\
+      \midrule
+      \textsf{nqueens}      &  $69.09$    & $313.14$    & \textbf{4.53}  & 2/2 & 5/5 & $41$ \\
+      \textsf{euler11}      &  $71.42$    & $941.73$    & \textbf{13.19} & 2/2 & 5/5 & $61$ \\
+      \textsf{euler31}      &  $47.70$    & $134.35$    & \textbf{2.82}  & 1/1\textsuperscript{\textdagger} & 2/2 & $46$ \\
+      \textsf{eratos}       &  $277.13$   & $316.64$    & \textbf{1.14}  & 2/2 & 0/0 & $86$ \\
+      \textsf{lyndon}       &  $37.89$    & $859.91$    & \textbf{22.69} & 3/3 & 0/0 & $127$ \\
+      \textsf{partitions}   &  $50.36$    & $217.56$    & \textbf{4.32}  & 1/1 & 0/0 & $228$ \\
+      \textsf{pymaging}     &  $102.80$   & $283.99$    & \textbf{2.76}  & 2/2 & 0/0 & $1528$ \\
+      \textsf{python-graph} &  $51.89$    & $93.08$     & \textbf{1.79}  & 2/2 & 2/2 & $3136$ \\
+      \textsf{simplejson}   &  $66.12$    & $242.52$    & \textbf{3.67}  & 1/1 & 0/0 & $3128$ \\
+      \textsf{sympy}        &  $198.55$   & $259.68$    & \textbf{1.31}  & 4/5\textsuperscript{\textdagger} & 1/2 & $262k$ \\
+      \textsf{whoosh}       &  $242.74$   & $676.10$    & \textbf{2.79}  & 4/4 & 0/0 & $40k$ \\
+      \textbf{mean}         &             &             & \textbf{3.58}  &     &     & \\
+      \bottomrule
+	\end{tabular}
+    \begin{tablenotes}
+    \item \textsuperscript{\textdagger} Contains recursive generator calls.
+    \end{tablenotes}
+    \caption{The performance numbers of generator peeling}
+    \label{tab:ch6-peeling-benchmark-scores}
+  \end{center}
+\end{table*}
 
 Table~\ref{tab:ch6-peeling-benchmark-scores} shows the results of our experiments.
 We use a score system to gauge VM performance.
