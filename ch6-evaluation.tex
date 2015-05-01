@@ -1,6 +1,98 @@
 \chapter{Evaluation}
 \label{chp:ch5-evaluation}
 
+To fully evaluate the effectiveness of the optimizations we discussed in the Chapter~\ref{chp:ch3-zippy}, Chapter~\ref{chp:ch4-peeling} and Chapter~\ref{chp:ch5-object}, we evaluate the performance of ZipPy in the following steps:
+First we evaluate the overall performance of ZipPy by running a selection of conventional benchmarks.
+These benchmarks are popular among the virtual machine research and Python communities.
+They provide a good indication of the overall performance of a programming language implementation.
+Second we examine the effectiveness of generator peeling using a set of real world and generator intensive Python programs.
+As the last step, we analyze the performance and space impact of using flexible object storage generation in ZipPy.
+We organize our extensive performance experiments by comparing ZipPy with the existing Python VMs.
+
+\section{The Performance of ZipPy}
+
+\subsection{Experiment Setup}
+
+We evaluate the overall performance of ZipPy by comparing the performance of our system with existing Python VMs, such as CPython~\cite{python}, Jython~\cite{jython} and PyPy~\cite{pypy}.
+Our system setup is as follows:
+
+\begin{itemize}
+
+\item Intel Xeon E5462 Quad-Core processor running at a frequency of 2.8GHz, on Mac OS X version 10.9.3 build 13D65.
+
+\item Apple LLVM 5.1, OpenJDK 1.8.0\_05, Truffle/Graal 0.3.\footnote{From source code repository \url{http://hg.openjdk.java.net/graal/graal}}
+
+\end{itemize}
+
+The VM versions used in the comparison and the description of their execution models are as follows:
+
+\begin{itemize}
+
+\item CPython 2.7.6 and 3.4.0: Interpreter only.
+
+\item Jython 2.7-beta2:
+Python 2 compliant, hosted on JVMs.
+Compiles Python modules to Java classes and lets the JVM JIT compiler further compiles them to machine code.
+
+\item PyPy 2.3.1 and PyPy3 2.3.1: Python 2 and 3 compliant respectively.
+Uses a meta-tracing JIT compiler that compiles Python code to machine code.
+
+\end{itemize}
+
+% Python 2 vs. Python 3
+Python 3 is not backward compatible with Python 2.
+Although ZipPy exclusively supports Python 3, including well-established Python 2 VMs in the comparison highlights the potential of our optimization.
+The benchmarks we chose support both Python 2 and 3.
+The same code, however, suffers from a slight difference in the semantics interpreted by different VMs.
+
+% how we measure, peak performance
+We run each benchmark ten times on each VM and average the execution times.
+For VMs that use a tiered execution strategy, we warm up the benchmarks to ensure that the code is just-in-time compiled.
+This allows us to properly measure peak performance.
+
+\subsection{Benchmark Selection}
+
+\begin{table*}
+  \begin{center}
+    \begin{tabular}{ l l }
+    \toprule
+    Benchmark suite & Included benchmarks \\
+    \midrule
+	Computer Language Benchmarks - & \textsf{binarytrees}, \textsf{fannkuchredux}, \textsf{fasta}, \textsf{mandelbrot}, \textsf{meteor} \\
+	Games & \textsf{nbody}, \textsf{pidigits}, \textsf{spectralnorm} \\
+	\midrule
+	Unladen Swallow Benchmarks &  \textsf{float}, \textsf{richards} \\
+	\midrule
+	PyPy Benchmarks & \textsf{chaos}, \textsf{deltablue}, \textsf{go} \\
+    \bottomrule
+	\end{tabular}
+    \caption{Benchmarks selection}
+    \label{tab:ch6-regular-benchmark-selection}
+  \end{center}
+\end{table*}
+
+We selected a number of benchmarks for the performance experiments from three popular benchmark suites.
+The descriptions of the chosen benchmark suites are as follows:
+
+\begin{itemize}
+
+\item Computer Language Benchmarks Game~\cite{benchmarkgame}: a popular benchmark suite for evaluating and comparing the performance of different programming languages.
+
+\item Unladen Swallow Benchmarks~\cite{unladen.swallow}: the benchmark suite used by the unladen swallow project.
+Unladen swallow is an optimization branch of CPython built by Google.
+The goal of the project was to become a faster yet fully compatible modification of CPython.
+Its benchmark suite is well-regarded in the Python community.
+
+\item PyPy Benchmarks: a collection of benchmarks used by the PyPy project.
+
+\end{itemize}
+
+Table~\ref{tab:ch6-regular-benchmark-selection} summerizes the benchmarks we selected in this experiment from the above mentioned suites.
+Since we focus on the overall performance of a Python VM, we intentionally leave out benchmarks that are sentitive to the performance of generators.
+We selected benchmarks that are written in both imperative and object oriented styles.
+
+\subsection{Experiment Results}
+
 \begin{table*}
   \small
   \begin{center}
@@ -27,7 +119,6 @@
   \label{tab:ch6-regular-benchmarks-scores}
   \end{center}
 \end{table*}
-
 
 \begin{table*}
   \small
@@ -57,6 +148,7 @@
   \end{center}
 \end{table*}
 
+\section{The Effectiveness of Generator Peeling}
 
 \begin{table*}
   \begin{center}
@@ -259,6 +351,10 @@ Figure~\ref{fig:ch6-generator-benchmark-zippy-speedup} shows the performance of 
 The average speedups of PyPy3 and ZipPy against CPython 3 are $\pypyToCPython{}\times$ and $\zippyToCPython{}\times$, respectively.
 These numbers improve performance by an order of magnitude relative to other VMs.
 
+%%%%%%%%%%%%%%%%%%%%%%
+% Regular benchmarks
+%%%%%%%%%%%%%%%%%%%%%%
+\fxnote{regular benchmarks}
 To give a better overview of ZipPy's performance, we include experiment results on additional popular benchmarks in the Appendix (Table~\ref{tab:ch6-regular-benchmarks-scores} and Table~\ref{tab:ch6-regular-benchmarks-speedups}).
 The additional benchmarks include compute intensive ones from the Computer Language Benchmarks Game~\cite{benchmarkgame} as well as object-oriented ones that are frequently used to evaluate VM performance.
 These benchmarks do not contain generator loops that are performance critical, hence they cannot benefit from generator peeling.
