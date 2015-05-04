@@ -172,7 +172,7 @@ This approach effectively enables low level optimizations offered by the underly
 Being able to speculatively bring the cost of arithmetic operations in Python much closer to the one in Java is the key distinguisher between ZipPy and the existing JVM-based Python implementations.
 
 The noticeable slow down in \textsf{pidigits} is caused by integer overflows in Python.
-After an integer overflow, ZipPy uses a JDK \texttt{BigInteger} \fxnote{cite JDK?} to model integers of a large value.
+After an integer overflow, ZipPy uses a JDK \texttt{BigInteger}~\ref{hotspot} to model integers of a large value.
 However, the implementation of \texttt{BigInteger} in the JDK did not outperform the implementation of \texttt{PyInt} in CPython on our benchmark.
 We did not pursue in the direction of replacing \texttt{BigInteger} with a more efficient alternative written in Java, since we consider the implementation details of an unbound integer type to be orthogonal to the research we discuss in this thesis.
 
@@ -199,24 +199,9 @@ In summary, by making better use of Truffle ZipPy is able to achieve high speedu
 
 \section{The Effectiveness of Generator Peeling}
 
-We evaluate the performance of our generator peeling implementation in ZipPy.
-We compare the performance of our system with existing Python VMs: CPython~\cite{python}, Jython~\cite{jython} and PyPy~\cite{pypy}.
-Our system setup is as follows:
+We evaluate the performance of our generator peeling implementation in ZipPy by running Python programs that have intense use of generators.
 
-\begin{itemize}
-
-\item Intel Xeon E5462 Quad-Core processor running at a frequency of 2.8GHz, on Mac OS X version 10.9.3 build 13D65.
-
-\item Apple LLVM 5.1, OpenJDK 1.8.0\_05, Truffle/Graal 0.3.\footnote{From source code repository \url{http://hg.openjdk.java.net/graal/graal}}
-
-\end{itemize}
-
-% how we measure, peak performance
-We run each benchmark ten times on each VM and average the execution times.
-For VMs that use a tiered execution strategy, we warm up the benchmarks to ensure that the code is just-in-time compiled.
-This allows us to properly measure peak performance.
-
-\subsubsection*{Benchmark Selection}
+\subsection{Benchmark Selection}
 
 % benchmark selection
 We analyzed hundreds of programs listed on the Python Package Index~\cite{pypi}.
@@ -260,7 +245,7 @@ It is infeasible for us to support all Python standard libraries required to run
 Second, many of these applications are not compute intensive.
 They spent most of the execution time processing Unicode strings or in native libraries, which is not a good indicator of the VM performance.
 
-\subsection{The Performance of Generator Peeling}
+\subsection{Experiment Results}
 
 \begin{table*}
   \begin{center}
@@ -306,7 +291,7 @@ The number on the left in each cell is the number of optimized generator loops, 
 Note that we only count generator loops that are executed by the benchmarks, since these are the ones that we can potentially optimize.
 Table~\ref{tab:ch6-peeling-benchmark-scores} also shows, for each benchmark, the number of lines of Python code in the bottom row.
 
-\subsubsection*{Performance Analysis}
+\subsection{Performance Analysis}
 
 Our experiments show that generator peeling covers most instances of generator loops used in the benchmarks and results in speedups of up to an order of magnitude.
 The following four steps explain how we obtain this performance.
@@ -368,48 +353,8 @@ Generator peeling does not introduce new optimization phases to the compiler, ra
 For the nested generator loops case, generator peeling does increase the AST size but it also reduces the number of functions that need to be compiled.
 In general, generator peeling has negligible impact on the compilation times.
 
-
-\section{Compare ZipPy with Existing Python VMs}
-
-% description of different VMs
-To fully evaluate our optimization, we compare the performance of ZipPy with generator peeling against CPython, Jython and PyPy.
-The VM versions used in the comparison and the description of their execution models are as follows:
-
-\begin{itemize}
-
-\item CPython 2.7.6 and 3.4.0: Interpreter only.
-
-\item Jython 2.7-beta2:
-Python 2 compliant, hosted on JVMs.
-Compiles Python modules to Java classes and lets the JVM JIT compiler further compiles them to machine code.
-
-\item PyPy 2.3.1 and PyPy3 2.3.1: Python 2 and 3 compliant respectively.
-Uses a meta-tracing JIT compiler that compiles Python code to machine code.
-
-\end{itemize}
-
-% Python 2 vs. Python 3
-Python 3 is not backward compatible with Python 2.
-Although ZipPy exclusively supports Python 3, including well-established Python 2 VMs in the comparison highlights the potential of our optimization.
-The benchmarks we chose support both Python 2 and 3.
-The same code, however, suffers from a slight difference in the semantics interpreted by different VMs.
-
-% performance fig.
-Figure~\ref{fig:ch6-generator-benchmark-zippy-speedup} shows the performance of different Python VMs running the selected benchmarks relative to our baseline, CPython 3.4.0.
-The average speedups of PyPy3 and ZipPy against CPython 3 are $\pypyToCPython{}\times$ and $\zippyToCPython{}\times$, respectively.
-These numbers improve performance by an order of magnitude relative to other VMs.
-
-%%%%%%%%%%%%%%%%%%%%%%
-% Regular benchmarks
-%%%%%%%%%%%%%%%%%%%%%%
-\fxnote{regular benchmarks}
-To give a better overview of ZipPy's performance, we include experiment results on additional popular benchmarks in the Appendix (Table~\ref{tab:ch6-regular-benchmarks-scores} and Table~\ref{tab:ch6-regular-benchmarks-speedups}).
-The additional benchmarks include compute intensive ones from the Computer Language Benchmarks Game~\cite{benchmarkgame} as well as object-oriented ones that are frequently used to evaluate VM performance.
-These benchmarks do not contain generator loops that are performance critical, hence they cannot benefit from generator peeling.
-However, including these additional results demonstrate ZipPy's performance on a wider selection of programs.
-
 % ZipPy vs. PyPy
-\subsubsection*{ZipPy vs. PyPy}
+\subsection{ZipPy vs. PyPy}
 
 \begin{figure}
 \centering
@@ -436,7 +381,7 @@ It relies on the underlying Java compiler to JIT compile Python code.
 The Java JIT compiler is, in general, more sophisticated and aggressive than the one in PyPy.
 Any additional optimizations added to Truffle will automatically benefit our system.
 
-\subsubsection*{PyPy's Generator Optimization}
+\subsubsection{PyPy's Generator Optimization}
 
 \begin{table*}
   \begin{center}
