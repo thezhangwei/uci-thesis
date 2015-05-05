@@ -453,42 +453,96 @@ As we discussed in Chapter~\ref{chp:ch5-object}, a fixed object storage has a fi
 To accommodate attributes modeled using Java primitive types, a fixed object storage needs to have fields of different types, such as Java \textsf{int}, \textsf{double} and \textsf{Object}.
 In our experiment, we use fixed object storages that have equal number of fields of each of these three types.
 Note that we cannot mix the fields of different types, since the binary representation of each type varies in different JVM implementations.
-For instance, in some versions of the HotSpot VM~\cite{hotspot}, the JVM uses a technique called pointer compression to reduce the size of a Java object pointer inside the VM.
+For instance, some versions of the HotSpot VM~\cite{hotspot} use a technique called pointer compression to reduce the size of a Java object pointer.
 Therefore, storing a non-pointer value in a pointer field using \textsf{Unsafe} will lead to unexpected behavior at runtime.
 The size of a fixed object storage refers to the number of fields of each type the storage has.
 The bigger the storage size the more attribute it can accommodate in a field.
 However, larger storage size also lead to memory space inefficiency.
 Since a large portion of the object storage space maybe not be utilized.
-The the overall performance evaluation, the space configuration of the fixed object storage in ZipPy is five.
+In the overall performance evaluation, the space configuration of the fixed object storage used in ZipPy is five.
 
 The size of a flexible object storage is determined at runtime.
 The two different configurations we used in our experiment are \emph{simple flexible object storage} and \emph{flexible object storage with continuous generation}.
 Simple flexible object storage means we only generate one storage class for each Python class.
 We handle all post-constructor object layout change by using the spill array.
-Flexible object storage with continuous generation means we always generate a new storage class whenever a layout change takes place.
+In flexible object storage with continuous generation, we always generate a new storage class whenever a layout change takes place.
 
 \subsection{The Performance of Flexible Object Storages}
 
 \begin{figure}
 \centering
-\includegraphics[scale=.35, page=4]{benchmarks/object-model-results}
-\caption{Detailed speedups of different object model configurations normalized to fixed object storage}
+\includegraphics[scale=.4, page=4]{benchmarks/object-model-results}
+\caption{Detailed speedups of different object model configurations normalized to fixed object storage of size $5$}
 \label{fig:ch6-object-model-config-speedup}
 \end{figure}
+
+Figure~\ref{fig:ch6-object-model-config-speedup} shows the performance of each object model configuration running the selected benchmarks normalized to the fixed object storage.
+With flexible object storage enabled we discover speedups when running the majority of the benchmarks with the highest speedup of $14\%$ on \textsf{chaos}.
+The average speedup of using flexible object storage is $2$ to $3\%$.
+We also notice a slowdown on \textsf{richards}.
+The worse case slowdown caused by using flexible object storage is about $22\%$.
+
+We did not observe more aggressive speedups, because of the high setting on the size of the baseline fixed object storage configuration.
+A fixed object storage of size five has fifteen fields.
+Given that most Python objects allocated at runtime are small in size, a fixed object storage of size five is in most cases more than enough to accommodate all the attributes of a Python object.
+Having a high setting on the size of fixed object storage enables better performance but at the price of allocating more space for each Python object.
+
+Flexible object storage on the other hand ensures that we allocate just enough memory space for a Python object.
+Continuous storage class generation also guarantees that any new object allocation is performance wise optimal based on the latest layout description of the object.
+On a few benchmarks enabling continuous storage class generation causes a moderate slowdown.
+This slowdown is caused by higher degree of polymorphism potentially introduced by new storage class generation at an object access site.
+After the generation of a new storage class, the Python object instances allocated using an old storage class might still be alive.
+The mix of storage classes causes the access of Python objects of the same Python class to use multiple inline cache entries.
+The increase in the number of cache entries leads to a slowdown that we observed in our results.
+The more noticeable slowdown on \textsf{richards} when enabling flexible object storage is due to the current implementation of Truffle we used in this experiment.
+Switching the object storage configuration causes a change in the AST inlining pattern for \textsf{richards}.
+As a consequence, this pattern change results in a slowdown in our experiment.
+We expect that using a newer version of Truffle with updated inlining heuristics will correct this number.
+
+A fixed object storage configuration is always biased.
+A single size configuration cannot work well for all Python programs let alone the fixed type distribute among the fields of an object storage.
+Even with a high size setting, using fixed object storage is $14\%$ slower than the flexible approach as shown in Figure~\ref{fig:ch6-object-model-config-speedup}.
+The reason behind is the allocation of large Python objects.
+Any attribute that cannot fit into the fixed object storage is stored in the spill array.
+The additional memory access incurred by accessing the spill array causes a slowdown on the benchmark.
 
 \subsection{The Space Efficiency of Flexible Object Storages}
 
 \begin{figure}
 \centering
 \includegraphics[scale=.45, page=5]{benchmarks/object-model-results}
-\caption{Fixed object storage memory overhead with slot size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
+\caption{The memory overheads of fixed object storage of size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
 \label{fig:ch6-fixed-object-storage-space-overhead}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=.45, page=6]{benchmarks/object-model-results}
-\caption{Fixed object storage slowdowns with slot size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
+\caption{The slowdowns of fixed object storage of size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
 \label{fig:ch6-fixed-object-storage-slowdown}
 \end{figure}
+
+We measured the memory space used to allocate fixed object storages for each selected benchmark with three distinct size settings: one, three and five.
+We compare the memory space numbers with the equivalent measured using flexible object storage with continuous generation enabled.
+Figure~\ref{fig:ch6-fixed-object-storage-space-overhead} shows the results of this experiment normalized to the memory space usage of flexible object storage.
+Using a fixed object storage of size one allocates on average $1.63\times$ more memory than using flexible object storage.
+Using a fixed object storage of size five allocates up to $3.6\times$ more memory than using the flexible configuration.
+
+The result shows that using a fixed object storage causes a significant memory overhead.
+We attribute this inefficiency to the poor type distribution among the fields of a fixed object layout.
+In theory one could design an improved solution that generates a library of fixed object storage with various combination of sizes and type distributions ahead of time, and pick the closest fit from the library when allocating a Python object.
+This hypothetical solution, even in an idea case, cannot surpass flexible object storage in terms of space efficiency.
+Since flexible object storage ensure the optimal space and type distribution allocated for a given Python object.
+
+We also measured the slowdown of using a fixed object storage running the benchmarks compared to using flexible object storages.
+The fixed object storage configurations used in our experiment includes the following size settings: one, three and five.
+Figure~\ref{fig:ch6-fixed-object-storage-slowdown} shows the slowdowns of using various fixed object storages.
+Overall we observe slowdowns ranging from $2$ to $20\%$ in the results.
+The smaller the fixed object storage size the higher the slowdown.
+Using a fixed object storage of size one causes a slowdown up to $20\%$ on \textsf{chaos}.
+By increase the size of fixed object storages the slowdowns tend to decrease or even diminish.
+
+\fxnote{adding a discussion subsection?}
+
+
 
