@@ -10,6 +10,7 @@ As the last step, we analyze the performance and space impact of using flexible 
 We organize our extensive performance experiments by comparing ZipPy with the existing Python VMs.
 
 \section{The Performance of ZipPy}
+\label{sec:ch6-performance-of-zippy}
 
 \subsection{Experiment Setup}
 
@@ -200,6 +201,7 @@ In summary, by making better use of Truffle ZipPy is able to achieve high speedu
 \section{The Effectiveness of Generator Peeling}
 
 We evaluate the performance of our generator peeling implementation in ZipPy by running Python programs that have intense use of generators.
+We used the same experiment setup as we did in the overall performance evaluation of ZipPy in Section~\ref{sec:ch6-performance-of-zippy}.
 
 \subsection{Benchmark Selection}
 
@@ -311,12 +313,12 @@ To verify that generator peeling completely eliminates the overhead incurred by 
 We compare the scores of ZipPy running the modified version and the original benchmark with generator peeling enabled.
 We found that generator peeling delivers the same performance on the original benchmark as manually rewriting generator functions to loops.
 
-\begin{figure*}
+\begin{figure}
 \centering
 \includegraphics[scale=.58, page=2]{benchmarks/generator-peeling-benchmark-chart}
 \caption{Detailed speedups of different Python implementations normalized to CPython 3.4.0}
 \label{fig:ch6-generator-benchmark-zippy-speedup}
-\end{figure*}
+\end{figure}
 
 However, the number of optimized generator loops does not directly relate to the speedups we observed.
 The time each program spends in generator loops varies from one to another.
@@ -435,3 +437,58 @@ Moreover, by analyzing the assembly code produced by both JIT compilers, we foun
 Table~\ref{tab:ch6-generator-benchmarks-zippy-vs-pypy} shows the speedups of ZipPy with and without generator peeling, relative to PyPy3 (Python 3).
 The overall performance of ZipPy without generator peeling is competitive with PyPy3.
 However, by enabling generator peeling, our system outperforms PyPy3 by a factor of two.
+
+\section{The Effectiveness of Flexible Object Storages}
+
+In the overall performance evaluation of ZipPy we used a fixed object storage configuration in our experiments.
+Here we extend our experiments and evaluates the implementation of flexible object storage in ZipPy.
+We do so by comparing the time and space efficiency between the different object model configurations in ZipPy.
+We select a number of object-bound benchmarks from our comprehensive benchmark selection for this particular experiments.
+Those benchmarks includes: \textsf{float}, \textsf{richards}, \textsf{chaos}, \textsf{deltablue} and \textsf{go}.
+We used the same experiment setup as mentioned previously in Section~\ref{sec:ch6-performance-of-zippy}.
+
+\subsection{Object Model Configurations}
+
+As we discussed in Chapter~\ref{chp:ch5-object}, a fixed object storage has a fixed number of fields to stores Python object attributes.
+To accommodate attributes modeled using Java primitive types, a fixed object storage needs to have fields of different types, such as Java \textsf{int}, \textsf{double} and \textsf{Object}.
+In our experiment, we use fixed object storages that have equal number of fields of each of these three types.
+Note that we cannot mix the fields of different types, since the binary representation of each type varies in different JVM implementations.
+For instance, in some versions of the HotSpot VM~\cite{hotspot}, the JVM uses a technique called pointer compression to reduce the size of a Java object pointer inside the VM.
+Therefore, storing a non-pointer value in a pointer field using \textsf{Unsafe} will lead to unexpected behavior at runtime.
+The size of a fixed object storage refers to the number of fields of each type the storage has.
+The bigger the storage size the more attribute it can accommodate in a field.
+However, larger storage size also lead to memory space inefficiency.
+Since a large portion of the object storage space maybe not be utilized.
+The the overall performance evaluation, the space configuration of the fixed object storage in ZipPy is five.
+
+The size of a flexible object storage is determined at runtime.
+The two different configurations we used in our experiment are \emph{simple flexible object storage} and \emph{flexible object storage with continuous generation}.
+Simple flexible object storage means we only generate one storage class for each Python class.
+We handle all post-constructor object layout change by using the spill array.
+Flexible object storage with continuous generation means we always generate a new storage class whenever a layout change takes place.
+
+\subsection{The Performance of Flexible Object Storages}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.35, page=4]{benchmarks/object-model-results}
+\caption{Detailed speedups of different object model configurations normalized to fixed object storage}
+\label{fig:ch6-object-model-config-speedup}
+\end{figure}
+
+\subsection{The Space Efficiency of Flexible Object Storages}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.45, page=5]{benchmarks/object-model-results}
+\caption{Fixed object storage memory overhead with slot size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
+\label{fig:ch6-fixed-object-storage-space-overhead}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.45, page=6]{benchmarks/object-model-results}
+\caption{Fixed object storage slowdowns with slot size $1$, $3$ and $5$ relative to flexible storage allocation with continuous generation}
+\label{fig:ch6-fixed-object-storage-slowdown}
+\end{figure}
+
