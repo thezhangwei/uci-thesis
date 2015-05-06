@@ -173,7 +173,7 @@ This approach effectively enables low level optimizations offered by the underly
 Being able to speculatively bring the cost of arithmetic operations in Python much closer to the one in Java is the key distinguisher between ZipPy and the existing JVM-based Python implementations.
 
 The noticeable slow down in \textsf{pidigits} is caused by integer overflows in Python.
-After an integer overflow, ZipPy uses a JDK \texttt{BigInteger}~\ref{hotspot} to model integers of a large value.
+After an integer overflow, ZipPy uses a JDK \texttt{BigInteger}~\cite{hotspot} to model integers of a large value.
 However, the implementation of \texttt{BigInteger} in the JDK did not outperform the implementation of \texttt{PyInt} in CPython on our benchmark.
 We did not pursue in the direction of replacing \texttt{BigInteger} with a more efficient alternative written in Java, since we consider the implementation details of an unbound integer type to be orthogonal to the research we discuss in this thesis.
 
@@ -497,7 +497,7 @@ The increase in the number of cache entries leads to a slowdown that we observed
 The more noticeable slowdown on \textsf{richards} when enabling flexible object storage is due to the current implementation of Truffle we used in this experiment.
 Switching the object storage configuration causes a change in the AST inlining pattern for \textsf{richards}.
 As a consequence, this pattern change results in a slowdown in our experiment.
-We expect that using a newer version of Truffle with updated inlining heuristics will correct this number.
+We expect that using a newer version of Truffle with updated inlining heuristics will correct this fluctuation.
 
 A fixed object storage configuration is always biased.
 A single size configuration cannot work well for all Python programs let alone the fixed type distribute among the fields of an object storage.
@@ -543,6 +543,4 @@ Using a fixed object storage of size one causes a slowdown up to $20\%$ on \text
 By increase the size of fixed object storages the slowdowns tend to decrease or even diminish.
 
 \fxnote{adding a discussion subsection?}
-
-
 
