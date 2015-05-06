@@ -60,6 +60,26 @@ Since 2010, bytecode interpreters benefit from simple and efficient inline cachi
 Our work does not require handling assembly code, but leverages efficient Java just-in-time compilers~\cite{kotzmann.etal+08,paleczny.etal+01}, which directly build on the earlier
 \textsc{Self} and Smalltalk results. Similarly, by operating on AST nodes rather than a bytecode representation, we avoid the need to define this virtual instruction set, and sidestep the implementation effort required to compile to this set of bytecode.
 
+\section{Truffle Languages}
+
+The approach of using Truffle/Graal to optimize implementations of dynamic languages via specialization and other dynamic optimizations on an AST-based interpreter has become a hot topic in the language runtime research community.
+We have seen recent works on using Truffle to optimize dynamic programming languages other than Python as well as other aspects of language runtimes that are traditionally regarded as difficult to optimize such as debugging and native library interfacing.
+
+Chris Seaton et al.~\cite{seaton2014debugging} demonstrated their use of Truffle to provide low overhead debugging in their Truffle-based Ruby implementation.
+Their work now has become part of the JRuby project.
+Grimmer et al. proposed \emph{GNFI}~\cite{Grimmer+2013} a new native interface for the JVM that uses Graal to generate the native call stub dynamically at runtime.
+Grimmer et al. later on extended their work onto TruffleJS~\cite{Grimmer+2014}, a Truffle-based JavaScript implementation written in Java.
+They described how a JavaScript application running on TruffleJS can access C data structure efficiently with the help of TruffleC~\cite{Grimmer+2014TruffleC}, a C interpreter built using Truffle.
+W\"{o}\ss et al.~\cite{WoB+2014} described Truffle OSM, a high-performance object storage model for the Truffle framework.
+This work was originally designed for TruffleJS and later on included as part of the Truffle framework.
+Truffle OSM is similar to the fixed object storage described in this thesis.
+The flexible object storage implementation in ZipPy is however a generalization of Truffle OSM that takes advantage of the existence of class in Python.
+
+In a more recent work, Grimmer et al.~\cite{grimmer2015dynamically, Grimmer+2014interoperability} demonstrated the potential of language interoperability on top of Truffle by hosting multiple Truffle language runtimes on the same JVM instance.
+They introduced an interface for shareable objects that allows different language runtimes to exchange data with converting objects from one language to the other.
+Marr et al.~\fxnote{bibtex to be available} showed that the overhead of reflective operations and metaobject protocols can be eliminated by using polymorphic cache inspired \emph{dispatch chains}.
+They demonstrated their work in the context of self-optimizing interpreters running on top of Truffle.
+
 \section{Generators and Coroutines}
 
 % original generator idea
