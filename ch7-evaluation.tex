@@ -1,7 +1,7 @@
 \chapter{Evaluation}
-\label{chp:ch5-evaluation}
+\label{chp:ch7-evaluation}
 
-To fully evaluate the effectiveness of the optimizations we discussed in the Chapter~\ref{chp:ch3-zippy}, Chapter~\ref{chp:ch4-peeling} and Chapter~\ref{chp:ch5-object}, we evaluate the performance of ZipPy in the following steps:
+To fully evaluate the effectiveness of the optimizations we discussed in the Chapter~\ref{chp:ch4-zippy}, Chapter~\ref{chp:ch5-peeling} and Chapter~\ref{chp:ch6-object}, we evaluate the performance of ZipPy in the following steps:
 First we evaluate the overall performance of ZipPy by running a selection of conventional benchmarks.
 These benchmarks are popular among the virtual machine research and Python communities.
 They provide a good indication of the overall performance of a programming language implementation.
@@ -449,7 +449,7 @@ We used the same experiment setup as mentioned previously in Section~\ref{sec:ch
 
 \subsection{Object Model Configurations}
 
-As we discussed in Chapter~\ref{chp:ch5-object}, a fixed object storage has a fixed number of fields to stores Python object attributes.
+As we discussed in Chapter~\ref{chp:ch6-object}, a fixed object storage has a fixed number of fields to stores Python object attributes.
 To accommodate attributes modeled using Java primitive types, a fixed object storage needs to have fields of different types, such as Java \textsf{int}, \textsf{double} and \textsf{Object}.
 In our experiment, we use fixed object storages that have equal number of fields of each of these three types.
 Note that we cannot mix the fields of different types, since the binary representation of each type varies in different JVM implementations.
