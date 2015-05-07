@@ -1,0 +1,32 @@
+\chapter{Conclusions}
+\label{chp:ch7-conclusions}
+
+This research demonstrates various of techniques that accelerates the execution of hosted interpreters for dynamic languages like Python.
+The optimizations we discussed in this thesis strengthens hosted interpreter as a promising architectural choice to implement dynamic language runtimes in terms of both efficiency and implementation cost.
+In Chapter~\ref{chp:ch2-bytecode} we apply the classic direct threading instruction dispatch technique to a real work implementation of Python in the context of a hosted bytecode interpreter on the JVM.
+Our system automatically speedups Jython to a factor of $2.45\times$ without having to implement a custom compiler.
+
+In Chapter~\ref{chp:ch3-zippy} we presented the first full-fledged Python 3 prototype running atop the Java virtual machine.
+Our implementation leverages the Truffle framework which is a runtime system designed to efficiently host dynamic languages on a JVM.
+We show that ZipPy exploits Truffle's type specialization by replacing generic AST nodes with type-specialized AST nodes during execution.
+We also present high-level optimizations that specifically benefit Python programs such as efficient support of generators as well as call, loop, and sequence specialization.
+
+We evaluate our system by comparing it with two other Python implementations, CPython and Jython.
+Our ZipPy outperforms both CPython and Jython while being simple and easy to implement.
+As a result, our ZipPy is the first and fastest Python 3 prototype implementation targeting the JVM.
+
+Many popular programming languages support generators to express iterators elegantly.
+Their ability to suspend and resume execution sets them apart from regular functions and make them harder to optimize. 
+In Chapter~\ref{chp:ch4-peeling} We address this challenge in context of a modern, optimizing AST-interpreter for Python 3. 
+It leverages the Truffle framework for the JVM to benefit from type specialization and just-in-time compilation.
+
+We use a specialized set of control-flow nodes to suspend and resume generator functions represented as abstract syntax trees and present a generator peeling transformation to remove the overheads incurred by generators.
+Together, our optimizations transform common uses of generators into simple, nested loops. 
+This transformation simplifies the control flow and eliminates the need for heap allocation of frames which in turn exposes additional optimization opportunities to the underlying JVM.
+As a result, our generator-bound benchmarks run $\peelingSpeedup{}\times$ faster on average.
+Our techniques are neither limited to Python nor our language implementation, ZipPy.
+This means that programmers no longer have to choose between succinct code or efficient iteration---our solution offers both.
+
+In Chapter~\ref{chp:ch5-object} we demonstrate a noval technique that generalizes the existing approach of modeling object in dynamic languages on the JVM.
+Not only that our technique offers the same performance as the existing works do, but also it is significantly more space efficient.
+We expect the adoption of our technique in other popular imlementations of dynamic languages on the JVM.
