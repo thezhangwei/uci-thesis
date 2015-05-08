@@ -1,2 +1,38 @@
 \chapter{Background}
 \label{chp:ch2-background}
+
+\section{Virtual Machines}
+\label{sec:ch2-virtual-machines}
+
+In this thesis we refer process virtual machines or application virtual machines simply as VMs.
+They usually supports a single process running in a hosted operating system.
+A VM provides a high-level abstraction composing a high-level programming language compared to the traditional low-level system programming languages.
+This type of VM become popular since the wide adoption of the Java virtual machine which implements the Java programming language.
+Microsoft's common language runtime is another example.
+V8~\cite{v8}, a JavaScript implementation developed by Google, is a more recent popular language VM.
+
+Virtual machines execute the hosted program in various fashions.
+The VM can execute the hosted code using an interpreter, a just-in-time (JIT) compiler or a combination of both.
+First the VM parses the targeted program from source code to a form of intermediate representation (IR).
+The IR consists of series of ``instructions'' with each ``instruction'' representing exactly one functional operation, e.g., an arithmetic additional operation.
+The interpreter then executes the program by translating the IR into actions one piece at a time.
+For instance the interpreter interprets the IR instruction representing an additional operation by performing the actual addition.
+The JIT compiler on the other hand execute the program by translating the IR into machine code and then redirect execution to the compiled machine code.
+
+Interpreters often subject to suboptimal performance.
+This is partially caused to the cost of by having to process each instruction before executing it.
+Whereas a JIT compiler performs the translation prior to the execution of the program and avoid the overhead of processing repetitively executed instructions.
+In addition, JIT compilers often implement more aggressive optimizations that potentially skip the execution of some portions of the program altogether.
+However, the time the JIT compiler spend in compiling the program does not directly contribute to the execution of the target program.
+This delay in compilation makes JIT compilers less ideal for programs that requires fast response.
+A VM execution strategy called ``mixed mode'' addresses the disadvantages of both options by combining an interpreter and JIT compiler.
+The VM initially executes the target program using the interpreter for fast response.
+As the program becomes ``hot'', the VM switches the its execution by using the JIT compiler for fast execution.
+The VM switches the execution strategy at the granularity of a compilation unit or a method as defined in the target language.
+The initial use of interpreter also helps to collect more runtime information that can benefit optimizations later on performed by the JIT compiler.
+
+\section{Interpreters}
+
+\section{Just-In-Time Compilers}
+
+\section{Type Specialization for Dynamic Languages}
