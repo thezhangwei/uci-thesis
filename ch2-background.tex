@@ -29,10 +29,53 @@ A VM execution strategy called ``mixed mode'' addresses the disadvantages of bot
 The VM initially executes the target program using the interpreter for fast response.
 As the program becomes ``hot'', the VM switches the its execution by using the JIT compiler for fast execution.
 The VM switches the execution strategy at the granularity of a compilation unit or a method as defined in the target language.
-The initial use of interpreter also helps to collect more runtime information that can benefit optimizations later on performed by the JIT compiler.
+The initial use of interpreter also helps to collect more runtime information regarding the target program that can benefit the optimizations later on performed by the JIT compiler.
 
 \section{Interpreters}
 
+Interpreters directly executes a target program without previously compiling them into machine code.
+Most interpreters operate on two form of IRs: abstract syntax tree (AST)~\cite{jones2003abstract} and bytecode.
+ASTs are the most simple and natural way to represent computer programs.
+It is straight forward to produce from the source program and easy to manipulate due to the nature of a tree data structure.
+However, interpreting an AST requires an expensive tree traversal step at each node.
+The overhead caused by the tree traversal is the main drawback on the performance of an AST interpreter.
+
+Bytecode is a more compact form of IR consisting of a sequence of virtual instructions or opcode.
+Each virtual instruction is a number of bytes encoding the detail of a program operation.
+The interpretation of bytecode is more efficient than AST since it does not require traversing a tree data structure.
+In addition, the VM can encode the result of semantics analysis of types and scopes in the bytecode, therefore allows better performance.
+On the other hand, bytecode is more rigid than ASTs.
+The format of a bytecode instruction set is predetermined.
+It is complicated to apply transformations at runtime because of the compact data representation of bytecode.
+
+Interpreters are in general simpler to implement and less expensive to maintain.
+They are also portable.
+Since the implementation of an interpreter is not platform dependent, it runs on all the platform where the language used to implement the interpreter supports.
+As a result, the development cycle for a interpreter is considerably shorter than that of a compiler.
+It is more affordable for a language implementer to make changes to their language when implemented as an interpreter.
+
 \section{Just-In-Time Compilers}
+
+JIT compilers, in contrast to traditional compilers that perform compilation ahead of time (AOT), translate target program into machine code just prior to their execution at runtime.
+The main advantage of a JIT compiler is that is can make use of information only available at runtime to produce better code.
+For instance, a JIT compiler can make use of Intel's SSE2~\cite{klimovitski2001using} instructions to accelerate floating point operations if it detects that the CPU support them.
+An AOT compiler on the other hand cannot assume the availability of SSE2 instructions at runtime, therefore must conservatively compile the target program without the use of SSE2.
+
+There is a wide spectrum between the simplest JIT compilers and the more advanced ones.
+The most simple way to implement a JIT compiler is to use a compilation template.
+A template compiler translates target program from the input IR to machine code using a straight forward translation.
+That is always translating an interpreter instruction to a predetermined sequence of machine code.
+The compiler essentially stitches all the translated templates into a single piece of machine code and executes it.
+More advanced JIT compilers implement more sophisticated internal intermediate representations and advanced optimization techniques.
+For example, Graal~\cite{duboscq2013graal}, a Java JIT compiler developed at Oracle Labs, uses a graph-based IR that represents a Java program as a sea of graph nodes.
+The IR models both control-flow and data-flow dependencies between nodes that allows variety of transformations performed by the compiler.
+Graal also implements advanced optimizations such as partial escape analysis and scalar replacement for Java~\cite{stadler2014partial}.
+
+One of the most important trade off of using a JIT compiler is compilation time.
+The longer the compiler spend in compilation the longer it delays the actual execution of the program, resulting a longer overall execution time of the program.
+However, allocating more compilation time allows the JIT compiler to perform more expensive optimizations to produce better code for long running programs.
+Modern VMs use a tier compilation strategy that involves more than one JIT compilers to execute the target program.
+The VM first uses a less powerful compiler to produce machine code in a short period of time, and switches to a more powerful compiler for ``hotter'' or longer running methods.
+This combination avoid long compilation time when it is not necessary.
 
 \section{Type Specialization for Dynamic Languages}
