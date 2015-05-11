@@ -72,10 +72,44 @@ The IR models both control-flow and data-flow dependencies between nodes that al
 Graal also implements advanced optimizations such as partial escape analysis and scalar replacement for Java~\cite{stadler2014partial}.
 
 One of the most important trade off of using a JIT compiler is compilation time.
-The longer the compiler spend in compilation the longer it delays the actual execution of the program, resulting a longer overall execution time of the program.
-However, allocating more compilation time allows the JIT compiler to perform more expensive optimizations to produce better code for long running programs.
+The longer the compiler spend in compilation the longer it delays the actual execution of the program, resulting a longer overall execution time.
+However, allocating more compilation time allows the JIT compiler to perform more expensive optimizations to produce more efficient code for long running programs.
 Modern VMs use a tier compilation strategy that involves more than one JIT compilers to execute the target program.
 The VM first uses a less powerful compiler to produce machine code in a short period of time, and switches to a more powerful compiler for ``hotter'' or longer running methods.
-This combination avoid long compilation time when it is not necessary.
+This combination allows optimal performance for both short and long running programs.
 
 \section{Type Specialization for Dynamic Languages}
+
+Dynamic languages like Python allows symbols or variables to be associated with values of \emph{any} type.
+The type information of a variable is typically unknown before execution.
+This lack of type information is the main challenge of compiling and optimizing programs written in dynamic languages.
+Prior to the execution of an operation, the type of its operands must be discovered.
+This information is necessary for the VM to perform the actual computation.
+For instance, for an addition operation in Python, if both of the operands are integers, an integer addition occurs.
+If both operands are strings, a string concatenation should be performed.
+This overhead of resolving type information for each operation significantly increases the cost of executing programs written in dynamic languages.
+
+However, value types at a particular program location tend to be stable.
+Deustch et al.~\cite{Deutsch1984} observed this ``type stable'' effect in their work in Smalltalk.
+That is once a variable is assigned to an integer, it is most likely to stay as an integer in successive executions.
+Richards et al.~\cite{Richards+2010} presented that in JavaScript programs $80\%$ of all the call sites has only one type.
+Therefore, to speedup dynamic languages, the VMs need to use JIT compilers to produce better code by exploiting type stabilities.
+
+Type specialization is a technique implemented in modern dynamic language VMs that eliminates the overhead of type checking at runtime.
+Type specialization speculatively assumes that the operands' type of an operation stays stable, hence, perform the operation as if it is typed.
+For example, if an addition operation was previously resolved as integer addition, type specialization performs all subsequent the executions as integer addition until its operands are not integers anymore.
+Since we only need perform the type check against integers, the JIT compiler can optimize these simple checks.
+
+Chambers and Ungar~\cite{Chambers+1989} demonstrated method customizations in \textsc{Self}.
+Their solution generates a customized machine code version using the JIT compiler for each typed signature of a method.
+Deustch et al.~\cite{Deutsch1984} introduced inline caching in Smalltalk.
+Inline caching caches the type information for the initial execution of an operation.
+It assumes type stability for successive executions to alleviate the type checking cost.
+Holzle et al.~\cite{Holzle+1991} introduced polymorphic inline caching (PIC).
+PIC extends inline caching to cache multiple operand types for which the type checking is still cheaper than a full lookup.
+
+Brunthaler~\cite{Brunthaler2010inca} applies quickening to bytecode interpreters, and demonstrated substantial speedup in his optimized Python interpreter.
+Quickening performs type specialization by rewriting the program input bytecode sequence to cache type information.
+W\"{u}rthinger~\cite{Wurthinger+12} proposed self-optimizing AST interpreters that use profiling and node rewriting to accelerate its execution.
+A node rewrite attempts to replace the existing AST node with a type-specialized version optimized for the cached operand types.
+
