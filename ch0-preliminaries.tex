@@ -13,7 +13,7 @@
 \committeechair{Professor Michael Franz}
 \othercommitteemembers
 {
-  Professor Pai Chou\\
+  Professor Kwei-Jay Lin\\
   Professor Guoqing Xu
 }
 
@@ -177,10 +177,10 @@ like Jython (Python), Rhino (JavaScript) or JRuby (Ruby). It automatically accel
 
 Motivated by high development costs, production compilers and virtual machines, often support more than one language.
 This strategy is most effective when the language family is homogeneous.
-Many languages, for instance, are very amenable to static program analysis; dynamic languages are not.
+Many languages, for instance, are very amenable to static program analysis dynamic languages are not.
 Consequently, a single VM cannot deliver peak performance for both types of languages without adapting its optimization strategy accordingly.
 
-Informally, we host a “highly dynamic” language (Python) on the Java Virtual Machine, a VM for “moderately dynamic” languages.
+Informally, we host a ``highly dynamic'' language (Python) on the Java Virtual Machine, a VM for ``moderately dynamic'' languages.
 While we are not the first to do so, our approach diverges from current practice by representing Python programs as abstract syntax trees, ASTs, rather than bytecode.
 Not only are ASTs the simplest and most natural programming language implementation,
 they also lend themselves well to optimizations those are particularly beneficial to highly dynamic languages.

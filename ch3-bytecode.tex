@@ -130,8 +130,7 @@ Although the return instruction is an indirect branch, modern hardware can accur
 \section{Just-In-Time Threaded Code for Hosted Bytecode Interpreters}
 
 Instruction dispatch greatly affects the overall performance of a bytecode interpreter.
-The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques}
-relies on the use of computed goto's.
+The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques} relies on the use of computed goto's.
 Due to the restricted use of pointers, a hosted bytecode interpreter written in Java can not make use of those techniques.
 To address this issue, we extend the JVM by adding the functionality of threaded code generation to enable efficient instruction dispatch for hosted interpreters.
 Our research prototype takes an existing switch-based bytecode interpreter written in Java, and converts it into a direct threading interpreter in a semi-automatic fashion.

@@ -56,7 +56,7 @@ In this Chapter we describe the design choices we made to retrofit the core part
 \label{sec:ch3-fast-arithmetics}
 
 Arithmetic operations are fundamental constructs of a programming language.
-It is challenging to implement efficient arithmetic operations in a dynamically typed langauge like Python.
+It is challenging to implement efficient arithmetic operations in a dynamically typed language like Python.
 In this Section, we explain how we utilize Truffle to enable fast arithmetics in ZipPy.
 
 \subsection{Numeric Types}
@@ -268,7 +268,7 @@ This transformation enables further optimizations described previously in this s
 In summary, list comprehension desugaring eliminates the performance overhead introduced by the concise syntax of list comprehension, and enables efficient list creations in ZipPy.
 
 \section{Discussion}
-ZipPy is the first full-fledged Python 3 protype running atop the Java virtual machine.
+ZipPy is the first full-fledged Python 3 prototype running atop the Java virtual machine.
 Our implementation applies type specialization using Truffle by replacing generic AST nodes with type-specialized ones during execution.
 We also present efficient supports of composite data types and loops that specifically benefit Python programs.
 The techniques we discussed in this Chapter provide a performant basis that includes the imperative subset of the Python language.
