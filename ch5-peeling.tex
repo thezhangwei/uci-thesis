@@ -28,7 +28,7 @@ Furthermore, function calls in those languages are known to be expensive as well
 In this thesis, we examine the challenges of improving generator performance for Python.
 First, we show how to efficiently implement generators in abstract syntax tree (AST) interpreters,
 which requires a fundamentally different design than existing implementations for bytecode interpreters.
-We use our own full-fledged prototype implementation of Python 3, called ZipPy\footnote{Publicly available at \url{https://bitbucket.org/ssllab/zippy}},
+We use our own full-fledged prototype implementation of Python 3, called ZipPy,
 which targets the Java virtual machine (JVM).
 ZipPy uses the Truffle framework~\cite{Wurthinger+13} to optimize interpreted programs in stages, first collecting type feedback in the AST interpreter,
 then just-in-time compiling an AST down to optimized machine code.

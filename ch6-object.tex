@@ -597,7 +597,8 @@ To ensure the performance of an attribute access we want to assign most attribut
 But on the other hand is it impossible to predict the type of each attribute.
 To increase the chance of an optimal location assignment, we need to increase the number of fields of each type on the object storage.
 This size increase inevitably introduces more un-utilized memory space at runtime.
-In addition, a fixed object storage is fixed, for a Python object that has a large number of attributes it has to spill some of the attributes to the spill array.
+In addition, a fixed object storage is fixed.
+For a Python object that has a large number of attributes it has to spill some of the attributes to the spill array.
 This size limitation leads to performance overhead incurred by auto-boxing and more level of indirections.
 In summary, fixed object storage is simple but has limitations when it comes to both performance and space efficiencies.
 

@@ -5,7 +5,7 @@ Abstract syntax trees, ASTs, are the simplest and most natural ways to implement
 They do not require an additional translation step that linearizes ASTs produced by the parser to bytecode or other forms of internal representations.
 They also lend themselves well to optimizations that are particularly beneficial to highly dynamic languages like Python.
 
-We present ZipPy, a Python 3 implementation that is hosted on the JVM.
+We present ZipPy\footnote{Publicly available at \url{https://bitbucket.org/ssllab/zippy}}, a Python 3 implementation that is hosted on the JVM.
 ZipPy incorporates recent works on self-optimizing AST interpreters for the JVM.
 Our work however focuses on high level guest language features that are distinct in Python and
 how well we can fit them onto the existing optimizing AST interpreter framework.
