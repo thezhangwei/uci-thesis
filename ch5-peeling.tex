@@ -324,7 +324,7 @@ When the generator resumes, it picks up the evaluated values from the variables 
 \section{Optimizing Generators with Peeling}
 \label{sec:ch4-generaor-peeling}
 
-Generator peeling is an AST level speculative optimization that targets the idiomatic generator loop pattern.
+Generator peeling~\cite{Zhang+2014} is an AST level speculative optimization that targets the idiomatic generator loop pattern.
 It transforms the high level generator calling semantics to lower level control structures and eliminates the overheads incurred by generators altogether.
 
 \subsection{Peeling Generator Loops}

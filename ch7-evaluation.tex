@@ -190,7 +190,7 @@ Whereas Graal is a substantially more sophisticated and aggressive method JIT.
 The kinds of optimizations implemented in Graal outnumbered that in PyPy.
 Overall we do expect Graal to generate more efficient machine code that the compiler in PyPy.
 
-In general the speedups we achieved in our experiment are inline with other efficient Truffle language implementations~\fxnote{cite other truffle langs?}.
+In general the speedups we achieved in our experiment are inline with other efficient Truffle language implementations~\cite{seaton2014debugging,Grimmer+2014,Grimmer+2014TruffleC}.
 A number of semi built-in optimizations offered by Truffle helped us achieving this result.
 The most important ones includes: frame optimization that eliminates the heap allocation of a frame object and Truffle AST inlining.
 Another advantage of using Truffle as the base of ZipPy is that it makes it easy for guest language implementers to fine tune the machine code size produced by the compiler.
@@ -542,5 +542,4 @@ The smaller the fixed object storage size the higher the slowdown.
 Using a fixed object storage of size one causes a slowdown up to $20\%$ on \textsf{chaos}.
 By increase the size of fixed object storages the slowdowns tend to decrease or even diminish.
 
-\fxnote{adding a discussion subsection?}
-
+%\fxnote{adding a discussion subsection?}

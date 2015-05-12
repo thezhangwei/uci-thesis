@@ -587,8 +587,7 @@ From a software engineering perspective, however, this is a less desirable solut
 \label{sec:ch5-flexible-object-storages}
 
 As we described in Section~\ref{sec:ch5-object-module}, ZipPy uses a fixed Java object in combination with a dynamically updated layout table to model a mutable Python object.
-This design is a common pattern shared by a number of Truffle based language implementations.
-\fxnote{Add citations to truffle languages}.
+This design is a common pattern shared by a number of Truffle based language implementations~\cite{seaton2014debugging,Grimmer+2014,Grimmer+2014TruffleC}.
 For simplicity here we refer the fixed Java object as an \emph{object storage}, since it stores the attributes of a Python object.
 We refer the Java class used to create object storages as a storage class in the rest of this thesis.
 Although using a fixed object storage provides both performance efficiency and implementation simplicity, it is not optimal when it comes to space efficiency.
@@ -739,7 +738,7 @@ It also rewrites itself to a new \texttt{CallCtorFlexNode} optimizing for the al
 
 Each Python class keeps track of its own Java storage classes used to instantiate the Python class.
 It marks the most recently generated storage class as its current storage class.
-Each \texttt{CallCtorFlexNode} caches the current storage class and the Java method handle \fxnote{reference to method handle} of its constructor.
+Each \texttt{CallCtorFlexNode} caches the current storage class and the Java method handle~\cite{jdk8} of its constructor.
 When allocating an object storage, the \texttt{CallCtorFlexNode} calls the Java constructor of the storage class by using the cached method handle.
 A Python object layout change signals its Python class to mark the current storage class as ``old''.
 The following instantiation of the Python class triggers an storage class generation, and replaces the ``old'' current storage class with the ``new'' one.
