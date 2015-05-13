@@ -531,8 +531,8 @@ Using a fixed object storage of size five allocates up to $3.6\times$ more memor
 The result shows that using a fixed object storage causes a significant memory overhead.
 We attribute this inefficiency to the poor type distribution among the fields of a fixed object layout.
 In theory one could design an improved solution that generates a library of fixed object storage with various combination of sizes and type distributions ahead of time, and pick the closest fit from the library when allocating a Python object.
-This hypothetical solution, even in an idea case, cannot surpass flexible object storage in terms of space efficiency.
-Since flexible object storage ensure the optimal space and type distribution allocated for a given Python object.
+This hypothetical solution, even in an ideal case, cannot surpass flexible object storage in terms of space efficiency.
+Since flexible object storage ensures the optimal space and type distribution allocated for a given Python object.
 
 We also measured the slowdown of using a fixed object storage running the benchmarks compared to using flexible object storages.
 The fixed object storage configurations used in our experiment includes the following size settings: one, three and five.
