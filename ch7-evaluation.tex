@@ -542,4 +542,27 @@ The smaller the fixed object storage size the higher the slowdown.
 Using a fixed object storage of size one causes a slowdown up to $20\%$ on \textsf{chaos}.
 By increase the size of fixed object storages the slowdowns tend to decrease or even diminish.
 
-%\fxnote{adding a discussion subsection?}
+\subsection{Discussion}
+
+There is always a trade-off when using a fixed object storage.
+Empirically it is impossible to find an optimal fixed object storage size that offers both space efficiency and performance.
+One could either trade memory space for performance by choosing a bigger fixed object storage size,
+or inversely use a smaller size to save memory space at the price of a lower performance.
+In our experiments, using a fixed object storage leads up to a $3.6\times$ more memory usage on one end and a $20\%$ performance lost on the other.
+
+On the other hand, flexible object storage ensures minimum memory usage with optimal performance for each Python class.
+Our technique produces a storage class that is optimal in terms of both space and performance for the current status of the Python class.
+As the program state evolves at runtime, our system automatically adapts the change and reproduces the updated storage class.
+
+However, continuous flexible storage class generation could lead to the coexistence of multiple storage classes for a single Python class.
+The additionally generated storage classes incurs a small memory overhead.
+This overhead is however negligible when compared to the memory use of Python instance objects.
+Multiple storage classes also creates multiple valid cache entries at an object access site.
+The additional cache entries cause the slowdown in \textsf{richards} when compared to a fixed object storage of size $5$.
+Given that the saving on the memory space significantly overweights the speed lost (\textsf{richards} of size $5$), we think flexible object storage still delivers a much better balance between space and performance than its fixed counterpart even in the worst case of our tests.
+
+Furthermore, ZipPy can potentially alleviate this slowdown by carefully reordering the cache entries created for the same Python class.
+The reordering can hoist the cache entry created for the newer generation storage class above the entries created for the older ones assuming more frequent accesses on the Python objects allocated using the newer storage class.
+However, we found in our tests that the benefit of this optimization is input dependent or program behavior dependent.
+Some program favors the older storage classes, whereas the other programs favors the newer ones.
+We observed mixed results with cache entry reordering enabled.
