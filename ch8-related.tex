@@ -3,7 +3,7 @@
 
 Python, similar to other popular dynamic languages, is originally implemented as an interpreter written in C, namely CPython~\cite{python}.
 Google later on developed unladen swallow, an optimizing branch of CPython, attempting to improve its performance by adopting JIT compilation techniques.
-As the existing programming language virtual machines built for traditional statically type languages like JVM and Microsoft CLR~\cite{Kennedy+2001,Gough+2001,kilgore2002open} mature and gain more popularity, they start to become multi-tenant.
+As the existing virtual machines built for traditional statically typed programming languages, such as JVM and Microsoft CLR~\cite{Kennedy+2001,Gough+2001,kilgore2002open}, mature and gain more popularity, they start to become multi-tenant.
 This movement drove the appearance of multiple hosted Python implementations:
 IronPython is a Python implementation that runs on Microsoft's CLR architecture~\cite{hugunin2004ironpython}.
 Jython is a Python implementation written in Java and hosted on the JVM~\cite{jython}.
@@ -27,13 +27,13 @@ Based on our experiences obtained by implementing our full-fledged prototype, we
 
 Our implementation differs from their work primarily in exploring and extending the applicability and performance to Python 3.
 Not only do we measure the type specialization potential and compare implementation effort, but we also explore necessary optimizations to obtain high performance on a stock Java virtual machine.
-By leveraging the recently explored partial evaluation plus JIT compiler combination, 
+By leveraging the recently explored partial evaluation plus JIT compiler combination,
 we are able to gain substantial speedups on top of our platform---requiring only little extra implementation effort.
 
 Similar to Truffle, the PyPy project~\cite{Rigo2006} also aims to provide an easy to use framework for dynamic language implementers.
-There are several similarities, such as using RPython instead of C/C++ to implement interpreters. 
+There are several similarities, such as using RPython instead of C/C++ to implement interpreters.
 The differences are more of a subtle nature.
-First, PyPy mostly  focuses on virtual machine interpreters instead of AST interpreters (though they are supported).
+First, PyPy mostly  focuses on bytecode interpreters instead of AST interpreters (though they are supported).
 Second, PyPy uses a trace-based compilation approach relying on the bytecode interpreter~\cite{bolz.etal09}.
 In theory, however, PyPy is not bound to the bytecode interpreter and could very well duplicate the Truffle approach.
 Furthermore, trace-based compilation~\cite{gal.etal+09,chang.etal+09} is somewhat similar to partial evaluation followed by just-in-time compilation.
@@ -112,7 +112,6 @@ It allows compiler optimizations to map the caller frame and the generator frame
 Therefore it is more efficient.
 
 Watt~\cite{watt2006technique} describes an inlining based technique that optimizes control-based iterators in Aldor, a statically typed language.
-His approach requires multiple extra steps that iteratively optimize the data structures and the control flows after the initial inlining. 
-Generator peeling transforms the guest program AST in a single step before the compilation starts. 
+His approach requires multiple extra steps that iteratively optimize the data structures and the control flows after the initial inlining.
+Generator peeling transforms the guest program AST in a single step before the compilation starts.
 It simplifies the workload for the underlying compiler and enables more optimizations.
-
