@@ -1,7 +1,7 @@
 \chapter{Evaluation}
 \label{chp:ch7-evaluation}
 
-To fully evaluate the effectiveness of the optimizations we discussed in the Chapter~\ref{chp:ch4-zippy}, Chapter~\ref{chp:ch5-peeling} and Chapter~\ref{chp:ch6-object}, we evaluate the performance of ZipPy in the following steps:
+To fully assess the effectiveness of the optimizations we discussed in the Chapter~\ref{chp:ch4-zippy},~\ref{chp:ch5-peeling} and~\ref{chp:ch6-object}, we evaluate the performance of ZipPy in the following steps:
 First we evaluate the overall performance of ZipPy by running a selection of conventional benchmarks.
 These benchmarks are popular among the virtual machine research and Python communities.
 They provide a good indication of the overall performance of a programming language implementation.
@@ -170,7 +170,7 @@ The majority of the high number speedups of ZipPy comes from compute intensive b
 The unboxed data representation of numeric types in ZipPy successfully optimizes these benchmarks without ever having to go to the boxed representation.
 At peak performance, ZipPy executes the entire benchmark by only using Java primitives for arithmetic operations.
 This approach effectively enables low level optimizations offered by the underlying Graal compiler, which consequently achieved Java like arithmetics performance for Python programs in our experiments.
-Being able to speculatively bring the cost of arithmetic operations in Python much closer to the one in Java is the key distinguisher between ZipPy and the existing JVM-based Python implementations.
+Being able to speculatively reduce the cost of arithmetic operations in Python to be much closer to that in Java is the key distinguisher between ZipPy and the existing JVM-based Python implementations.
 
 The noticeable slow down in \textsf{pidigits} is caused by integer overflows in Python.
 After an integer overflow, ZipPy uses a JDK \texttt{BigInteger}~\cite{hotspot} to model integers of a large value.
@@ -188,13 +188,13 @@ We attribute this advancement to Graal, the underlying Java JIT compiler.
 PyPy uses a relatively straight forward tracing JIT compiler to compile Python programs down to machine code.
 Whereas Graal is a substantially more sophisticated and aggressive method JIT.
 The kinds of optimizations implemented in Graal outnumbered that in PyPy.
-Overall we do expect Graal to generate more efficient machine code that the compiler in PyPy.
+Overall we do expect Graal to generate more efficient machine code than the compiler in PyPy.
 
 In general the speedups we achieved in our experiment are inline with other efficient Truffle language implementations~\cite{seaton2014debugging,Grimmer+2014,Grimmer+2014TruffleC}.
 A number of semi built-in optimizations offered by Truffle helped us achieving this result.
 The most important ones includes: frame optimization that eliminates the heap allocation of a frame object and Truffle AST inlining.
 Another advantage of using Truffle as the base of ZipPy is that it makes it easy for guest language implementers to fine tune the machine code size produced by the compiler.
-It offers utilities that helps us to precisely specify the boundary of a JIT compilation rather than fully relying on the compiler heuristics.
+Truffle offers utilities that helps us to precisely specify the boundary of a JIT compilation rather than fully relying on the compiler heuristics.
 This features allows us to carve out less important code paths from the compiled code to make the machine code size more compact.
 In summary, by making better use of Truffle ZipPy is able to achieve high speedups when compared with existing Python VMs with low implementation cost.
 
