@@ -52,7 +52,7 @@ The descriptions of each data representation are as follows:
 ZipPy, as explained in Chapter~\ref{sec:ch3-fast-arithmetics}, models some built-in numeric types, like \texttt{bool}, \texttt{int} and \texttt{float}, using Java primitives.
 This approach helps to achieve Java level performance for arithmetic operations in ZipPy.
 We refer types that has a Java primitive representation as \emph{unboxable}.
-Each \emph{unboxable} numeric type in ZipPy has a corresponding \emph{boxed} representation using Java objects as a fallback.
+Each \emph{unboxable} numeric type in ZipPy has a corresponding \emph{boxed} representation using Java objects as a fall-back.
 As shown in the Figure, a boxing operation will convert an instance of unboxable type, e.g., \texttt{int}, from its Java primitive representation to the boxed one.
 
 \item \textbf{Built-in immutable types}
@@ -66,7 +66,7 @@ All custom or user defined types in Python are mutable.
 That includes Python modules, custom type definitions written in Python and instances of custom classes.
 We model them using still a regular Java object, an instance of \texttt{PythonObject} in ZipPy, to circumvent the performance overhead incurred by using a hash map.
 ZipPy maps Python attribute accesses to field accesses on the \texttt{PythonObject} object.
-We support attribute mutation by maintaining an object layout table for each Python object.
+We support attribute modifications by maintaining an object layout table for each Python object.
 The object layout table keeps track of the memory offset for each attribute that is currently stored on the object.
 We will discuss how we support attribute modifications on custom types in more detail in Section~\ref{sec:ch5-custom-mutable-types}.
 
@@ -186,22 +186,23 @@ The spill array allocation is lazy so that we only allocate the array when neces
 During the layout update, ZipPy calculates the size of the additional spill array needed to accommodate all the attributes.
 If it requires a spill array, we conservatively allocate an array that is just enough to store all the attributes.
 
-The type of an attribute can change at runtime.
-A type change also triggers a layout update.
-Our current solution is to assign a location that matches the most general type of an attribute.
+In Python, attribute types can change at runtime.
+An attribute type change also triggers a layout update.
+Our current solution to handle such a type change is to assign a location that matches the most generic type of the attribute.
 Once an unboxed attribute becomes boxed, we always assign a boxed location for this attribute in the future.
 
 Our approach uses \texttt{PythonObject}s simply as a physical storage for the attributes of a Python object.
-We detach the layout description of the Python object from its storage component, which gives us the freedom to customize the behavior of attribute accesses in ZipPy without being restricted by Java's own object model.
-Since we model class objects in the same way as regular objects in Python, they enjoy the same potential performance benefit achieved by this design.
+We detach the layout description of the Python object from its storage component.
+This approach gives us the freedom to customize the behavior of attribute accesses in ZipPy without being restricted by Java's own object model.
+Since we model class objects in the same way as we do for regular objects in Python, they enjoy the same potential performance benefit achieved by this design.
 
 \subsection{Inline Caching for Attribute Accesses}
 
-As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table stores the location of each object attribute.
-Access an attribute requires looking up its location information from the layout table and then performing a memory operation that reads from or writes to the obtained memory location.
+As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table stores the location of object attributes.
+Accessing an attribute requires looking up its location information from the layout table and then performing a memory read or write at the obtained memory location.
 Since we implement the layout table using a hash map, the cost of accessing the table is as expensive as attribute accesses on a hash map based object.
 However, ZipPy optimizes attribute accesses by caching attribute locations after a full layout table lookup.
-This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, holzle1991, Brunthaler2010inca}, amortizes the cost of accesses to the same attribute on the object of the same type.
+This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, holzle1991, Brunthaler2010inca}, amortizes the cost of accessing the same attribute on the Python objects of the same type.
 
 \subsubsection{Attribute Access Dispatch Chain}
 \label{sec:ch5-attribute-access-dispatch-chain}
@@ -220,8 +221,8 @@ This technique, inspired by previous research on virtual machines~\cite{Deutsch1
 \label{fig:ch5-attribute-access-dispatch-chain}
 \end{figure}
 
-Like the other operation, we model attribute accesses using AST nodes in ZipPy.
-We model an attribute read operation using a \texttt{GetAttributeNode} and write operation using a \texttt{SetAttributeNode}.
+Like the other operations, we model attribute accesses using AST nodes in ZipPy.
+We model an attribute read operation using a \texttt{GetAttributeNode} and attribute write operation using a \texttt{SetAttributeNode}.
 Figure~\ref{fig:ch5-attribute-access-dispatch-chain} illustrates the structure of these two nodes.
 In each attribute access node, the \textsf{primary} child node represents the primary expression, the component precedes the period in Python's syntax.
 The \textsf{primary} node evaluates to the Python object, on which we perform the attribute access.
@@ -231,7 +232,7 @@ The attribute access dispatch chain is a link list of dispatch nodes.
 Each dispatch node has a \textsf{next} field that points to the next dispatch node except for the last one.
 The chain forms a polymorphic inline cache with each node working as an individual cache entry.
 Each entry stores the object layout and the location of a previously accessed attribute.
-Upon a successive access to the attribute on an object having the same layout, the matching dispatch node performs a memory access directly using the cached location.
+Upon a successive access to the attribute on a Python object sharing the same layout, the matching dispatch node performs a direct memory operation using the cached location.
 In other words, a cache hit in the dispatch chain voids executing the slow path lookup on the object layout.
 
 ZipPy performs an attribute access operation in a number of steps.
