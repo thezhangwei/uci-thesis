@@ -95,11 +95,11 @@ To preserve the unbounded integer semantics, a \texttt{PInt} uses a \texttt{BigI
 For all the arithmetic operation nodes in ZipPy, we specify the type specializations in the order that ensures the correct type coercion rules.
 
 ZipPy uses another unboxed data representation for numbers to achieve fast arithmetic operation.
-Essentially we map Python numeric types to Java primitive types as long as possible.
-For instance, initially ZipPy uses a Java \texttt{int} to represent a Python \texttt{int}.
-For all arithmetic operations that consume unboxed numbers, as long as the result does not overflow, ZipPy keep their result remain unboxed.
-Object operations such as attribute access trigger lazy boxing that coverts a number from the unboxed representation to the boxed one.
-To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
+Essentially we map Python numeric types to Java primitive types when possible.
+For instance, ZipPy initially uses a Java \texttt{int} to represent a Python \texttt{int}.
+It keeps the results of all the arithmetic operations consuming the \texttt{int} remain unboxed, as long as the result does not overflow.
+Object operations such as attribute access trigger lazy boxing that coverts a number from its unboxed representation to the boxed one.
+To handle the unbound integer semantics, ZipPy uses \texttt{BigInteger} to model integers with bigger values in addition to Java primitive \texttt{int}.
 
 \subsection{Applying Type Specializations}
 
@@ -118,9 +118,9 @@ To handle the unbound integer semantics, ZipPy use \texttt{BigInteger} to model 
 \end{figure}
 
 Truffle provides a Java annotation based source code generation engine.
-Hosted VM implementers can use this engine to automatically generate type specialized derivatives for their AST interpreters.
+Hosted VM implementers can use this engine to automatically generate type specialized derivatives for their AST nodes.
 Derivative generation is an essential but tedious part of applying type specializations.
-This code generation process requires minimum boilerplate code from the hosted VM implementers and helps them to focus on the core logic of their interpreter.
+Truffle's code generation feature requires minimum boilerplate code from hosted VM implementers, and allows them to focus on the other aspects of their work.
 
 \texttt{not} is a unary arithmetic operation in Python.
 The operation evaluates the given expression to a boolean value and returns the inversion of that value.
@@ -128,7 +128,7 @@ Similar to other arithmetic operations, ZipPy implements \texttt{not} as a singl
 Figure~\ref{fig:not-node-code} illustrates the implementation of the \texttt{NotNode} in ZipPy using Truffle's DSL (simplified for brevity).
 Note that each method annotated using \texttt{@Specialization} represents a type specialized derivative of the \texttt{NotNode}.
 For instance, the method \texttt{doInteger} and \texttt{doDouble} implement the \texttt{not} operation for integers and floating point numbers.
-We will explain in~\ref{sec:numeric-types} about the reason why we specialize against Java primitive types instead of boxed representations of numeric types in Python.
+As explained in~\ref{sec:numeric-types}, we specialize against Java primitive types instead of boxed representations of numeric types in Python for better performance.
 \texttt{@Fallback} denotes the generic version of the \texttt{not} operand.
 
 Truffle's code generation engine produces the actual implementation of the derivative nodes.
@@ -143,12 +143,13 @@ If no matching derivative is found, the node rewrites to \texttt{NodeGenericNode
 \section{Efficient Data Representation for Composite Data Types}
 
 Python provides a rich set of built-in composite data types including \texttt{list}s, \texttt{tuple}s, \texttt{set}s, and \texttt{dict}s.
-Jython uses a straight-forward approach that uses the existing collection types in the Java development kit (JDK) to implement these data types.
-This approach is simple to implement but adds runtime cost to the use of the data types.
-When adding an element to a Java generics based collection type, the JVM performs auto-boxing on the primitive types to their corresponding object wrapper classes.
-Auto-boxing ensures that every element in a collection type is of reference type.
+Jython simply uses the existing collection types in the Java development kit (JDK) to implement these data types.
+This approach is straight-forward to implement but adds runtime cost to the use of these data types.
+Java collection types only store elements of reference type.
+When adding an unboxed premitive value to a Java collection, the JVM performs an auto-boxing converting the primitive value to a boxed data type.
+Auto-boxing ensures that every element in a collection is of reference type.
 This design simplifies garbage collection in Java, since the garbage collector does not have to distinguish between reference type and value type for members of collection types.
-However, auto-boxing involves heap allocation and additional memory accesses, and it slows down accesses to composite data types in Jython.
+However, auto-boxing involves heap allocation and additional memory operations, and as a result it slows down accesses to composite data types in Jython.
 
 \subsection{Unboxed Sequence Storage}
 
@@ -160,12 +161,12 @@ However, auto-boxing involves heap allocation and additional memory accesses, an
 \end{figure}
 
 ZipPy employs more efficient data representations for Python composite or sequence data types to avoid auto-boxing.
-Unlike \texttt{tuple}s, programmers tend to use \texttt{list}s in a homogeneous way meaning that elements of a \texttt{list} are usually of the same type.
+For example, Python programmers tend to use \texttt{list}s in a homogeneous way meaning that elements of a \texttt{list} are usually of the same type.
 Therefore, we can speculatively stores a list of integers, for instance, in a Java primitive \texttt{int} array to avoid auto-boxing.
 In ZipPy, a \texttt{list} stores its elements in a \texttt{SequenceStorage} object that dynamically switches between different concrete data representations.
 Figure~\ref{fig:sequence-storage-types} shows the different \texttt{SequenceStorage} types used in ZipPy.
-For instance, a list of Python integers uses a \texttt{IntSequenceStorage} to store the integers in a Java primitive \texttt{int} array assuming that the element types will stay the same.
-As long as the assumption holds, ZipPy specializes accesses of the integer list and avoids auto-boxing altogether.
+As mentioned in the previous example, a list of Python integers uses a \texttt{IntSequenceStorage} to store the integers in a Java primitive \texttt{int} array assuming that the element types will stay the same.
+As long as the assumption holds, ZipPy specializes the accesses to the integer list and avoids auto-boxing altogether.
 Once the assumption becomes invalid, the list automatically converts its \texttt{SequenceStorage} to the next matching type to preserve semantics.
 
 \subsection{Profiling-based List Literal Specialization}
@@ -186,8 +187,8 @@ Once the assumption becomes invalid, the list automatically converts its \texttt
 
 ZipPy enables the use of unboxed sequence storages by specializing Python list constructions.
 More specifically we create type specialized derivatives for list constructor calls and list literals.
-When a list literal creates a list that can use a more efficient sequence storage type, we specialize it to a typed list literal
-that always try to create a list using an unboxed sequence storage type.
+When a list literal creates a list that can use a more efficient sequence storage type, we specialize it to a typed list literal.
+The specialized list literal always tries to create a list using an unboxed sequence storage type.
 
 However, some times the list construction site does not have enough information about the elements going into the list at a later point.
 For instance, what we often see in Python programs is a pattern similar to the code snippet shown in Figure~\ref{fig:list-construction-loop-code}.
@@ -200,12 +201,12 @@ The AST labeled as \textsf{1} is the initial version with both the \texttt{ListL
 If we simply specialize the \texttt{ListLiteralNode} base on type information available locally, we will replace it with an \texttt{EmptyListLiteralNode} (\textsf{2A} in Figure~\ref{fig:empty-list-storage-profiling}).
 The \texttt{EmptyListLiteralNode} returns a list backed by an \texttt{EmptySequenceStorage}.
 Subsequently the \texttt{ListAppendNode} in the loop body specializes itself to an \texttt{IntStorageAppendNode} and switches the list's storage to an \texttt{IntSequenceStorage}.
-The remaining iterations of the loop does not introduce changes to the AST and populates and populates the list using an efficient data representation.
+The remaining iterations of the loop does not introduce changes to the AST and populates the list using an efficient data representation.
 However, if \texttt{makeList} is invoked again, the above mentioned specializations will alter.
 Note that the \texttt{EmptyListLiteralNode} always return a list using \texttt{EmptySequenceStorage}.
 This storage type is not expected by the \texttt{IntStorageAppendNode} in the loop body and will trigger a re-specialization that generalizes the list storage type to an boxed one.
 The reason of this action is that the previous specialization to \texttt{IntSequenceStorage} become unstable.
-Therefore, the node need to give up the current specialization, and rewrites itself to the next matching derivative version.
+Consequently, the node need to give up the current specialization, and rewrites itself to the next matching derivative version.
 In short, the straight forward specialization can not properly handle empty list instantiation.
 
 Alternatively, we could add an intermediate step when specializing list literals.
@@ -215,7 +216,6 @@ Upon the second execution of function \texttt{makeList}, the \texttt{ProfilingLi
 It performs the final specialization to the derivative version that matches the previous list assuming that the next list is most likely to have the same storage type.
 This step results in the stable AST \textsf{3B} shown in Figure~\ref{fig:empty-list-storage-profiling}.
 By using profiling based non-local type feedback, ZipPy is able to optimize list accesses for more complicated list construction pattern in Python programs.
-
 
 \section{Control Flow Specializations}
 
@@ -228,7 +228,9 @@ By using profiling based non-local type feedback, ZipPy is able to optimize list
 \label{fig:for-range-node}
 \end{figure}
 
-Unlike the way other languages use it, for statements in Python iterate over a sequence of items, like a list or a string, in the order that they appear in the sequence.
+For loops in Python are elegantly designed.
+Basically, any object with an \emph{iterable} method or a sequence can be consumed by a for loop.
+For statements in Python iterate over a sequence of items, like a list or a string, in the order that they appear in the sequence.
 ZipPy models Python control flow using Java control flow constructs.
 Naturally it uses Java loops to construct for loops in Python.
 If we abstract a for loop in Python as an operation, the only input operand of this operation is the sequence flowing into the loop.
@@ -238,8 +240,9 @@ Figure~\ref{fig:for-range-node} shows a specialization we added to the \texttt{F
 In Python the built-in \texttt{range} function generates an iterable containing arithmetic progressions that can be used to iterate over a sequence of numbers.
 A for loop over a range iterator, or a for range loop like the one shown in Figure~\ref{fig:list-construction-loop-code}, is the most common use of for loops among Python programs.
 The \texttt{doPRange} method shown in Figure~\ref{fig:for-range-node} completely unboxes the incoming \texttt{PRangeIterator} into a few primitive integer indices.
-This approach effectively lower the semantics level of a for range loop in Python to a straight forward for loop in Java.
+This approach effectively lower the semantics level of a for range loop in Python to a straight-forward for loop in Java.
 The for range specialization not only minimizes the loop overhead on the JVM, it also enables more advanced loop optimizations like loop unrolling for the Java compiler.
+As a result, for range loops in ZipPy enjoye optimal performance.
 
 \subsection{List Comprehensions}
 
@@ -271,4 +274,4 @@ In summary, list comprehension desugaring eliminates the performance overhead in
 ZipPy is the first full-fledged Python 3 prototype running atop the Java virtual machine.
 Our implementation applies type specialization using Truffle by replacing generic AST nodes with type-specialized ones during execution.
 We also present efficient supports of composite data types and loops that specifically benefit Python programs.
-The techniques we discussed in this Chapter provide a performant basis that includes the imperative subset of the Python language.
+The techniques we discussed in this Chapter enables a performant basis that includes the imperative subset of the Python language.
