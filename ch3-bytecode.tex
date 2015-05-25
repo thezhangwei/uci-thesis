@@ -11,7 +11,7 @@ In the second step bytecode interpreters execute the bytecode as a sequence of v
 Interpreters are also regard as virtual machines, since they emulate ``machines'' with their own virtual instruction sets.
 
 In this Chapter, we go over performance overheads of bytecode interpreters and the classic techniques used to minimize these overheads.
-Lastly, we introduce ModularVM~\cite{savrun2013, savrun2014}, a research JVM that automatically optimize the performance of hosted bytecode interpreters.
+Lastly, we introduce Modular VM~\cite{savrun2013, savrun2014}, a research JVM that automatically optimize the performance of hosted bytecode interpreters.
 
 \section{Performance Anatomy of Bytecode Interpreters}
 
@@ -26,7 +26,7 @@ Instruction dispatch includes fetching the next instruction, decoding the instru
 Operand access involves fetching operands required to perform the instruction from either a temporal operand stack or a virtual register file depending on the design of the virtual instruction set.
 It also includes storing the computed result back to where temporal operands should be stored.
 Subsequently in the last step the interpreter performs the actual computation.
-For instance, if the instruction is addition of two numbers, the actually addition is performed in this step.
+For instance, if the instruction is addition of two numbers, the actual addition is performed in this step.
 
 \begin{figure}[th]
 \centering
@@ -45,7 +45,7 @@ Since these are the stages that prepare the operands for the computing unit and 
 The interpreter step that performs the function of the instruction works exactly as the execute stage in RISC, which performs the actual computation.
 
 The cost of running a hosted program on an interpreter consists of the costs of performing each of the three steps we described above.
-Among those steps, instruction dispatch and operand access does not directly contribute to the actual work of the hosted program.
+Among those steps, instruction dispatch and operand access do not directly contribute to the actual work of the hosted program.
 The less time the interpreter spend in these two steps, the more time the interpreter spend in doing the actual work.
 Therefore, an efficient bytecode interpreter must encompass techniques that optimize instruction dispatch and operand access.
 
@@ -96,7 +96,7 @@ This mis-prediction results in a significant performance penalty for switch-base
 
 Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation~\cite{bell73}.
 Figure~\ref{fig:direct-threading-dispatch-code} illustrates this technique written in C.
-Direct threading requires an additional translation phase that translates the bytecode sequence into a sequence of pointers or the threaded code.
+Direct threading requires an additional translation phase that translates the bytecode sequence into a sequence of pointers namely the threaded code.
 Each pointer in the threaded code points to the instruction implementation that corresponds to the bytecode instruction in the original bytecode input.
 The interpreter starts interpretation by jumping to the address pointed by the first pointer in the threaded code as shown in Figure~\ref{fig:direct-threading-dispatch-code}.
 Similarly each instruction implementation repeat the same dispatch routine at the end of it to forward execution to the next instruction implementation.
@@ -130,7 +130,7 @@ Although the return instruction is an indirect branch, modern hardware can accur
 \section{Just-In-Time Threaded Code for Hosted Bytecode Interpreters}
 
 Instruction dispatch greatly affects the overall performance of a bytecode interpreter.
-The implementation of an efficient instruction dispatch technique like the ones explained in Chapter~\ref{sec:efficient-instruction-dispatch-techniques} relies on the use of computed goto's.
+The implementation of an efficient instruction dispatch technique like the ones explained in Section~\ref{sec:efficient-instruction-dispatch-techniques} relies on the use of computed goto's.
 Due to the restricted use of pointers, a hosted bytecode interpreter written in Java can not make use of those techniques.
 To address this issue, we extend the JVM by adding the functionality of threaded code generation to enable efficient instruction dispatch for hosted interpreters.
 Our research prototype takes an existing switch-based bytecode interpreter written in Java, and converts it into a direct threading interpreter in a semi-automatic fashion.
@@ -141,7 +141,7 @@ Our research prototype takes an existing switch-based bytecode interpreter writt
 \begin{figure}[th]
 \centering
 \includegraphics[scale=.3]{figures/ch2-jython-on-modularvm.pdf}
-\caption{Jython on ModularVM}
+\caption{Jython on Modular VM}
 \label{fig:jython-on-modularvm}
 \end{figure}
 
@@ -288,7 +288,7 @@ We run ten repetitions of each benchmark for each argument and report the geomet
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=.44]{figures/ch2-benchmark-jython-direct-threading-rawinterpreter.pdf}
+\includegraphics[scale=.41]{figures/ch2-benchmark-jython-direct-threading-rawinterpreter.pdf}
 \caption{Jython's direct threaded interpreter vs. switch-based}
 \label{fig:benchmark-jython-direct-threading-rawinterpreter}
 \end{figure}
@@ -322,7 +322,7 @@ Without efficient array stores, our interpreter is $34\%$ slower than Jython's c
 
 Jython's class file compiler, although marginally faster than our interpreter, is more expensive to construct and maintain.
 Implementing a class file compiler that is custom to its source language requires a thorough understanding not only on the source language but also many details of the JVM.
-They need to find efficient and smart ways to map their languages onto the Java bytecode instruction set and at the same time incorporate classic compiler optimizations into their compilers.
+They need to find efficient ways to map their languages onto the Java bytecode instruction set, and at the same time incorporate classic compiler optimizations into their compilers.
 This process requires a costly effort from the host VM implementors both initially and continuously.
 
 Our optimizations on the other hand hides away many of the details of the JVM and how to run interpreter efficiently on the JVM.
