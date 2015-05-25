@@ -228,12 +228,12 @@ In each attribute access node, the \textsf{primary} child node represents the pr
 The \textsf{primary} node evaluates to the Python object, on which we perform the attribute access.
 The \textsf{attribute} nodes shown in both Figure~\ref{fig:ch5-get-attribute-node} and~\ref{fig:ch5-set-attribute-node} are dispatch chains that perform the actual read or write on the resolved object.
 
-The attribute access dispatch chain is a link list of dispatch nodes.
+The attribute access dispatch chain is a linked list of dispatch nodes.
 Each dispatch node has a \textsf{next} field that points to the next dispatch node except for the last one.
 The chain forms a polymorphic inline cache with each node working as an individual cache entry.
 Each entry stores the object layout and the location of a previously accessed attribute.
 Upon a successive access to the attribute on a Python object sharing the same layout, the matching dispatch node performs a direct memory operation using the cached location.
-In other words, a cache hit in the dispatch chain voids executing the slow path lookup on the object layout.
+In other words, a cache hit in the dispatch chain avoids executing the slow path lookup on the object layout.
 
 ZipPy performs an attribute access operation in a number of steps.
 It first evaluates the primary object, and passes the object to the dispatch chain.
@@ -248,14 +248,14 @@ The added entry increases the depth of the inline cache as well as the chance of
 However, if the cache depth reaches a certain threshold, ZipPy rewrites the entire dispatch chain to a single generic dispatch node that always perform a slow path lookup.
 
 Each cache entry in the dispatch chain consists of a cluster of nodes coordinated by the dispatch node.
-Besides the \textsf{next} field pointing to the next node, each dispatch node has a \texttt{LayoutCheckNode} as well as a \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
+Besides the \textsf{next} field pointing to the next node, each dispatch node has a \texttt{LayoutCheckNode} as well as an \texttt{AttributeReadNode} or \texttt{AttributeWriteNode} (Figure~\ref{fig:ch5-attribute-access-dispatch-chain}).
 The \textsf{check} node stores the cached object layout and performs the layout test.
-The \textsf{read} or \textsf{write} node stores the cached attribute location and performs the actual read or write on the primary object.
+The \textsf{read} or \textsf{write} node stores the cached attribute location and performs the actual memory read or write on the primary object.
 When a layout update happens, ZipPy creates a new layout instance for the associated Python object.
 ZipPy also signals the old layout as invalid, since it does not describe a valid layout for the associated object anymore.
 Therefore, when performing a layout test the \texttt{LayoutCheckNode} also checks the validity of the cached layout.
 If the cached layout become invalid, it throws an exception back to the parent node.
-ZipPy handles the exception by remove the invalid cache entry from the dispatch chain.
+ZipPy handles the exception by removing the invalid cache entry from the dispatch chain.
 
 \subsubsection{Dispatch Node Transformation}
 
@@ -268,7 +268,7 @@ ZipPy handles the exception by remove the invalid cache entry from the dispatch 
 
 The above mentioned attribute access dispatch chain initially starts with a single uninitialized dispatch node.
 It expands into a chain linking a number of \texttt{LinkedDispatchNode} during execution.
-If the depth of the chain overflows a given limit, the entire chain transforms to a \texttt{GenericDispatchNode}.
+If the depth of the chain overflows the given limit, the entire chain transforms to a \texttt{GenericDispatchNode}.
 Figure~\ref{fig:ch5-attribute-dispatch-transformation} further illustrates this transformation.
 The descriptions of the transformation rules depicted in the Figure are as follows:
 
@@ -279,12 +279,12 @@ Depending on the data representation of the primary object, it chooses the \text
 A \texttt{LinkedDispatchUnboxNode} stores the Java class of the \emph{unboxed} object.
 
 \item A \texttt{LinkedDispatchBoxedNode} performs the layout test through an identify check between the cached layout and the layout of the incoming primary object.
-A layout test on a \texttt{LinkedDispatchUnboxedNode} compares the cached Java class to that of the primary object.
+A layout test in a \texttt{LinkedDispatchUnboxedNode} compares the cached Java class to that of the primary object.
 If the layout test returns a match, the cached dispatch node remains unchanged.
 Note that in an attribute read operation, as explained in Section~\ref{sec:ch5-attribute-resolution}, the resolved attribute may not be stored on the primary object itself.
 In fact, the actual owner can be any object on the attribute resolution chain of the primary object.
 In this case, the cached dispatch node needs to conservatively cache all the layout of the objects on the attribute resolution chain from the primary object itself up to the owner of the resolved attribute.
-In the layout test, the dispatch node needs to perform a series of checks to ensure the validity of the cache layouts.
+In this case, to perform a proper layout test, the dispatch node needs to perform a series of checks to ensure the validity of the cache layouts.
 
 \item If the layout test returns a miss match or a cache miss occurs, the cached dispatch node redirects execution to the next node on the dispatch chain.
 The same rules apply to the transformation of the next dispatch node.
@@ -301,7 +301,7 @@ The cost of hitting a cache entry located close to the bottom of the chain grows
 Thus, it is not cost effective to grow the dispatch chain indefinitely.
 On the other hand, for a program location exhibits a high degree of polymorphism or also referred as a megamorphic dispatch site,
 optimizing for just a few number of cases only affects a limited fraction of the overall execution occurred at this program location.
-An optimization strategy like inline caching is unlikely to have an substantial performance impact in this case.
+An optimization strategy like inline caching is unlikely to have a meaningful performance impact in this case.
 In summary, for a megamorphic dispatch site using a generic dispatch node is simpler and as efficient as forming a deep dispatch chain.
 
 \section{Call Site Modeling}
@@ -335,8 +335,9 @@ First, the program needs to lookup the symbol \texttt{ham} from the current scop
 After resolving the callee, the program then checks the type of the callee to determine the eligibility of such call.
 Lastly, the actual call takes place using a calling convention that matches the callee type.
 The Python interpreter handles argument passing differently for different callee types.
-For instance, a constructor call, a call to a Python class object, creates an instance of the Python class.
-In a constructor call, the interpreter creates an empty Python object and passes it to the callee as the first argument.
+For instance, a constructor call, a call to a Python class object, returns an instance of the Python class.
+In a constructor call, the interpreter implicitly creates an empty Python object and passes it to the callee as the first argument.
+Whereas such an implicit argument is not present if the caller is not a Python class.
 
 The call site shown in Figure~\ref{fig:ch5-call-site-simple-code} is in its simplest form.
 We refer it as a \emph{simple call site}.
@@ -348,7 +349,7 @@ For example, if \texttt{ham} is a global variable, the look up of \texttt{ham} i
 Similarly, in a class scope, a simple call to an existing class attribute also involves an implicit attribute look up on the enclosing class object.
 % say something about motivates the structure of the AST
 The same syntax implies different semantics and ways to make the actual call at runtime.
-To cover different variations, we decompose a call site in ZipPy into multiple of components or nodes and assemble them in various ways to serve our needs.
+To cover all the different variations, we decompose a call site in ZipPy into a number of components or nodes, and assemble them in various ways to serve our needs.
 This way allows us to apply specializations on each component separately to optimize calls in Python programs.
 
 \subsubsection{The AST of Call Sites}
@@ -378,19 +379,19 @@ If the callee resolution does not involve an attribute access, it ignores the pr
 \item The keywords node evaluates all the keyword arguments, and returns them to the call node in an Java array.
 
 \item The \texttt{PythonCallNode} passes the evaluated primary object, callee, arguments array and keyword arguments array to the dispatch node.
-The dispatch node performs the actual call using an inline caching inspired dispatch chain scheme~\cite{Deutsch1984, holzle1991}, and passes all the arguments to the AST of the callee.
+The dispatch node performs the actual call using an inline caching inspired dispatch chain~\cite{Deutsch1984, holzle1991}, and passes all the arguments to the AST of the callee.
 We will explain the call dispatch nodes in more detail in Section~\ref{sec:ch5-call-site-caching-and-inlining}.
 
 \end{enumerate}
 
 Note that some components like the primary or keyword arguments are not always present.
 In case that an optional component is missing, we still model it as a dummy node that returns a \texttt{None} or an empty Java array to make it consistent for all call nodes.
-The \texttt{PythonCallNode} organizes different components of the call site and handles transformations like type specialization and deoptimization at runtime.
+The \texttt{PythonCallNode} organizes different components of the call site, and handles transformations like type specialization and deoptimization at runtime.
 
 \subsection{Call Node Specializations}
 
 Similar to other operations in ZipPy, we applies type specializations to call nodes against the type of the callee through node rewriting.
-It initially constructs a call node using the uninitialized version (\texttt{UninitCallNode} in Figure~\ref{fig:ch5-call-node-specialization-simple}).
+ZipPy initially constructs a call node using the uninitialized version (\texttt{UninitCallNode} in Figure~\ref{fig:ch5-call-node-specialization-simple}).
 Upon the first execution of the call, the uninitialized call node executes a slow path to resolve the primary object and callee.
 At the same time, it rewrites itself to a derivative version that is tailored to the resolved primary and callee.
 Not only that the call node specializes itself, it also applies type specializations to its child nodes during the rewriting process.
@@ -405,8 +406,8 @@ In this Section, we explain how ZipPy applies call node specializations for diff
 \label{fig:ch5-call-node-specialization-simple}
 \end{figure}
 
-As explained in Section~\ref{sec:ch5-structure-of-call-sites}, the callee resolution of a simple call site (Figure~\ref{fig:ch5-call-site-simple-code}) depends on the type of the namespace to which the callee belongs.
-Therefore, the specialization of a simple call site needs to cover different resolution cases.
+As explained in Section~\ref{sec:ch5-structure-of-call-sites}, the callee resolution of a simple call site (Figure~\ref{fig:ch5-call-site-simple-code}) is determined by the type of the namespace to which the callee belongs.
+Therefore, the specialization of a simple call site needs to cover the different resolution cases.
 Figure~\ref{fig:ch5-call-node-specialization-simple} illustrates various call node transformations of a simple call site.
 The description of the three different specialization cases shown in the Figure is as follows:
 
@@ -430,18 +431,18 @@ The callee node reads the callee attribute from the module object returned by th
 The \texttt{ReadGlobalNode} accesses the built-in module if it failed to resolve it from the global scope module.
 Upon a successful resolution of the callee object, the \texttt{ReadGlobalNode} caches the actual primary object.
 For instance, if the resolved callee object is an attribute of the built-in object, the node caches the built-in object instead of the current module.
-Caching speedups subsequent attribute accesses by accessing the cached object directly as long as the attributes of the object remain unchanged.
+Caching speedups subsequent attribute accesses by performing a direct memory operation at the cached location as long as the attributes of the object remain unchanged.
 
 \item \textbf{Callee as a class attribute}
-The call takes place in a class scope.
-The resolved callee is an existing class attribute of the enclosing scope.
+The resolved callee is an existing class attribute of the enclosing class scope.
+Class scope refers to the enclosed scope of a Python class definition.
 Class definition works as a special function in Python.
-The evaluation of the class definition statement is essentially a call to the special function.
+The evaluation of the class definition statement is essentially a call to this special function.
 The interpreter passes an empty class object as the first argument to the function, and the class definition function populates the class object with attributes like functions.
-The call to the class definition function returns the created class object containing attributes specified by in the class definition.
-To access an existing attribute of the defining class, we need to first retrieve the defining class object.
+The call to the class definition function returns the constructed class object containing attributes specified by the class definition.
+In a class scope, to access an attribute of the class being defined, we need to first retrieve the class object itself.
 The \texttt{ReadArgumentNode} does so by reading the argument array passed by the caller of the class definition.
-the callee node then reads the callee attribute from the primary class object.
+The callee node then reads the callee attribute from the primary class object.
 The \texttt{GetAttributeNode} also enjoys type specialization and caching on its own, which we will discuss more in Section~\ref{sec:ch5-object-module}.
 
 \end{enumerate}
@@ -468,7 +469,7 @@ We simplified the Figure by not including the arguments node and the keyword arg
 In Section~\ref{sec:ch5-object-module} we discussed that ZipPy models Python objects using multiple data representations to make arithmetics and object operations more efficient.
 As a consequence, attribute accesses on objects modeled using different representations are also different.
 Figure~\ref{fig:ch5-attribute-call-site-boxed-unboxed-code} shows two examples of attribute call sites.
-The primary object in the left example --- \texttt{h} --- is a custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}),
+The primary object in the left example, \texttt{h}, is a custom Python object (Figure~\ref{fig:ch5-attribute-call-site-boxed-code}),
 whereas the primary object \texttt{n} in the right one (Figure~\ref{fig:ch5-attribute-call-site-unboxed-code}) is a built-in integer.
 The callee resolutions in these two cases are different.
 
@@ -485,11 +486,11 @@ A \texttt{UnboxedCallNode} on the other hand expects an unboxed primary object.
 It obtains the primary's class object through the mapping table explained in Section~\ref{sec:ch5-attribute-resolution} to access the primary's attribute resolution chain.
 
 In Python, an attribute reference that looks up a \texttt{PyFunction} object creates a \texttt{PyMethod} that wraps both the primary and the \texttt{PyFunction} objects.
-If the \texttt{PyMethod} is invoked at another program location, it passes the stored primary object to the actual callee as the first argument.
+If the \texttt{PyMethod} is invoked at a different program location, it passes the stored primary object to the actual callee as the first argument.
 The \texttt{PyMethod} creation guarantees the data binding between the primary and its function attribute.
 However, in most cases, the allocation of the \texttt{PyMethod} object is unnecessary.
 In an attribute call site, the resolved callee is invoked right away and does not escape the program location where it is referenced.
-Therefore, there is no need to create the wrapper for it.
+Therefore, there is no need to create the wrapper \texttt{PyMethod}.
 By applying specialization for attribute call sites in ZipPy we eliminate the creation of \texttt{PyMethod} objects in most cases.
 
 \subsubsection{Specialization for Special Method Call Sites}
@@ -518,10 +519,10 @@ In the end, the values of the attribute \texttt{v} on the object \texttt{l} and 
 To support special method overwriting in ZipPy, we applied additional specializations to the operation nodes that support overloading.
 As an example, Figure~\ref{fig:ch5-add-node-special-method-code} shows such a specialization we added to the \texttt{AddNode} in ZipPy.
 Add is a binary operation.
-So an \texttt{AddNode} in ZipPy specializes against the types of the two operands.
+An \texttt{AddNode} in ZipPy specializes against the type of both left and right operands.
 If either of the operand is a boxed Python object or of type \texttt{PythonObject} we specialize this add operation as a special method call.
 The call to \texttt{doSpecialMethodCall} shown in the Figure tries to lookup the special method \texttt{\_\_add\_\_} from the operands and invoke it.
-At the same time, it also constructs a call dispatch chain that performs the actual invocation and attaches the chain to the add node.
+At the same time, the specialization transformation also constructs a call dispatch chain that performs the actual invocation, and attaches the chain to the add node.
 
 \begin{figure}
 \centering
@@ -532,13 +533,13 @@ At the same time, it also constructs a call dispatch chain that performs the act
 
 Figure~\ref{fig:ch5-add-node-with-special-dispatch} illustrates the structure of an add node after successfully specialized for a special method call.
 First, ZipPy specializes the add node itself to an \texttt{AddObjectNode} based on the operand types.
-The left and right children of the add node can be nodes of any time.
+The left and right children of the add node can be nodes of any type.
 We simply mark them as \texttt{PNode}s here to show their existences.
 More interestingly, a call dispatch chain represented by the \texttt{CallDispatchSpecialNode} appears as a child of the add node.
 A call dispatch chain is similar to an attribute access dispatch chain.
 It forms an inline cache for calls, which we will explain in more detail in Section~\ref{sec:ch5-call-site-caching-and-inlining}.
-When executing a subsequent call to the special method, the add node first evaluates the operands and passes them to the call dispatch chain.
-The dispatch chain performs the actual call and passes the two operands as arguments to the callee.
+When executing a subsequent call to the special method, the add node first evaluates the two operands and passes them to the call dispatch chain.
+The dispatch chain performs the actual call, and passes the two operands as arguments to the callee.
 
 \subsection{Call Site Dispatch and Inlining}
 \label{sec:ch5-call-site-caching-and-inlining}
@@ -559,16 +560,16 @@ Due to the dynamic nature of Python, the callee resolution of a procedure call n
 A subsequent call performed at the same location does not guarantee to call the same target.
 
 To overcome this challenge we use call dispatch chains similar to the one described in Section~\ref{sec:ch5-attribute-access-dispatch-chain} to optimize and inline calls in ZipPy.
-A call dispatch chain is a chain of dispatch nodes that work as a polymorphic inline cache.
+A call dispatch chain is a linked list of dispatch nodes that work as a polymorphic inline cache.
 Each cache entry on the chain caches the layout of the primary object and the resolved callee of a previous call at the same call site.
 Figure~\ref{fig:ch5-call-dispatch-chain} shows the components of the call dispatch chain in more detail.
 Each \texttt{LinkedCallDispatchNode} represents a single cache entry.
-The check node of the entry layout of a previous primary object and performs a layout test to determine a cache hit.
-The invoke node stores the cached call target and call the AST of the callee.
-A call dispatch chain goes through the same transformation process as an attribute dispatch chain, which starts with an uninitialized version and later on expands into a number linked dispatch nodes.
-If the depth of the chain grows over threshold, the entire chain rewrites itself with a generic dispatch node.
+The check node of the entry caches the layout of a previous primary object, and performs a layout test to determine a cache hit.
+The invoke node stores the cached call target, and calls the AST of the callee.
+A call dispatch chain goes through the same transformation process as an attribute dispatch chain, which starts with an uninitialized version and later on expands into a number of linked dispatch nodes.
+If the depth of the chain grows over the given threshold, the entire chain rewrites itself with a generic dispatch node.
 
-As an AST interpreter, all Python functions are ASTs in ZipPy.
+In ZipPy, all Python functions are ASTs.
 Inlining a function call is essentially stitching the AST of the callee to that of the caller at the node that represents the call site.
 Truffle runtime handles the actual inlining and possibly cloning the callee AST automatically during execution.
 It does so through the \texttt{InvokeNode} interface shown in Figure~\ref{fig:ch5-call-dispatch-chain}.
@@ -576,11 +577,11 @@ The \texttt{InvokeNode} stores the AST of the resolved callee and passes the arg
 Truffle runtime profiles the hotness of each call in the \texttt{InvokeNode} and performs call inlining by rewriting the \texttt{InvokeNode}.
 Some times different call sites pass arguments of different types to the same callee.
 This difference in type causes the callee AST to specialize for multiple call sites.
-To void this unwanted state share between an inlined AST and the original one, Truffle clones the entire callee AST before stitches it to that of the caller.
+To void this unwanted AST state share between different call sites, Truffle clones the entire callee AST before stitches it to that of the caller.
 
 However, Truffle's call profiling and inlining treats the entire AST as a single entity.
-It does not have domain knowledge about the semantics of the guest language but only to provide building blocks that makes it easier for the guest language implementer.
-To enable AST inlining, ZipPy needs to construct Python call sites using \texttt{InvokeNode}s in the way that we have described above.
+It does not have domain knowledge about the semantics of the guest language but only to provide building blocks for the guest language implementer.
+To enable AST inlining, ZipPy needs to construct Python call sites using \texttt{InvokeNode}s in the way we have described above.
 Alternatively, we could handle AST inlining complete by ourselves.
 From a software engineering perspective, however, this is a less desirable solution, since offloading it to the Truffle framework is easier to maintain in the long run.
 
