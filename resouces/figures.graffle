@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-05-25 05:32:49 +0000</string>
+	<string>2015-05-28 04:53:30 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -21784,8 +21784,8 @@ Python AST}</string>
 											<integer>3133</integer>
 											<key>Points</key>
 											<array>
-												<string>{347.93318763273493, 136.06970609890482}</string>
-												<string>{351.2168482959342, 141.98028901337031}</string>
+												<string>{347.9331846918339, 136.0697077346735}</string>
+												<string>{351.21684293060343, 141.98029199763653}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -21830,8 +21830,8 @@ Python AST}</string>
 											<integer>3134</integer>
 											<key>Points</key>
 											<array>
-												<string>{339.96683948075162, 136.06970553149247}</string>
-												<string>{336.6831781870963, 141.98028958079078}</string>
+												<string>{339.96684242164605, 136.06970716725843}</string>
+												<string>{336.68318355241547, 141.98029256505259}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -22545,8 +22545,8 @@ Python AST}</string>
 											<integer>3145</integer>
 											<key>Points</key>
 											<array>
-												<string>{242.08318868177673, 136.06970609890482}</string>
-												<string>{245.36684934497598, 141.98028901337028}</string>
+												<string>{242.08318574087562, 136.0697077346735}</string>
+												<string>{245.36684397964515, 141.9802919976365}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -22591,8 +22591,8 @@ Python AST}</string>
 											<integer>3146</integer>
 											<key>Points</key>
 											<array>
-												<string>{234.11684052979331, 136.0697055314925}</string>
-												<string>{230.83317923613802, 141.98028958079078}</string>
+												<string>{234.11684347068777, 136.06970716725846}</string>
+												<string>{230.83318460145725, 141.98029256505257}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -24475,6 +24475,220 @@ specialization}</string>
 			<string>1 pt = 1 pt</string>
 			<key>GraphicsList</key>
 			<array>
+				<dict>
+					<key>Bounds</key>
+					<string>{{315, 405}, {85, 96}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Courier</string>
+						<key>Size</key>
+						<real>5</real>
+					</dict>
+					<key>ID</key>
+					<integer>26</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>0</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red23\green34\blue41;\red48\green87\blue137;
+\red70\green123\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs10 \cf0       \cf2 jmp\cf0  \cf3 L7\cf0 \
+    \
+\cf3 L6: \cf0   \cf2 mov\cf0        \cf4 ecx\cf3 ,\cf0  \cf4 edx\cf0 \
+      \cf2 add\cf0        \cf4 ecx\cf3 ,\cf0  \cf5 ebp\cf0 \
+      \cf2 jo\cf0         \cf3 L8\cf0 \
+      \cf2 mov\cf0        \cf4 edx\cf3 ,\cf0  \cf5 ebp\cf0 \
+      \cf2 incl\cf0       \cf4 edx\cf0 \
+      \cf2 mov\cf0        \cf5 esi\cf3 ,\cf0  \cf5 ebp\cf0 \
+      \cf2 mov\cf0        \cf4 ebp\cf3 ,\cf0  \cf4 edx\cf0 \
+      \cf2 mov\cf0        \cf4 edx\cf3 ,\cf0  \cf4 ecx\cf0 \
+\cf3 L7:\cf0    \cf2 cmp\cf0        \cf4 eax\cf3 ,\cf0  \cf5 ebp\cf0 \
+      \cf2 jle\cf0        \cf3 L9\cf0 \
+      \cf2 jmp\cf0        \cf3 L6\cf0 \
+\cf3 L8:\cf0    \cf2 call\cf0       \cf3 deoptimize()\cf0 \
+\
+\cf3 L9:}</string>
+						<key>VerticalPad</key>
+						<integer>0</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{322, 326}, {86, 54}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Consolas</string>
+						<key>Size</key>
+						<real>5</real>
+					</dict>
+					<key>ID</key>
+					<integer>24</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>0</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red106\green62\blue62;}
+\deftab720
+\pard\pardeftab720
+
+\f0\fs10 \cf2 public\cf0  \cf2 int\cf0  sum(\cf2 int\cf0  \cf3 n\cf0 \ul \ulc0 )\ulnone  \{\
+  \cf2 int\cf0  \cf3 ttl\cf0  = 0;\
+\
+  \cf2 for\cf0  (\cf2 int\cf0  \cf3 i\cf0  = 0; \cf3 i\cf0  &lt; \cf3 n\cf0 ; \cf3 i\cf0 ++) \{\
+    \cf3 ttl\cf0  += \cf3 i\cf0 ;\
+  \}\
+\
+  \cf2 return\cf0  \cf3 ttl\cf0 ;\
+\}}</string>
+						<key>VerticalPad</key>
+						<integer>0</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{334, 248}, {74, 40}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>21</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.999991</string>
+								<key>g</key>
+								<string>0.999974</string>
+								<key>r</key>
+								<string>1</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0</string>
+							</dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>ShadowVector</key>
+							<string>{8.5039396286010742, 8.5039396286010742}</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+							<key>PointAtLeast</key>
+							<true/>
+							<key>Width</key>
+							<real>0.72000002861022949</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>4</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;}
+\deftab720
+\pard\pardeftab720
+
+\f0\fs12 \cf2 def\cf0  sum(n):\
+  ttl = 0\
+  \cf2 for\cf0  i \cf2 in\cf0  range(n):\
+    ttl += i\
+  \cf2 return\cf0  ttl}</string>
+						<key>VerticalPad</key>
+						<integer>4</integer>
+					</dict>
+					<key>TextPlacement</key>
+					<integer>0</integer>
+				</dict>
 				<dict>
 					<key>Bounds</key>
 					<string>{{96, 456}, {76, 26}}</string>
@@ -32617,8 +32831,8 @@ l = []\
 							<integer>37556</integer>
 							<key>Points</key>
 							<array>
-								<string>{350.60592802418131, 2507.6316958951911}</string>
-								<string>{364.07750682165579, 2521.1032720596968}</string>
+								<string>{350.60592724456365, 2507.6316967046851}</string>
+								<string>{364.0775064676327, 2521.1032755204074}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -32771,8 +32985,8 @@ l = []\
 							<integer>37559</integer>
 							<key>Points</key>
 							<array>
-								<string>{350.60592802418131, 2442.2132910730961}</string>
-								<string>{364.0775068216559, 2455.6848672376018}</string>
+								<string>{350.60592724456382, 2442.2132918825901}</string>
+								<string>{364.0775064676327, 2455.6848706983124}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -33025,8 +33239,8 @@ l = []\
 							<integer>37564</integer>
 							<key>Points</key>
 							<array>
-								<string>{251.29739179097606, 2406.128693314829}</string>
-								<string>{266.37438101386135, 2422.5688543159599}</string>
+								<string>{251.29739157511494, 2406.1286935130852}</string>
+								<string>{266.37438044402785, 2422.5688548393182}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -33071,8 +33285,8 @@ l = []\
 							<integer>37565</integer>
 							<key>Points</key>
 							<array>
-								<string>{317.89672479186987, 2474.9224934841436}</string>
-								<string>{331.36830358934515, 2488.3940696486497}</string>
+								<string>{317.89672401225238, 2474.9224942936376}</string>
+								<string>{331.36830323532172, 2488.3940731093599}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -33516,8 +33730,8 @@ l = []\
 							<integer>37573</integer>
 							<key>Points</key>
 							<array>
-								<string>{53.297397036184833, 2406.128693314829}</string>
-								<string>{68.374386259070121, 2422.5688543159599}</string>
+								<string>{53.297396820323733, 2406.1286935130852}</string>
+								<string>{68.374385689236618, 2422.5688548393182}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34059,7 +34273,13 @@ frame passing}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaDq6qqPoOM
+								iws/g7m4OD4B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -34069,41 +34289,35 @@ frame passing}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZguEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg6uqqj6D
-								jIsLP4O5uDg+
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgub
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -34214,6 +34428,12 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg/r4
+								eD6D2NbWPoOc
+								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -34223,41 +34443,35 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYLhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoP6
-								+Hg+g9jW1j6D
-								nJsbPwGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYLmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -34812,8 +35026,8 @@ loop body}</string>
 							<integer>37592</integer>
 							<key>Points</key>
 							<array>
-								<string>{351.15808456947332, 2707.4316906022987}</string>
-								<string>{364.62966336694842, 2720.9032667668048}</string>
+								<string>{351.15808378985565, 2707.4316914117926}</string>
+								<string>{364.62966301292505, 2720.9032702275149}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34966,8 +35180,8 @@ loop body}</string>
 							<integer>37595</integer>
 							<key>Points</key>
 							<array>
-								<string>{351.15808456947349, 2642.0132857802037}</string>
-								<string>{364.62966336694842, 2655.4848619447098}</string>
+								<string>{351.15808378985554, 2642.0132865896976}</string>
+								<string>{364.62966301292505, 2655.4848654054199}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35173,8 +35387,8 @@ loop body}</string>
 							<integer>37599</integer>
 							<key>Points</key>
 							<array>
-								<string>{285.73967810485118, 2642.0132857802037}</string>
-								<string>{299.21125690232589, 2655.4848619447098}</string>
+								<string>{285.73967732523323, 2642.0132865896976}</string>
+								<string>{299.2112565483024, 2655.4848654054199}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35219,8 +35433,8 @@ loop body}</string>
 							<integer>37600</integer>
 							<key>Points</key>
 							<array>
-								<string>{251.84954833626821, 2605.9286880219365}</string>
-								<string>{266.92653755915353, 2622.3688490230675}</string>
+								<string>{251.84954812040712, 2605.9286882201927}</string>
+								<string>{266.92653698932008, 2622.3688495464257}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35265,8 +35479,8 @@ loop body}</string>
 							<integer>37601</integer>
 							<key>Points</key>
 							<array>
-								<string>{318.44888133716228, 2674.7224881912512}</string>
-								<string>{331.92046013463704, 2688.1940643557573}</string>
+								<string>{318.44888055754433, 2674.7224890007451}</string>
+								<string>{331.92045978061367, 2688.1940678164674}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35419,8 +35633,8 @@ loop body}</string>
 							<integer>37604</integer>
 							<key>Points</key>
 							<array>
-								<string>{152.60593326939022, 2707.4316906022987}</string>
-								<string>{166.07751206686495, 2720.9032667668048}</string>
+								<string>{152.60593248977239, 2707.4316914117926}</string>
+								<string>{166.0775117128415, 2720.9032702275149}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35573,8 +35787,8 @@ loop body}</string>
 							<integer>37607</integer>
 							<key>Points</key>
 							<array>
-								<string>{152.60593326939005, 2642.0132857802037}</string>
-								<string>{166.07751206686498, 2655.4848619447098}</string>
+								<string>{152.60593248977239, 2642.0132865896976}</string>
+								<string>{166.0775117128415, 2655.4848654054199}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35827,8 +36041,8 @@ loop body}</string>
 							<integer>37612</integer>
 							<key>Points</key>
 							<array>
-								<string>{53.297397036184833, 2605.9286880219365}</string>
-								<string>{68.374386259070121, 2622.3688490230675}</string>
+								<string>{53.297396820323733, 2605.9286882201927}</string>
+								<string>{68.374385689236618, 2622.3688495464257}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35873,8 +36087,8 @@ loop body}</string>
 							<integer>37613</integer>
 							<key>Points</key>
 							<array>
-								<string>{119.89673003707884, 2674.7224881912512}</string>
-								<string>{133.36830883455391, 2688.1940643557573}</string>
+								<string>{119.89672925746086, 2674.7224890007451}</string>
+								<string>{133.36830848053029, 2688.1940678164674}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -37182,6 +37396,12 @@ loop body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg9vZ
+								WT+DkZCQPoPi
+								4GA+AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -37191,41 +37411,35 @@ loop body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYHhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoPb
-								2Vk/g5GQkD6D
-								4uBgPgGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYHmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -37394,6 +37608,12 @@ exception}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg/r4
+								eD6D2NbWPoOc
+								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -37403,41 +37623,35 @@ exception}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYHhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoP6
-								+Hg+g9jW1j6D
-								nJsbPwGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYHmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -37554,7 +37768,13 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaDq6qqPoOM
+								iws/g7m4OD4B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -37564,41 +37784,35 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgeEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg6uqqj6D
-								jIsLP4O5uDg+
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgeb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -38478,6 +38692,12 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg9vZ
+								WT+DkZCQPoPi
+								4GA+AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -38487,41 +38707,35 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYHhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoPb
-								2Vk/g5GQkD6D
-								4uBgPgGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYHmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -38638,6 +38852,12 @@ exception}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg/r4
+								eD6D2NbWPoOc
+								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -38647,41 +38867,35 @@ exception}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYHhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoP6
-								+Hg+g9jW1j6D
-								nJsbPwGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYHmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -38798,7 +39012,13 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaDq6qqPoOM
+								iws/g7m4OD4B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -38808,41 +39028,35 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgeEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg6uqqj6D
-								jIsLP4O5uDg+
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgeb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -44185,7 +44399,13 @@ generator body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaDq6qqPoOM
+								iws/g7m4OD4B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -44195,41 +44415,35 @@ generator body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgeEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg6uqqj6D
-								jIsLP4O5uDg+
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgeb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -46281,6 +46495,12 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg/r4
+								eD6D2NbWPoOc
+								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -46290,41 +46510,35 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYHhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoP6
-								+Hg+g9jW1j6D
-								nJsbPwGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYHmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -55075,6 +55289,12 @@ x = _tmp + (
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
+								B05TQ29sb3KG
+								koSEhAdOU0Nv
+								bG9yAJSEAWMC
+								hARmZmZmg/r4
+								eD6D2NbWPoOc
+								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -55084,41 +55304,35 @@ x = _tmp + (
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSf
-								ngA4hpKEn54A
-								VIaShJ+eAHCG
-								koSfngCBjACG
-								koSfngCBqACG
-								koSfngCBxACG
-								koSfngCB4ACG
-								koSfngCB/ACG
-								koSfngCBGAGG
-								koSfngCBNAGG
-								koSfngCBUAGG
+								AkNmAByGkoSi
+								oQA4hpKEoqEA
+								VIaShKKhAHCG
+								koSioQCBjACG
+								koSioQCBqACG
+								koSioQCBxACG
+								koSioQCB4ACG
+								koSioQCB/ACG
+								koSioQCBGAGG
+								koSioQCBNAGG
+								koSioQCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
-								lpYGTlNLZXJu
-								hpKEhIQITlNO
-								dW1iZXIAhIQH
-								TlNWYWx1ZQCU
-								hAEqhIQBZKMA
-								hpKElpYGTlNG
-								b250hpKEhIQG
-								TlNGb250HpSZ
-								MIQFWzQ4Y10G
-								AAAAKAAAAP/+
-								QwBvAG4AcwBv
-								AGwAYQBzAC0A
-								QgBvAGwAZABJ
-								AHQAYQBsAGkA
-								YwCEAWYFhAFj
-								AKcBpwCnAIaS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSn
-								AoQEZmZmZoP6
-								+Hg+g9jW1j6D
-								nJsbPwGGhoY=
+								lpYGTlNGb250
+								hpKEhIQGTlNG
+								b250HpSZMIQF
+								WzQ4Y10GAAAA
+								KAAAAP/+QwBv
+								AG4AcwBvAGwA
+								YQBzAC0AQgBv
+								AGwAZABJAHQA
+								YQBsAGkAYwCE
+								AWYFmwCbAZsA
+								mwCGkoSWlgZO
+								U0tlcm6GkoSE
+								hAhOU051bWJl
+								cgCEhAdOU1Zh
+								bHVlAJSEASqE
+								hAFkqQCGhoY=
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -55235,7 +55449,13 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaDq6qqPoOM
+								iws/g7m4OD4B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -55245,41 +55465,35 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgWEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg6uqqj6D
-								jIsLP4O5uDg+
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgWb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -56261,7 +56475,13 @@ a, b = 0, 1\
 								AmlJAReShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaD+vh4PoPY
+								1tY+g5ybGz8B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -56271,41 +56491,35 @@ a, b = 0, 1\
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgWEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg/r4eD6D
-								2NbWPoOcmxs/
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgWb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -56518,6 +56732,12 @@ generator loop}</string>
 								HJKEhIQMTlNE
 								aWN0aW9uYXJ5
 								AJSEAWkEkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoOr
+								qqo+g4yLCz+D
+								ubg4PgGGkoSW
 								lhBOU1BhcmFn
 								cmFwaFN0eWxl
 								hpKEhIQQTlNQ
@@ -56528,40 +56748,34 @@ generator loop}</string>
 								mQyShISECU5T
 								VGV4dFRhYgCU
 								hAJDZgAchpKE
-								n54AOIaShJ+e
-								AFSGkoSfngBw
-								hpKEn54AgYwA
-								hpKEn54AgagA
-								hpKEn54AgcQA
-								hpKEn54AgeAA
-								hpKEn54AgfwA
-								hpKEn54AgRgB
-								hpKEn54AgTQB
-								hpKEn54AgVAB
+								oqEAOIaShKKh
+								AFSGkoSioQBw
+								hpKEoqEAgYwA
+								hpKEoqEAgagA
+								hpKEoqEAgcQA
+								hpKEoqEAgeAA
+								hpKEoqEAgfwA
+								hpKEoqEAgRgB
+								hpKEoqEAgTQB
+								hpKEoqEAgVAB
 								hoaBAAiEBFsx
 								Zl2DzcxMPYaS
-								hJaWBk5TS2Vy
-								boaShISECE5T
-								TnVtYmVyAISE
-								B05TVmFsdWUA
-								lIQBKoSEAWSj
-								AIaShJaWBk5T
-								Rm9udIaShISE
-								Bk5TRm9udB6U
-								mTCEBVs0OGNd
-								BgAAACgAAAD/
-								/kMAbwBuAHMA
-								bwBsAGEAcwAt
-								AEIAbwBsAGQA
-								SQB0AGEAbABp
-								AGMAhAFmBYQB
-								YwCnAacApwCG
-								koSWlgdOU0Nv
-								bG9yhpKEhIQH
-								TlNDb2xvcgCU
-								pwKEBGZmZmaD
-								q6qqPoOMiws/
-								g7m4OD4BhoaG
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmTCE
+								BVs0OGNdBgAA
+								ACgAAAD//kMA
+								bwBuAHMAbwBs
+								AGEAcwAtAEIA
+								bwBsAGQASQB0
+								AGEAbABpAGMA
+								hAFmBZsAmwGb
+								AJsAhpKElpYG
+								TlNLZXJuhpKE
+								hIQITlNOdW1i
+								ZXIAhIQHTlNW
+								YWx1ZQCUhAEq
+								hIQBZKkAhoaG
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -56985,6 +57199,12 @@ _sum = None\
 								ARSShISEDE5T
 								RGljdGlvbmFy
 								eQCUhAFpBJKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								q6qqPoOMiws/
+								g7m4OD4BhpKE
 								lpYQTlNQYXJh
 								Z3JhcGhTdHls
 								ZYaShISEEE5T
@@ -56995,40 +57215,34 @@ _sum = None\
 								lJkMkoSEhAlO
 								U1RleHRUYWIA
 								lIQCQ2YAHIaS
-								hJ+eADiGkoSf
-								ngBUhpKEn54A
-								cIaShJ+eAIGM
-								AIaShJ+eAIGo
-								AIaShJ+eAIHE
-								AIaShJ+eAIHg
-								AIaShJ+eAIH8
-								AIaShJ+eAIEY
-								AYaShJ+eAIE0
-								AYaShJ+eAIFQ
+								hKKhADiGkoSi
+								oQBUhpKEoqEA
+								cIaShKKhAIGM
+								AIaShKKhAIGo
+								AIaShKKhAIHE
+								AIaShKKhAIHg
+								AIaShKKhAIH8
+								AIaShKKhAIEY
+								AYaShKKhAIE0
+								AYaShKKhAIFQ
 								AYaGgQAIhARb
 								MWZdg83MTD2G
-								koSWlgZOU0tl
-								cm6GkoSEhAhO
-								U051bWJlcgCE
-								hAdOU1ZhbHVl
-								AJSEASqEhAFk
-								owCGkoSWlgZO
-								U0ZvbnSGkoSE
-								hAZOU0ZvbnQe
-								lJkwhAVbNDhj
-								XQYAAAAoAAAA
-								//5DAG8AbgBz
-								AG8AbABhAHMA
-								LQBCAG8AbABk
-								AEkAdABhAGwA
-								aQBjAIQBZgWE
-								AWMApwGnAKcA
-								hpKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lKcChARmZmZm
-								g6uqqj6DjIsL
-								P4O5uDg+AYaG
+								koSWlgZOU0Zv
+								bnSGkoSEhAZO
+								U0ZvbnQelJkw
+								hAVbNDhjXQYA
+								AAAoAAAA//5D
+								AG8AbgBzAG8A
+								bABhAHMALQBC
+								AG8AbABkAEkA
+								dABhAGwAaQBj
+								AIQBZgWbAJsB
+								mwCbAIaShJaW
+								Bk5TS2VyboaS
+								hISECE5TTnVt
+								YmVyAISEB05T
+								VmFsdWUAlIQB
+								KoSEAWSpAIaG
 								hg==
 								</data>
 								<key>Text</key>
@@ -57146,7 +57360,13 @@ generator expression}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYQTlNQ
+								BJKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaD+vh4PoPY
+								1tY+g5ybGz8B
+								hpKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -57156,41 +57376,35 @@ generator expression}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShJ+eADiG
-								koSfngBUhpKE
-								n54AcIaShJ+e
-								AIGMAIaShJ+e
-								AIGoAIaShJ+e
-								AIHEAIaShJ+e
-								AIHgAIaShJ+e
-								AIH8AIaShJ+e
-								AIEYAYaShJ+e
-								AIE0AYaShJ+e
+								HIaShKKhADiG
+								koSioQBUhpKE
+								oqEAcIaShKKh
+								AIGMAIaShKKh
+								AIGoAIaShKKh
+								AIHEAIaShKKh
+								AIHgAIaShKKh
+								AIH8AIaShKKh
+								AIEYAYaShKKh
+								AIE0AYaShKKh
 								AIFQAYaGgQAI
 								hARbMWZdg83M
 								TD2GkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkowCGkoSW
-								lgZOU0ZvbnSG
-								koSEhAZOU0Zv
-								bnQelJkwhAVb
-								NDhjXQYAAAAo
-								AAAA//5DAG8A
-								bgBzAG8AbABh
-								AHMALQBCAG8A
-								bABkAEkAdABh
-								AGwAaQBjAIQB
-								ZgWEAWMApwGn
-								AKcAhpKElpYH
-								TlNDb2xvcoaS
-								hISEB05TQ29s
-								b3IAlKcChARm
-								ZmZmg/r4eD6D
-								2NbWPoOcmxs/
-								AYaGhg==
+								U0ZvbnSGkoSE
+								hAZOU0ZvbnQe
+								lJkwhAVbNDhj
+								XQYAAAAoAAAA
+								//5DAG8AbgBz
+								AG8AbABhAHMA
+								LQBCAG8AbABk
+								AEkAdABhAGwA
+								aQBjAIQBZgWb
+								AJsBmwCbAIaS
+								hJaWBk5TS2Vy
+								boaShISECE5T
+								TnVtYmVyAISE
+								B05TVmFsdWUA
+								lIQBKoSEAWSp
+								AIaGhg==
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -57751,26 +57965,26 @@ sum(x*2
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						bG9vcIaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
-						YXJhZ3JhcGhTdHlsZYaShISEEE5T
-						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
-						UwEAhISEB05TQXJyYXkAlJkMkoSE
-						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
-						hJ+eADiGkoSfngBUhpKEn54AcIaS
-						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
-						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
-						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
-						hJ+eAIFQAYaGgQAIhARbMWZdg83M
-						TD2GkoSWlgZOU0tlcm6GkoSEhAhO
-						U051bWJlcgCEhAdOU1ZhbHVlAJSE
-						ASqEhAFkowCGkoSWlgZOU0ZvbnSG
-						koSEhAZOU0ZvbnQelJkwhAVbNDhj
-						XQYAAAAoAAAA//5DAG8AbgBzAG8A
-						bABhAHMALQBCAG8AbABkAEkAdABh
-						AGwAaQBjAIQBZgWEAWMApwGnAKcA
-						hpKElpYHTlNDb2xvcoaShISEB05T
-						Q29sb3IAlKcChARmZmZmg/r4eD6D
-						2NbWPoOcmxs/AYaGhg==
+						dGlvbmFyeQCUhAFpBJKElpYHTlND
+						b2xvcoaShISEB05TQ29sb3IAlIQB
+						YwKEBGZmZmaD+vh4PoPY1tY+g5yb
+						Gz8BhpKElpYQTlNQYXJhZ3JhcGhT
+						dHlsZYaShISEEE5TUGFyYWdyYXBo
+						U3R5bGUAlIQEQ0NAUwEAhISEB05T
+						QXJyYXkAlJkMkoSEhAlOU1RleHRU
+						YWIAlIQCQ2YAHIaShKKhADiGkoSi
+						oQBUhpKEoqEAcIaShKKhAIGMAIaS
+						hKKhAIGoAIaShKKhAIHEAIaShKKh
+						AIHgAIaShKKhAIH8AIaShKKhAIEY
+						AYaShKKhAIE0AYaShKKhAIFQAYaG
+						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
+						hAVbNDhjXQYAAAAoAAAA//5DAG8A
+						bgBzAG8AbABhAHMALQBCAG8AbABk
+						AEkAdABhAGwAaQBjAIQBZgWbAJsB
+						mwCbAIaShJaWBk5TS2VyboaShISE
+						CE5TTnVtYmVyAISEB05TVmFsdWUA
+						lIQBKoSEAWSpAIaGhg==
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -57879,26 +58093,26 @@ generator loop}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						Ym9keYaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
-						YXJhZ3JhcGhTdHlsZYaShISEEE5T
-						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
-						UwEAhISEB05TQXJyYXkAlJkMkoSE
-						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
-						hJ+eADiGkoSfngBUhpKEn54AcIaS
-						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
-						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
-						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
-						hJ+eAIFQAYaGgQAIhARbMWZdg83M
-						TD2GkoSWlgZOU0tlcm6GkoSEhAhO
-						U051bWJlcgCEhAdOU1ZhbHVlAJSE
-						ASqEhAFkowCGkoSWlgZOU0ZvbnSG
-						koSEhAZOU0ZvbnQelJkwhAVbNDhj
-						XQYAAAAoAAAA//5DAG8AbgBzAG8A
-						bABhAHMALQBCAG8AbABkAEkAdABh
-						AGwAaQBjAIQBZgWEAWMApwGnAKcA
-						hpKElpYHTlNDb2xvcoaShISEB05T
-						Q29sb3IAlKcChARmZmZmg6uqqj6D
-						jIsLP4O5uDg+AYaGhg==
+						dGlvbmFyeQCUhAFpBJKElpYHTlND
+						b2xvcoaShISEB05TQ29sb3IAlIQB
+						YwKEBGZmZmaDq6qqPoOMiws/g7m4
+						OD4BhpKElpYQTlNQYXJhZ3JhcGhT
+						dHlsZYaShISEEE5TUGFyYWdyYXBo
+						U3R5bGUAlIQEQ0NAUwEAhISEB05T
+						QXJyYXkAlJkMkoSEhAlOU1RleHRU
+						YWIAlIQCQ2YAHIaShKKhADiGkoSi
+						oQBUhpKEoqEAcIaShKKhAIGMAIaS
+						hKKhAIGoAIaShKKhAIHEAIaShKKh
+						AIHgAIaShKKhAIH8AIaShKKhAIEY
+						AYaShKKhAIE0AYaShKKhAIFQAYaG
+						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
+						hAVbNDhjXQYAAAAoAAAA//5DAG8A
+						bgBzAG8AbABhAHMALQBCAG8AbABk
+						AEkAdABhAGwAaQBjAIQBZgWbAJsB
+						mwCbAIaShJaWBk5TS2VyboaShISE
+						CE5TTnVtYmVyAISEB05TVmFsdWUA
+						lIQBKoSEAWSpAIaGhg==
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -58945,26 +59159,26 @@ generator body}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKwlsb29wIGJvZHmG
 						hAJpSQEJkoSEhAxOU0RpY3Rpb25h
-						cnkAlIQBaQSShJaWEE5TUGFyYWdy
-						YXBoU3R5bGWGkoSEhBBOU1BhcmFn
-						cmFwaFN0eWxlAJSEBENDQFMBAISE
-						hAdOU0FycmF5AJSZDJKEhIQJTlNU
-						ZXh0VGFiAJSEAkNmAByGkoSfngA4
-						hpKEn54AVIaShJ+eAHCGkoSfngCB
-						jACGkoSfngCBqACGkoSfngCBxACG
-						koSfngCB4ACGkoSfngCB/ACGkoSf
-						ngCBGAGGkoSfngCBNAGGkoSfngCB
-						UAGGhoEACIQEWzFmXYPNzEw9hpKE
-						lpYGTlNLZXJuhpKEhIQITlNOdW1i
-						ZXIAhIQHTlNWYWx1ZQCUhAEqhIQB
-						ZKMAhpKElpYGTlNGb250hpKEhIQG
-						TlNGb250HpSZMIQFWzQ4Y10GAAAA
-						KAAAAP/+QwBvAG4AcwBvAGwAYQBz
-						AC0AQgBvAGwAZABJAHQAYQBsAGkA
-						YwCEAWYFhAFjAKcBpwCnAIaShJaW
-						B05TQ29sb3KGkoSEhAdOU0NvbG9y
-						AJSnAoQEZmZmZoP6+Hg+g9jW1j6D
-						nJsbPwGGhoY=
+						cnkAlIQBaQSShJaWB05TQ29sb3KG
+						koSEhAdOU0NvbG9yAJSEAWMChARm
+						ZmZmg/r4eD6D2NbWPoOcmxs/AYaS
+						hJaWEE5TUGFyYWdyYXBoU3R5bGWG
+						koSEhBBOU1BhcmFncmFwaFN0eWxl
+						AJSEBENDQFMBAISEhAdOU0FycmF5
+						AJSZDJKEhIQJTlNUZXh0VGFiAJSE
+						AkNmAByGkoSioQA4hpKEoqEAVIaS
+						hKKhAHCGkoSioQCBjACGkoSioQCB
+						qACGkoSioQCBxACGkoSioQCB4ACG
+						koSioQCB/ACGkoSioQCBGAGGkoSi
+						oQCBNAGGkoSioQCBUAGGhoEACIQE
+						WzFmXYPNzEw9hpKElpYGTlNGb250
+						hpKEhIQGTlNGb250HpSZMIQFWzQ4
+						Y10GAAAAKAAAAP/+QwBvAG4AcwBv
+						AGwAYQBzAC0AQgBvAGwAZABJAHQA
+						YQBsAGkAYwCEAWYFmwCbAZsAmwCG
+						koSWlgZOU0tlcm6GkoSEhAhOU051
+						bWJlcgCEhAdOU1ZhbHVlAJSEASqE
+						hAFkqQCGhoY=
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -59073,26 +59287,26 @@ loop body}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						Ym9keYaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
-						YXJhZ3JhcGhTdHlsZYaShISEEE5T
-						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
-						UwEAhISEB05TQXJyYXkAlJkMkoSE
-						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
-						hJ+eADiGkoSfngBUhpKEn54AcIaS
-						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
-						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
-						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
-						hJ+eAIFQAYaGgQAIhARbMWZdg83M
-						TD2GkoSWlgZOU0tlcm6GkoSEhAhO
-						U051bWJlcgCEhAdOU1ZhbHVlAJSE
-						ASqEhAFkowCGkoSWlgZOU0ZvbnSG
-						koSEhAZOU0ZvbnQelJkwhAVbNDhj
-						XQYAAAAoAAAA//5DAG8AbgBzAG8A
-						bABhAHMALQBCAG8AbABkAEkAdABh
-						AGwAaQBjAIQBZgWEAWMApwGnAKcA
-						hpKElpYHTlNDb2xvcoaShISEB05T
-						Q29sb3IAlKcChARmZmZmg6uqqj6D
-						jIsLP4O5uDg+AYaGhg==
+						dGlvbmFyeQCUhAFpBJKElpYHTlND
+						b2xvcoaShISEB05TQ29sb3IAlIQB
+						YwKEBGZmZmaDq6qqPoOMiws/g7m4
+						OD4BhpKElpYQTlNQYXJhZ3JhcGhT
+						dHlsZYaShISEEE5TUGFyYWdyYXBo
+						U3R5bGUAlIQEQ0NAUwEAhISEB05T
+						QXJyYXkAlJkMkoSEhAlOU1RleHRU
+						YWIAlIQCQ2YAHIaShKKhADiGkoSi
+						oQBUhpKEoqEAcIaShKKhAIGMAIaS
+						hKKhAIGoAIaShKKhAIHEAIaShKKh
+						AIHgAIaShKKhAIH8AIaShKKhAIEY
+						AYaShKKhAIE0AYaShKKhAIFQAYaG
+						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
+						hAVbNDhjXQYAAAAoAAAA//5DAG8A
+						bgBzAG8AbABhAHMALQBCAG8AbABk
+						AEkAdABhAGwAaQBjAIQBZgWbAJsB
+						mwCbAIaShJaWBk5TS2VyboaShISE
+						CE5TTnVtYmVyAISEB05TVmFsdWUA
+						lIQBKoSEAWSpAIaGhg==
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -60705,6 +60919,12 @@ sum(g)
 								SQEMkoSEhAxO
 								U0RpY3Rpb25h
 								cnkAlIQBaQSS
+								hJaWB05TQ29s
+								b3KGkoSEhAdO
+								U0NvbG9yAJSE
+								AWMChARmZmZm
+								g/r4eD6D2NbW
+								PoOcmxs/AYaS
 								hJaWEE5TUGFy
 								YWdyYXBoU3R5
 								bGWGkoSEhBBO
@@ -60715,40 +60935,34 @@ sum(g)
 								AJSZDJKEhIQJ
 								TlNUZXh0VGFi
 								AJSEAkNmAByG
-								koSfngA4hpKE
-								n54AVIaShJ+e
-								AHCGkoSfngCB
-								jACGkoSfngCB
-								qACGkoSfngCB
-								xACGkoSfngCB
-								4ACGkoSfngCB
-								/ACGkoSfngCB
-								GAGGkoSfngCB
-								NAGGkoSfngCB
+								koSioQA4hpKE
+								oqEAVIaShKKh
+								AHCGkoSioQCB
+								jACGkoSioQCB
+								qACGkoSioQCB
+								xACGkoSioQCB
+								4ACGkoSioQCB
+								/ACGkoSioQCB
+								GAGGkoSioQCB
+								NAGGkoSioQCB
 								UAGGhoEACIQE
 								WzFmXYPNzEw9
-								hpKElpYGTlNL
-								ZXJuhpKEhIQI
-								TlNOdW1iZXIA
-								hIQHTlNWYWx1
-								ZQCUhAEqhIQB
-								ZKMAhpKElpYG
-								TlNGb250hpKE
-								hIQGTlNGb250
-								HpSZMIQFWzQ4
-								Y10GAAAAKAAA
-								AP/+QwBvAG4A
-								cwBvAGwAYQBz
-								AC0AQgBvAGwA
-								ZABJAHQAYQBs
-								AGkAYwCEAWYF
-								hAFjAKcBpwCn
-								AIaShJaWB05T
-								Q29sb3KGkoSE
-								hAdOU0NvbG9y
-								AJSnAoQEZmZm
-								ZoP6+Hg+g9jW
-								1j6DnJsbPwGG
+								hpKElpYGTlNG
+								b250hpKEhIQG
+								TlNGb250HpSZ
+								MIQFWzQ4Y10G
+								AAAAKAAAAP/+
+								QwBvAG4AcwBv
+								AGwAYQBzAC0A
+								QgBvAGwAZABJ
+								AHQAYQBsAGkA
+								YwCEAWYFmwCb
+								AZsAmwCGkoSW
+								lgZOU0tlcm6G
+								koSEhAhOU051
+								bWJlcgCEhAdO
+								U1ZhbHVlAJSE
+								ASqEhAFkqQCG
 								hoY=
 								</data>
 								<key>Text</key>
@@ -60962,6 +61176,12 @@ inlined sum }</string>
 								ARSShISEDE5T
 								RGljdGlvbmFy
 								eQCUhAFpBJKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								q6qqPoOMiws/
+								g7m4OD4BhpKE
 								lpYQTlNQYXJh
 								Z3JhcGhTdHls
 								ZYaShISEEE5T
@@ -60972,40 +61192,34 @@ inlined sum }</string>
 								lJkMkoSEhAlO
 								U1RleHRUYWIA
 								lIQCQ2YAHIaS
-								hJ+eADiGkoSf
-								ngBUhpKEn54A
-								cIaShJ+eAIGM
-								AIaShJ+eAIGo
-								AIaShJ+eAIHE
-								AIaShJ+eAIHg
-								AIaShJ+eAIH8
-								AIaShJ+eAIEY
-								AYaShJ+eAIE0
-								AYaShJ+eAIFQ
+								hKKhADiGkoSi
+								oQBUhpKEoqEA
+								cIaShKKhAIGM
+								AIaShKKhAIGo
+								AIaShKKhAIHE
+								AIaShKKhAIHg
+								AIaShKKhAIH8
+								AIaShKKhAIEY
+								AYaShKKhAIE0
+								AYaShKKhAIFQ
 								AYaGgQAIhARb
 								MWZdg83MTD2G
-								koSWlgZOU0tl
-								cm6GkoSEhAhO
-								U051bWJlcgCE
-								hAdOU1ZhbHVl
-								AJSEASqEhAFk
-								owCGkoSWlgZO
-								U0ZvbnSGkoSE
-								hAZOU0ZvbnQe
-								lJkwhAVbNDhj
-								XQYAAAAoAAAA
-								//5DAG8AbgBz
-								AG8AbABhAHMA
-								LQBCAG8AbABk
-								AEkAdABhAGwA
-								aQBjAIQBZgWE
-								AWMApwGnAKcA
-								hpKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lKcChARmZmZm
-								g6uqqj6DjIsL
-								P4O5uDg+AYaG
+								koSWlgZOU0Zv
+								bnSGkoSEhAZO
+								U0ZvbnQelJkw
+								hAVbNDhjXQYA
+								AAAoAAAA//5D
+								AG8AbgBzAG8A
+								bABhAHMALQBC
+								AG8AbABkAEkA
+								dABhAGwAaQBj
+								AIQBZgWbAJsB
+								mwCbAIaShJaW
+								Bk5TS2VyboaS
+								hISECE5TTnVt
+								YmVyAISEB05T
+								VmFsdWUAlIQB
+								KoSEAWSpAIaG
 								hg==
 								</data>
 								<key>Text</key>
@@ -61418,6 +61632,1832 @@ _sum = None\
 			<string>1 pt = 1 pt</string>
 			<key>GraphicsList</key>
 			<array>
+				<dict>
+					<key>Bounds</key>
+					<string>{{1143, 1669}, {274, 42}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>38786</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>0</integer>
+						<key>RTFD</key>
+						<data>
+						BAtzdHJlYW10eXBlZIHoA4QBQISE
+						hBJOU0F0dHJpYnV0ZWRTdHJpbmcA
+						hIQITlNPYmplY3QAhZKEhIQITlNT
+						dHJpbmcBlIQBK2BjbXAgJDB4ZTgz
+						MGY3N2IscjExZCAgIDsgT2JqZWN0
+						TGF5b3V0CmpuZSAweDAwMDAwMDAx
+						MTAyZThlZTkgOyBuZXh0IGRpc3Bh
+						dGNoCm1vdiByZGksMHg2NDAoJXJz
+						cCmGhAJpSQEDkoSEhAxOU0RpY3Rp
+						b25hcnkAlIQBaQOShJaWB05TQ29s
+						b3KGkoSEhAdOU0NvbG9yAJSEAWMB
+						hARmZmZmg//+/j4Ag6uqqj4BhpKE
+						lpYQTlNQYXJhZ3JhcGhTdHlsZYaS
+						hISEEE5TUGFyYWdyYXBoU3R5bGUA
+						lIQEQ0NAUwQAhQCGkoSWlgZOU0Zv
+						bnSGkoSEhAZOU0ZvbnQelJkYhAVb
+						MjRjXQYAAAAQAAAA//5DAG8AdQBy
+						AGkAZQByAIQBZgybAJsBmwCbAIaG
+						lwICkoSYmQKSnJKdkp+SoIaXAwqS
+						hJiZA5KZkoSbmwGcg1d1Gj2DiB3w
+						PYPrtlU+AYaSnJKdkp+SoIaXAgGX
+						BASShJiZA5KZkoSbmwGcg8HAQD6D
+						r66uPoOKiQk/AYaSnJKdkp+SoIaX
+						AgOXBQ+ShJiZA5KZkoSbmwGcg4L4
+						uz2DgS0JPoM4PSU+AYaSnJKdkp+S
+						oIaXAQOXAgGXAxKXAgGXBQ+XAgGX
+						AQOXAgGXBAOXAgGXAwWXAgKXBgOS
+						hJiZA5KZkoSbmwKcg6uqqj6DjIsL
+						P4O5uDg+AYaSnJKdkp+SoIaXAgGG
+						</data>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red10\green30\blue53;\red48\green87\blue137;
+\red23\green34\blue41;\red69\green123\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf2 cmp\cf0  $\cf3 0xe830f77b\cf0 ,\cf4 r11d\cf0    \cf5 ; ObjectLayout\
+\cf2 jne\cf0  \cf3 0x00000001102e8ee9\cf0  \cf5 ; next dispatch\cf0 \
+\cf2 mov\cf0  \cf4 rdi\cf0 ,\cf3 0x640\cf0 (%\cf6 rsp\cf0 )}</string>
+						<key>VerticalPad</key>
+						<integer>0</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Group</string>
+					<key>Graphics</key>
+					<array>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1264}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38767</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 hashmap}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1248}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38768</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 PythonObject}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+							</array>
+							<key>GroupConnect</key>
+							<string>YES</string>
+							<key>ID</key>
+							<integer>38766</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{0, 1}</string>
+								<string>{0, -1}</string>
+								<string>{1, 0}</string>
+								<string>{-1, 0}</string>
+							</array>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38769</integer>
+							<key>Points</key>
+							<array>
+								<string>{808, 1320}</string>
+								<string>{824, 1320}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>Pattern</key>
+									<integer>24</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{824, 1312.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.598332</string>
+									<key>g</key>
+									<string>0.603193</string>
+									<key>r</key>
+									<string>0.585766</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38770</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+									<key>Pattern</key>
+									<integer>24</integer>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>RTFD</key>
+								<data>
+								BAtzdHJlYW10
+								eXBlZIHoA4QB
+								QISEhBJOU0F0
+								dHJpYnV0ZWRT
+								dHJpbmcAhIQI
+								TlNPYmplY3QA
+								hZKEhIQITlNT
+								dHJpbmcBlIQB
+								Kwonc3BhbScg
+								OiAwhoQCaUkB
+								CpKEhIQMTlNE
+								aWN0aW9uYXJ5
+								AJSEAWkDkoSW
+								lgdOU0NvbG9y
+								hpKEhIQHTlND
+								b2xvcgCUhAFj
+								AoQEZmZmZoOn
+								piY/g6uqKj+D
+								qqkpPwGGkoSW
+								lhBOU1BhcmFn
+								cmFwaFN0eWxl
+								hpKEhIQQTlNQ
+								YXJhZ3JhcGhT
+								dHlsZQCUhARD
+								Q0BTAACEhIQH
+								TlNBcnJheQCU
+								mQyShISECU5T
+								VGV4dFRhYgCU
+								hAJDZgAchpKE
+								oqEAOIaShKKh
+								AFSGkoSioQBw
+								hpKEoqEAgYwA
+								hpKEoqEAgagA
+								hpKEoqEAgcQA
+								hpKEoqEAgeAA
+								hpKEoqEAgfwA
+								hpKEoqEAgRgB
+								hpKEoqEAgTQB
+								hpKEoqEAgVAB
+								hoaBAAiEBFsx
+								Zl2DzcxMPYaS
+								hJaWBk5TRm9u
+								dIaShISEBk5T
+								Rm9udB6UmSSE
+								BVszNmNdBgAA
+								ABoAAAD//k0A
+								ZQBuAGwAbwAt
+								AEkAdABhAGwA
+								aQBjAAAAhAFm
+								B5sAmwGbAJsA
+								hoaG
+								</data>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red149\green154\blue153;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'spam' : 0}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38771</integer>
+							<key>Points</key>
+							<array>
+								<string>{728, 1337}</string>
+								<string>{744, 1351}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{744, 1343.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38772</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'ham' : 2}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38773</integer>
+							<key>Points</key>
+							<array>
+								<string>{728, 1320}</string>
+								<string>{744, 1320}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{744, 1312.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38774</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'egg' : 42}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{680, 1344}, {48, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38775</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 2}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38776</integer>
+							<key>Points</key>
+							<array>
+								<string>{664, 1319.75}</string>
+								<string>{680, 1319.75}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{680, 1328}, {48, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38777</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\i\fs14 \cf2 1}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{680, 1312}, {48, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38778</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 0}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>Group</string>
+							<key>Graphics</key>
+							<array>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1360}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38780</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 loadFactor}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1344}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38781</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 mod}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1328}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38782</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 size}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1312}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Italic</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38783</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Align</key>
+										<integer>0</integer>
+										<key>Pad</key>
+										<integer>15</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 table}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+								<dict>
+									<key>AllowConnections</key>
+									<string>NO</string>
+									<key>Bounds</key>
+									<string>{{592, 1296}, {72, 15.75}}</string>
+									<key>Class</key>
+									<string>ShapedGraphic</string>
+									<key>FitText</key>
+									<string>Clip</string>
+									<key>Flow</key>
+									<string>Clip</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Color</key>
+										<dict>
+											<key>b</key>
+											<string>0.136613</string>
+											<key>g</key>
+											<string>0.136613</string>
+											<key>r</key>
+											<string>0.136613</string>
+										</dict>
+										<key>Font</key>
+										<string>Menlo-Regular</string>
+										<key>Size</key>
+										<real>8</real>
+									</dict>
+									<key>ID</key>
+									<integer>38784</integer>
+									<key>Shape</key>
+									<string>Rectangle</string>
+									<key>Style</key>
+									<dict>
+										<key>shadow</key>
+										<dict>
+											<key>Draws</key>
+											<string>NO</string>
+										</dict>
+										<key>stroke</key>
+										<dict>
+											<key>Color</key>
+											<dict>
+												<key>b</key>
+												<string>0.137255</string>
+												<key>g</key>
+												<string>0.482353</string>
+												<key>r</key>
+												<string>0.27451</string>
+											</dict>
+										</dict>
+									</dict>
+									<key>Text</key>
+									<dict>
+										<key>Pad</key>
+										<integer>1</integer>
+										<key>Text</key>
+										<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 HashMap}</string>
+									</dict>
+									<key>Wrap</key>
+									<string>NO</string>
+								</dict>
+							</array>
+							<key>ID</key>
+							<integer>38779</integer>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38785</integer>
+							<key>Points</key>
+							<array>
+								<string>{628, 1279.75}</string>
+								<string>{628, 1297}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+							<key>Tail</key>
+							<dict>
+								<key>ID</key>
+								<integer>38766</integer>
+								<key>Info</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+					</array>
+					<key>ID</key>
+					<integer>38765</integer>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Group</string>
+					<key>Graphics</key>
+					<array>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{1024, 1344.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38703</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'egg' : loc 1}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>ID</key>
+							<integer>38704</integer>
+							<key>Points</key>
+							<array>
+								<string>{1008, 1320}</string>
+								<string>{1024, 1320}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.249683</string>
+										<key>g</key>
+										<string>0.249679</string>
+										<key>r</key>
+										<string>0.249687</string>
+									</dict>
+									<key>CornerRadius</key>
+									<real>0.5</real>
+									<key>HeadArrow</key>
+									<string>StickArrow</string>
+									<key>HeadScale</key>
+									<real>0.69999992847442627</real>
+									<key>Legacy</key>
+									<true/>
+									<key>TailArrow</key>
+									<string>0</string>
+									<key>Width</key>
+									<real>0.69999998807907104</real>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{1024, 1328.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38705</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 'ham' : loc 0}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{1024, 1312.25}, {64, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>7</real>
+							</dict>
+							<key>ID</key>
+							<integer>38706</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.209924</string>
+										<key>g</key>
+										<string>0.209924</string>
+										<key>r</key>
+										<string>0.209924</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs14 \cf2 ObjectLayout}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{936, 1360.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38707</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 spill array}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{936, 1344.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38708</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 1:  2}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{936, 1328.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38709</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading100\pardirnatural
+
+\f0\i\fs14 \cf2 0:  42   }</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{936, 1312.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Italic</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38710</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Pad</key>
+								<integer>15</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\i\fs14 \cf2 layout}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>AllowConnections</key>
+							<string>NO</string>
+							<key>Bounds</key>
+							<string>{{936, 1296.25}, {72, 15.75}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Clip</string>
+							<key>Flow</key>
+							<string>Clip</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>b</key>
+									<string>0.136613</string>
+									<key>g</key>
+									<string>0.136613</string>
+									<key>r</key>
+									<string>0.136613</string>
+								</dict>
+								<key>Font</key>
+								<string>Menlo-Regular</string>
+								<key>Size</key>
+								<real>8</real>
+							</dict>
+							<key>ID</key>
+							<integer>38711</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Color</key>
+									<dict>
+										<key>b</key>
+										<string>0.137255</string>
+										<key>g</key>
+										<string>0.482353</string>
+										<key>r</key>
+										<string>0.27451</string>
+									</dict>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>1</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red35\green35\blue35;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf2 PythonObject}</string>
+							</dict>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+					</array>
+					<key>ID</key>
+					<integer>38702</integer>
+				</dict>
 				<dict>
 					<key>Class</key>
 					<string>Group</string>
@@ -70124,50 +72164,50 @@ w/ flexible object storage}</string>
 								aUkBDZKEhIQM
 								TlNEaWN0aW9u
 								YXJ5AJSEAWkE
-								koSWlhBOU1Bh
-								cmFncmFwaFN0
-								eWxlhpKEhIQQ
-								TlNQYXJhZ3Jh
-								cGhTdHlsZQCU
-								hARDQ0BTAgCE
-								hIQHTlNBcnJh
-								eQCUmQyShISE
-								CU5TVGV4dFRh
-								YgCUhAJDZgAc
-								hpKEn54AOIaS
-								hJ+eAFSGkoSf
-								ngBwhpKEn54A
-								gYwAhpKEn54A
-								gagAhpKEn54A
-								gcQAhpKEn54A
-								geAAhpKEn54A
-								gfwAhpKEn54A
-								gRgBhpKEn54A
-								gTQBhpKEn54A
-								gVABhoaBAAiE
-								BFsxZl2DzcxM
-								PYaShJaWB05T
-								Q29sb3KGkoSE
-								hAdOU0NvbG9y
-								AJSEAWMChARm
-								ZmZmg6Oioj6D
-								o6KiPoOjoqI+
-								AYaShJaWBk5T
-								Rm9udIaShISE
-								Bk5TRm9udB6U
-								mSyEBVs0NGNd
-								BgAAACQAAAD/
-								/kgAZQBsAHYA
-								ZQB0AGkAYwBh
-								AC0ATwBiAGwA
-								aQBxAHUAZQCE
-								AWYGoQChAaEA
-								oQCGkoSWlgZO
-								U0tlcm6GkoSE
-								hAhOU051bWJl
-								cgCEhAdOU1Zh
-								bHVlAJSEASqE
-								hAFkqQCGhoY=
+								koSWlgZOU0tl
+								cm6GkoSEhAhO
+								U051bWJlcgCE
+								hAdOU1ZhbHVl
+								AJSEASqEhAFk
+								nQCGkoSWlhBO
+								U1BhcmFncmFw
+								aFN0eWxlhpKE
+								hIQQTlNQYXJh
+								Z3JhcGhTdHls
+								ZQCUhARDQ0BT
+								AgCEhIQHTlNB
+								cnJheQCUmQyS
+								hISECU5TVGV4
+								dFRhYgCUhAJD
+								ZgAchpKEpKIA
+								OIaShKSiAFSG
+								koSkogBwhpKE
+								pKIAgYwAhpKE
+								pKIAgagAhpKE
+								pKIAgcQAhpKE
+								pKIAgeAAhpKE
+								pKIAgfwAhpKE
+								pKIAgRgBhpKE
+								pKIAgTQBhpKE
+								pKIAgVABhoaB
+								AAiEBFsxZl2D
+								zcxMPYaShJaW
+								Bk5TRm9udIaS
+								hISEBk5TRm9u
+								dB6UmSyEBVs0
+								NGNdBgAAACQA
+								AAD//kgAZQBs
+								AHYAZQB0AGkA
+								YwBhAC0ATwBi
+								AGwAaQBxAHUA
+								ZQCEAWYGhAFj
+								AKcBpwCnAIaS
+								hJaWB05TQ29s
+								b3KGkoSEhAdO
+								U0NvbG9yAJSn
+								AoQEZmZmZoOj
+								oqI+g6Oioj6D
+								o6KiPgGGhoY=
 								</data>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -87779,11 +89819,11 @@ h.egg()}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>0</integer>
+		<integer>6</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{-0, 4}, {1920, 1173}}</string>
+		<string>{{0, 60}, {1920, 1057}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -87795,9 +89835,9 @@ h.egg()}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{1, 235}, {1790, 1061}}</string>
+		<string>{{1016.5, 1418.5}, {895, 472.5}}</string>
 		<key>Zoom</key>
-		<real>1</real>
+		<real>2</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
@@ -87817,8 +89857,8 @@ h.egg()}</string>
 			</array>
 			<array>
 				<string>ch3-code</string>
-				<real>2</real>
 				<real>4</real>
+				<real>2</real>
 			</array>
 			<array>
 				<string>ch4-fig</string>

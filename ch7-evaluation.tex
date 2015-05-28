@@ -528,11 +528,11 @@ Figure~\ref{fig:ch6-fixed-object-storage-space-overhead} shows the results of th
 Using a fixed object storage of size one allocates on average $1.63\times$ more memory than using flexible object storage.
 Using a fixed object storage of size five allocates up to $3.6\times$ more memory than using the flexible configuration.
 
-The result shows that using a fixed object storage causes a significant memory overhead.
+The result shows that using a fixed object storage causes significant memory overhead.
 We attribute this inefficiency to the poor type distribution among the fields of a fixed object layout.
 In theory one could design an improved solution that generates a library of fixed object storage with various combination of sizes and type distributions ahead of time, and pick the closest fit from the library when allocating a Python object.
-This hypothetical solution, even in an ideal case, cannot surpass flexible object storage in terms of space efficiency.
 Since flexible object storage ensures the optimal space and type distribution allocated for a given Python object.
+This multi-variant fixed object storage solution, even in an ideal case, cannot surpass flexible object storage in terms of space efficiency.
 
 We also measured the slowdown of using a fixed object storage running the benchmarks compared to using flexible object storages.
 The fixed object storage configurations used in our experiment includes the following size settings: one, three and five.
@@ -544,25 +544,25 @@ By increase the size of fixed object storages the slowdowns tend to decrease or 
 
 \subsection{Discussion}
 
-There is always a trade-off when using a fixed object storage.
+There is always a trade-off when using fixed object storage.
 Empirically it is impossible to find an optimal fixed object storage size that offers both space efficiency and performance.
-One could either trade memory space for performance by choosing a bigger fixed object storage size,
+One can either trade memory space for performance, by choosing a bigger fixed object storage size,
 or inversely use a smaller size to save memory space at the price of a lower performance.
-In our experiments, using a fixed object storage leads up to a $3.6\times$ more memory usage on one end and a $20\%$ performance lost on the other.
+In our experiments, using fixed object storage either increases memory usage by $3.6\times$, or shows a $20\%$ performance lost.
 
-On the other hand, flexible object storage ensures minimum memory usage with optimal performance for each Python class.
+Flexible object storage, on the other hand, ensures minimum memory usage with optimal performance for each Python class.
 Our technique produces a storage class that is optimal in terms of both space and performance for the current status of the Python class.
-As the program state evolves at runtime, our system automatically adapts the change and reproduces the updated storage class.
+As the program state evolves over time, our system automatically adapts to the change and generates an updated storage class.
 
-However, continuous flexible storage class generation could lead to the coexistence of multiple storage classes for a single Python class.
-The additionally generated storage classes incurs a small memory overhead.
-This overhead is however negligible when compared to the memory use of Python instance objects.
-Multiple storage classes also creates multiple valid cache entries at an object access site.
-The additional cache entries cause the slowdown in \textsf{richards} when compared to a fixed object storage of size $5$.
-Given that the saving on the memory space significantly overweights the speed lost (\textsf{richards} of size $5$), we think flexible object storage still delivers a much better balance between space and performance than its fixed counterpart even in the worst case of our tests.
+However, continuous flexible storage class generation can lead to multiple storage classes coexisting for a single Python class.
+These generated storage classes incurs a small memory overhead.
+This overhead is, however, negligible when compared to the memory allocated for Python instance objects.
+Multiple storage classes also create multiple valid cache entries in an object access inline cache.
+These additional cache entries cause the slowdown in \textsf{richards} when compared to a fixed object storage of size $5$.
+Given that the memory usage significantly overweights the speed lost for \textsf{richards} of size $5$, we think flexible object storage still delivers a much better balance between space and performance than its fixed counterpart even in the worst case of our tests.
 
 Furthermore, ZipPy can potentially alleviate this slowdown by carefully reordering the cache entries created for the same Python class.
 The reordering can hoist the cache entry created for the newer generation storage class above the entries created for the older ones assuming more frequent accesses on the Python objects allocated using the newer storage class.
 However, we found in our tests that the benefit of this optimization is input dependent or program behavior dependent.
-Some program favors the older storage classes, whereas the other programs favors the newer ones.
-We observed mixed results with cache entry reordering enabled.
+Some programs access the older storage classes more often, whereas the other programs tend to access the newer ones.
+Thus, in our experiments, the benefit of using cache entry reordering is inconclusive.
