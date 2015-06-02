@@ -548,7 +548,7 @@ There is always a trade-off when using fixed object storage.
 Empirically it is impossible to find an optimal fixed object storage size that offers both space efficiency and performance.
 One can either trade memory space for performance, by choosing a bigger fixed object storage size,
 or inversely use a smaller size to save memory space at the price of a lower performance.
-In our experiments, using fixed object storage either increases memory usage by $3.6\times$, or shows a $20\%$ performance lost.
+In our experiments, using fixed object storage either increases memory usage by $3.6\times$, or shows a $20\%$ performance loss.
 
 Flexible object storage, on the other hand, ensures minimum memory usage with optimal performance for each Python class.
 Our technique produces a storage class that is optimal in terms of both space and performance for the current status of the Python class.
@@ -559,7 +559,7 @@ These generated storage classes incurs a small memory overhead.
 This overhead is, however, negligible when compared to the memory allocated for Python instance objects.
 Multiple storage classes also create multiple valid cache entries in an object access inline cache.
 These additional cache entries cause the slowdown in \textsf{richards} when compared to a fixed object storage of size $5$.
-Given that the memory usage significantly overweights the speed lost for \textsf{richards} of size $5$, we think flexible object storage still delivers a much better balance between space and performance than its fixed counterpart even in the worst case of our tests.
+Given that the memory usage significantly overweights the speed loss for \textsf{richards} of size $5$, we think flexible object storage still delivers a much better balance between space and performance than its fixed counterpart even in the worst case of our tests.
 
 Furthermore, ZipPy can potentially alleviate this slowdown by carefully reordering the cache entries created for the same Python class.
 The reordering can hoist the cache entry created for the newer generation storage class above the entries created for the older ones assuming more frequent accesses on the Python objects allocated using the newer storage class.

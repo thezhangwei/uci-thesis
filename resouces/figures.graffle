@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-05-29 00:21:59 +0000</string>
+	<string>2015-06-01 06:46:57 +0000</string>
 	<key>Modifier</key>
 	<string>Wei Zhang</string>
 	<key>NotesVisible</key>
@@ -22870,8 +22870,8 @@ Python AST}</string>
 											<integer>3133</integer>
 											<key>Points</key>
 											<array>
-												<string>{347.9331846918339, 136.0697077346735}</string>
-												<string>{351.21684293060343, 141.98029199763653}</string>
+												<string>{347.9331844263632, 136.06970788233178}</string>
+												<string>{351.21684244628329, 141.98029226702175}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -22916,8 +22916,8 @@ Python AST}</string>
 											<integer>3134</integer>
 											<key>Points</key>
 											<array>
-												<string>{339.96684242164605, 136.06970716725843}</string>
-												<string>{336.68318355241547, 141.98029256505259}</string>
+												<string>{339.9668426871159, 136.06970731491643}</string>
+												<string>{336.68318403673436, 141.98029283443725}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -23631,8 +23631,8 @@ Python AST}</string>
 											<integer>3145</integer>
 											<key>Points</key>
 											<array>
-												<string>{242.08318574087562, 136.0697077346735}</string>
-												<string>{245.36684397964515, 141.9802919976365}</string>
+												<string>{242.083185475405, 136.06970788233181}</string>
+												<string>{245.36684349532504, 141.98029226702175}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -23677,8 +23677,8 @@ Python AST}</string>
 											<integer>3146</integer>
 											<key>Points</key>
 											<array>
-												<string>{234.11684347068777, 136.06970716725846}</string>
-												<string>{230.83318460145725, 141.98029256505257}</string>
+												<string>{234.11684373615768, 136.06970731491643}</string>
+												<string>{230.83318508577608, 141.98029283443725}</string>
 											</array>
 											<key>Style</key>
 											<dict>
@@ -25563,7 +25563,7 @@ specialization}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{264, 10}, {171, 204}}</string>
+					<string>{{264, 10}, {171, 210}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -25646,6 +25646,7 @@ specialization}</string>
   String doString(String \cf4 left\cf0 , String \cf4 right\cf0 ) \{\
     \cf2 return\cf0  \cf4 left\cf0  + \cf4 right\cf0 ;\
   \}\
+  \cf3 //...\cf0 \
 \}}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
@@ -25794,7 +25795,7 @@ specialization}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{334, 248}, {74, 40}}</string>
+					<string>{{334, 248}, {74, 55}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -25860,7 +25861,9 @@ specialization}</string>
   ttl = 0\
   \cf2 for\cf0  i \cf2 in\cf0  range(n):\
     ttl += i\
-  \cf2 return\cf0  ttl}</string>
+  \cf2 return\cf0  ttl\
+\
+print(sum(1000))}</string>
 						<key>VerticalPad</key>
 						<integer>4</integer>
 					</dict>
@@ -26231,7 +26234,6 @@ specialization}</string>
 \pard\pardeftab720
 
 \f0\fs10 \cf2 @Specialization\cf0 \
-\pard\pardeftab720
 \cf3 public\cf0  Object doPRange(VirtualFrame \cf4 frame\cf0 , \
                        PRangeIterator \cf4 range\cf0 ) \{\
   \cf3 int\cf0  \cf4 start\cf0  = \cf4 range\cf0 .getStart();\
@@ -34009,8 +34011,8 @@ l = []\
 							<integer>37556</integer>
 							<key>Points</key>
 							<array>
-								<string>{350.60592724456365, 2507.6316967046851}</string>
-								<string>{364.0775064676327, 2521.1032755204074}</string>
+								<string>{350.60592722071681, 2507.6316967286921}</string>
+								<string>{364.07750641129144, 2521.1032755789411}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34163,8 +34165,8 @@ l = []\
 							<integer>37559</integer>
 							<key>Points</key>
 							<array>
-								<string>{350.60592724456382, 2442.2132918825901}</string>
-								<string>{364.0775064676327, 2455.6848706983124}</string>
+								<string>{350.60592722071681, 2442.2132919065971}</string>
+								<string>{364.07750641129155, 2455.6848707568461}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34417,8 +34419,8 @@ l = []\
 							<integer>37564</integer>
 							<key>Points</key>
 							<array>
-								<string>{251.29739157511494, 2406.1286935130852}</string>
-								<string>{266.37438044402785, 2422.5688548393182}</string>
+								<string>{251.2973915706699, 2406.1286935171679}</string>
+								<string>{266.37438043229366, 2422.5688548500957}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34463,8 +34465,8 @@ l = []\
 							<integer>37565</integer>
 							<key>Points</key>
 							<array>
-								<string>{317.89672401225238, 2474.9224942936376}</string>
-								<string>{331.36830323532172, 2488.3940731093599}</string>
+								<string>{317.89672398840554, 2474.9224943176446}</string>
+								<string>{331.3683031789804, 2488.3940731678936}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -34908,8 +34910,8 @@ l = []\
 							<integer>37573</integer>
 							<key>Points</key>
 							<array>
-								<string>{53.297396820323733, 2406.1286935130852}</string>
-								<string>{68.374385689236618, 2422.5688548393182}</string>
+								<string>{53.29739681587867, 2406.1286935171679}</string>
+								<string>{68.374385677502417, 2422.5688548500957}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -35451,13 +35453,7 @@ frame passing}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaDq6qqPoOM
-								iws/g7m4OD4B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -35467,19 +35463,25 @@ frame passing}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoOrqqo+
+								g4yLCz+Dubg4
+								PgGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -35488,8 +35490,8 @@ frame passing}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgub
-								AJsBmwCbAIaS
+								aQBjAIQBZguh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -35606,12 +35608,6 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg/r4
-								eD6D2NbWPoOc
-								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -35621,19 +35617,25 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								+vh4PoPY1tY+
+								g5ybGz8BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -35643,8 +35645,8 @@ generator body}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYLmwCbAZsA
-								mwCGkoSWlgZO
+								AWYLoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -36204,8 +36206,8 @@ loop body}</string>
 							<integer>37592</integer>
 							<key>Points</key>
 							<array>
-								<string>{351.15808378985565, 2707.4316914117926}</string>
-								<string>{364.62966301292505, 2720.9032702275149}</string>
+								<string>{351.15808376600882, 2707.4316914357996}</string>
+								<string>{364.62966295658373, 2720.9032702860486}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36358,8 +36360,8 @@ loop body}</string>
 							<integer>37595</integer>
 							<key>Points</key>
 							<array>
-								<string>{351.15808378985554, 2642.0132865896976}</string>
-								<string>{364.62966301292505, 2655.4848654054199}</string>
+								<string>{351.1580837660087, 2642.0132866137046}</string>
+								<string>{364.62966295658373, 2655.4848654639536}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36565,8 +36567,8 @@ loop body}</string>
 							<integer>37599</integer>
 							<key>Points</key>
 							<array>
-								<string>{285.73967732523323, 2642.0132865896976}</string>
-								<string>{299.2112565483024, 2655.4848654054199}</string>
+								<string>{285.73967730138634, 2642.0132866137046}</string>
+								<string>{299.21125649196108, 2655.4848654639536}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36611,8 +36613,8 @@ loop body}</string>
 							<integer>37600</integer>
 							<key>Points</key>
 							<array>
-								<string>{251.84954812040712, 2605.9286882201927}</string>
-								<string>{266.92653698932008, 2622.3688495464257}</string>
+								<string>{251.84954811596205, 2605.9286882242754}</string>
+								<string>{266.92653697758584, 2622.3688495572032}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36657,8 +36659,8 @@ loop body}</string>
 							<integer>37601</integer>
 							<key>Points</key>
 							<array>
-								<string>{318.44888055754433, 2674.7224890007451}</string>
-								<string>{331.92045978061367, 2688.1940678164674}</string>
+								<string>{318.4488805336976, 2674.7224890247521}</string>
+								<string>{331.92045972427212, 2688.1940678750007}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36811,8 +36813,8 @@ loop body}</string>
 							<integer>37604</integer>
 							<key>Points</key>
 							<array>
-								<string>{152.60593248977239, 2707.4316914117926}</string>
-								<string>{166.0775117128415, 2720.9032702275149}</string>
+								<string>{152.60593246592569, 2707.4316914357996}</string>
+								<string>{166.07751165650021, 2720.9032702860482}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -36965,8 +36967,8 @@ loop body}</string>
 							<integer>37607</integer>
 							<key>Points</key>
 							<array>
-								<string>{152.60593248977239, 2642.0132865896976}</string>
-								<string>{166.0775117128415, 2655.4848654054199}</string>
+								<string>{152.60593246592569, 2642.0132866137046}</string>
+								<string>{166.07751165650021, 2655.4848654639532}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -37219,8 +37221,8 @@ loop body}</string>
 							<integer>37612</integer>
 							<key>Points</key>
 							<array>
-								<string>{53.297396820323733, 2605.9286882201927}</string>
-								<string>{68.374385689236618, 2622.3688495464257}</string>
+								<string>{53.29739681587867, 2605.9286882242754}</string>
+								<string>{68.374385677502417, 2622.3688495572032}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -37265,8 +37267,8 @@ loop body}</string>
 							<integer>37613</integer>
 							<key>Points</key>
 							<array>
-								<string>{119.89672925746086, 2674.7224890007451}</string>
-								<string>{133.36830848053029, 2688.1940678164674}</string>
+								<string>{119.89672923361432, 2674.7224890247521}</string>
+								<string>{133.36830842418914, 2688.1940678750011}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -38574,12 +38576,6 @@ loop body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg9vZ
-								WT+DkZCQPoPi
-								4GA+AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -38589,19 +38585,25 @@ loop body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								29lZP4ORkJA+
+								g+LgYD4BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -38611,8 +38613,8 @@ loop body}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYHmwCbAZsA
-								mwCGkoSWlgZO
+								AWYHoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -38786,12 +38788,6 @@ exception}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg/r4
-								eD6D2NbWPoOc
-								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -38801,19 +38797,25 @@ exception}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								+vh4PoPY1tY+
+								g5ybGz8BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -38823,8 +38825,8 @@ exception}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYHmwCbAZsA
-								mwCGkoSWlgZO
+								AWYHoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -38946,13 +38948,7 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaDq6qqPoOM
-								iws/g7m4OD4B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -38962,19 +38958,25 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoOrqqo+
+								g4yLCz+Dubg4
+								PgGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -38983,8 +38985,8 @@ loop body}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgeb
-								AJsBmwCbAIaS
+								aQBjAIQBZgeh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -39870,12 +39872,6 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg9vZ
-								WT+DkZCQPoPi
-								4GA+AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -39885,19 +39881,25 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								29lZP4ORkJA+
+								g+LgYD4BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -39907,8 +39909,8 @@ generator body}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYHmwCbAZsA
-								mwCGkoSWlgZO
+								AWYHoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -40030,12 +40032,6 @@ exception}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg/r4
-								eD6D2NbWPoOc
-								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -40045,19 +40041,25 @@ exception}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								+vh4PoPY1tY+
+								g5ybGz8BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -40067,8 +40069,8 @@ exception}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYHmwCbAZsA
-								mwCGkoSWlgZO
+								AWYHoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -40190,13 +40192,7 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaDq6qqPoOM
-								iws/g7m4OD4B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -40206,19 +40202,25 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoOrqqo+
+								g4yLCz+Dubg4
+								PgGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -40227,8 +40229,8 @@ loop body}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgeb
-								AJsBmwCbAIaS
+								aQBjAIQBZgeh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -45577,13 +45579,7 @@ generator body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaDq6qqPoOM
-								iws/g7m4OD4B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -45593,19 +45589,25 @@ generator body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoOrqqo+
+								g4yLCz+Dubg4
+								PgGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -45614,8 +45616,8 @@ generator body}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgeb
-								AJsBmwCbAIaS
+								aQBjAIQBZgeh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -47673,12 +47675,6 @@ generator body}</string>
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg/r4
-								eD6D2NbWPoOc
-								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -47688,19 +47684,25 @@ generator body}</string>
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								+vh4PoPY1tY+
+								g5ybGz8BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -47710,8 +47712,8 @@ generator body}</string>
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYHmwCbAZsA
-								mwCGkoSWlgZO
+								AWYHoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -56467,12 +56469,6 @@ x = _tmp + (
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								B05TQ29sb3KG
-								koSEhAdOU0Nv
-								bG9yAJSEAWMC
-								hARmZmZmg/r4
-								eD6D2NbWPoOc
-								mxs/AYaShJaW
 								EE5TUGFyYWdy
 								YXBoU3R5bGWG
 								koSEhBBOU1Bh
@@ -56482,19 +56478,25 @@ x = _tmp + (
 								U0FycmF5AJSZ
 								DJKEhIQJTlNU
 								ZXh0VGFiAJSE
-								AkNmAByGkoSi
-								oQA4hpKEoqEA
-								VIaShKKhAHCG
-								koSioQCBjACG
-								koSioQCBqACG
-								koSioQCBxACG
-								koSioQCB4ACG
-								koSioQCB/ACG
-								koSioQCBGAGG
-								koSioQCBNAGG
-								koSioQCBUAGG
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
 								hoEACIQEWzFm
 								XYPNzEw9hpKE
+								lpYHTlNDb2xv
+								coaShISEB05T
+								Q29sb3IAlIQB
+								YwKEBGZmZmaD
+								+vh4PoPY1tY+
+								g5ybGz8BhpKE
 								lpYGTlNGb250
 								hpKEhIQGTlNG
 								b250HpSZMIQF
@@ -56504,8 +56506,8 @@ x = _tmp + (
 								YQBzAC0AQgBv
 								AGwAZABJAHQA
 								YQBsAGkAYwCE
-								AWYFmwCbAZsA
-								mwCGkoSWlgZO
+								AWYFoQChAaEA
+								oQCGkoSWlgZO
 								U0tlcm6GkoSE
 								hAhOU051bWJl
 								cgCEhAdOU1Zh
@@ -56627,13 +56629,7 @@ loop body}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaDq6qqPoOM
-								iws/g7m4OD4B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -56643,19 +56639,25 @@ loop body}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoOrqqo+
+								g4yLCz+Dubg4
+								PgGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -56664,8 +56666,8 @@ loop body}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgWb
-								AJsBmwCbAIaS
+								aQBjAIQBZgWh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -57653,13 +57655,7 @@ a, b = 0, 1\
 								AmlJAReShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaD+vh4PoPY
-								1tY+g5ybGz8B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -57669,19 +57665,25 @@ a, b = 0, 1\
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoP6+Hg+
+								g9jW1j6DnJsb
+								PwGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -57690,8 +57692,8 @@ a, b = 0, 1\
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgWb
-								AJsBmwCbAIaS
+								aQBjAIQBZgWh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -57910,12 +57912,6 @@ generator loop}</string>
 								HJKEhIQMTlNE
 								aWN0aW9uYXJ5
 								AJSEAWkEkoSW
-								lgdOU0NvbG9y
-								hpKEhIQHTlND
-								b2xvcgCUhAFj
-								AoQEZmZmZoOr
-								qqo+g4yLCz+D
-								ubg4PgGGkoSW
 								lhBOU1BhcmFn
 								cmFwaFN0eWxl
 								hpKEhIQQTlNQ
@@ -57926,18 +57922,24 @@ generator loop}</string>
 								mQyShISECU5T
 								VGV4dFRhYgCU
 								hAJDZgAchpKE
-								oqEAOIaShKKh
-								AFSGkoSioQBw
-								hpKEoqEAgYwA
-								hpKEoqEAgagA
-								hpKEoqEAgcQA
-								hpKEoqEAgeAA
-								hpKEoqEAgfwA
-								hpKEoqEAgRgB
-								hpKEoqEAgTQB
-								hpKEoqEAgVAB
+								n54AOIaShJ+e
+								AFSGkoSfngBw
+								hpKEn54AgYwA
+								hpKEn54AgagA
+								hpKEn54AgcQA
+								hpKEn54AgeAA
+								hpKEn54AgfwA
+								hpKEn54AgRgB
+								hpKEn54AgTQB
+								hpKEn54AgVAB
 								hoaBAAiEBFsx
 								Zl2DzcxMPYaS
+								hJaWB05TQ29s
+								b3KGkoSEhAdO
+								U0NvbG9yAJSE
+								AWMChARmZmZm
+								g6uqqj6DjIsL
+								P4O5uDg+AYaS
 								hJaWBk5TRm9u
 								dIaShISEBk5T
 								Rm9udB6UmTCE
@@ -57947,8 +57949,8 @@ generator loop}</string>
 								AGEAcwAtAEIA
 								bwBsAGQASQB0
 								AGEAbABpAGMA
-								hAFmBZsAmwGb
-								AJsAhpKElpYG
+								hAFmBaEAoQGh
+								AKEAhpKElpYG
 								TlNLZXJuhpKE
 								hIQITlNOdW1i
 								ZXIAhIQHTlNW
@@ -58377,12 +58379,6 @@ _sum = None\
 								ARSShISEDE5T
 								RGljdGlvbmFy
 								eQCUhAFpBJKE
-								lpYHTlNDb2xv
-								coaShISEB05T
-								Q29sb3IAlIQB
-								YwKEBGZmZmaD
-								q6qqPoOMiws/
-								g7m4OD4BhpKE
 								lpYQTlNQYXJh
 								Z3JhcGhTdHls
 								ZYaShISEEE5T
@@ -58393,18 +58389,24 @@ _sum = None\
 								lJkMkoSEhAlO
 								U1RleHRUYWIA
 								lIQCQ2YAHIaS
-								hKKhADiGkoSi
-								oQBUhpKEoqEA
-								cIaShKKhAIGM
-								AIaShKKhAIGo
-								AIaShKKhAIHE
-								AIaShKKhAIHg
-								AIaShKKhAIH8
-								AIaShKKhAIEY
-								AYaShKKhAIE0
-								AYaShKKhAIFQ
+								hJ+eADiGkoSf
+								ngBUhpKEn54A
+								cIaShJ+eAIGM
+								AIaShJ+eAIGo
+								AIaShJ+eAIHE
+								AIaShJ+eAIHg
+								AIaShJ+eAIH8
+								AIaShJ+eAIEY
+								AYaShJ+eAIE0
+								AYaShJ+eAIFQ
 								AYaGgQAIhARb
 								MWZdg83MTD2G
+								koSWlgdOU0Nv
+								bG9yhpKEhIQH
+								TlNDb2xvcgCU
+								hAFjAoQEZmZm
+								ZoOrqqo+g4yL
+								Cz+Dubg4PgGG
 								koSWlgZOU0Zv
 								bnSGkoSEhAZO
 								U0ZvbnQelJkw
@@ -58414,8 +58416,8 @@ _sum = None\
 								bABhAHMALQBC
 								AG8AbABkAEkA
 								dABhAGwAaQBj
-								AIQBZgWbAJsB
-								mwCbAIaShJaW
+								AIQBZgWhAKEB
+								oQChAIaShJaW
 								Bk5TS2VyboaS
 								hISECE5TTnVt
 								YmVyAISEB05T
@@ -58538,13 +58540,7 @@ generator expression}</string>
 								AmlJAQ6ShISE
 								DE5TRGljdGlv
 								bmFyeQCUhAFp
-								BJKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lIQBYwKEBGZm
-								ZmaD+vh4PoPY
-								1tY+g5ybGz8B
-								hpKElpYQTlNQ
+								BJKElpYQTlNQ
 								YXJhZ3JhcGhT
 								dHlsZYaShISE
 								EE5TUGFyYWdy
@@ -58554,19 +58550,25 @@ generator expression}</string>
 								YXkAlJkMkoSE
 								hAlOU1RleHRU
 								YWIAlIQCQ2YA
-								HIaShKKhADiG
-								koSioQBUhpKE
-								oqEAcIaShKKh
-								AIGMAIaShKKh
-								AIGoAIaShKKh
-								AIHEAIaShKKh
-								AIHgAIaShKKh
-								AIH8AIaShKKh
-								AIEYAYaShKKh
-								AIE0AYaShKKh
+								HIaShJ+eADiG
+								koSfngBUhpKE
+								n54AcIaShJ+e
+								AIGMAIaShJ+e
+								AIGoAIaShJ+e
+								AIHEAIaShJ+e
+								AIHgAIaShJ+e
+								AIH8AIaShJ+e
+								AIEYAYaShJ+e
+								AIE0AYaShJ+e
 								AIFQAYaGgQAI
 								hARbMWZdg83M
-								TD2GkoSWlgZO
+								TD2GkoSWlgdO
+								U0NvbG9yhpKE
+								hIQHTlNDb2xv
+								cgCUhAFjAoQE
+								ZmZmZoP6+Hg+
+								g9jW1j6DnJsb
+								PwGGkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkwhAVbNDhj
@@ -58575,8 +58577,8 @@ generator expression}</string>
 								AG8AbABhAHMA
 								LQBCAG8AbABk
 								AEkAdABhAGwA
-								aQBjAIQBZgWb
-								AJsBmwCbAIaS
+								aQBjAIQBZgWh
+								AKEBoQChAIaS
 								hJaWBk5TS2Vy
 								boaShISECE5T
 								TnVtYmVyAISE
@@ -59143,24 +59145,24 @@ sum(x*2
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						bG9vcIaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYHTlND
-						b2xvcoaShISEB05TQ29sb3IAlIQB
-						YwKEBGZmZmaD+vh4PoPY1tY+g5yb
-						Gz8BhpKElpYQTlNQYXJhZ3JhcGhT
-						dHlsZYaShISEEE5TUGFyYWdyYXBo
-						U3R5bGUAlIQEQ0NAUwEAhISEB05T
-						QXJyYXkAlJkMkoSEhAlOU1RleHRU
-						YWIAlIQCQ2YAHIaShKKhADiGkoSi
-						oQBUhpKEoqEAcIaShKKhAIGMAIaS
-						hKKhAIGoAIaShKKhAIHEAIaShKKh
-						AIHgAIaShKKhAIH8AIaShKKhAIEY
-						AYaShKKhAIE0AYaShKKhAIFQAYaG
-						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
+						YXJhZ3JhcGhTdHlsZYaShISEEE5T
+						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
+						UwEAhISEB05TQXJyYXkAlJkMkoSE
+						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
+						hJ+eADiGkoSfngBUhpKEn54AcIaS
+						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
+						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
+						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
+						hJ+eAIFQAYaGgQAIhARbMWZdg83M
+						TD2GkoSWlgdOU0NvbG9yhpKEhIQH
+						TlNDb2xvcgCUhAFjAoQEZmZmZoP6
+						+Hg+g9jW1j6DnJsbPwGGkoSWlgZO
 						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
 						hAVbNDhjXQYAAAAoAAAA//5DAG8A
 						bgBzAG8AbABhAHMALQBCAG8AbABk
-						AEkAdABhAGwAaQBjAIQBZgWbAJsB
-						mwCbAIaShJaWBk5TS2VyboaShISE
+						AEkAdABhAGwAaQBjAIQBZgWhAKEB
+						oQChAIaShJaWBk5TS2VyboaShISE
 						CE5TTnVtYmVyAISEB05TVmFsdWUA
 						lIQBKoSEAWSpAIaGhg==
 						</data>
@@ -59271,24 +59273,24 @@ generator loop}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						Ym9keYaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYHTlND
-						b2xvcoaShISEB05TQ29sb3IAlIQB
-						YwKEBGZmZmaDq6qqPoOMiws/g7m4
-						OD4BhpKElpYQTlNQYXJhZ3JhcGhT
-						dHlsZYaShISEEE5TUGFyYWdyYXBo
-						U3R5bGUAlIQEQ0NAUwEAhISEB05T
-						QXJyYXkAlJkMkoSEhAlOU1RleHRU
-						YWIAlIQCQ2YAHIaShKKhADiGkoSi
-						oQBUhpKEoqEAcIaShKKhAIGMAIaS
-						hKKhAIGoAIaShKKhAIHEAIaShKKh
-						AIHgAIaShKKhAIH8AIaShKKhAIEY
-						AYaShKKhAIE0AYaShKKhAIFQAYaG
-						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
+						YXJhZ3JhcGhTdHlsZYaShISEEE5T
+						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
+						UwEAhISEB05TQXJyYXkAlJkMkoSE
+						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
+						hJ+eADiGkoSfngBUhpKEn54AcIaS
+						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
+						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
+						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
+						hJ+eAIFQAYaGgQAIhARbMWZdg83M
+						TD2GkoSWlgdOU0NvbG9yhpKEhIQH
+						TlNDb2xvcgCUhAFjAoQEZmZmZoOr
+						qqo+g4yLCz+Dubg4PgGGkoSWlgZO
 						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
 						hAVbNDhjXQYAAAAoAAAA//5DAG8A
 						bgBzAG8AbABhAHMALQBCAG8AbABk
-						AEkAdABhAGwAaQBjAIQBZgWbAJsB
-						mwCbAIaShJaWBk5TS2VyboaShISE
+						AEkAdABhAGwAaQBjAIQBZgWhAKEB
+						oQChAIaShJaWBk5TS2VyboaShISE
 						CE5TTnVtYmVyAISEB05TVmFsdWUA
 						lIQBKoSEAWSpAIaGhg==
 						</data>
@@ -60337,23 +60339,23 @@ generator body}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKwlsb29wIGJvZHmG
 						hAJpSQEJkoSEhAxOU0RpY3Rpb25h
-						cnkAlIQBaQSShJaWB05TQ29sb3KG
-						koSEhAdOU0NvbG9yAJSEAWMChARm
-						ZmZmg/r4eD6D2NbWPoOcmxs/AYaS
-						hJaWEE5TUGFyYWdyYXBoU3R5bGWG
-						koSEhBBOU1BhcmFncmFwaFN0eWxl
-						AJSEBENDQFMBAISEhAdOU0FycmF5
-						AJSZDJKEhIQJTlNUZXh0VGFiAJSE
-						AkNmAByGkoSioQA4hpKEoqEAVIaS
-						hKKhAHCGkoSioQCBjACGkoSioQCB
-						qACGkoSioQCBxACGkoSioQCB4ACG
-						koSioQCB/ACGkoSioQCBGAGGkoSi
-						oQCBNAGGkoSioQCBUAGGhoEACIQE
-						WzFmXYPNzEw9hpKElpYGTlNGb250
+						cnkAlIQBaQSShJaWEE5TUGFyYWdy
+						YXBoU3R5bGWGkoSEhBBOU1BhcmFn
+						cmFwaFN0eWxlAJSEBENDQFMBAISE
+						hAdOU0FycmF5AJSZDJKEhIQJTlNU
+						ZXh0VGFiAJSEAkNmAByGkoSfngA4
+						hpKEn54AVIaShJ+eAHCGkoSfngCB
+						jACGkoSfngCBqACGkoSfngCBxACG
+						koSfngCB4ACGkoSfngCB/ACGkoSf
+						ngCBGAGGkoSfngCBNAGGkoSfngCB
+						UAGGhoEACIQEWzFmXYPNzEw9hpKE
+						lpYHTlNDb2xvcoaShISEB05TQ29s
+						b3IAlIQBYwKEBGZmZmaD+vh4PoPY
+						1tY+g5ybGz8BhpKElpYGTlNGb250
 						hpKEhIQGTlNGb250HpSZMIQFWzQ4
 						Y10GAAAAKAAAAP/+QwBvAG4AcwBv
 						AGwAYQBzAC0AQgBvAGwAZABJAHQA
-						YQBsAGkAYwCEAWYFmwCbAZsAmwCG
+						YQBsAGkAYwCEAWYFoQChAaEAoQCG
 						koSWlgZOU0tlcm6GkoSEhAhOU051
 						bWJlcgCEhAdOU1ZhbHVlAJSEASqE
 						hAFkqQCGhoY=
@@ -60465,24 +60467,24 @@ loop body}</string>
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKw5nZW5lcmF0b3Ig
 						Ym9keYaEAmlJAQ6ShISEDE5TRGlj
-						dGlvbmFyeQCUhAFpBJKElpYHTlND
-						b2xvcoaShISEB05TQ29sb3IAlIQB
-						YwKEBGZmZmaDq6qqPoOMiws/g7m4
-						OD4BhpKElpYQTlNQYXJhZ3JhcGhT
-						dHlsZYaShISEEE5TUGFyYWdyYXBo
-						U3R5bGUAlIQEQ0NAUwEAhISEB05T
-						QXJyYXkAlJkMkoSEhAlOU1RleHRU
-						YWIAlIQCQ2YAHIaShKKhADiGkoSi
-						oQBUhpKEoqEAcIaShKKhAIGMAIaS
-						hKKhAIGoAIaShKKhAIHEAIaShKKh
-						AIHgAIaShKKhAIH8AIaShKKhAIEY
-						AYaShKKhAIE0AYaShKKhAIFQAYaG
-						gQAIhARbMWZdg83MTD2GkoSWlgZO
+						dGlvbmFyeQCUhAFpBJKElpYQTlNQ
+						YXJhZ3JhcGhTdHlsZYaShISEEE5T
+						UGFyYWdyYXBoU3R5bGUAlIQEQ0NA
+						UwEAhISEB05TQXJyYXkAlJkMkoSE
+						hAlOU1RleHRUYWIAlIQCQ2YAHIaS
+						hJ+eADiGkoSfngBUhpKEn54AcIaS
+						hJ+eAIGMAIaShJ+eAIGoAIaShJ+e
+						AIHEAIaShJ+eAIHgAIaShJ+eAIH8
+						AIaShJ+eAIEYAYaShJ+eAIE0AYaS
+						hJ+eAIFQAYaGgQAIhARbMWZdg83M
+						TD2GkoSWlgdOU0NvbG9yhpKEhIQH
+						TlNDb2xvcgCUhAFjAoQEZmZmZoOr
+						qqo+g4yLCz+Dubg4PgGGkoSWlgZO
 						U0ZvbnSGkoSEhAZOU0ZvbnQelJkw
 						hAVbNDhjXQYAAAAoAAAA//5DAG8A
 						bgBzAG8AbABhAHMALQBCAG8AbABk
-						AEkAdABhAGwAaQBjAIQBZgWbAJsB
-						mwCbAIaShJaWBk5TS2VyboaShISE
+						AEkAdABhAGwAaQBjAIQBZgWhAKEB
+						oQChAIaShJaWBk5TS2VyboaShISE
 						CE5TTnVtYmVyAISEB05TVmFsdWUA
 						lIQBKoSEAWSpAIaGhg==
 						</data>
@@ -62097,12 +62099,6 @@ sum(g)
 								SQEMkoSEhAxO
 								U0RpY3Rpb25h
 								cnkAlIQBaQSS
-								hJaWB05TQ29s
-								b3KGkoSEhAdO
-								U0NvbG9yAJSE
-								AWMChARmZmZm
-								g/r4eD6D2NbW
-								PoOcmxs/AYaS
 								hJaWEE5TUGFy
 								YWdyYXBoU3R5
 								bGWGkoSEhBBO
@@ -62113,18 +62109,24 @@ sum(g)
 								AJSZDJKEhIQJ
 								TlNUZXh0VGFi
 								AJSEAkNmAByG
-								koSioQA4hpKE
-								oqEAVIaShKKh
-								AHCGkoSioQCB
-								jACGkoSioQCB
-								qACGkoSioQCB
-								xACGkoSioQCB
-								4ACGkoSioQCB
-								/ACGkoSioQCB
-								GAGGkoSioQCB
-								NAGGkoSioQCB
+								koSfngA4hpKE
+								n54AVIaShJ+e
+								AHCGkoSfngCB
+								jACGkoSfngCB
+								qACGkoSfngCB
+								xACGkoSfngCB
+								4ACGkoSfngCB
+								/ACGkoSfngCB
+								GAGGkoSfngCB
+								NAGGkoSfngCB
 								UAGGhoEACIQE
 								WzFmXYPNzEw9
+								hpKElpYHTlND
+								b2xvcoaShISE
+								B05TQ29sb3IA
+								lIQBYwKEBGZm
+								ZmaD+vh4PoPY
+								1tY+g5ybGz8B
 								hpKElpYGTlNG
 								b250hpKEhIQG
 								TlNGb250HpSZ
@@ -62134,8 +62136,8 @@ sum(g)
 								AGwAYQBzAC0A
 								QgBvAGwAZABJ
 								AHQAYQBsAGkA
-								YwCEAWYFmwCb
-								AZsAmwCGkoSW
+								YwCEAWYFoQCh
+								AaEAoQCGkoSW
 								lgZOU0tlcm6G
 								koSEhAhOU051
 								bWJlcgCEhAdO
@@ -62354,12 +62356,6 @@ inlined sum }</string>
 								ARSShISEDE5T
 								RGljdGlvbmFy
 								eQCUhAFpBJKE
-								lpYHTlNDb2xv
-								coaShISEB05T
-								Q29sb3IAlIQB
-								YwKEBGZmZmaD
-								q6qqPoOMiws/
-								g7m4OD4BhpKE
 								lpYQTlNQYXJh
 								Z3JhcGhTdHls
 								ZYaShISEEE5T
@@ -62370,18 +62366,24 @@ inlined sum }</string>
 								lJkMkoSEhAlO
 								U1RleHRUYWIA
 								lIQCQ2YAHIaS
-								hKKhADiGkoSi
-								oQBUhpKEoqEA
-								cIaShKKhAIGM
-								AIaShKKhAIGo
-								AIaShKKhAIHE
-								AIaShKKhAIHg
-								AIaShKKhAIH8
-								AIaShKKhAIEY
-								AYaShKKhAIE0
-								AYaShKKhAIFQ
+								hJ+eADiGkoSf
+								ngBUhpKEn54A
+								cIaShJ+eAIGM
+								AIaShJ+eAIGo
+								AIaShJ+eAIHE
+								AIaShJ+eAIHg
+								AIaShJ+eAIH8
+								AIaShJ+eAIEY
+								AYaShJ+eAIE0
+								AYaShJ+eAIFQ
 								AYaGgQAIhARb
 								MWZdg83MTD2G
+								koSWlgdOU0Nv
+								bG9yhpKEhIQH
+								TlNDb2xvcgCU
+								hAFjAoQEZmZm
+								ZoOrqqo+g4yL
+								Cz+Dubg4PgGG
 								koSWlgZOU0Zv
 								bnSGkoSEhAZO
 								U0ZvbnQelJkw
@@ -62391,8 +62393,8 @@ inlined sum }</string>
 								bABhAHMALQBC
 								AG8AbABkAEkA
 								dABhAGwAaQBj
-								AIQBZgWbAJsB
-								mwCbAIaShJaW
+								AIQBZgWhAKEB
+								oQChAIaShJaW
 								Bk5TS2VyboaS
 								hISECE5TTnVt
 								YmVyAISEB05T
@@ -62870,21 +62872,28 @@ _sum = None\
 						hARmZmZmg//+/j4Ag6uqqj4BhpKE
 						lpYQTlNQYXJhZ3JhcGhTdHlsZYaS
 						hISEEE5TUGFyYWdyYXBoU3R5bGUA
-						lIQEQ0NAUwQAhQCGkoSWlgZOU0Zv
-						bnSGkoSEhAZOU0ZvbnQelJkYhAVb
-						MjRjXQYAAAAQAAAA//5DAG8AdQBy
-						AGkAZQByAIQBZgybAJsBmwCbAIaG
-						lwICkoSYmQKSnJKdkp+SoIaXAwqS
-						hJiZA5KZkoSbmwGcg1d1Gj2DiB3w
-						PYPrtlU+AYaSnJKdkp+SoIaXAgGX
-						BASShJiZA5KZkoSbmwGcg8HAQD6D
-						r66uPoOKiQk/AYaSnJKdkp+SoIaX
-						AgOXBQ+ShJiZA5KZkoSbmwGcg4L4
-						uz2DgS0JPoM4PSU+AYaSnJKdkp+S
-						oIaXAQOXAgGXAxKXAgGXBQ+XAgGX
-						AQOXAgGXBAOXAgGXAwWXAgKXBgOS
-						hJiZA5KZkoSbmwKcg6uqqj6DjIsL
-						P4O5uDg+AYaSnJKdkp+SoIaXAgGG
+						lIQEQ0NAUwAAhISEB05TQXJyYXkA
+						lJkMkoSEhAlOU1RleHRUYWIAlIQC
+						Q2YAHIaShKKhADiGkoSioQBUhpKE
+						oqEAcIaShKKhAIGMAIaShKKhAIGo
+						AIaShKKhAIHEAIaShKKhAIHgAIaS
+						hKKhAIH8AIaShKKhAIEYAYaShKKh
+						AIE0AYaShKKhAIFQAYaGgQAIhARb
+						MWZdg83MTD2GkoSWlgZOU0ZvbnSG
+						koSEhAZOU0ZvbnQelJkYhAVbMjRj
+						XQYAAAAQAAAA//5DAG8AdQByAGkA
+						ZQByAIQBZgybAJsBmwCbAIaGlwIC
+						koSYmQKSnJKdkq6Sr4aXAwqShJiZ
+						A5KZkoSbmwGcg1d1Gj2DiB3wPYPr
+						tlU+AYaSnJKdkq6Sr4aXAgGXBASS
+						hJiZA5KZkoSbmwGcg8HAQD6Dr66u
+						PoOKiQk/AYaSnJKdkq6Sr4aXAgOX
+						BQ+ShJiZA5KZkoSbmwGcg4L4uz2D
+						gS0JPoM4PSU+AYaSnJKdkq6Sr4aX
+						AQOXAgGXAxKXAgGXBQ+XAgGXAQOX
+						AgGXBAOXAgGXAwWXAgKXBgOShJiZ
+						A5KZkoSbmwKcg6uqqj6DjIsLP4O5
+						uDg+AYaSnJKdkq6Sr4aXAgGG
 						</data>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
@@ -73342,34 +73351,34 @@ w/ flexible object storage}</string>
 								aUkBDZKEhIQM
 								TlNEaWN0aW9u
 								YXJ5AJSEAWkE
-								koSWlgZOU0tl
-								cm6GkoSEhAhO
-								U051bWJlcgCE
-								hAdOU1ZhbHVl
-								AJSEASqEhAFk
-								nQCGkoSWlhBO
-								U1BhcmFncmFw
-								aFN0eWxlhpKE
-								hIQQTlNQYXJh
-								Z3JhcGhTdHls
-								ZQCUhARDQ0BT
-								AgCEhIQHTlNB
-								cnJheQCUmQyS
-								hISECU5TVGV4
-								dFRhYgCUhAJD
-								ZgAchpKEpKIA
-								OIaShKSiAFSG
-								koSkogBwhpKE
-								pKIAgYwAhpKE
-								pKIAgagAhpKE
-								pKIAgcQAhpKE
-								pKIAgeAAhpKE
-								pKIAgfwAhpKE
-								pKIAgRgBhpKE
-								pKIAgTQBhpKE
-								pKIAgVABhoaB
-								AAiEBFsxZl2D
-								zcxMPYaShJaW
+								koSWlhBOU1Bh
+								cmFncmFwaFN0
+								eWxlhpKEhIQQ
+								TlNQYXJhZ3Jh
+								cGhTdHlsZQCU
+								hARDQ0BTAgCE
+								hIQHTlNBcnJh
+								eQCUmQyShISE
+								CU5TVGV4dFRh
+								YgCUhAJDZgAc
+								hpKEn54AOIaS
+								hJ+eAFSGkoSf
+								ngBwhpKEn54A
+								gYwAhpKEn54A
+								gagAhpKEn54A
+								gcQAhpKEn54A
+								geAAhpKEn54A
+								gfwAhpKEn54A
+								gRgBhpKEn54A
+								gTQBhpKEn54A
+								gVABhoaBAAiE
+								BFsxZl2DzcxM
+								PYaShJaWBk5T
+								S2VyboaShISE
+								CE5TTnVtYmVy
+								AISEB05TVmFs
+								dWUAlIQBKoSE
+								AWSjAIaShJaW
 								Bk5TRm9udIaS
 								hISEBk5TRm9u
 								dB6UmSyEBVs0
@@ -90997,11 +91006,11 @@ h.egg()}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{1920, 0}, {1920, 1057}}</string>
+		<string>{{2240, 140}, {1280, 777}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -91013,7 +91022,7 @@ h.egg()}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{0.5, 284.5}, {895, 472.5}}</string>
+		<string>{{83.5, 0.5}, {575, 332.5}}</string>
 		<key>Zoom</key>
 		<real>2</real>
 		<key>ZoomValues</key>
@@ -91035,8 +91044,8 @@ h.egg()}</string>
 			</array>
 			<array>
 				<string>ch3-code</string>
-				<real>4</real>
 				<real>2</real>
+				<real>4</real>
 			</array>
 			<array>
 				<string>ch4-fig</string>
@@ -91045,8 +91054,8 @@ h.egg()}</string>
 			</array>
 			<array>
 				<string>ch4-code</string>
+				<real>2</real>
 				<real>4</real>
-				<real>1</real>
 			</array>
 			<array>
 				<string>ch5-fig</string>
