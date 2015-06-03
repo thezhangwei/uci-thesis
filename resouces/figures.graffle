@@ -94096,11 +94096,11 @@ h.egg()}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
+		<integer>6</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{-0, 4}, {1920, 1173}}</string>
+		<string>{{0, 4}, {1920, 1053}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -94112,9 +94112,9 @@ h.egg()}</string>
 		<key>SidebarWidth</key>
 		<integer>116</integer>
 		<key>VisibleRegion</key>
-		<string>{{578, 178.25}, {447.5, 265.25}}</string>
+		<string>{{0.5, 1966}, {895, 470.5}}</string>
 		<key>Zoom</key>
-		<real>4</real>
+		<real>2</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
@@ -94129,8 +94129,8 @@ h.egg()}</string>
 			</array>
 			<array>
 				<string>ch3-fig</string>
-				<real>4</real>
 				<real>2</real>
+				<real>8</real>
 			</array>
 			<array>
 				<string>ch3-code</string>
