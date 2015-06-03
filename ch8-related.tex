@@ -52,7 +52,7 @@ The primary difference between the repurposed virtual machine approach and our i
 Since we are not bound by the CPython bytecode representation, the AST interpreter has more potential to perform inlining.
 Similar to PyPy, the repurposed VM approach does not make implementation of new languages easier, in the sense that they do not provide a code generator.
 
-Type feedback goes back to the successful optimization efforts of the \textsc{Self} programming language~\cite{holzle.ungar+94,holzle+94}, extending previously successful results for implementing the Smalltalk-80 system with inline caches and just-in-time compilation (along with pointing out the importance of deoptimization)~\cite{Deutsch1984}.
+Type feedback goes back to the successful optimization efforts of the \textsc{Self} programming language~\cite{Chambers+self+1989,Holzle+debugging+1992,holzle.ungar+94,holzle+94,Holzle+self+1994}, extending previously successful results for implementing the Smalltalk-80 system with inline caches and just-in-time compilation (along with pointing out the importance of deoptimization)~\cite{Deutsch1984}.
 We refer the interested reader to a concise survey covering the state-of-the-art until 2003~\cite{aycock+03}.
 Using traditional assembly inline caching to gather type feedback and subsequently performing speculative optimizations is the key to efficient just-in-time compiling highly dynamic programming languages~\cite{chang.etal+11}.
 Since 2010, bytecode interpreters benefit from simple and efficient inline caching, resulting in substantial speedups~\cite{Brunthaler2010inca,williams.etal+10}.
