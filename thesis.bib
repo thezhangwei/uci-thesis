@@ -166,6 +166,24 @@
   timestamp = {2011.09.08}
 }
 
+@inproceedings{Bebenita+cil+2010,
+ author = {Bebenita, Michael and Brandner, Florian and Fahndrich, Manuel and Logozzo, Francesco and Schulte, Wolfram and Tillmann, Nikolai and Venter, Herman},
+ title = {SPUR: A Trace-based JIT Compiler for CIL},
+ booktitle = {Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications},
+ series = {OOPSLA '10},
+ year = {2010},
+ isbn = {978-1-4503-0203-6},
+ location = {Reno/Tahoe, Nevada, USA},
+ pages = {708--725},
+ numpages = {18},
+ url = {http://doi.acm.org/10.1145/1869459.1869517},
+ doi = {10.1145/1869459.1869517},
+ acmid = {1869517},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cil, dynamic compilation, javascript, just-in-time, tracing},
+} 
+
 @INPROCEEDINGS{wimmer.etal+09,
   author = {Christian Wimmer and Marcelo Silva Cintra and Michael Bebenita and
   Mason Chang and Andreas Gal and Michael Franz},
@@ -189,6 +207,39 @@
   timestamp = {2011.09.08}
 }
 
+@INPROCEEDINGS{yermolovich.etal+09,
+  author = {Yermolovich, Alexander and Wimmer, Christian and Franz, Michael},
+  title = {Optimization of dynamic languages using hierarchical layering of
+  virtual machines},
+  year = {2009},
+  pages = {79--88},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  crossref = {dls'09},
+  doi = {10.1145/1640134.1640147},
+  isbn = {978-1-60558-769-1},
+  location = {Orlando, Florida, USA},
+  timestamp = {2010.03.01}
+}
+
+@inproceedings{Wimmer+modularity+2012,
+ author = {Wimmer, Christian and Brunthaler, Stefan and Larsen, Per and Franz, Michael},
+ title = {Fine-grained Modularity and Reuse of Virtual Machine Components},
+ booktitle = {Proceedings of the 11th Annual International Conference on Aspect-oriented Software Development},
+ series = {AOSD '12},
+ year = {2012},
+ isbn = {978-1-4503-1092-5},
+ location = {Potsdam, Germany},
+ pages = {203--214},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2162049.2162073},
+ doi = {10.1145/2162049.2162073},
+ acmid = {2162073},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dynamic languages, java, just-in-time compilation, languages, maxine, metacircular VM, modular VM, modularity, optimization, performance, virtual machine},
+} 
+
 ##########################
 # Non academic references
 ##########################
@@ -205,6 +256,33 @@
 @misc{ruby,
     author = {{Ruby}},
     howpublished = {\url{http://www.ruby-lang.org/}}
+}
+
+@inproceedings{sasada+yarv+2005,
+  title={YARV: yet another RubyVM: innovating the ruby interpreter},
+  author={Sasada, Koichi},
+  booktitle={Companion to the 20th annual ACM SIGPLAN conference on Object-oriented programming, systems, languages, and applications},
+  pages={158--159},
+  year={2005},
+  organization={ACM}
+}
+
+@inproceedings{Furr+2009,
+ author = {Furr, Michael and An, Jong-hoon (David) and Foster, Jeffrey S. and Hicks, Michael},
+ title = {The Ruby Intermediate Language},
+ booktitle = {Proceedings of the 5th Symposium on Dynamic Languages},
+ series = {DLS '09},
+ year = {2009},
+ isbn = {978-1-60558-769-1},
+ location = {Orlando, Florida, USA},
+ pages = {89--98},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1640134.1640148},
+ doi = {10.1145/1640134.1640148},
+ acmid = {1640148},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {intermediate language, profile guided anlaysis, ril, ruby},
 }
 
 @misc{jruby,
@@ -444,6 +522,89 @@
   ee        = {http://doi.ieeecomputersociety.org/10.1109/MC.1982.1653970},
 }
 
+@INPROCEEDINGS{ertl+01,
+  author = {M. Anton Ertl},
+  title = {Threaded code variations and optimizations},
+  booktitle = {EuroForth},
+  year = {2001},
+  pages = {49--55},
+  address = {TU Wien, Vienna, Austria}
+}
+
+@inproceedings{Berndl+2005,
+ author = {Berndl, Marc and Vitale, Benjamin and Zaleski, Mathew and Brown, Angela Demke},
+ title = {Context Threading: A Flexible and Efficient Dispatch Technique for Virtual Machine Interpreters},
+ booktitle = {Proceedings of the international symposium on Code generation and optimization},
+ series = {CGO '05},
+ year = {2005},
+ isbn = {0-7695-2298-X},
+ pages = {15--26},
+ numpages = {12},
+ url = {http://dx.doi.org/10.1109/CGO.2005.14},
+ doi = {10.1109/CGO.2005.14},
+ acmid = {1048973},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@ARTICLE{ertl.gregg+03,
+  author = {M. Anton Ertl and David Gregg},
+  title = {The Structure and Performance of Efficient Interpreters},
+  journal = {Journal of Instruction-Level Parallelism},
+  year = {2003},
+  volume = {5},
+  pages = {1-25},
+  month = {November},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://www.jilp.org/vol5/v5paper12.pdf}
+}
+
+@ARTICLE{shi.etal+08,
+  author = {Yunhe Shi and Kevin Casey and M. Anton Ertl and David Gregg},
+  title = {Virtual machine showdown: Stack versus registers},
+  journal = {ACM Transactions on Architecture and Code Optimization},
+  year = {2008},
+  volume = {4},
+  pages = {1--36},
+  number = {4},
+  doi = {http://doi.acm.org/10.1145/1328195.1328197},
+  issn = {1544-3566}
+}
+
+@INPROCEEDINGS{ertl+95,
+  author = {M. Anton Ertl},
+  title = {Stack caching for interpreters},
+  year = {1995},
+  pages = {315--327},
+  crossref = {pldi'95},
+  doi = {http://doi.acm.org/10.1145/207110.207165},
+  isbn = {0-89791-697-2}
+}
+
+@INPROCEEDINGS{ertl.gregg+04,
+  author = {M. Anton Ertl and David Gregg},
+  title = {Combining stack caching with dynamic superinstructions},
+  year = {2004},
+  pages = {7--14},
+  crossref = {ivme'04},
+  doi = {http://doi.acm.org/10.1145/1059579.1059583},
+  isbn = {1-58113-909-8}
+}
+
+@INPROCEEDINGS{ertl.gregg+03a,
+  author = {M. Anton Ertl and David Gregg},
+  title = {Optimizing indirect branch prediction accuracy in virtual machine
+  interpreters},
+  year = {2003},
+  pages = {278--288},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  crossref = {pldi'03},
+  doi = {http://doi.acm.org/10.1145/781131.781162},
+  isbn = {1-58113-662-5},
+  location = {San Diego, California, USA}
+}
+
 #######################
 # Virtual Machines
 #######################
@@ -461,15 +622,6 @@
  acmid = {800542},
  publisher = {ACM},
  address = {New York, NY, USA},
-}
-
-@inproceedings{holzle1991,
-  title={Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
-  author={H{\"o}lzle, Urs and Chambers, Craig and Ungar, David},
-  booktitle={ECOOP'91 European Conference on Object-Oriented Programming},
-  pages={21--38},
-  year={1991},
-  organization={Springer}
 }
 
 @INPROCEEDINGS{ishizaki.etal+12,
@@ -579,6 +731,59 @@
  address = {New York, NY, USA},
  keywords = {dynamic behavior, dynamic metrics, execution tracing, javascript, program analysis},
 } 
+
+#######################
+# Hosted dyna lang VMs
+#######################
+@inproceedings{Castanos+2012,
+ author = {Castanos, Jose and Edelsohn, David and Ishizaki, Kazuaki and Nagpurkar, Priya and Nakatani, Toshio and Ogasawara, Takeshi and Wu, Peng},
+ title = {On the Benefits and Pitfalls of Extending a Statically Typed Language JIT Compiler for Dynamic Scripting Languages},
+ booktitle = {Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications},
+ series = {OOPSLA '12},
+ year = {2012},
+ isbn = {978-1-4503-1561-6},
+ location = {Tucson, Arizona, USA},
+ pages = {195--212},
+ numpages = {18},
+ url = {http://doi.acm.org/10.1145/2384616.2384631},
+ doi = {10.1145/2384616.2384631},
+ acmid = {2384631},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {python, scripting languages},
+} 
+
+#######################
+# Trace compilation
+#######################
+@inproceedings{Inoue+2012,
+ author = {Inoue, Hiroshi and Hayashizaki, Hiroshige and Wu, Peng and Nakatani, Toshio},
+ title = {Adaptive Multi-level Compilation in a Trace-based Java JIT Compiler},
+ booktitle = {Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications},
+ series = {OOPSLA '12},
+ year = {2012},
+ isbn = {978-1-4503-1561-6},
+ location = {Tucson, Arizona, USA},
+ pages = {179--194},
+ numpages = {16},
+ url = {http://doi.acm.org/10.1145/2384616.2384630},
+ doi = {10.1145/2384616.2384630},
+ acmid = {2384630},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {JAVA, jit compiler, profiling, trace selection and compilation},
+}
+
+@INPROCEEDINGS{Inoue+2011,
+  author={Inoue, H. and Hayashizaki, H. and Peng Wu and Nakatani, T.}, 
+  booktitle={Code Generation and Optimization (CGO), 2011 9th Annual IEEE/ACM International Symposium on}, 
+  title={A trace-based Java JIT compiler retrofitted from a method-based compiler}, 
+  year={2011}, 
+  month={April}, 
+  pages={246-256}, 
+  keywords={Java;just-in-time;optimisation;program compilers;compiler optimization;compiling languages;production-quality method-based JIT compiler;trace-based Java JIT compiler;Generators;Java;Magnetic heads;Optimization;Radiation detectors;Redundancy;Runtime;JIT;Java;trace-based compilation}, 
+  doi={10.1109/CGO.2011.5764692},
+}
 
 #######################
 # Java/JVM
@@ -799,6 +1004,35 @@
  address = {New York, NY, USA},
  keywords = {Java, Maxine VM, VM design, VM interfaces, debugging, inspector, metacircular VM, tool support},
 }
+
+@INPROCEEDINGS{Kulkarni+2013, 
+  author={Kulkarni, S. and Cavazos, J. and Wimmer, C. and Simon, D.}, 
+  booktitle={Code Generation and Optimization (CGO), 2013 IEEE/ACM International Symposium on}, 
+  title={Automatic construction of inlining heuristics using machine learning}, 
+  year={2013}, 
+  month={Feb}, 
+  pages={1-12}, 
+  keywords={learning (artificial intelligence);neural nets;program compilers;Java HotSpot server compiler;Maxine VM C1X compiler;callee method;caller method;inlining decision;inlining heuristics;machine learning;method inlining;neural network;neuro-evolution technique;program running time;Benchmark testing;Context;Decision trees;Measurement;Neural networks;Optimization;Training}, 
+  doi={10.1109/CGO.2013.6495004},
+}
+
+@inproceedings{Titzer+2010,
+ author = {Titzer, Ben L. and W\"{u}rthinger, Thomas and Simon, Doug and Cintra, Marcelo},
+ title = {Improving Compiler-runtime Separation with XIR},
+ booktitle = {Proceedings of the 6th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+ series = {VEE '10},
+ year = {2010},
+ isbn = {978-1-60558-910-7},
+ location = {Pittsburgh, Pennsylvania, USA},
+ pages = {39--50},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1735997.1736005},
+ doi = {10.1145/1735997.1736005},
+ acmid = {1736005},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {JIT, compilers, intermediate representations, java, lowering, object model, register allocation, runtime interface, software architecture, virtual machines},
+} 
 
 @inproceedings{duboscq2013graal,
   title={Graal IR: An extensible declarative intermediate representation},

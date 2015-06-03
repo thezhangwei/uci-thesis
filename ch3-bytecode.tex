@@ -47,7 +47,7 @@ The interpreter step that performs the function of the instruction works exactly
 The cost of running a hosted program on an interpreter consists of the costs of performing each of the three steps we described above.
 Among those steps, instruction dispatch and operand access do not directly contribute to the actual work of the hosted program.
 The less time the interpreter spend in these two steps, the more time the interpreter spend in doing the actual work.
-Therefore, an efficient bytecode interpreter must encompass techniques that optimize instruction dispatch and operand access.
+Therefore, an efficient bytecode interpreter must encompass techniques that optimize instruction dispatch and operand access~\cite{ertl+95,ertl.gregg+04,ertl.gregg+03a}.
 
 \subsection{Switch-based Dispatch}
 
@@ -94,7 +94,7 @@ This mis-prediction results in a significant performance penalty for switch-base
 \label{fig:direct-threading-dispatch}
 \end{figure}
 
-Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation~\cite{bell73,piumarta.riccardi+98}.
+Instead of letting each instruction dispatch share the same branch, direct threading duplicates instruction dispatch at the end of each instruction implementation~\cite{bell73,piumarta.riccardi+98,ertl+01,ertl.gregg+03,shi.etal+08,Berndl+2005}.
 Figure~\ref{fig:direct-threading-dispatch-code} illustrates this technique written in C.
 Direct threading requires an additional translation phase that translates the bytecode sequence into a sequence of pointers namely the threaded code.
 Each pointer in the threaded code points to the instruction implementation that corresponds to the bytecode instruction in the original bytecode input.
@@ -145,7 +145,7 @@ Our research prototype takes an existing switch-based bytecode interpreter writt
 \label{fig:jython-on-modularvm}
 \end{figure}
 
-Our system, Modular VM, is an extension to Maxine VM~\cite{Wimmer2013}, a research JVM developed at Oracle Labs.
+Our system, Modular VM, is an extension to Maxine VM~\cite{Wimmer2013,Kulkarni+2013,Titzer+2010}, a research JVM developed at Oracle Labs.
 We build Modular VM with the ability to recognize hosted interpreters running on top of it and automatically optimizes them.
 We host Jython, a Python VM written in Java, on Modular VM in our experiment to show case our optimization.
 Figure~\ref{fig:jython-on-modularvm} illustrates the overall system setup.

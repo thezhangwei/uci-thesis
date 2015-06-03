@@ -14,7 +14,7 @@ Their approach separates the hosted Python bytecode interpreter from the underly
 \section{Hosted Interpreters for Dynamic Languages}
 
 Implementing a complete high-performance VM for each language is not a scalable approach.
-Therefore, there are several projects that seek to build a framework supporting multiple dynamic languages.
+Therefore, there are several projects that seek to build a framework supporting multiple dynamic languages~\cite{yermolovich.etal+09,Castanos+2012,Wimmer+modularity+2012}.
 
 Our system builds on the publicly available Truffle framework of Oracle Labs~\cite{Wurthinger+12}.
 Following previously successful research in type specialization of bytecode interpreters (cf.~\cite{Brunthaler2010inca,Brunthaler2010quickening,williams.etal+10}), W\"{u}rthinger et al. apply the concept of quickening to AST nodes, hence the term ``node rewriting.''
@@ -36,7 +36,7 @@ The differences are more of a subtle nature.
 First, PyPy mostly  focuses on bytecode interpreters instead of AST interpreters (though they are supported).
 Second, PyPy uses a trace-based compilation approach relying on the bytecode interpreter~\cite{bolz.etal09}.
 In theory, however, PyPy is not bound to the bytecode interpreter and could very well duplicate the Truffle approach.
-Furthermore, trace-based compilation~\cite{gal.etal+09,chang.etal+09,bebenita.etal+10,bebenita.etal+09,wimmer.etal+09} is somewhat similar to partial evaluation followed by just-in-time compilation.
+Furthermore, trace-based compilation~\cite{gal.etal+09,chang.etal+09,bebenita.etal+10,bebenita.etal+09,Bebenita+cil+2010,wimmer.etal+09,Inoue+2011,Inoue+2012} is somewhat similar to partial evaluation followed by just-in-time compilation.
 Third, PyPy does not target an existing virtual machine, i.e., it offers more degrees of freedom to language implementers.
 
 For our project, these differences are, however, not relevant.
@@ -92,7 +92,7 @@ Stadler et al.~\cite{Stadler2010} presented a coroutine implementation for the J
 Our generator solution does not rely on coroutine stacks and does not require modifications to the host language.
 
 % Ruby's block inlining
-In Ruby~\cite{ruby}, methods may receive a code block from the caller.
+In Ruby~\cite{ruby,sasada+yarv+2005,Furr+2009}, methods may receive a code block from the caller.
 The method may invoke the code block using ``yield'' and pass values into the code block.
 Ruby uses this block parameter to implement iterators.
 An iterator method expects a code block from the caller and ``yields'' a series of values to the block.

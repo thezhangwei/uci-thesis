@@ -202,7 +202,7 @@ As explained in Section~\ref{sec:ch5-custom-mutable-types}, the layout table sto
 Accessing an attribute requires looking up its location information from the layout table and then performing a memory read or write at the obtained memory location.
 Since we implement the layout table using a hash map, the cost of accessing the table is as expensive as attribute accesses on a hash map based object.
 However, ZipPy optimizes attribute accesses by caching attribute locations after a full layout table lookup.
-This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, holzle1991, Brunthaler2010inca}, amortizes the cost of accessing the same attribute on the Python objects of the same type.
+This technique, inspired by previous research on virtual machines~\cite{Deutsch1984, Holzle+1991, Brunthaler2010inca}, amortizes the cost of accessing the same attribute on the Python objects of the same type.
 
 \subsubsection{Attribute Access Dispatch Chain}
 \label{sec:ch5-attribute-access-dispatch-chain}
@@ -379,7 +379,7 @@ If the callee resolution does not involve an attribute access, it ignores the pr
 \item The keywords node evaluates all the keyword arguments, and returns them to the call node in an Java array.
 
 \item The \texttt{PythonCallNode} passes the evaluated primary object, callee, arguments array and keyword arguments array to the dispatch node.
-The dispatch node performs the actual call using an inline caching inspired dispatch chain~\cite{Deutsch1984, holzle1991}, and passes all the arguments to the AST of the callee.
+The dispatch node performs the actual call using an inline caching inspired dispatch chain~\cite{Deutsch1984, Holzle+1991}, and passes all the arguments to the AST of the callee.
 We will explain the call dispatch nodes in more detail in Section~\ref{sec:ch5-call-site-caching-and-inlining}.
 
 \end{enumerate}
