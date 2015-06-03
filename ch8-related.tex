@@ -7,7 +7,7 @@ As the existing virtual machines built for traditional statically typed programm
 This movement drove the appearance of multiple hosted Python implementations:
 IronPython is a Python implementation that runs on Microsoft's CLR architecture~\cite{hugunin2004ironpython}.
 Jython is a Python implementation written in Java and hosted on the JVM~\cite{jython}.
-As a more recent work, PyPy\cite{Rigo2006,bolz.etal09,bolz.etal+15} is a fast and highly compliant implementation of the Python programming language.
+As a more recent work, PyPy\cite{Rigo2006,bolz.etal09,Bolz+2011,Bolz+alloc+2011,Bolz+2013,bolz.etal+15,Ardo+2012,Schneider+2012} is a fast and highly compliant implementation of the Python programming language.
 PyPy uses a novel meta-tracing JIT compilation approach to speedup execution of Python programs.
 Their approach separates the hosted Python bytecode interpreter from the underlying tracing compiler, and enables PyPy as a framework for other language implementations.
 
@@ -36,7 +36,7 @@ The differences are more of a subtle nature.
 First, PyPy mostly  focuses on bytecode interpreters instead of AST interpreters (though they are supported).
 Second, PyPy uses a trace-based compilation approach relying on the bytecode interpreter~\cite{bolz.etal09}.
 In theory, however, PyPy is not bound to the bytecode interpreter and could very well duplicate the Truffle approach.
-Furthermore, trace-based compilation~\cite{gal.etal+09,chang.etal+09} is somewhat similar to partial evaluation followed by just-in-time compilation.
+Furthermore, trace-based compilation~\cite{gal.etal+09,chang.etal+09,bebenita.etal+10,bebenita.etal+09,wimmer.etal+09} is somewhat similar to partial evaluation followed by just-in-time compilation.
 Third, PyPy does not target an existing virtual machine, i.e., it offers more degrees of freedom to language implementers.
 
 For our project, these differences are, however, not relevant.
@@ -54,10 +54,10 @@ Similar to PyPy, the repurposed VM approach does not make implementation of new 
 
 Type feedback goes back to the successful optimization efforts of the \textsc{Self} programming language~\cite{holzle.ungar+94,holzle+94}, extending previously successful results for implementing the Smalltalk-80 system with inline caches and just-in-time compilation (along with pointing out the importance of deoptimization)~\cite{Deutsch1984}.
 We refer the interested reader to a concise survey covering the state-of-the-art until 2003~\cite{aycock+03}.
-Using traditional assembly inline caching to gather type feedback and subsequently performing speculative optimizations is the key to efficient just-in-time compiling highly dynamic programming languages.
+Using traditional assembly inline caching to gather type feedback and subsequently performing speculative optimizations is the key to efficient just-in-time compiling highly dynamic programming languages~\cite{chang.etal+11}.
 Since 2010, bytecode interpreters benefit from simple and efficient inline caching, resulting in substantial speedups~\cite{Brunthaler2010inca,williams.etal+10}.
 
-Our work does not require handling assembly code, but leverages efficient Java just-in-time compilers~\cite{kotzmann.etal+08,paleczny.etal+01}, which directly build on the earlier
+Our work does not require handling assembly code, but leverages efficient Java just-in-time compilers~\cite{kotzmann.etal+08,paleczny.etal+01,wimmer.franz+10}, which directly build on the earlier
 \textsc{Self} and Smalltalk results. Similarly, by operating on AST nodes rather than a bytecode representation, we avoid the need to define this virtual instruction set, and sidestep the implementation effort required to compile to this set of bytecode.
 
 \section{Truffle Languages}

@@ -28,20 +28,18 @@
   publisher={ACM}
 }
 
-@article{Zhang+2014,
+@inproceedings{Zhang+2014,
  author = {Zhang, Wei and Larsen, Per and Brunthaler, Stefan and Franz, Michael},
  title = {Accelerating Iterators in Optimizing AST Interpreters},
- journal = {SIGPLAN Not.},
- issue_date = {October 2014},
- volume = {49},
- number = {10},
- month = oct,
+ booktitle = {Proceedings of the 2014 ACM International Conference on Object Oriented Programming Systems Languages \& Applications},
+ series = {OOPSLA '14},
  year = {2014},
- issn = {0362-1340},
+ isbn = {978-1-4503-2585-1},
+ location = {Portland, Oregon, USA},
  pages = {727--743},
  numpages = {17},
- url = {http://doi.acm.org/10.1145/2714064.2660223},
- doi = {10.1145/2714064.2660223},
+ url = {http://doi.acm.org/10.1145/2660193.2660223},
+ doi = {10.1145/2660193.2660223},
  acmid = {2660223},
  publisher = {ACM},
  address = {New York, NY, USA},
@@ -125,6 +123,70 @@
   isbn = {978-1-60558-375-4},
   owner = {tommy},
   timestamp = {2010.03.01}
+}
+
+@INPROCEEDINGS{chang.etal+11,
+  author = {Chang, M. and Mathiske, B. and Smith, E. and Chaudhuri, A. and Gal,
+  A. and Bebenita, M. and Wimmer, C. and Franz, M.},
+  title = {The Impact of Optional Type Information on JIT Compilation of Dynamically
+  Typed Languages},
+  year = {2011},
+  organization = {ACM},
+  note = {To appear},
+  crossref = {dls'11},
+  timestamp = {2011.09.08}
+}
+
+@INPROCEEDINGS{bebenita.etal+09,
+  title = {Stream-Based Dynamic Compilation for Object-Oriented Languages},
+  author = {Michael Bebenita and Mason Chang and Andreas Gal and Michael Franz},
+  year = {2009},
+  doi = {http://dx.doi.org/10.1007/978-3-642-02571-6_6},
+  researchr = {http://researchr.org/publication/BebenitaCGF09},
+  cites = {0},
+  citedby = {0},
+  pages = {77-95},
+  booktitle = {Objects, Components, Models and Patterns, 47th International Conference, TOOLS EUROPE 2009, Zurich, Switzerland, June 29-July 3, 2009. Proceedings},
+  editor = {Manuel Oriol and Bertrand Meyer},
+  volume = {33},
+  series = {Lecture Notes in Business Information Processing},
+  publisher = {Springer},
+  isbn = {978-3-642-02570-9},
+}
+
+@INPROCEEDINGS{bebenita.etal+10,
+  author = {Michael Bebenita and Mason Chang and Gregor Wagner and Andreas Gal
+  and Christian Wimmer and Michael Franz},
+  title = {Trace-based compilation in execution environments without interpreters},
+  booktitle = {PPPJ},
+  year = {2010},
+  pages = {59-68},
+  crossref = {pppj'10},
+  doi = {10.1145/1852761.1852771},
+  timestamp = {2011.09.08}
+}
+
+@INPROCEEDINGS{wimmer.etal+09,
+  author = {Christian Wimmer and Marcelo Silva Cintra and Michael Bebenita and
+  Mason Chang and Andreas Gal and Michael Franz},
+  title = {Phase detection using trace compilation},
+  year = {2009},
+  pages = {172-181},
+  crossref = {pppj'09},
+  doi = {10.1145/1596655.1596683},
+  ee = {http://doi.acm.org/10.1145/1596655.1596683},
+  timestamp = {2011.09.08}
+}
+
+@INPROCEEDINGS{wimmer.franz+10,
+  author = {Christian Wimmer and Michael Franz},
+  title = {Linear scan register allocation on SSA form},
+  year = {2010},
+  pages = {170-179},
+  crossref = {cgo'10},
+  doi = {10.1145/1772954.1772979},
+  ee = {http://doi.acm.org/10.1145/1772954.1772979},
+  timestamp = {2011.09.08}
 }
 
 ##########################
@@ -347,6 +409,41 @@
   timestamp = {2010.05.17}
 }
 
+@INPROCEEDINGS{piumarta.riccardi+98,
+  author = {Ian Piumarta and Fabio Riccardi},
+  title = {Optimizing direct threaded code by selective inlining},
+  year = {1998},
+  pages = {291--300},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  crossref = {pldi'98},
+  doi = {10.1145/277650.277743},
+  isbn = {0-89791-987-4},
+  location = {Montreal, Quebec, Canada},
+}
+
+@BOOK{debaere.campenhout+90,
+  author    = {Eddy H. Debaere and
+               Jan M. van Campenhout},
+  title     = {Interpretation and Instruction Path Coprocessing},
+  publisher = {MIT Press},
+  series    = {Computer systems},
+  year      = {1990},
+  isbn      = {978-0-262-04107-2},
+  pages     = {I-IX, 1-192},
+}
+
+@ARTICLE{kogge+82,
+  author    = {Peter M. Kogge},
+  title     = {Am Architectural Trail to Threaded-Code Systems},
+  journal   = {IEEE Computer},
+  volume    = {15},
+  number    = {3},
+  year      = {1982},
+  pages     = {22-32},
+  ee        = {http://doi.ieeecomputersociety.org/10.1109/MC.1982.1653970},
+}
+
 #######################
 # Virtual Machines
 #######################
@@ -483,6 +580,40 @@
  keywords = {dynamic behavior, dynamic metrics, execution tracing, javascript, program analysis},
 } 
 
+#######################
+# Java/JVM
+#######################
+@ARTICLE{kotzmann.etal+08,
+  author = {Kotzmann, Thomas and Wimmer, Christian and M\"{o}ssenb\"{o}ck, Hanspeter
+  and Rodriguez, Thomas and Russell, Kenneth and Cox, David},
+  title = {Design of the {Java HotSpot}\texttrademark{} client compiler for {Java} 6},
+  journal = {ACM Transactions on Architecture and Code Optimization (TACO)},
+  year = {2008},
+  volume = {5},
+  pages = {1--32},
+  number = {1},
+  address = {New York, NY, USA},
+  doi = {http://doi.acm.org/10.1145/1369396.1370017},
+  file = {:home/tommy/Desktop/PhD/related_work/design hotspot client compiler 2008.pdf:PDF},
+  issn = {1544-3566},
+  owner = {tommy},
+  publisher = {ACM},
+  timestamp = {2009.07.14}
+}
+
+@inproceedings{paleczny.etal+01,
+ author = {Paleczny, Michael and Vick, Christopher and Click, Cliff},
+ title = {The {Java HotSpot}\texttrademark{} server compiler},
+ booktitle = {Proceedings of the 2001 Symposium on Java Virtual Machine Research and Technology - Volume 1},
+ series = {JVM'01},
+ year = {2001},
+ location = {Monterey, California},
+ pages = {1--12},
+ url = {http://dl.acm.org/citation.cfm?id=1267847.1267848},
+ acmid = {1267848},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+}
 
 #######################
 # Oracle Labs
@@ -669,39 +800,6 @@
  keywords = {Java, Maxine VM, VM design, VM interfaces, debugging, inspector, metacircular VM, tool support},
 }
 
-@ARTICLE{kotzmann.etal+08,
-  author = {Kotzmann, Thomas and Wimmer, Christian and M\"{o}ssenb\"{o}ck, Hanspeter
-  and Rodriguez, Thomas and Russell, Kenneth and Cox, David},
-  title = {Design of the {Java HotSpot}\texttrademark{} client compiler for
-  {Java} 6},
-  journal = {ACM Transactions on Architecture and Code Optimization (TACO)},
-  year = {2008},
-  volume = {5},
-  pages = {1--32},
-  number = {1},
-  address = {New York, NY, USA},
-  doi = {http://doi.acm.org/10.1145/1369396.1370017},
-  file = {:home/tommy/Desktop/PhD/related_work/design hotspot client compiler 2008.pdf:PDF},
-  issn = {1544-3566},
-  owner = {tommy},
-  publisher = {ACM},
-  timestamp = {2009.07.14}
-}
-
-@inproceedings{paleczny.etal+01,
- author = {Paleczny, Michael and Vick, Christopher and Click, Cliff},
- title = {The {Java HotSpot}\texttrademark{} server compiler},
- booktitle = {Proceedings of the 2001 Symposium on Java Virtual Machine Research and Technology - Volume 1},
- series = {JVM'01},
- year = {2001},
- location = {Monterey, California},
- pages = {1--12},
- url = {http://dl.acm.org/citation.cfm?id=1267847.1267848},
- acmid = {1267848},
- publisher = {USENIX Association},
- address = {Berkeley, CA, USA},
-}
-
 @inproceedings{duboscq2013graal,
   title={Graal IR: An extensible declarative intermediate representation},
   author={Duboscq, Gilles and Stadler, Lukas and W{\"u}rthinger, Thomas and Simon, Doug and Wimmer, Christian and M{\"o}ssenb{\"o}ck, Hanspeter},
@@ -718,9 +816,13 @@
   organization={ACM}
 }
 
-@article{marrzero,
-  title={Zero-Overhead Metaprogramming},
-  author={Marr, Stefan and Seaton, Chris and Ducasse, St{\'e}phane}
+@inproceedings{marrzero,
+  title = {Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises},
+  author = {Marr, Stefan and Seaton, Chris and Ducasse, St{\'e}phane},
+  booktitle = {Proceedings of the 36th Conference on Programming Language Design and Implementation},
+  series = {PLDI '15},
+  year = {2015},
+  organization = {ACM}
 }
 
 #############################
@@ -920,7 +1022,7 @@
 } 
 
 @inproceedings{Bolz.etal09,
- author = {Bolz, Carl Friedrich and Cuni, Antonio and Fijalkowski, Maciej and Rigo, Armin},
+ author = {Bolz, Carl Friedrich and Cuni, Antonio and Fija\l{}kowski, Maciej and Rigo, Armin},
  title = {{Tracing the Meta-level: PyPy's Tracing JIT Compiler}},
  booktitle = {Proceedings of the 4th Workshop on the Implementation, Compilation, Optimization of Object-Oriented Languages and Programming Systems},
  series = {ICOOOLPS '09},
@@ -935,6 +1037,43 @@
  address = {New York, NY, USA},
 }
 
+@inproceedings{Bolz+2011,
+ author = {Bolz, Carl Friedrich and Cuni, Antonio and Fija\l{}kowski, Maciej and Leuschel, Michael and Pedroni, Samuele and Rigo, Armin},
+ title = {Runtime Feedback in a Meta-tracing JIT for Efficient Dynamic Languages},
+ booktitle = {Proceedings of the 6th Workshop on Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems},
+ series = {ICOOOLPS '11},
+ year = {2011},
+ isbn = {978-1-4503-0894-6},
+ location = {Lancaster, United Kingdom},
+ pages = {9:1--9:8},
+ articleno = {9},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2069172.2069181},
+ doi = {10.1145/2069172.2069181},
+ acmid = {2069181},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {code generation, interpreter, meta-programming, runtime feedback, tracing JIT},
+}
+
+@inproceedings{Bolz+alloc+2011,
+ author = {Bolz, Carl Friedrich and Cuni, Antonio and Fija\l{}kowski, Maciej and Leuschel, Michael and Pedroni, Samuele and Rigo, Armin},
+ title = {Allocation Removal by Partial Evaluation in a Tracing JIT},
+ booktitle = {Proceedings of the 20th ACM SIGPLAN Workshop on Partial Evaluation and Program Manipulation},
+ series = {PEPM '11},
+ year = {2011},
+ isbn = {978-1-4503-0485-6},
+ location = {Austin, Texas, USA},
+ pages = {43--52},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1929501.1929508},
+ doi = {10.1145/1929501.1929508},
+ acmid = {1929508},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {optimization, partial evaluation, tracing jit},
+} 
+
 @article{bolz.etal+15,
     author = {Bolz, Carl Friedrich and Tratt, Laurence},
     title = {The impact of meta-tracing on VM design and implementation},
@@ -948,7 +1087,7 @@
 @inproceedings{Bolz+2013,
  author = {Bolz, Carl Friedrich and Diekmann, Lukas and Tratt, Laurence},
  title = {Storage Strategies for Collections in Dynamically Typed Languages},
- booktitle = {Proceedings of the 2013 ACM SIGPLAN International Conference on Object Oriented Programming Systems Languages \&\#38; Applications},
+ booktitle = {Proceedings of the 2013 ACM SIGPLAN International Conference on Object Oriented Programming Systems Languages \& Applications},
  series = {OOPSLA '13},
  year = {2013},
  isbn = {978-1-4503-2374-1},
@@ -961,7 +1100,43 @@
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {collection types, dynamic typing, implementation, memory optimization},
-} 
+}
+
+@inproceedings{Ardo+2012,
+ author = {Ard\"{o}, H{\aa}kan and Bolz, Carl Friedrich and FijaBkowski, Maciej},
+ title = {Loop-aware Optimizations in PyPy's Tracing JIT},
+ booktitle = {Proceedings of the 8th Symposium on Dynamic Languages},
+ series = {DLS '12},
+ year = {2012},
+ isbn = {978-1-4503-1564-7},
+ location = {Tucson, Arizona, USA},
+ pages = {63--72},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2384577.2384586},
+ doi = {10.1145/2384577.2384586},
+ acmid = {2384586},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {loop-invariant code motion, optimization, tracing JIT},
+}
+
+@inproceedings{Schneider+2012,
+ author = {Schneider, David and Bolz, Carl Friedrich},
+ title = {The Efficient Handling of Guards in the Design of RPython's Tracing JIT},
+ booktitle = {Proceedings of the Sixth ACM Workshop on Virtual Machines and Intermediate Languages},
+ series = {VMIL '12},
+ year = {2012},
+ isbn = {978-1-4503-1633-0},
+ location = {Tucson, Arizona, USA},
+ pages = {3--12},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2414740.2414743},
+ doi = {10.1145/2414740.2414743},
+ acmid = {2414743},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {deoptimization, guards, tracing jit},
+}
 
 #######################
 # Other

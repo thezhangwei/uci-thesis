@@ -160,7 +160,7 @@ However, auto-boxing involves heap allocation and additional memory operations, 
 \label{fig:sequence-storage-types}
 \end{figure}
 
-ZipPy employs more efficient data representations for Python composite or sequence data types to avoid auto-boxing.
+ZipPy employs more efficient data representations for Python composite or sequence data types to avoid auto-boxing~\cite{Bolz+2013}.
 For example, Python programmers tend to use \texttt{list}s in a homogeneous way meaning that elements of a \texttt{list} are usually of the same type.
 Therefore, we can speculatively stores a list of integers, for instance, in a Java primitive \texttt{int} array to avoid auto-boxing.
 In ZipPy, a \texttt{list} stores its elements in a \texttt{SequenceStorage} object that dynamically switches between different concrete data representations.
